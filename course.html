@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="欢迎来到SupernovaGo的世界">
+    <meta name="keywords" content="个人网站">
+    <title>SupernovaGo</title>
+    <link rel="stylesheet" href="./css/bootstrap-5/css/bootstrap.min.css">
+    <style>
+        .head{
+            width: 60px;
+            height: 60px;
+            display: flex;
+            margin-top: 3%;
+            margin-left: 40%;
+            background-image: url(./resource/other/headphoto.jpg);
+            background-size:cover;
+            border-radius: 50% 50%;
+            background-position: 0 0;
+        }
+        .offcanvas-title{
+          font-size: xx-large;
+          color: rgb(0, 208, 255);
+          font-weight: bold;
+          font-style: italic;
+        }
+        .offcanvas-start{
+          background-color: #00000037;
+        }
+        .navi{
+          font-size: large;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
+        }
+        body{
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          background-image: url(./resource/other/横板/00017-2165643784.png);
+          background-size:cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+        h3{
+          font-weight: bold;
+          margin-left: 3%;
+          display: flex;
+        }
+        .btn-primary{
+          margin-left: 6%;
+          font-size: larger;
+        }
+        .container:first-child{
+          display: flex;
+          margin: 0;
+        }
+        .row:first-child {
+          display: flex;
+          left: 20%;
+        }
+        .column {
+          display: flex;
+          flex-direction: column;
+        }
+        .card-img-top {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+        .note-head{
+          font-size:6rem;
+          display: flex;
+          margin-top: 3%;
+          margin-left: 30%;
+          text-shadow: 2px 2px 4px rgba(31, 169, 255, 0.807);
+        }
+        .card{
+          margin: 1.5%;
+          padding: 0%;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="column">
+      <div class="head"></div>
+      <h3>SupernovaGo</h3>
+      <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        导航
+        </a>
+    </div>
+    <div class="row">
+      <div class="note-head">笔记本-课程板块</div>
+    </div>
+  </div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/线代.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">线性代数</h5>
+              <p class="card-text">线性代数课程笔记</p>
+              <a href="./resource/onenote/课程/线代.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/概率论.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">概率论</h5>
+              <p class="card-text">概率论课程笔记</p>
+              <a href="./resource/onenote/课程/概率论.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/数理统计.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">数理统计</h5>
+              <p class="card-text">数理统计课程笔记</p>
+              <a href="./resource/onenote/课程/数理统计.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/数据结构.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">数据结构</h5>
+              <p class="card-text">数据结构笔记</p>
+              <a href="./resource/onenote/课程/数据结构.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/计算机.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">计算机组成原理</h5>
+              <p class="card-text">计算机组成原理笔记</p>
+              <a href="./resource/onenote/课程/计组.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/os.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">操作系统</h5>
+              <p class="card-text">操作系统笔记</p>
+              <a href="./resource/onenote/课程/os.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/net.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">计算机网络</h5>
+              <p class="card-text">计算机网络笔记</p>
+              <a href="./resource/onenote/课程/net.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/多元.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">多元统计分析</h5>
+              <p class="card-text">多元统计分析笔记</p>
+              <a href="./resource/onenote/课程/多元.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/随机过程.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">随机过程</h5>
+              <p class="card-text">随机过程笔记</p>
+              <a href="./resource/onenote/课程/随机过程.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./resource/other/电子商务.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">电子商务</h5>
+              <p class="card-text">电子商务笔记</p>
+              <a href="./resource/onenote/课程/电子商务.pdf" class="btn btn-primary" target="_blank">打开</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">侧边栏导航</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+      <div class="navi">
+      Hello！
+      </div>
+      <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        OneNote笔记
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="course.html">计算机和经济统计</a></li>
+        <li><a class="dropdown-item" href="skills.html">课外拓展</a></li>
+      </ul>
+    </div>
+    <hr>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          “心之回忆”计划
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="plan-2022.html">2022</a></li>
+          <li><a class="dropdown-item" href="#">2021</a></li>
+          <li><a class="dropdown-item" href="#">2020</a></li>
+        </ul>
+      </div>
+      <hr>
+        <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          小项目
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="../html/kkk.html">UE5+ChatGPT</a></li>
+          <li><a class="dropdown-item" href="#">AI绘图</a></li>
+          <li><a class="dropdown-item" href="#">爬虫</a></li>
+          <li><a class="dropdown-item" href="#">Blender</a></li>
+          <li><a class="dropdown-item" href="#">Web开发</a></li>
+        </ul>
+      </div>
+      <hr>
+        <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          小说
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="../html/kkk.html">黑洞旅行者</a></li>
+          <li><a class="dropdown-item" href="../html/kkk.html">银河追光</a></li>
+        </ul>
+      </div>
+      <hr>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          关于本网站（必看）
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="../html/kkk.html">说明（必看）</a></li>
+          <li><a class="dropdown-item" href="../html/kkk.html">web代码</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+
+    <script src="./css/bootstrap-5/js/bootstrap.bundle.js"></script>
+</body>
+</html>
