@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,14 +79,14 @@
         .main-head{
           display: flex;
           font-size: 6rem;
-          margin-left: 26%;
+          justify-content: center;
           font-weight: bold;
           animation: words 1.5s linear forwards;
         }
         .second-head{
           display: flex;
           font-size: 2rem;
-          margin-left: 32%;
+          justify-content: center;
           animation: words2 1.5s linear forwards;
           font-style: italic;
         }
@@ -196,15 +196,15 @@
       function createSnowflake() {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
-        snowflake.style.left = Math.random() * 99 + 'vw';
+        snowflake.style.left = Math.random() * 98 + 'vw';
         document.body.appendChild(snowflake);
     
         setTimeout(() => {
           snowflake.remove();
-        }, 4500);
+        }, 4200);
       }
     
-      setInterval(createSnowflake, 200);
+      setInterval(createSnowflake, 300);
     </script>
     <script src="./css/bootstrap-5/js/bootstrap.bundle.js"></script>
 </body>

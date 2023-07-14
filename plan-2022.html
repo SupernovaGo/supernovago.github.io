@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,9 @@
         .head{
             width: 60px;
             height: 60px;
-            display: inline-block;
-            margin-top: 2%;
-            margin-left: 6%;
+            display: flex;
+            margin-top: 3%;
+            margin-left: 40%;
             background-image: url(./resource/other/headphoto.jpg);
             background-size:cover;
             border-radius: 50% 50%;
@@ -38,7 +38,7 @@
           height: 100%;
           margin: 0;
           padding: 0;
-          background-image: url(./resource/other/横板/1a2d08a0-618f-4eb7-9b50-70f10700115e.JPG);
+          background-image: url(./resource/other/横板/00017-2165643784.png);
           background-size:cover;
           background-position: center center;
           background-repeat: no-repeat;
@@ -46,7 +46,8 @@
         }
         h3{
           font-weight: bold;
-          margin-left: 2%;
+          margin-left: 3%;
+          display: flex;
         }
         .btn-primary{
           margin-left: 6%;
@@ -57,14 +58,86 @@
           color: #ffffff;
           text-decoration: none;
         }
+        .plan-head{
+          font-size:6rem;
+          display: flex;
+          margin-top: 3%;
+          margin-left: 10%;
+          text-shadow: 2px 2px 4px rgba(31, 169, 255, 0.807);
+        }
+        .slide{
+          width: 70%;
+          height: 70%;
+          display: flex;
+          margin-left: 14%;
+          margin-top: 3%;
+          box-shadow: 3px 6px 10px 5px rgba(0, 0, 0, 0.538);
+        }
+        .container:first-child{
+          display: flex;
+          margin: 0;
+        }
+        .row:first-child {
+          display: flex;
+          left: 20%;
+        }
+
+        .column {
+          display: flex;
+          flex-direction: column;
+        }
+        .card{
+          margin: 1.5%;
+          padding: 0%;
+        }
+        video{
+          max-width: 100%;
+          height: auto;
+          box-shadow: 3px 6px 10px 5px rgba(0, 0, 0, 0.538);
+        }
+        .second-title{
+          font-size:4rem;
+          display: flex;
+          text-shadow: 2px 2px 4px rgba(31, 169, 255, 0.807);
+          margin-top: 5%;
+          margin-left: 28%;
+          color: orange;
+        }
+        .third-title{
+          font-size:4rem;
+          display: flex;
+          text-shadow: 2px 2px 4px rgba(31, 169, 255, 0.807);
+          margin-top: 5%;
+          margin-left: 33%;
+          color: orange;
+        }
+        .box{
+          width: 20rem;
+          background-color: rgb(192, 192, 192);
+          color: rgb(255, 0, 0);
+        }
+        .card-img-top {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+
     </style>
 </head>
 <body>
-    <div class="head"></div>
-    <h3>SupernovaGo</h3>
-    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-      导航
-      </a>
+    <div class="container">
+      <div class="column">
+        <div class="head"></div>
+        <h3>SupernovaGo</h3>
+        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          导航
+          </a>
+      </div>
+      <div class="row">
+        <div class="plan-head">“心之回忆”计划-2022</div>
+      </div>
+    </div>
+    
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">侧边栏导航</h5>
@@ -72,7 +145,7 @@
       </div>
       <div class="offcanvas-body">
       <div class="navi">
-      Hello！
+      Hello!
       </div>
       <div class="dropdown mt-3">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
@@ -117,17 +190,303 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <li><a class="dropdown-item" href="../html/kkk.html">黑洞旅行者</a></li>
+          <li><a class="dropdown-item" href="../html/kkk.html">银河追光</a></li>
         </ul>
       </div>
       <hr>
-        <div class="dropdown mt-3">
+      <div class="dropdown mt-3">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          <a href="" class="about">关于本网站</a>
+          关于本网站
         </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="../html/kkk.html">说明</a></li>
+          <li><a class="dropdown-item" href="../html/kkk.html">web代码</a></li>
+        </ul>
       </div>
       </div>
     </div>
-    
-    <script src="../css/bootstrap-5/js/bootstrap.bundle.js"></script>
+    <div class="container">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 9"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9" aria-label="Slide 10"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./resource/memory of heart plan/2022/古都西安繁华夜景.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>古都西安的绚丽夜景</h5>
+            <p>首次拍摄出高画质的城市夜景天际线</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./resource/memory of heart plan/2022/与银河对望.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>与银河对望</h5>
+            <p>首次使用相机搭配大光圈定焦镜头拍摄的银河</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./resource/memory of heart plan/2022/猎户座大星云M42.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>猎户座大星云M42</h5>
+            <p>2022年深空摄影代表</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./resource/memory of heart plan/2022/西安城市TimeMix.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>西安城市TimeMix</h5>
+            <p>首次尝试时间切片照片</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./resource/memory of heart plan/2022/盛开的樱花.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>晴日里盛开的红叶李花朵</h5>
+            <p>更换定焦镜头后拍摄的首张照片</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./resource/memory of heart plan/2022/太白山巅的日暮.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>太白山巅的日暮</h5>
+            <p>站酷首张卖出去的照片（已重新后期）</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./resource/memory of heart plan/2022/雨天操场上遗落的羽毛球.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>雨天操场上遗落的羽毛球</h5>
+            <p>搬到新校区后进行拍摄活动的缩影</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./resource/memory of heart plan/2022/钟楼夜景.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>钟楼夜景</h5>
+            <p>2022年多次钟楼拍摄行动的缩影</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./resource/memory of heart plan/2022/半月.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>半月</h5>
+            <p>目前拍摄到的最清楚的半月特写图</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./resource/memory of heart plan/2022/绚丽多彩的城市灯光.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>绚丽多彩的城市灯光</h5>
+            <p>赛博朋克风格，高饱和度</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </div>
+    <div class="container">
+      <div class="second-title">2022年度总结视频</div>
+      <video src="./resource/memory of heart plan/2022/2022年度总结视频.mp4" controls></video>
+    </div>
+    <div class="container">
+      <div class="second-title">2022年度最佳照片</div>
+      <div class="row">
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/苍穹下绵延的秦岭山脉.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">苍穹下绵延的秦岭山脉</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/向日葵花盘.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">向日葵花盘</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/太白山巅的平安锁.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">太白山巅的平安锁</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/金色天际线笼罩下的城市.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">金色天际线笼罩下的城市</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/跑道上落下的秋叶.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">跑道上落下的秋叶</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/绿叶点缀的鲜红月季花.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">绿叶点缀的鲜红月季花</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/太白山巅的星月夜.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">太白山巅的星月夜</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/太白山巅飘扬的红丝带和平安锁.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">太白山巅飘扬的红丝带</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/建筑的对称之美.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">建筑的对称之美</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/晨曦下连绵的群山.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">晨曦下连绵的群山</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/月球上的环形山.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">月球上的环形山</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/洞庭湖上空的彩色晨曦.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">洞庭湖上空的彩色晨曦</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/满月初升.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">随云彩升起的满月</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/焰火的光与影.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">焰火的光与影</p>
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="./resource/memory of heart plan/2022/覆雪长椅.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">覆雪长椅</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="second-title">
+        2022年度总结报告
+      </div>
+      <div class="box">
+        <p>红红火火恍恍惚惚</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="third-title">
+        Achievement
+      </div>
+      <div class="row">
+        <div class="card" style="width: 18rem;">
+          <img src="./resource/projects/spider/v2-a808ed8dd58234857734fcf3925b867d_b.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">爬虫</h5>
+            <p class="card-text">解析网页，并使用Python写爬虫脚本以获取网站指定资源</p>
+            <a href="#" class="btn btn-primary">前往爬虫项目</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./resource/projects/ue+chatgpt/v2-1bf3892bc41b981cea8d7dda04b9d2ab_b.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">虚幻引擎</h5>
+            <p class="card-text">基础的虚幻引擎使用：基本工具、创建世界、蓝图模块等</p>
+            <a href="#" class="btn btn-primary">前往虚幻引擎笔记</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./resource/projects/blender/OIP-C.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Blender</h5>
+            <p class="card-text">使用Blender创建3D模型、动画、骨架网格体等</p>
+            <a href="#" class="btn btn-primary">前往Blender项目</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./resource/onenote/课外/OIP-C (1).jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">C++</h5>
+            <p class="card-text">基础的C++使用：基本概念、函数、类和对象、简单算法等</p>
+            <a href="#" class="btn btn-primary">前往C++笔记</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./resource/novel/1520951915202.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">《黑洞旅行者》</h5>
+            <p class="card-text">居住在黑洞中的种族，随着黑洞的消亡而被迫迁徙</p>
+            <a href="#" class="btn btn-primary">前往小说</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="second-title">
+        关于2022的更多资料
+      </div>
+      <div class="row">
+        <div class="card" style="width: 18rem;">
+          <img src="./resource/other/camera.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">全部照片</h5>
+            <p class="card-text">包含相机、手机以及第三方拍摄的全部照片</p>
+            <a href="#" class="btn btn-primary">不可前往</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./resource/other/摄像机.webp" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">全部视频</h5>
+            <p class="card-text">包含相机、手机以及第三方拍摄的全部视频</p>
+            <a href="#" class="btn btn-primary">不可前往</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="./resource/other/docu.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">其它资料</h5>
+            <p class="card-text">包含截屏、文档等其他内容</p>
+            <a href="#" class="btn btn-primary">不可前往</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./css/bootstrap-5/js/bootstrap.bundle.js"></script>
 </body>
 </html>
