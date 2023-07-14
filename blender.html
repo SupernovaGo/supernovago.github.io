@@ -11,9 +11,9 @@
         .head{
             width: 60px;
             height: 60px;
-            display: inline-block;
-            margin-top: 2%;
-            margin-left: 6%;
+            display: flex;
+            margin-top: 3%;
+            margin-left: 40%;
             background-image: url(./resource/other/headphoto.jpg);
             background-size:cover;
             border-radius: 50% 50%;
@@ -46,25 +46,85 @@
         }
         h3{
           font-weight: bold;
-          margin-left: 2%;
+          margin-left: 3%;
+          display: flex;
         }
         .btn-primary{
           margin-left: 6%;
           font-size: larger;
         }
-        .about{
-          font-style: italic;
-          color: #ffffff;
-          text-decoration: none;
+        .container:first-child{
+          display: flex;
+          margin: 0;
         }
+        .row:first-child {
+          display: flex;
+          left: 20%;
+        }
+        .column {
+          display: flex;
+          flex-direction: column;
+        }
+        .note-head{
+          font-size:6rem;
+          display: flex;
+          margin-top: 3%;
+          margin-left: 10%;
+          text-shadow: 2px 2px 4px rgba(31, 169, 255, 0.807);
+        }
+
+
     </style>
 </head>
 <body>
-    <div class="head"></div>
-    <h3>SupernovaGo</h3>
-    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-      导航
-      </a>
+  <div class="container">
+    <div class="column">
+      <div class="head"></div>
+      <h3>SupernovaGo</h3>
+      <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        导航
+        </a>
+    </div>
+    <div class="row">
+      <div class="note-head">Blender</div>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="colunm">
+            <h3>
+                硬表面建模
+            </h3>
+            <hr>
+            <h3>
+                动画效果
+            </h3>
+            <hr>
+            <h3>
+                雕刻
+            </h3>
+            <hr>
+            <h3>
+                粒子系统与动画
+            </h3>
+            <hr>
+            <h3>
+                刚体系统
+            </h3>
+            <hr>
+            <h3>
+                几何节点与动画效果
+            </h3>
+            <hr>
+            <h3>
+                骨骼装配与动画
+            </h3>
+
+        </div>
+    </div>
+
+
+
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">侧边栏导航</h5>
@@ -79,9 +139,8 @@
         OneNote笔记
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="../html/kkk.html">计算机相关</a></li>
-        <li><a class="dropdown-item" href="#">经济统计相关</a></li>
-        <li><a class="dropdown-item" href="#">课外拓展</a></li>
+        <li><a class="dropdown-item" href="course.html">计算机和经济统计</a></li>
+        <li><a class="dropdown-item" href="skills.html">课外拓展</a></li>
       </ul>
     </div>
     <hr>
@@ -90,11 +149,9 @@
           “心之回忆”计划
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="../html/kkk.html">2023</a></li>
-          <li><a class="dropdown-item" href="../html/kkk.html">2022</a></li>
-          <li><a class="dropdown-item" href="#">2021</a></li>
-          <li><a class="dropdown-item" href="#">2020</a></li>
-          <li><a class="dropdown-item" href="#">2020以前</a></li>
+          <li><a class="dropdown-item" href="plan-2022.html">2022</a></li>
+          <li><a class="dropdown-item" href="#">2021（暂不可用）</a></li>
+          <li><a class="dropdown-item" href="#">2020（暂不可用）</a></li>
         </ul>
       </div>
       <hr>
@@ -117,16 +174,16 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <li><a class="dropdown-item" href="../html/kkk.html">黑洞旅行者</a></li>
-          <li><a class="dropdown-item" href="../html/kkk.html">银河追光</a></li>
+          <li><a class="dropdown-item" href="../html/kkk.html">银河追光（暂不可用）</a></li>
         </ul>
       </div>
       <hr>
       <div class="dropdown mt-3">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-          关于本网站
+          关于本网站（必看）
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="../html/kkk.html">说明</a></li>
+          <li><a class="dropdown-item" href="README.md">说明（必看）</a></li>
           <li><a class="dropdown-item" href="../html/kkk.html">web代码</a></li>
         </ul>
       </div>

@@ -1,2 +1,20 @@
 # supernovago.github.io
-A personal website for SupernovaGo
+this is a personal website for SupernovaGo
+
+由于Github仓库容量存在限制，因此有许多资料暂时无法上传
+目前“心之回忆”计划，由于容量的限制，仅打算上传2022及以后的资料
+    （原本一个2022年度总结视频就高达600M，现在压成了720p和3M的码率）
+
+
+虽然该域名没有被墙，但是速度还是比较慢，如果加载不出来图片，可以尝试科学上网
+Onenote笔记目前大部分已上传。最开始时是使用的手写笔记，因此经济统计的笔记仅上传了使用非手写的三门课
+
+
+目前Projects的资料还没有上传，预计在近几天内完成。
+    （其实是不知道如何呈现，例如虚幻引擎+ChatGPT的内容，压缩包太大又不可能放在网站上）
+
+
+
+如有发现笔记中存在错误，请联系我：
+    2138827335@qq.com
+    SupernovaGoX@gmail.com
