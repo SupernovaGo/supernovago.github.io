@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="欢迎来到SupernovaGo的世界">
+    <meta name="keywords" content="个人网站">
+    <title>SupernovaGo</title>
+    <link rel="stylesheet" href="./css/bootstrap-5/css/bootstrap.min.css">
+    <style>
+        .head{
+            width: 60px;
+            height: 60px;
+            display: flex;
+            margin-top: 3%;
+            margin-left: 40%;
+            background-image: url(./resource/other/headphoto.jpg);
+            background-size:cover;
+            border-radius: 50% 50%;
+            background-position: 0 0;
+        }
+        .offcanvas-title{
+          font-size: xx-large;
+          color: rgb(0, 208, 255);
+          font-weight: bold;
+          font-style: italic;
+        }
+        .offcanvas-start{
+          background-color: #00000037;
+        }
+        .navi{
+          font-size: large;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
+        }
+        body{
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          background-image: url(./resource/other/横板/00029-800968789.png);
+          background-size:cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+        h3{
+          font-weight: bold;
+          margin-left: 3%;
+          display: flex;
+        }
+        .btn-primary{
+          margin-left: 6%;
+          font-size: larger;
+        }
+        .container:first-child{
+          display: flex;
+          margin: 0;
+        }
+        .row:first-child {
+          display: flex;
+          left: 20%;
+        }
+        .column {
+          display: flex;
+          flex-direction: column;
+        }
+        .note-head{
+          font-size:6rem;
+          display: flex;
+          margin-top: 3%;
+          margin-left: 10%;
+          text-shadow: 2px 2px 4px rgba(31, 169, 255, 0.807);
+        }
+        .column>h2:first-child{
+          margin-top: 5%;
+        }
+        img{
+            margin-top: 5%;
+            width: 50%;
+            margin-left: 25%;
+        }
+        video{
+          max-width: 60%;
+          height: auto;
+          box-shadow: 3px 6px 10px 5px rgba(0, 0, 0, 0.538);
+          margin-left: 20%;
+        }
+
+
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="column">
+      <div class="head"></div>
+      <h3>SupernovaGo</h3>
+      <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        导航
+        </a>
+    </div>
+    <div class="row">
+      <div class="note-head">Stable diffusion AI绘图</div>
+    </div>
+    </div>
+
+    <div class="container">
+      <div class="column">
+        <h2>
+            说明
+        </h2>
+        <hr>
+        <h4>
+            1、Stable diffusion是一个潜在扩散模型，能够实现文生图、图生图等基本功能，还能借助controlnet、deforum实现更为强大的功能
+        </h4>
+        <h4>
+            2、如果你也想尝试，请参考笔记的AI绘图部分，里面有详细的本地部署方法，各种坑我都替你踩过了
+        </h4>
+        <h4>
+            3、下面展示的图片和视频，均由部署在谷歌Colab上的模型绘制的（毕竟能使用16GB显存的显卡）
+        </h4>
+        <hr>
+        <h2>
+            AI视频：Stable diffusion结合Deforum制作
+        </h2>
+        <hr>
+        <video src="./resource/projects/stable diffusion/20230530155840.mp4" controls></video>
+        <hr>
+        <h2>
+            AI图像-矢量图风景
+        </h2>
+        <hr>
+        <img src="./resource/other/横板/00026-800968786.png" alt="">
+        <img src="./resource/other/横板/00005-4227851877.png" alt="">
+        <img src="./resource/other/横板/00016-2165643783.png" alt="">
+        <img src="./resource/projects/stable diffusion/00020-330228610.png" alt="">
+        <img src="./resource/projects/stable diffusion/00027-2333088936.png" alt="">
+        <hr>
+        <h2>
+            AI图像-人物
+        </h2>
+        <img src="./resource/projects/stable diffusion/00045-3176394084.png" alt="">
+      </div>
+    </div>
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">侧边栏导航</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+      <div class="navi">
+      Hello！
+      </div>
+      <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        OneNote笔记
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="course.html">计算机和经济统计</a></li>
+        <li><a class="dropdown-item" href="skills.html">课外拓展</a></li>
+      </ul>
+    </div>
+    <hr>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          “心之回忆”计划
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="plan-2022.html">2022</a></li>
+          <li><a class="dropdown-item" href="#">2021（暂不可用）</a></li>
+          <li><a class="dropdown-item" href="#">2020（暂不可用）</a></li>
+        </ul>
+      </div>
+      <hr>
+        <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          小项目
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="ue+chat.html">UE5+ChatGPT</a></li>
+          <li><a class="dropdown-item" href="sd.html">AI绘图</a></li>
+          <li><a class="dropdown-item" href="spider.html">爬虫</a></li>
+          <li><a class="dropdown-item" href="blender.html">Blender</a></li>
+          <li><a class="dropdown-item" href="#">Web开发（暂不可用）</a></li>
+        </ul>
+      </div>
+      <hr>
+        <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          小说
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="./resource/novel/黑洞旅行者.pdf">黑洞旅行者</a></li>
+          <li><a class="dropdown-item" href="#">银河追光（暂不可用）</a></li>
+        </ul>
+      </div>
+      <hr>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          关于本网站（必看）
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="README.md">说明（必看）</a></li>
+          <li><a class="dropdown-item" href="#">web代码（暂不可用）</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+
+    <script src="./css/bootstrap-5/js/bootstrap.bundle.js"></script>
+</body>
+</html>

@@ -69,11 +69,22 @@
           font-size:6rem;
           display: flex;
           margin-top: 3%;
-          margin-left: 10%;
+          margin-left: 100%;
           text-shadow: 2px 2px 4px rgba(31, 169, 255, 0.807);
         }
-
-
+        video{
+          max-width: 60%;
+          height: auto;
+          box-shadow: 3px 6px 10px 5px rgba(0, 0, 0, 0.538);
+          margin-left: 20%;
+        }  
+        .card{
+          padding: 0%;
+          margin: 2%;
+        }
+        .row.img{
+          justify-content: space-around;
+        }
     </style>
 </head>
 <body>
@@ -92,33 +103,66 @@
 
     <div class="container">
         <div class="colunm">
+          <hr>
             <h3>
                 硬表面建模
             </h3>
+            <div class="row img">
+              <div class="card" style="width: 18rem;">
+                <img src="./resource/projects/blender/pigs.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">三只小猪</p>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="./resource/projects/blender/goldcoin (2).png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">金币基站</p>
+                </div>
+              </div>
+              <hr>
+            </div>
+            <h3>
+                基本动画
+            </h3>
+            <video src="./resource/projects/blender/basicAdmination.mp4" controls>
+            </video>
             <hr>
             <h3>
-                动画效果
+                雕刻系统
             </h3>
+            <div class="row img">
+              <div class="card" style="width: 18rem;">
+                <img src="./resource/projects/blender/雕刻.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">荧光树桩</p>
+                </div>
+              </div>
+            </div>
             <hr>
             <h3>
-                雕刻
+                粒子系统：狂奔小车
             </h3>
+            <video src="./resource/projects/blender/动画+粒子系统.mp4" controls>
+            </video>
             <hr>
             <h3>
-                粒子系统与动画
+                刚体系统：子弹冲击
             </h3>
+            <video src="./resource/projects/blender/动画+刚体.mp4" controls>
+            </video>
             <hr>
             <h3>
-                刚体系统
+                几何节点：猴头构建
             </h3>
+            <video src="./resource/projects/blender/几何节点与动画效果.mp4" controls>
+            </video>
             <hr>
             <h3>
-                几何节点与动画效果
+                骨骼装配：走路机器人
             </h3>
-            <hr>
-            <h3>
-                骨骼装配与动画
-            </h3>
+            <video src="./resource/projects/blender/骨骼装配动画.mp4" controls>
+            </video>
 
         </div>
     </div>
@@ -160,11 +204,11 @@
           小项目
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="../html/kkk.html">UE5+ChatGPT</a></li>
-          <li><a class="dropdown-item" href="#">AI绘图</a></li>
-          <li><a class="dropdown-item" href="#">爬虫</a></li>
-          <li><a class="dropdown-item" href="#">Blender</a></li>
-          <li><a class="dropdown-item" href="#">Web开发</a></li>
+          <li><a class="dropdown-item" href="ue+chat.html">UE5+ChatGPT</a></li>
+          <li><a class="dropdown-item" href="sd.html">AI绘图</a></li>
+          <li><a class="dropdown-item" href="spider.html">爬虫</a></li>
+          <li><a class="dropdown-item" href="blender.html">Blender</a></li>
+          <li><a class="dropdown-item" href="#">Web开发（暂不可用）</a></li>
         </ul>
       </div>
       <hr>
@@ -173,8 +217,8 @@
           小说
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" href="../html/kkk.html">黑洞旅行者</a></li>
-          <li><a class="dropdown-item" href="../html/kkk.html">银河追光（暂不可用）</a></li>
+          <li><a class="dropdown-item" href="./resource/novel/黑洞旅行者.pdf">黑洞旅行者</a></li>
+          <li><a class="dropdown-item" href="#">银河追光（暂不可用）</a></li>
         </ul>
       </div>
       <hr>
@@ -184,7 +228,7 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <li><a class="dropdown-item" href="README.md">说明（必看）</a></li>
-          <li><a class="dropdown-item" href="../html/kkk.html">web代码</a></li>
+          <li><a class="dropdown-item" href="#">web代码（暂不可用）</a></li>
         </ul>
       </div>
       </div>

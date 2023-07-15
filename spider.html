@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="欢迎来到SupernovaGo的世界">
+    <meta name="keywords" content="个人网站">
+    <title>SupernovaGo</title>
+    <link rel="stylesheet" href="./css/bootstrap-5/css/bootstrap.min.css">
+    <style>
+        .head{
+            width: 60px;
+            height: 60px;
+            display: flex;
+            margin-top: 3%;
+            margin-left: 40%;
+            background-image: url(./resource/other/headphoto.jpg);
+            background-size:cover;
+            border-radius: 50% 50%;
+            background-position: 0 0;
+        }
+        .offcanvas-title{
+          font-size: xx-large;
+          color: rgb(0, 208, 255);
+          font-weight: bold;
+          font-style: italic;
+        }
+        .offcanvas-start{
+          background-color: #00000037;
+        }
+        .navi{
+          font-size: large;
+          color: rgb(255, 255, 255);
+          font-weight: bold;
+        }
+        body{
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          background-image: url(./resource/other/横板/00029-800968789.png);
+          background-size:cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+        h3{
+          font-weight: bold;
+          margin-left: 3%;
+          display: flex;
+        }
+        .btn-primary{
+          margin-left: 6%;
+          font-size: larger;
+        }
+        .container:first-child{
+          display: flex;
+          margin: 0;
+        }
+        .row:first-child {
+          display: flex;
+          left: 20%;
+        }
+        .column {
+          display: flex;
+          flex-direction: column;
+        }
+        .note-head{
+          font-size:6rem;
+          display: flex;
+          margin-top: 3%;
+          margin-left: 55%;
+          text-shadow: 2px 2px 4px rgba(31, 169, 255, 0.807);
+        }
+        .column>h2:first-child{
+          margin-top: 5%;
+        }
+        img{
+            margin-top: 5%;
+            width: 50%;
+            margin-left: 25%;
+        }
+        video{
+          max-width: 60%;
+          height: auto;
+          box-shadow: 3px 6px 10px 5px rgba(0, 0, 0, 0.538);
+          margin-left: 20%;
+        }
+
+
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="column">
+      <div class="head"></div>
+      <h3>SupernovaGo</h3>
+      <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        导航
+        </a>
+    </div>
+    <div class="row">
+      <div class="note-head">Python爬虫</div>
+    </div>
+    </div>
+
+    <div class="container">
+      <div class="column">
+        <h2>
+            使用requests库对没有强力反爬的网站进行爬取
+        </h2>
+        <hr>
+        <h4>
+            对象为每日必应网站。该网站爬取过程不难，主要是进入网站会禁用右键，导致不好对网站结构进行分析。先按alt再按F12可强制控制并分析网页
+        </h4>
+        <hr>
+        <pre>
+            <code>
+                import requests
+                from lxml import etree
+                import socket
+
+                socket.setdefaulttimeout(10)
+                base_url = 'https://www.todaybing.com/'
+                url = 'https://www.todaybing.com//detail/gMhm4dYs.html'
+                headers = {
+                    'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
+                    'Referer':'https://www.todaybing.com/'}
+
+                while True:
+                    response = requests.get(url=url,headers=headers)
+                    content = response.content.decode('UTF-8','ignore')
+                    tree = etree.HTML(content)
+                    url = base_url + tree.xpath('//a[@class="list-goto"]/@href')[0]  # 下一张图片所在的网页地址
+                    pic_src = tree.xpath('//img[@id="mbg"]/@src')[0]
+                    name1 = tree.xpath('//img[@id="mbg"]/@alt')[0]
+                    name2 = tree.xpath('//*[@id="syno-nsc-ext-gen3"]/main/div/div/div[1]/div[1]//span/text()')[0]
+                    if './bing_img/'+name1+'@'+name2+'.jpg':
+                        response2 = requests.get(url=pic_src,headers=headers)
+                        content2 = response2.content
+                        try:
+                            with open('./bing_img/'+name1+'@'+name2+'.jpg','wb') as f:
+                                f.write(content2)
+                            print(name1+url+'>>>下载完成')
+                        except:
+                            print("跳过这一张")
+                    else:
+                        print('完成')
+                        break
+                exit()
+
+            </code>
+        </pre>
+        <h2>
+            使用selenium驱动真实浏览器对有着强力反爬机制的网站的指定内容进行爬取
+        </h2>
+        <hr>
+        <h4>
+            这里的例子是sciencedirect网站，它使用了某著名公司的反爬保护，直接使用爬虫会被拦截。其它使用了类似反爬保护的网站，以及使用异步加载的网站，都可以使用selenium进行爬取
+        </h4>
+        <hr>
+        <pre>
+            <code>
+                from selenium import webdriver
+                import warnings
+                import time
+
+                f = open('hx.txt','a',encoding='utf-8')
+                warnings.filterwarnings('ignore',category=DeprecationWarning)
+                path = 'chromedriver.exe'
+                driver = webdriver.Chrome(path)
+                # 爬取31-58页的数据
+                for x in range(40,59):
+                    url = 'https://www.sciencedirect.com/journal/journal-of-english-for-academic-purposes/vol/{}/suppl/C'.format(str(x))
+                    driver.get(url)
+                    xpath1 = driver.find_elements_by_xpath('//ol/li/dl/dt/h3/a')
+                    src_list = []
+                    # 获取每卷的文章链接并将链接写入列表
+                    for item in xpath1:
+                        src = item.get_attribute('href')
+                        src_list.append(src)
+                    # 打开每篇文章
+                    for src in src_list:
+                        driver.get(src)
+                        time.sleep(5.5)
+                        for i in range(80,150,5):
+                            xpath2 = driver.find_elements_by_id('sectitle0{:0>3}'.format(str(i)))
+                            for title in xpath2:
+                                if title.text == 'Author statement':
+                                    txt = driver.find_element_by_xpath('//*[@id="sectitle0{:0>3}"]/parent::*/p'.format(str(i))).text
+                                    time.sleep(1)
+                                    name = driver.find_element_by_xpath('//*[@id="screen-reader-main-title"]/span').text
+                                    f.write(name+'\n'+txt+'\n'+'\n')
+                                    print(name+'\n'+txt+'\n'+'\n')
+                        time.sleep(6)
+                f.close()
+                driver.quit()
+            </code>
+        </pre>
+
+      </div>
+    </div>
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">侧边栏导航</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+      <div class="navi">
+      Hello！
+      </div>
+      <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        OneNote笔记
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="course.html">计算机和经济统计</a></li>
+        <li><a class="dropdown-item" href="skills.html">课外拓展</a></li>
+      </ul>
+    </div>
+    <hr>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          “心之回忆”计划
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="plan-2022.html">2022</a></li>
+          <li><a class="dropdown-item" href="#">2021（暂不可用）</a></li>
+          <li><a class="dropdown-item" href="#">2020（暂不可用）</a></li>
+        </ul>
+      </div>
+      <hr>
+        <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          小项目
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="ue+chat.html">UE5+ChatGPT</a></li>
+          <li><a class="dropdown-item" href="sd.html">AI绘图</a></li>
+          <li><a class="dropdown-item" href="spider.html">爬虫</a></li>
+          <li><a class="dropdown-item" href="blender.html">Blender</a></li>
+          <li><a class="dropdown-item" href="#">Web开发（暂不可用）</a></li>
+        </ul>
+      </div>
+      <hr>
+        <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          小说
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="./resource/novel/黑洞旅行者.pdf">黑洞旅行者</a></li>
+          <li><a class="dropdown-item" href="#">银河追光（暂不可用）</a></li>
+        </ul>
+      </div>
+      <hr>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+          关于本网站（必看）
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="README.md">说明（必看）</a></li>
+          <li><a class="dropdown-item" href="#">web代码（暂不可用）</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+
+    <script src="./css/bootstrap-5/js/bootstrap.bundle.js"></script>
+</body>
+</html>
