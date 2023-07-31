@@ -10,3 +10,8 @@ this is a personal website for SupernovaGo
 如有发现笔记中存在错误，或在project中存在想要探讨的点，请联系我：
     2138827335@qq.com
     SupernovaGoX@gmail.com
+
+网站更新日志：
+    2023.07.15：网站正式上线
+
+    2023.07.24：笔记本板块新增论文解析栏目，上传了近期阅读和研究的两篇论文：《Attention is All You Need》以及《High-Resolution Image Synthesis with Latent Diffusion Models》。同时在AI绘图笔记中补全了有关Stable diffusion模型的解析
