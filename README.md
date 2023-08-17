@@ -15,3 +15,5 @@ this is a personal website for SupernovaGo
     2023.07.15：网站正式上线
 
     2023.07.24：笔记本板块新增论文解析栏目，上传了近期阅读和研究的两篇论文：《Attention is All You Need》以及《High-Resolution Image Synthesis with Latent Diffusion Models》。同时在AI绘图笔记中补全了有关Stable diffusion模型的解析
+
+    2023.08.17：更新C++笔记（CMake的使用）和Python笔记（Python与C++联合编程）以及UE笔记（虚幻C++编程、引入第三方lib），这些笔记都是在解决项目的过程中学习的新知识；新上传论文笔记《Generative Agents: Interactive Simulacra of Human Behavior》，这是一篇来自斯坦福和谷歌的有关基于ChatGPT的可信人类仿真实验论文
