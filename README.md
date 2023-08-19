@@ -4,6 +4,8 @@
 
 ### this is a personal website for SupernovaGo
 
+! ! ! Attention：Many browsers don't support all the functions of Markdown, so there may be some errors displayed.
+
 由于Github仓库容量存在限制，有许多资料暂时无法上传
 目前“心之回忆”计划，由于容量的限制，仅打算上传2022及以后的资料
 
