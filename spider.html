@@ -75,16 +75,8 @@
         .column>h2:first-child{
           margin-top: 5%;
         }
-        img{
-            margin-top: 5%;
-            width: 50%;
-            margin-left: 25%;
-        }
-        video{
-          max-width: 60%;
-          height: auto;
-          box-shadow: 3px 6px 10px 5px rgba(0, 0, 0, 0.538);
-          margin-left: 20%;
+        .code{
+          background: #000;
         }
 
 
@@ -110,24 +102,34 @@
             使用requests库对没有强力反爬的网站进行爬取
         </h2>
         <hr>
-        <h4>
-            对象为每日必应网站。该网站爬取过程不难，主要是进入网站会禁用右键，导致不好对网站结构进行分析。先按alt再按F12可强制控制并分析网页
-        </h4>
+        <ul>
+          <li>
+            <h4>
+              对象为每日必应网站。该网站爬取过程不难，主要是进入网站会禁用右键，导致不好对网站结构进行分析。先按alt再按F12可强制控制并分析网页
+          </h4>
+          </li>
+          <li>
+            <h4>
+              可参考<a href="supernovago.github.io/skills.html">笔记本：Python爬虫部分</a>，以下是项目示例代码
+            </h4>
+          </li>
+        </ul>
+        
         <hr>
-        <pre>
+        <pre class="code">
             <code>
-                import requests
+                import requests   # 导入必须的模块
                 from lxml import etree
                 import socket
 
-                socket.setdefaulttimeout(10)
+                socket.setdefaulttimeout(10)    # 设置超时时间
                 base_url = 'https://www.todaybing.com/'
                 url = 'https://www.todaybing.com//detail/gMhm4dYs.html'
                 headers = {
                     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
-                    'Referer':'https://www.todaybing.com/'}
+                    'Referer':'https://www.todaybing.com/'}     # 设置标头
 
-                while True:
+                while True:   # 使用一个循环不断下载图片
                     response = requests.get(url=url,headers=headers)
                     content = response.content.decode('UTF-8','ignore')
                     tree = etree.HTML(content)
@@ -151,15 +153,26 @@
 
             </code>
         </pre>
+        <hr>
         <h2>
             使用selenium驱动真实浏览器对有着强力反爬机制的网站的指定内容进行爬取
         </h2>
         <hr>
-        <h4>
-            这里的例子是sciencedirect网站，它使用了某著名公司的反爬保护，直接使用爬虫会被拦截。其它使用了类似反爬保护的网站，以及使用异步加载的网站，都可以使用selenium进行爬取
-        </h4>
+
+        <ul>
+          <li>
+            <h4>
+              这里的例子是sciencedirect网站，它使用了某著名公司的反爬保护，直接使用爬虫会被拦截。其它使用了类似反爬保护的网站，以及使用异步加载的网站，都可以使用selenium进行爬取
+          </h4>
+          </li>
+          <li>
+            <h4>
+              可参考<a href="supernovago.github.io/skills.html">笔记本：Python爬虫部分</a>，以下是项目示例代码
+            </h4>
+          </li>
+        </ul>
         <hr>
-        <pre>
+        <pre class="code">
             <code>
                 from selenium import webdriver
                 import warnings
@@ -169,7 +182,7 @@
                 warnings.filterwarnings('ignore',category=DeprecationWarning)
                 path = 'chromedriver.exe'
                 driver = webdriver.Chrome(path)
-                # 爬取31-58页的数据
+                # 爬取40-58页的数据
                 for x in range(40,59):
                     url = 'https://www.sciencedirect.com/journal/journal-of-english-for-academic-purposes/vol/{}/suppl/C'.format(str(x))
                     driver.get(url)
@@ -241,6 +254,7 @@
           <li><a class="dropdown-item" href="sd.html">AI绘图</a></li>
           <li><a class="dropdown-item" href="spider.html">爬虫</a></li>
           <li><a class="dropdown-item" href="blender.html">Blender</a></li>
+          <li><a class="dropdown-item" href="AIvill.html">复现AI小镇实验</a></li>
         </ul>
       </div>
       <hr>
