@@ -38,7 +38,7 @@
           height: 100%;
           margin: 0;
           padding: 0;
-          background-image: url(./resource/other/横板/00028-800968788.png);
+          background-image: url(./resource/other/background/DSC01828-14.jpg);
           background-size:cover;
           background-position: center center;
           background-repeat: no-repeat;
@@ -98,7 +98,7 @@
     <div class="container">
         <div class="colunm">
         <h2>
-            注意：由于该实验涉及较多的知识板块，复现尚未完成，笔记仅供参考（一个人在短时间内弄完还是太勉强，等考完研了和懂相关知识的小伙伴一起弄）
+            注意：由于该实验涉及较多的知识板块，复现尚未完成，笔记仅供参考。目前卡在了UE编程上，UE使用的C++和标准C++略有不同，无法使用String、vector等数据结构，只能使用诸如FString等专有数据。
           </h2>
           <hr>
           <hr>
@@ -130,7 +130,7 @@
                     原论文基于Phaser网页游戏开发框架，来实现沙盒世界，而本次复现采用虚幻引擎5，原因是：希望更加熟悉UE开发尤其是UE的C++开发；UE本身带有寻路等功能，只要会用就能避免去写Dijkstra等算法，节省时间；希望在3D世界中实现智能角色，这更加接近虚拟世界。
             </li>
             <li>
-                    原论文十分依赖ChatGPT，诸如词嵌入、重要性等方面都需要询问ChatGPT。为了避免过多的ChatGPT消耗，放弃少许准确性，采用本地词嵌入和测量重要性的方法。
+                    原论文十分依赖ChatGPT，诸如词嵌入、重要性等方面都需要询问ChatGPT。为了避免过多的ChatGPT消耗，放弃少许准确性，采用本地词嵌入和测量重要性的方法。其中AI用Python比较多，但虚幻引擎里只能使用C++，因此需要C++能调用Python，请参考<a href="P+C.html">Python&C++联合编程</a>
             </li>
             <li>
                     反思过程的第一步，仅向ChatGPT输入重要性高的记忆，避免ChatGPT的过多消耗。
@@ -316,6 +316,7 @@
         <li><a class="dropdown-item" href="course.html">计算机和经济统计</a></li>
         <li><a class="dropdown-item" href="skills.html">课外拓展</a></li>
         <li><a class="dropdown-item" href="essay.html">论文解析</a></li>
+        <li><a class="dropdown-item" href="xmind.html">思维导图</a></li>
       </ul>
     </div>
     <hr>
@@ -324,6 +325,7 @@
           “心之回忆”计划
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="plan-2023.html">2023</a></li>
           <li><a class="dropdown-item" href="plan-2022.html">2022</a></li>
           <li><a class="dropdown-item" href="#">2021（暂不可用）</a></li>
           <li><a class="dropdown-item" href="#">2020（暂不可用）</a></li>
@@ -340,6 +342,7 @@
           <li><a class="dropdown-item" href="spider.html">爬虫</a></li>
           <li><a class="dropdown-item" href="blender.html">Blender</a></li>
           <li><a class="dropdown-item" href="AIvill.html">复现AI小镇实验</a></li>
+          <li><a class="dropdown-item" href="P+C.html">Python&C++联合编程</a></li>
         </ul>
       </div>
       <hr>
