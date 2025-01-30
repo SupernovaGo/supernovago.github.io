@@ -1,0 +1,1843 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+
+/* FONTS */
+
+/* VARIABLES */
+
+:root {
+  --theme-0: rgb(255, 255, 255);
+
+  /* Slate grayscale */
+  --theme-50: #f8fafc;
+  --theme-100: #f1f5f9;
+  --theme-200: #e2e8f0;
+  --theme-300: #cbd5e1;
+  --theme-400: #94a3b8;
+  --theme-500: #64748b;
+  --theme-600: #475569;
+  --theme-700: #334155;
+  --theme-800: #1e293b;
+  --theme-900: #0f172a;
+
+  /* Tailwind variables */
+  --tw-primary: #62bbf3;
+
+  --tw-prose-body: var(--theme-700);
+  --tw-prose-headings: var(--theme-900);
+  --tw-prose-lead: var(--theme-600);
+  --tw-prose-links: var(--theme-900);
+  --tw-prose-bold: var(--theme-900);
+  --tw-prose-counters: var(--theme-500);
+  --tw-prose-bullets: var(--theme-300);
+  --tw-prose-hr: var(--theme-200);
+  --tw-prose-quotes: var(--theme-900);
+  --tw-prose-quote-borders: var(--theme-200);
+  --tw-prose-captions: var(--theme-500);
+  --tw-prose-code: var(--theme-900);
+  --tw-prose-pre-code: var(--theme-100);
+  --tw-prose-pre-bg: var(--theme-800);
+  --tw-prose-th-borders: var(--theme-300);
+  --tw-prose-td-borders: var(--theme-200);
+  --tw-prose-bg: var(--theme-0);
+  --tw-prose-meta: var(--theme-500);
+  --tw-prose-meta-bg: var(--theme-100);
+
+  --tw-prose-invert-body: var(--theme-300);
+  --tw-prose-invert-headings: var(--theme-0);
+  --tw-prose-invert-lead: var(--theme-400);
+  --tw-prose-invert-links: var(--theme-0);
+  --tw-prose-invert-bold: var(--theme-0);
+  --tw-prose-invert-counters: var(--theme-400);
+  --tw-prose-invert-bullets: var(--theme-600);
+  --tw-prose-invert-hr: var(--theme-700);
+  --tw-prose-invert-quotes: var(--theme-100);
+  --tw-prose-invert-quote-borders: var(--theme-700);
+  --tw-prose-invert-captions: var(--theme-400);
+  --tw-prose-invert-code: var(--theme-0);
+  --tw-prose-invert-pre-bg: var(--theme-900);
+  --tw-prose-invert-th-borders: var(--theme-600);
+  --tw-prose-invert-td-borders: var(--theme-700);
+  --tw-prose-invert-bg: var(--theme-800);
+  --tw-prose-invert-meta: var(--theme-400);
+  --tw-prose-invert-meta-bg: var(--theme-700);
+
+  --tw-highlight-color: #fde047; /* yellow-300 */
+  --tw-drop-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  --tw-button-hover-bg: var(--theme-100);
+
+  --tw-button-hover-bg-inverted: var(--theme-700);
+
+  /* Typora variables */
+
+  --background: var(--tw-prose-bg);
+  --bg-color: var(--tw-prose-bg);
+  --text-color: var(--tw-prose-body);
+  --primary-color: var(--tw-primary);
+  --md-char-color: var(--theme-400);
+  --meta-content-color: var(--theme-500);
+  --typora-source-body: var(--theme-800);
+  --heading-char-color: var(--md-char-color);
+  --mermaid-theme: neutral;
+  --active-toggle-btn-color: var(--theme-200);
+
+  --md-char-color-inverted: var(--theme-500);
+  --meta-content-color-inverted: var(--theme-400);
+  --typora-source-body-inverted: var(--theme-300);
+  --mermaid-theme-inverted: dark;
+  --active-toggle-btn-color-inverted: var(--theme-400);
+
+  /* Sidebar */
+  --side-bar-bg-color: var(--tw-prose-bg);
+  --active-file-bg-color: var(--theme-100);
+  --active-file-text-color: var(--tw-prose-bold);
+  --active-file-border-color: var(--theme-100);
+  --panel-border-color: var(--theme-300);
+  --blur-text-color: var(--theme-300);
+  --window-border: 1px solid var(--theme-200);
+  --item-hover-bg-color: var(--theme-100);
+  --search-hit-text-bg-color: var(--theme-200);
+  --search-hit-text-font-color: inherit;
+  --search-select-text-color: var(--select-text-font-color);
+  --search-select-bg-color: var(--select-text-bg-color);
+
+  --blur-text-color-inverted: var(--theme-500);
+  --panel-border-color-inverted: var(--theme-700);
+  --active-file-bg-color-inverted: var(--theme-700);
+  --window-border-inverted: 1px solid var(--theme-700);
+  --search-hit-text-bg-color-inverted: var(--theme-700);
+  --search-hit-text-font-color-inverted: var(--theme-0);
+  --search-select-bg-color-inverted: var(--theme-400);
+  --rawblock-edit-panel-bd: var(--tw-prose-pre-bg);
+  --item-hover-bg-color-inverted: var(--theme-700);
+
+  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Custom */
+  --footnote: var(--tw-prose-body);
+  /* I'd love to use the --theme grayscale for --footnote-bg, but there's (currently)
+  no way to add an alpha-channel to a CSS variable (and we need the transparency
+  because otherwise the caret wil not be visible), so I here just used a hardcoded
+  copy of --theme-500 */
+  --footnote-bg: #94a3b855;
+  --button-bg: var(--theme-200);
+
+  --button-bg-inverted: var(--theme-600);
+
+  --md-grid-header: var(--theme-100);
+  --md-grid-header-ext: var(--theme-400);
+  --md-grid-ext: var(--theme-300);
+  --md-grid-header-active: var(--theme-500);
+  --md-grid-active: var(--theme-400);
+  --md-grid-border-color: var(--theme-500);
+
+  --md-grid-header-inverted: var(--theme-600);
+  --md-grid-header-ext-inverted: var(--theme-500);
+  --md-grid-ext-inverted: var(--theme-600);
+  --md-grid-header-active-inverted: var(--theme-400);
+  --md-grid-active-inverted: var(--theme-500);
+  --md-grid-border-color-inverted: var(--theme-200);
+
+  --code-blocks-font-size: 0.9em;
+  --inline-code-font-size: 0.9em;
+}
+
+.ty-file-search-match-text {
+  background-color: var(--search-hit-text-bg-color);
+}
+
+/* TAILWIND RESET */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: currentColor;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: "";
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+*/
+
+#text {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+#text {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+#write {
+    background: #131b29;
+    color: #a9aaab;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 30px;
+    padding-bottom: 100px;
+    position: static;
+    width: 90%;
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+a {
+    color: #71bfd9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    cursor: text;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6,
+#write pre {
+    color: #dfb057;
+    width: auto;
+}
+
+#write h1::before,
+#write h2::before,
+#write h3::before,
+#write h4::before,
+#write h5::before,
+#write h6::before {
+    border-radius: 0;
+    bottom: 0;
+    color: #517090;
+    float: none;
+    font-size: 1rem;
+    font-variant: 'small-caps';
+    font-weight: bold;
+    left: auto;
+    line-height: 20px;
+    padding: 0;
+    position: absolute;
+    right: calc(100% + 10px);
+    vertical-align: baseline;
+}
+
+#write h1 {
+    font-size: 3.2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+#write h1::before {
+    bottom: 1.45rem;
+    content: 'H1';
+}
+
+#write h2 {
+    font-size: 2.2rem;
+    margin: 1.4rem 0;
+}
+
+#write h2::before {
+    bottom: 0.2rem;
+    content: 'H2';
+}
+
+#write h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+#write h3::before {
+    bottom: 0.18rem;
+    content: 'H3';
+}
+
+#write h4 {
+    font-size: 1.7rem;
+    margin: 0.8rem 3;
+}
+
+#write h4::before {
+    content: 'H4';
+    bottom: 0.15rem;
+}
+
+#write h5 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+#write h6 {
+    font-size: 1.3rem;
+    margin: 0.2rem,0;
+}
+
+#write h5::before,
+#write h6::before {
+    bottom: 0.1rem;
+}
+
+#write h5::before {
+    content: 'H5';
+}
+
+#write h6::before {
+    content: 'H6';
+}
+
+h1::after, h2::after {
+  content: ""; /* 必须设置 content */
+  display: block; /* 确保伪元素占据一行 */
+  border-bottom: 2px solid #ccc; /* 分割线样式：颜色为灰色，厚度为 1px */
+  margin-top: 4px; /* 分割线与标题的间距 */
+  margin-bottom: 8px; /* 分割线与下文的间距 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: "LXGWWenKai-Blod";
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--monospace);
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/* TAILWIND PROSE IMPLEMENTATION */
+
+#write {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  max-width: 80rem;
+}
+
+html,
+body {
+  font-family: "LXGWWenKai-Regular";
+}
+
+/* on Windows/Linux, it is the part that is not titlebar or status bar. */
+content,
+titlebar {
+  background: var(--tw-prose-bg);
+}
+
+#write {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: var(--tw-prose-body);
+  max-width: 60ch;
+}
+
+#write > :where(:first-child) {
+  margin-top: 0;
+}
+
+#write > :where(:last-child) {
+  margin-bottom: 0;
+}
+
+/**
+  * ---------------------
+  * Block Elements
+  */
+
+/* yaml */
+pre.md-meta-block {
+  color: var(--tw-prose-meta);
+  background-color: var(--tw-prose-meta-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+  margin-bottom: 2.8em;
+}
+
+/* headings */
+h1 {
+  color: var(--tw-prose-headings);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 2.75rem;
+  letter-spacing: -1.5px;
+}
+
+h1 strong {
+  font-weight: 900;
+}
+
+h2 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.63rem;
+  margin-top: 1.5555556em;
+  margin-bottom: 1.5rem;
+  line-height: 1.875rem;
+  letter-spacing: -1px;
+}
+
+h2 strong {
+  font-weight: 800;
+}
+
+h3 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.17rem;
+  margin-top: 1.6em;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: -1px;
+}
+
+h3 strong {
+  font-weight: 700;
+}
+
+h4 {
+  color: var(--tw-prose-headings);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-top: 1.8em;
+  margin-bottom: 1.5rem;
+  line-height: 1.375rem;
+}
+
+h4 strong {
+  font-weight: 700;
+}
+
+h2 code {
+  font-size: 0.8611111em;
+}
+
+h3 code {
+  font-size: 0.9em;
+}
+
+h2 + * {
+  margin-top: 0;
+}
+
+h3 + * {
+  margin-top: 0;
+}
+
+h4 + * {
+  margin-top: 0;
+}
+
+h5 {
+  font-size: 0.97rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 0.93rem;
+  line-height: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* table */
+
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1.5555556;
+}
+
+/* table header */
+
+thead {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-th-borders);
+}
+
+thead th {
+  color: var(--tw-prose-headings);
+  font-weight: 600;
+  vertical-align: bottom;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+thead th:first-child {
+  padding-left: 0;
+}
+
+thead th:last-child {
+  padding-right: 0;
+}
+
+tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-td-borders);
+}
+
+tbody tr:last-child {
+  border-bottom-width: 0;
+}
+
+tbody td {
+  vertical-align: baseline;
+  padding-top: 0.8888889em;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+tbody td:first-child {
+  padding-left: 0;
+}
+
+tbody td:last-child {
+  padding-right: 0;
+}
+
+.md-grid-board tr[row="1"] {
+  background-color: var(--md-grid-header);
+}
+
+.md-grid-board a:hover,
+.md-grid-board a.md-active {
+  background: var(--md-grid-active);
+}
+
+.md-grid-board tr[row="1"] a:hover,
+.md-grid-board tr[row="1"] a.md-active {
+  background: var(--md-grid-header-active);
+}
+
+.md-grid-board .md-grid-ext {
+  background: var(--md-grid-ext);
+}
+
+.md-grid-board tr[row="1"] .md-grid-ext {
+  background: var(--md-grid-header-ext);
+}
+
+.md-grid-board a {
+  border-color: var(--md-grid-border-color) !important;
+}
+
+/* lists */
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1em;
+}
+
+li {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+#write ul.task-list {
+  padding-left: 0;
+}
+
+#write li.task-list-item {
+  padding-left: 0.4em;
+}
+
+#write input[type="checkbox"] {
+  margin-left: -1em;
+}
+
+input[checked] ~ * {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+ol > li::marker {
+  font-weight: 400;
+  color: var(--tw-prose-counters);
+}
+
+ul > li::marker {
+  color: var(--tw-prose-bullets);
+}
+
+ul > li,
+ol > li {
+  padding-left: 0.4em;
+}
+
+ul > li p,
+ol > li p {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+#write > ul > li > :not(input):first-child,
+#write > ol > li > :not(input):first-child,
+#write > ul > li > input + *,
+#write > ol > li > input + * {
+  margin-top: 1.2em;
+}
+
+#write > ul > li > *:last-child,
+#write > ol > li > *:last-child {
+  margin-bottom: 1.2em;
+}
+
+#write ul > li > p:only-child,
+#write ol > li > p:only-child,
+#write ul > li > input + p:last-child,
+#write ol > li > input + p:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+/* blockquote */
+blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--tw-prose-quotes);
+  border-left-width: 0.25rem;
+  border-left-color: var(--tw-prose-quote-borders);
+  quotes: "\201C""\201D""\2018""\2019";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1.0666667em;
+}
+
+blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+blockquote p:last-of-type::after {
+  content: close-quote;
+}
+
+/* hr */
+hr {
+  border-color: var(--tw-prose-hr);
+  border-top-width: 1px;
+}
+
+[mdtype="hr"] {
+  margin-top: 2.8em;
+  margin-bottom: 2.8em;
+}
+
+p {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  color: #eeeeee;
+}
+
+.in-text-selection,::selection {
+  background-color: var(--select-text-bg-color);
+}
+
+/* diagram panel */
+.md-diagram-panel {
+  color: var(--tw-prose-body);
+}
+
+.enable-diagrams .md-diagram .code-tooltip {
+  bottom: -1.9em;
+  right: 0;
+}
+
+.md-fences-adv-panel {
+  margin-top: 1.3em;
+}
+
+/* footnote definition */
+sup.md-footnote {
+  color: var(--footnote);
+  background-color: var(--footnote-bg);
+}
+
+.footnotes {
+  font-size: 0.85em;
+}
+
+.md-reverse-footnote-area a {
+  font-family: "LXGWWenKai-Regular";
+  text-decoration: none;
+  color: var(--tw-primary);
+  border-radius: 3px;
+}
+
+.md-hover-tip .code-tooltip-content {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 0.8em 1.2em;
+}
+
+.md-reverse-footnote-area a:hover {
+  background-color: var(--item-hover-bg-color);
+}
+
+.md-def-name:before {
+  color: var(--md-char-color);
+}
+
+.md-rawblock.md-rawblock-on-edit,
+.md-rawblock:hover {
+  color: var(--tw-prose-pre-code);
+}
+
+.md-inline-math script {
+  color: var(--tw-prose-code);
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: var(--tw-highlight-color) !important;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+.code-tooltip {
+  color: var(--tw-prose-pre-code);
+}
+
+.code-tooltip .md-mathjax-preview {
+  color: var(--tw-prose-body);
+}
+
+.md-htmlblock-container,
+.md-rawblock-input.md-rawblock-control,
+.md-htmlblock-panel.md-rawblock-control,
+.md-math-container {
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.md-rawblock-input {
+  font-size: var(--code-blocks-font-size);
+  padding: 0 1.3333333em;
+}
+
+.md-mathblock-panel .md-rawblock-input.md-rawblock-control {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 0;
+}
+
+.md-mathblock-panel .md-rawblock-before {
+  padding-top: 1.1em;
+  border-top-left-radius: 0.5rem;
+}
+
+.md-mathblock-panel .md-rawblock-after {
+  padding-bottom: 1.1em;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.md-htmlblock-panel .md-rawblock-input {
+  padding-top: 1.1111111em;
+  padding-bottom: 1.1111111em;
+}
+
+.md-mathblock-panel .md-rawblock-before,
+.md-mathblock-panel .md-rawblock-after {
+  font-size: var(--code-blocks-font-size);
+  padding-left: calc(4px + 1.3333333em);
+  color: var(--code-bracket);
+}
+
+.md-rawblock-tooltip {
+  color: var(--tw-prose-pre-code);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.md-rawblock-tooltip-name {
+  opacity: 1;
+}
+
+.md-comment {
+  font-size: var(--inline-code-font-size);
+  color: var(--code-comment);
+}
+
+.md-raw-inline,
+.md-tag,
+[md-inline="linebreak"],
+.md-image > .md-meta,
+.md-inline-math.md-expand > .md-inline-math-container {
+  font-size: var(--code-blocks-font-size);
+}
+
+/**
+  * Code Fences
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.md-fences {
+  color: var(--tw-prose-pre-code);
+  background-color: var(--tw-prose-pre-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+}
+
+.md-fences.md-focus {
+  border-bottom-right-radius: 0;
+}
+
+.md-fences > .code-tooltip {
+  height: 1.8rem;
+  bottom: -1.8rem;
+  font-size: 0.9rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.code-tooltip .ty-input {
+  min-width: 10rem;
+}
+
+pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+pre code::before {
+  content: none;
+}
+
+pre code::after {
+  content: none;
+}
+
+/* SYNTAX HIGHLIGHTING */
+
+:root {
+  --code-neutral: var(--theme-800);
+  --code-cursor: var(--theme-900);
+  --code-string: rgb(14, 165, 233); /* sky-500 */
+  --code-number: rgb(245, 158, 11); /* amber-500 */
+  --code-tag: rgb(236, 72, 153); /* pink-500 */
+  --code-color: rgb(154, 154, 154);
+  --code-color-bg: rgb(213, 213, 205);
+  --code-variable: var(--theme-700);
+  --code-operator: var(--theme-600);
+  --code-comment: var(--theme-500);
+  --code-bracket: var(--theme-500);
+  --code-citation: var(--theme-500);
+
+  --code-neutral-inverted: var(--theme-100);
+  --code-cursor-inverted: var(--theme-50);
+  --code-string-inverted: #7dd4fc; /* sky-300 */
+  --code-number-inverted: #fde68a; /* amber-100 */
+  --code-tag-inverted: #f472b5; /* pink-400 */
+  --code-variable-inverted: var(--theme-200);
+  --code-operator-inverted: var(--theme-400);
+  --code-comment-inverted: var(--theme-400);
+  --code-bracket-inverted: var(--theme-500);
+  --code-citation-inverted: var(--theme-400);
+}
+
+#write .cm-s-inner {
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+}
+
+.CodeMirror-selectedtext {
+  background-color: transparent;
+}
+.CodeMirror-cursor {
+  border-left: 1px solid var(--code-cursor) !important;
+}
+.CodeMirror-gutters {
+  border-color: var(--code-comment);
+}
+.cm-s-inner span.cm-string {
+  color: var(--code-string);
+}
+
+.cm-s-inner span.cm-number {
+  color: var(--code-number);
+}
+
+.cm-s-inner span.cm-tag,
+.cm-s-inner span.cm-keyword,
+.cm-s-inner span.cm-qualifier {
+  color: var(--code-tag);
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner span.cm-comment.cm-def,
+.cm-s-inner span.cm-comment.cm-type,
+.cm-s-inner span.cm-builtin,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-header,
+.cm-s-inner span.cm-link,
+.cm-s-inner span.cm-error {
+  background: transparent;
+  color: var(--code-neutral);
+}
+
+.cm-s-inner span.cm-attribute,
+.cm-s-inner span.cm-property,
+.cm-s-inner span.cm-variable,
+.cm-s-inner span.cm-variable-2,
+.cm-s-inner span.cm-variable-3,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-atom,
+.cm-s-inner span.cm-def {
+  color: var(--code-variable);
+}
+.cm-s-inner span.cm-comment,
+.cm-s-inner .CodeMirror-linenumber {
+  color: var(--code-comment);
+}
+.cm-s-inner span.cm-operator {
+  color: var(--code-operator);
+}
+.cm-s-inner span.cm-bracket,
+.cm-s-inner span.cm-tag.cm-bracket,
+.cm-s-inner span.cm-meta {
+  color: var(--code-bracket);
+}
+
+.cm-s-inner span.cm-link {
+  text-decoration: underline;
+}
+
+/**
+  * Inline Elements
+  */
+
+/* basic styles */
+
+code {
+  color: rgb(47, 206, 47);
+  background-color: var(--code-color-bg);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.3rem;
+  margin: 0.1rem 0.1rem;
+}
+
+code::before {
+  content: none;
+}
+
+code::after {
+  content: none;
+}
+
+[md-inline="code"].md-expand > code::before,
+[md-inline="code"].md-expand > code::after {
+  content: "";
+}
+
+a code {
+  color: var(--tw-prose-links);
+}
+
+mark code {
+  color: inherit;
+}
+
+strong {
+  color: rgb(211, 211, 77);
+  font-weight: 600;
+}
+
+a {
+  color: var(--tw-prose-links);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* A block-level image should have a total top and bottom margin of 2em.
+It is always wrapped in a paragraph with 1.2em vertical margin, hence we
+add 0.8 here */
+p > .md-image:only-child {
+  margin-top: 0.8em !important;
+  margin-bottom: 0.8em !important;
+}
+
+.md-image > .md-meta {
+  color: var(--tw-prose-code);
+}
+
+/* extend styles */
+
+mark {
+  border-radius: 3px;
+  padding: 0 2px;
+  background-color: var(--tw-highlight-color);
+}
+
+/**
+  * Source Code Mode
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background-color: var(--item-hover-bg-color);
+}
+
+#typora-source {
+  font-family: var(--monospace);
+  color: var(--typora-source-body);
+}
+
+#typora-source .cm-header {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-link {
+  color: var(--code-string);
+}
+
+#typora-source .cm-string {
+  color: var(--code-string);
+}
+
+#typora-source .cm-comment {
+  color: var(--code-comment);
+}
+
+#typora-source .cm-atom {
+  color: var(--code-citation);
+}
+
+#typora-source .cm-tag {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-attribute {
+  color: var(--code-variable);
+}
+
+#typora-source .cm-bracket {
+  color: var(--code-bracket);
+}
+
+.file-list-item-file-ext-part {
+  opacity: 0.5;
+}
+
+#write div.md-toc-tooltip {
+  background-color: var(--tw-prose-bg);
+}
+
+.md-toc {
+  font-size: 0.8em;
+}
+
+.md-toc-h1 .md-toc-inner {
+  margin-left: 0;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left: 1em;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2em;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3em;
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left: 4em;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left: 5em;
+}
+
+#typora-sidebar {
+  border-right: var(--window-border);
+}
+
+.sidebar-tab {
+  text-transform: none;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.md-search-hit {
+  color: var(--search-hit-text-font-color);
+  background-color: var(--search-hit-text-bg-color);
+}
+
+#md-searchpanel {
+  box-shadow: none;
+  filter: var(--tw-drop-shadow-md);
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: var(--tw-button-hover-bg);
+}
+
+#md-searchpanel input,
+#md-searchpanel .btn,
+#searchpanel-msg {
+  border-radius: 5px;
+}
+
+#searchpanel-msg {
+  color: var(--theme-500);
+  border-color: var(--theme-300);
+  background: var(--theme-100);
+}
+
+.form-control {
+  border-color: var(--panel-border-color);
+}
+
+.btn-default {
+  background-color: var(--button-bg);
+}
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+@import "";
+
+:root {
+  --tw-prose-body: var(--tw-prose-invert-body);
+  --tw-prose-headings: var(--tw-prose-invert-headings);
+  --tw-prose-lead: var(--tw-prose-invert-lead);
+  --tw-prose-links: var(--tw-prose-invert-links);
+  --tw-prose-bold: var(--tw-prose-invert-bold);
+  --tw-prose-counters: var(--tw-prose-invert-counters);
+  --tw-prose-bullets: var(--tw-prose-invert-bullets);
+  --tw-prose-hr: var(--tw-prose-invert-hr);
+  --tw-prose-quotes: var(--tw-prose-invert-quotes);
+  --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+  --tw-prose-code: var(--tw-prose-invert-code);
+  --tw-prose-captions: var(--tw-prose-invert-captions);
+  --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+  --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+  --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+  --tw-prose-bg: var(--tw-prose-invert-bg);
+  --tw-prose-meta: var(--tw-prose-invert-meta);
+  --tw-prose-meta-bg: var(--tw-prose-invert-meta-bg); 
+  --select-text-bg-color: rgb(35, 92, 197);
+
+  --tw-button-hover-bg: var(--tw-button-hover-bg-inverted);
+
+  --md-char-color: var(--md-char-color-inverted);
+  --meta-content-color: var(--meta-content-color-inverted);
+  --panel-border-color: var(--panel-border-color-inverted);
+  --active-file-bg-color: var(--active-file-bg-color-inverted);
+  --window-border: var(--window-border-inverted);
+  --search-hit-text-bg-color: var(--search-hit-text-bg-color-inverted);
+  --search-hit-text-font-color: var(--search-hit-text-font-color-inverted);
+  --search-select-bg-color: var(--search-select-bg-color-inverted);
+  --blur-text-color: var(--blur-text-color-inverted);
+  --item-hover-bg-color: var(--item-hover-bg-color-inverted);
+  --typora-source-body: var(--typora-source-body-inverted);
+  --mermaid-theme: var(--mermaid-theme-inverted);
+  --active-toggle-btn-color: var(--active-toggle-btn-color-inverted);
+
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+  --code-color: rgb(237, 71, 89);
+  --code-color-bg: rgb(32, 41, 58);
+
+  --button-bg: var(--button-bg-inverted);
+
+  --md-grid-header: var(--md-grid-header-inverted);
+  --md-grid-header-ext: var(--md-grid-header-ext-inverted);
+  --md-grid-ext: var(--md-grid-ext-inverted);
+  --md-grid-header-active: var(--md-grid-header-active-inverted);
+  --md-grid-active: var(--md-grid-active-inverted);
+  --md-grid-border-color: var(--md-grid-border-color-inverted);
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>摄影</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-色彩基础">1. 色彩基础</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一人类对颜色的认识">一、人类对颜色的认识</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二现代颜色标准">二、现代颜色标准</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#cie-1931-xyz-标准色度图">CIE 1931 XYZ 标准色度图</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#黑体轨迹曲线">黑体轨迹曲线</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#色域">色域</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#伽马">伽马</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#白点">白点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#色彩空间">色彩空间</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三其它颜色参数">三、其它颜色参数</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#色深">色深</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#frc像素点抖动技术">FRC：像素点抖动技术</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#色准">色准</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#动态范围">动态范围</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#hdr高动态范围">HDR：高动态范围</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-编解码与采样">2. 编解码与采样</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一常见视频参数">一、常见视频参数</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二编解码">二、编解码</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#目的">目的</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#图片视频中的冗余信息">图片、视频中的冗余信息</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#视频编解码技术">视频编解码技术</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#i-帧帧内编码">I 帧：帧内编码</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#p-帧帧间预测编码">P 帧：帧间预测编码</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#b-帧双向预测编码">B 帧：双向预测编码</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#运动估计和补偿">运动估计和补偿</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#编码格式">编码格式</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#封装">封装</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三颜色采样原理">三、颜色采样原理</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#颜色模型">颜色模型</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#色度子采样">色度子采样</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-后期参数">3. 后期参数</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4-相机和镜头">4. 相机和镜头</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一mtf-曲线图">一、MTF 曲线图</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二单反和无反">二、单反和无反</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#单反">单反</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#无反">无反</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三相机基础">三、相机基础</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#对焦模式">对焦模式</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#af自动对焦">AF：自动对焦</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#mf手动对焦">MF：手动对焦</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#dmf直接手动对焦">DMF：直接手动对焦</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#对焦区域">对焦区域</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#测光模式">测光模式</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#呼吸效应">呼吸效应</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#存储卡速度等级">存储卡速度等级</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#class-等级">Class 等级</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#uhs-等级">UHS 等级</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#vsc-等级">VSC 等级</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#快门类型">快门类型</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#机械快门">机械快门</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#电子快门">电子快门</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#电子前帘快门">电子前帘快门</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#afmf-与-ael-切换拨杆">AF/MF 与 AEL 切换拨杆</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#lut">LUT</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#传感器类型">传感器类型</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#前照式fsi）">前照式（FSI）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#背照式bsi）">背照式（BSI）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#堆栈式堆叠式积层式）">堆栈式（堆叠式、积层式）</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#5-拍摄技术与思路">5. 拍摄技术与思路</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一技术">一、技术</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#景深合成">景深合成</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作">操作</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#最低快门速度">最低快门速度</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ael曝光锁定">AEL：曝光锁定</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#数码变焦">数码变焦</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#清晰影像缩放">清晰影像缩放</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#希区柯克变焦">希区柯克变焦</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二思路">二、思路</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#逆光照片的拍摄">逆光照片的拍摄</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#银河接片">银河接片</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#拍摄星空">拍摄星空</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></div></div><div id='write'  class=' first-line-indent'><h1 id='1-色彩基础'><span>1. 色彩基础</span></h1><h2 id='一人类对颜色的认识'><span>一、人类对颜色的认识</span></h2><ol start='' ><li><p><span>1854年：格拉斯曼总结出颜色混合定律</span></p></li><li><p><span>1855年：麦克斯韦建立颜色方程以及颜色三角形</span></p></li><li><p><span>1931年：国际照明委员会（CIE）进行颜色匹配实验</span></p><p><span>采用 700.0nm的红、546.1nm的绿、435.8nm的蓝作为三原色，且根据实验结果练级了 CIE 1931 RGB 色度系统，为一个立体空间的三维坐标图</span></p><p><span>从该色度系统中导出了仅有 RG 两轴的平面坐标图，称为 CIE 1931 RGB 色度图，它是所有光谱色的色品坐标点连在一起而形成的光谱轨迹，解决了颜色定义问题</span></p><p><img src="assets/image-20240612205502738.png" alt="image-20240612205502738" style="zoom:50%;" /></p></li><li><p><span>但以上色度图存在负值，故 CIE 组织从新设计了一个新的 XYZ 坐标系进行空间转换，在不改变原有意义的情况下，通过坐标变换将所有点集中到了新坐标系的第一卦限里，由此形成 CIE 1931 XYZ 标准色度系统，并导出了下面的二维色度图</span></p><p>&nbsp;</p></li></ol><h2 id='二现代颜色标准'><span>二、现代颜色标准</span></h2><h4 id='cie-1931-xyz-标准色度图'><span>CIE 1931 XYZ 标准色度图</span></h4><p><img src="assets/image-20240612205639940.png" alt="image-20240612205639940" style="zoom:50%;" /></p><p><span>该色度图从数学角度描述了人类可以看到的所有颜色，也是由自然界中可见光谱组成的最大色彩空间。它的形状近似马蹄，又称马蹄图</span></p><p><span>外侧曲线为“单色光轨迹线”，波长从380nm到780nm。连接380nm到780nm两端的内测直线为“紫红线”，它并没有波段</span></p><p><img src="assets/image-20240612210102495.png" alt="image-20240612210102495" style="zoom:50%;" /></p><p><span>越靠近中间白色区域的颜色饱和度越低，越靠近边界外轮廓的颜色饱和度越高</span></p><p><span>在该色度图中没有完全体现颜色的色貌信息（色相+饱和度+明度），仅体现了色度（色相+饱和度）信息。实际上，该色度图使用（X,Y）坐标描述颜色的色度，使用隐藏参数 Z 描述颜色亮度，如果将 Z 显示出来，该图就不是二维平面图了</span></p><p><span>换句话说，即使改变某个颜色的明度，也不会改变颜色在该色度图的坐标</span></p><h4 id='黑体轨迹曲线'><span>黑体轨迹曲线</span></h4><p><img src="assets/image-20240612210842328.png" alt="image-20240612210842328" style="zoom:50%;" /></p><p><span>色度图中有一条横跨了白色区域并且向下弯曲的曲线，被称为普朗克轨迹或黑体轨迹，它是将每个温度的黑体辐射对应的光色转化为色坐标并标注在色度图上形成的</span></p><p><span>黑体轨迹上的每一个坐标所对应的颜色，称为该光源的色温，单位为开尔文（K）</span></p><p><img src="assets/image-20240612211051962.png" alt="image-20240612211051962" style="zoom: 67%;" /></p><p><span>0K~700K为黑色，在色度图之外，这说明在此温度范围内并不会辐射可见光，只会发出红外线</span></p><p><span>700K~1500K为暗红色，1500K以上由深红逐渐变成橙色、黄色、黄白、白色、蓝白、浅蓝、蓝色</span></p><p><span>黑体轨迹曲线上由 CIE 组织定义的特殊点：</span></p><ul><li><p><span>A：绝对色温为2856K，是白炽灯、钨丝灯的光源色温</span></p></li><li><p><span>B：相关色温为4874K，是中午日光的色温</span></p></li><li><p><span>C：相关色温为6774K，是平均昼光、阴天日光的色温</span></p></li><li><p><span>E：等能白，色温5400K，是三原色值达到平衡时形成的</span></p></li><li><p><span>D50：相关色温为5003K，是颜色略微偏暖的光源</span></p></li><li><p><span>D55：相关色温为5503K，是清晨日光的色温</span></p></li></ul><h4 id='色域'><span>色域</span></h4><p><span>色域（Gamut）是某技术系统所能产生的“颜色总合”及再现色彩范围的能力</span></p><p><span>在色度图上任取两点，由两点可混合成的颜色都在它们的连线上</span></p><p><span>色度图上任取三点，由三点可混合形成的所有颜色都在这个三角形内，这个三角形就是色域，色域覆盖面积越大，能表示的颜色范围越广</span></p><p><span>不同三原色形成的色域不同，有大有小，但无论怎样选择三原色，在整个可见光范围内，都无法覆盖人眼所能见到的所有颜色</span></p><blockquote><p><span>有的时候，商品宣传页的色域范围指的是色域容积而不是色域覆盖。色域覆盖是与某个色彩标准例如sRGB的重合率，最高100%，此时sRGB色彩范围完全位于本显示器的色彩范围之中。而色域容积是本显示器的色彩范围和某色彩标准如 sRGB 在色度图上的面积之比，仅表示两者色域覆盖面积的相对大小，不保证 sRGB 色域完全位于本显示器的色彩范围之中。而且色域覆盖很小但色域容积很大的话，显示某色彩标准时反而会出现严重的偏色</span></p></blockquote><p><span>屏幕色域不是越高越好。例如在Windows上默认采用100%sRGB，如果不做校色（色彩管理），广色域（超过100%sRGB）显示器常常过饱和，比如sRGB图片在P3屏幕上显示就会过饱和，因为P3色域更广。目前在Windows上最好就是直接用100%sRGB就可以了。而苹果的色彩管理就做的非常好，素材是sRGB的就用sRGB色域显示，是P3的就用P3显示</span></p><p><span>屏幕校色：即屏幕色彩管理，手动校色是使用校色仪等专业工具，生成ICC文件，它相当于一个函数，能将素材的色彩空间映射到屏幕的色彩空间中</span></p><h4 id='伽马'><span>伽马</span></h4><p><span>伽马（Gamma）即亮度的非线性采集和还原，决定了整个空间的灰阶的呈现效果</span></p><p><img src="assets/image-20240612212658192.png" alt="image-20240612212658192" style="zoom:50%;" /></p><p><span>人眼对亮度的感知是非线性的，对暗色调的分辨能力远超亮色调，物理上的50%中灰亮于视觉所感受到的50%中灰。如果显示器以自然界线性增长的灰阶的亮度来显示画面，这将导致画面大部分层次被亮色调占据，这就需要进行伽马马矫正，缩小亮色调与暗色调之间的灰阶差距</span></p><p><span>视觉上感受到50%的中灰亮度在物理灰阶的18%~21%的位置，也称十八度灰。摄影的测光系统即以18°灰为基准值</span></p><p><span>伽马值越高，两步就会被压暗以显示更多的层次；越低画面就会越发白。Gamma=2.2是目前主流，也是几乎最佳的伽马值</span></p><p><span>伽马马矫正是每台显示器必须的过程，这将直接影响需要呈现的光影效果</span></p><h4 id='白点'><span>白点</span></h4><p><span>白点（White Point）是色彩空间中的白平衡点或色温点，是三原色的交汇点，确定了这个色域中的白平衡。若白点偏色，则所有颜色都将偏色</span></p><h4 id='色彩空间'><span>色彩空间</span></h4><p><span>色彩空间（Color Space）是一系列色彩指标的集合，它包含：色域、伽马、白点等信息的规范</span></p><p><span>有的时候，色彩空间和色域的意思相同</span></p><p><span>常见色彩空间如下：</span></p><p><img src="assets/image-20240612213152422.png" alt="image-20240612213152422" style="zoom:67%;" /></p><ul><li><p><span>sRGB：是目前互联网使用最广泛的色彩空间标准</span></p><ul><li><p><span>Windows默认使用sRGB色彩空间</span></p></li><li><p><span>一般色域超过100% sRGB的显示器可能拿色域容积在偷换概念，小心甄别</span></p></li></ul></li><li><p><span>NTSC：美国彩色电视标准，古老且过时，尽管色域比 sRGB 更大，但无法完全覆盖 sRGB，目前已不再使用。仅有的作用是衡量其它色域的面积大小</span></p><p><span>诸如72%NTSC=100%sRGB这种等式是厂商用来忽悠买家的，虽然72%NTSC面积确实和sRGB的色域面积差不多，但不代表就是完全覆盖在sRGB色域空间的，甚至可能出现严重偏色</span></p><p><span>NTSC也可表NTSC信号，和PAL都是电视信号，与色彩无关</span></p></li><li><p><span>AdobeRGB：由 Adobe 定制，在 sRGB 的基础上增加了 CMYK 色域的支持，使得整个色域面积更大。对于印刷、摄影（尤其是拍摄RAW的专业摄影师）等行业来说，买100%AdobeRGB显示器是最优解</span></p></li><li><p><span>P3：广义上包含了 DCI-P3 和 Display P3，DCI-P3是影视行业标准，而Display P3是Apple在 DCI-P3 基础上参考了sRGB而修订出的自己的标准，在白点和伽马上与DCI-P3不同，但是能覆盖的颜色相同</span></p></li><li><p><span>此外还有Rec.709（视频领域）、Rec.2020（709的升级版）等</span></p></li></ul><p>&nbsp;</p><h2 id='三其它颜色参数'><span>三、其它颜色参数</span></h2><h4 id='色深'><span>色深</span></h4><p><span>色彩深度，即每个颜色通道可显示的颜色的多少，代表颜色的细腻程度</span></p><p><span>目前主流为8bit色深，每个通道可表示 </span><span class='math-in-toc'>$2^8$</span><span> 次方即 256 种颜色，RGB 三个通道可表示 </span><span class='math-in-toc'>$256^3=1670万$</span><span> 种颜色，而10bit可表示超过 10 亿种颜色</span></p><p><span>如果是N卡，高色深屏幕需要去nvidia控制面板将输出信息改为高色深，否则还是低色深</span></p><h6 id='frc像素点抖动技术'><span>FRC：像素点抖动技术</span></h6><p><span>该技术通过算法，使像素点在不同颜色之间快速切换，利用人眼的视觉暂留效应，从而混合产生新的中间色的错觉。通过该技术8bit可显示接近10bit的色深，但和原生10bit还有差距</span></p><h4 id='色准'><span>色准</span></h4><p><span>衡量颜色的“准确度”，即显示素材是什么颜色，显示器就显示什么颜色的准确度。一般用 ΔE 来衡量显示颜色和标准颜色的偏差，越小越好。软件校色可以部分降低色准值</span></p><h4 id='动态范围'><span>动态范围</span></h4><p><span>动态范围（Dynamic Range）是指一个系统、设备或媒介能够处理的信号强度范围，即从最低可检测信号（噪声水平）到最大不产生失真的信号之间的比率。在摄影和视频领域，指的是相机或显示设备能够捕捉或显示的最亮和最暗部分之间的差异</span></p><p><span>SDR：标准动态范围，无论是显示器还是视频本身，都是目前主流</span></p><p><span>XDR：极致动态范围，拥有目前能达到的最高对比度和峰值亮度等。主要是苹果在用这个标准</span></p><h6 id='hdr高动态范围'><span>HDR：高动态范围</span></h6><p><span>HDR 拥有比 SDR 更高的对比度、峰值亮度等，事实上有以下两个标准：</span></p><ul><li><p><span>视频标准：即视频信号编码标准，针对视频本身素质而言</span></p><ul><li><p><span>HDR10：最普及的视频HDR标准，开放免费。10bit色深、高色域、高对比度为三个基本点</span></p><p><span>目前绝大多数中低端的显示器，说是支持HDR10，其含义是支持HDR10视频的解码，本质上并不具备严格的HDR功能。当然有的显示器能打开HDR开关，但效果肯定不怎么样，不如不开</span></p></li><li><p><span>HDR10+：相比HDR10，新增动态元数据</span></p></li><li><p><span>杜比视界（Dobby Vision）：版权标准，12bit色深，更高的对比度和更高的色域，动态元数据</span></p></li></ul></li><li><p><span>显示器标准：VESA推出的用于衡量显示器素质的标准</span></p><p><span>诸如HDR400、HDR500、HDR600等，是视频电子标准协会VESA推出的认证显示器HDR显示效果的标准，后面的数字代表开启HDR后的最高亮度不低于该数值</span></p><ul><li><p><span>HDR400：原生8bit色深，95%sRGB色域，峰值亮度不低于400nit，全局调光</span></p><p><span>可以说是假HDR，甚至打开HDR可能有泛白的影响，打开HDR不一定比不打开观感好</span></p><p><span>全局调光：屏幕只有一个背光分区，只能全屏统一调节，要么全屏更亮，要么全屏更暗</span></p></li><li><p><span>HDR500：10bit色深，90%DCI-P3色域，峰值亮度不低于500nit，区域调光</span></p><p><span>区域调光：屏幕背光划分为多个区域，各区域能独立调节亮度，能极大地提高对比度。像OLED这种能控制单个像素发光的，显然拥有最高的对比度</span></p></li></ul></li></ul><blockquote><p><span>在显示器打开</span><strong><span>HDR</span></strong><span>后，是无法调节亮度的，因为此时的亮度信息由视频本身提供，</span><strong><span>HDR</span></strong><span>就是要完全按视频本身的明暗来显示。当然也有些显示器开了</span><strong><span>HDR</span></strong><span>还能调亮度，但那样就和真正的</span><strong><span>HDR</span></strong><span>有出入了</span></p></blockquote><p>&nbsp;</p><h1 id='2-编解码与采样'><span>2. 编解码与采样</span></h1><h2 id='一常见视频参数'><span>一、常见视频参数</span></h2><p><span>视频本质上是由一帧帧的画面构成的，是一个 4D 文件，含有：帧宽、帧高、颜色通道、时间</span></p><ul><li><p><span>色深：视频的颜色深度，即用几个bit来表示一个颜色通道，8bit就是RGB三个通道都用8bit来表示，因此总颜色深度为 24bit</span></p></li><li><p><span>PPI：pixels per inch，每英寸像素数，是一个显示器参数</span></p><p><span>画面清晰度不止和分辨率有关，也和屏幕大小有关，PPI越高，画面越细腻</span></p></li><li><p><span>帧率：Frame Rate，视频种每秒所包含的帧数量</span></p><p><span>单位为FPS，帧率越高越流畅，但帧率到达某个阈值后，人眼几乎无法感受到提升</span></p></li><li><p><span>比特率：文件每秒所需要的数据量，单位为 bps</span></p><p><span>未经压缩的视频，有：</span><code>比特率=宽*高*总色深*帧率</code><span>，</span><code>文件体积=比特率*时长</code><span>，如果不压缩视频的话，视频体积将十分巨大</span></p></li><li><p><span>CBR：恒定比特率，一段视频中比特率为恒定值</span></p></li><li><p><span>VBR：可变比特率，在视频中比特率为变化的值，当有较大画面变化时，比特率将上升</span></p></li></ul><p>&nbsp;</p><h2 id='二编解码'><span>二、编解码</span></h2><p><span>按照指定的方式，将信息从一种形式（格式），转化为另一种形式（格式）</span></p><h4 id='目的'><span>目的</span></h4><ul><li><p><span>压缩文件</span></p></li><li><p><span>将文字等表达的信息转变成数字等可进行计算的信息</span></p></li></ul><p><span>在媒体中，编码的目的是为了前者，以下均指媒体编码</span></p><h4 id='图片视频中的冗余信息'><span>图片、视频中的冗余信息</span></h4><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>种类</span></th><th style='text-align:center;' ><span>内容</span></th><th style='text-align:center;' ><span>压缩方法</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>空间冗余</span></td><td style='text-align:center;' ><span>像素间的相关性</span></td><td style='text-align:center;' ><span>变换编码、预测编码</span></td></tr><tr><td style='text-align:center;' ><span>时间冗余</span></td><td style='text-align:center;' ><span>时间方向上的相关性</span></td><td style='text-align:center;' ><span>帧间预测、运动补偿</span></td></tr><tr><td style='text-align:center;' ><span>图像构造冗余</span></td><td style='text-align:center;' ><span>图像本身的构造</span></td><td style='text-align:center;' ><span>轮廓编码、区域分割</span></td></tr><tr><td style='text-align:center;' ><span>知识冗余</span></td><td style='text-align:center;' ><span>收发两端对人物的共有认识</span></td><td style='text-align:center;' ><span>基于知识的编码</span></td></tr><tr><td style='text-align:center;' ><span>视觉冗余</span></td><td style='text-align:center;' ><span>人的视觉特性</span></td><td style='text-align:center;' ><span>非线性量化、位分配</span></td></tr><tr><td style='text-align:center;' ><span>其它</span></td><td style='text-align:center;' ><span>不确定性因素</span></td><td style='text-align:center;' >&nbsp;</td></tr></tbody></table></figure><ul><li><p><span>空间冗余：一张图像中，有很多不同的像素都是同一个颜色。图像压缩中，压缩率越高，就会将比较近似的颜色都算作同一种颜色进行压缩，进而影响画质</span></p></li><li><p><span>时间冗余：不同帧的同一个位置的像素，在某一段时间内都是同一个颜色</span></p></li></ul><h4 id='视频编解码技术'><span>视频编解码技术</span></h4><h6 id='i-帧帧内编码'><span>I 帧：帧内编码</span></h6><ul><li><p><span>这种帧是自带全部信息的独立帧，是最完整的画面，占用空间也最大</span></p></li><li><p><span>无需参考其它图像便可独立进行解码</span></p></li><li><p><span>视频中的第一个帧，始终都是 I 帧</span></p></li><li><p><span>编码时，只利用本帧内的空间相关性</span></p></li></ul><h6 id='p-帧帧间预测编码'><span>P 帧：帧间预测编码</span></h6><ul><li><p><span>需要参考前面的 I 帧和 P 帧的不同部分，才能进行编码，即对前面的帧有依赖性</span></p></li><li><p><span>压缩率比较高，占用的空间比较小</span></p></li><li><p><span>采用空间和时间的相关性，采用运动步长算法来去除冗余信息</span></p></li></ul><h6 id='b-帧双向预测编码'><span>B 帧：双向预测编码</span></h6><ul><li><p><span>需要参考前一帧和后一帧才能进行解码</span></p></li><li><p><span>压缩率最高</span></p></li><li><p><span>因为依赖于后面的帧，故不适合实时传输</span></p></li></ul><h6 id='运动估计和补偿'><span>运动估计和补偿</span></h6><p><span>比较前后两帧的画面，计算出不同的像素，估计画面中物体的运动，并记录像素运动的轨迹</span></p><p><span>一般把图像分割成不同的块（block）或宏块（Macroblock），对它们进行比较和计算</span></p><h4 id='编码格式'><span>编码格式</span></h4><p><span>如 H.26X 系列、MPEG 系列，它们决定了文件将以什么样的形式进行编码</span></p><h4 id='封装'><span>封装</span></h4><p><span>类似于一个箱子，将已经编码好的视频、音频、字幕等东西，按照一定格式封装到一个文件中</span></p><p><span>主流封装格式为：MP4、MOV、MKV、MP3等</span></p><p>&nbsp;</p><h2 id='三颜色采样原理'><span>三、颜色采样原理</span></h2><p><span>目的：消除文件中的冗余，以最大的可能压缩文件而又基本不影响画质</span></p><p><span>基础：利用了人眼对亮度比颜色更敏感的原理</span></p><h4 id='颜色模型'><span>颜色模型</span></h4><p><span>RGB 与 YCbCr 模型（也称YUV），两者之间可相互转化。一般在拍摄时使用 YUV，而在播放时使用 RGB</span></p><p><span>YCbCr：使用该模型记录画面的色彩和明度信息，将亮度和色度分离开，Y 表示亮度信息，Cb 表示 chroma blue，即蓝色信息，Cr 表示红色信息。chroma原义是色度。最终通过 Y 减去红色、蓝色信息部分的大小，得到绿色信息</span></p><h4 id='色度子采样'><span>色度子采样</span></h4><p><span>一种编码图像时，使得色度分辨率低于亮度的技术</span></p><p><span>一旦我们能从图像中分离出亮度和色度，则可以利用人眼对亮度比色度更敏感的特性，选择性地提取信息</span></p><p><span>一般是完全记录明度信息，然后选择性丢掉一些色度信息。相机的一个像素包含 RGB 三个通道，每个通道都可以记录 Y、U、V 的值</span></p><ul><li><p><span>YUV 4:2:2 表示以 4:2:2 的比例进行采样。每四个像素中，只有两个采集了色度信息，而另外两个直接沿用前两个的色度信息，也就是每两个像素采集一个色度信息。亮度信息是完整的，每个像素都采集。这种采样尽管丢失了 50 % 的色度信息，但人眼观感区别不大，却减少了文件体积</span></p></li><li><p><span>YUV 4:4:4 即完全采样，三个分量的信息都是完整的</span></p></li><li><p><span>YUV 4:2:0 即每两行的前 4 个像素，只有第一行的两个像素采集了色度信息，另外两个沿用它们的色度；而第二行沿用第一行的色度信息，即每4个像素只采集一个色度信息</span></p></li></ul><p>&nbsp;</p><h1 id='3-后期参数'><span>3. 后期参数</span></h1><ul><li><p><span>锐化：像素级别的对比度调整，对画面影调没有影响，即总体观感上没有影响</span></p></li><li><p><span>纹理：画面中较粗的细节的对比度调整，对画面影调有一点点影响</span></p><p><span>人像磨皮有用</span></p></li><li><p><span>清晰度：对画面中间调部分的对比度调整，对中间调部分有明显影响</span></p><p><span>略微降低清晰度，会呈现出柔光的朦胧感</span></p></li><li><p><span>去朦胧：画面总体对比度的智能调整，对总体影调影响非常强烈，又称去除薄雾（去霾）</span></p></li><li><p><span>饱和度：将所有饱和度一并提升，可能会造成色彩溢出</span></p></li><li><p><span>鲜艳度：只增加饱和度低的色彩的饱和度，对已经饱和的色彩影响较小</span></p></li><li><p><span>色彩校准：校准三原色的饱和度</span></p><p><span>对三原色进行针对性的饱和度调整，能防止颜色溢出和画面偏色，同时达到提升指定颜色的饱和度的目的</span></p></li></ul><p>&nbsp;</p><h1 id='4-相机和镜头'><span>4. 相机和镜头</span></h1><h2 id='一mtf-曲线图'><span>一、MTF 曲线图</span></h2><p><span>MTF 曲线图是镜头性能综合的体现</span></p><p><img src="assets/image-20240613103726205.png" referrerpolicy="no-referrer" alt="image-20240613103726205"></p><p><span>MTF 曲线主要有两个指标：对比度和分辨率，单位均为%，均用纵轴表示。某镜头的曲线越接近顶部，则该项表现越好</span></p><p><span>横轴为离画面中心的距离，0~14mm为 APS-C 规格，0~22mm为35mm全画幅规格</span></p><p><span>10线/mm 表示每 1mm 距离内有 10 条黑白相间的条纹，30线/mm 同理，即10线/mm 表示的是粗线，30线/mm 表示的是细线</span></p><p><span>粗线表示对比度，细线表示分辨率，一般情况下分辨率要低于对比度的值</span></p><p><span>一般来说，中心区域成像是最为优秀的，最边缘成像最差；光圈为 F8 时的成像在所有光圈中最优秀，最大光圈时成像最差</span></p><p><span>MTF 图中的光圈参数是定值，一般会在图外说明。有的镜头会给出两幅 MTF 图，分别展示在最大光圈和最佳光圈（如F8）的表现</span></p><p>&nbsp;</p><h2 id='二单反和无反'><span>二、单反和无反</span></h2><p><span>两者在取景结构上存在本质不同</span></p><h4 id='单反'><span>单反</span></h4><p><span>单反（Single Lens Reflex，SLR），单镜头反光式取景相机</span></p><p><img src="assets/image-20240613105602323.png" referrerpolicy="no-referrer" alt="image-20240613105602323"></p><ul><li><p><span>单镜头：一次只安装一个镜头。在胶片时代存在一个机身安装两个镜头的双反</span></p></li><li><p><span>反光式取景：要求机身有一个反光板和一个五棱镜。取景时，光线穿过镜头，再通过反光板和五棱镜到达取景器</span></p></li><li><p><span>光学取景器：直接通过镜组的透射来看到取景范围，即使关闭相机也能看到图像，所见非所得</span></p></li><li><p><span>单反并不等同于专业相机，只是一种有着特定结构的相机，和画质无关</span></p></li></ul><h4 id='无反'><span>无反</span></h4><p><span>无反（Millorless Interchangeable-lens Camera，MILC），无反光镜的可更换镜头相机，也称微单相机</span></p><ul><li><p><span>无反光镜：微单机内没有任何镜子，采用电子取景，光线射入到传感器上后，摄影者通过电子取景器（本质为一块屏幕）或者显示屏来观察画面</span></p></li><li><p><span>所见即所得：由于电子取景器的画面不是显示画面，而是传感器拍摄到的画面，因此看到的效果等同于实际拍摄效果</span></p></li><li><p><span>体积小、重量轻：没有反光板、五棱镜等结构，微单普遍比单反体积小、重量轻</span></p></li><li><p><span>手机拍照和无反拍照的原理是一致的</span></p></li></ul><p>&nbsp;</p><p><span>无论是单反还是无反，都必须是可更换镜头相机。单反和无反属于并列关系</span></p><p><span>单电相机指单镜头电子取景式相机，微单就是一种，但单反不是</span></p><p>&nbsp;</p><h2 id='三相机基础'><span>三、相机基础</span></h2><h4 id='对焦模式'><span>对焦模式</span></h4><h6 id='af自动对焦'><span>AF：自动对焦</span></h6><ul><li><p><span>AF-S：单点自动对焦，半按快门完成对焦后，便不再改变对焦点</span></p></li><li><p><span>AF-C：连续自动对焦，对焦完成后，若对焦物体发生位移，则自动进行跟焦</span></p><p><span>眼控对焦、AI物体跟踪等均为变种</span></p></li><li><p><span>AF-A：单点或连续自动对焦，自动选择模式，当物体是静物时为 AF-S，当物体发生移动就 AF-C</span></p></li></ul><h6 id='mf手动对焦'><span>MF：手动对焦</span></h6><p><span>通过拧动对焦环完成对焦</span></p><h6 id='dmf直接手动对焦'><span>DMF：直接手动对焦</span></h6><p><span>是AF和MF的结合，在 AF 完成之后，亦可旋转对焦环进行手动微调</span></p><p>&nbsp;</p><h4 id='对焦区域'><span>对焦区域</span></h4><p><span>对焦区域只针对 AF 而言</span></p><ul><li><p><span>广域：在相机整个对焦覆盖范围内，选择能进行对焦的最近物体，进行对焦</span></p></li><li><p><span>区：选择一个区域，相机在这个区域内选择能进行对焦的最近物体，进行对焦</span></p></li><li><p><span>中间：相机只会对焦处于相机视野正中间的物体或物体的一部分</span></p></li><li><p><span>自由点：可自由选择对焦点，相机只会对焦处于该自由点的物体或物体的一部分</span></p></li></ul><p>&nbsp;</p><h4 id='测光模式'><span>测光模式</span></h4><p><span>测光即通过判断画面中的明暗等级，确定合适的曝光参数</span></p><ul><li><p><span>中心：赋予中心点较大权重，其它区域较小权重，进行测光</span></p></li><li><p><span>多重：以整个画面区域作为基准进行测光</span></p></li><li><p><span>点：以某一点作为基准进行测光</span></p></li></ul><p>&nbsp;</p><h4 id='呼吸效应'><span>呼吸效应</span></h4><p><span>镜头对焦的时候，焦距会略微发生变化，导致画面略微放大或缩小，影响视频能力</span></p><p><span>拍视频时，若大幅变换焦点，则比较容易出现此问题</span></p><p><span>主要是光学设计和对焦组件之间的设计问题</span></p><p>&nbsp;</p><h4 id='存储卡速度等级'><span>存储卡速度等级</span></h4><h6 id='class-等级'><span>Class 等级</span></h6><p><span>早期存储卡速度等级使用 Class 等级来标识，主要有 C10、C6、C4、C2四种。Class 后面跟的数字表示该卡最低写入速度，如 Class 10 表示最低写入速度为 10MB/s</span></p><p><span>而读取速度一般远高于写入速度</span></p><h6 id='uhs-等级'><span>UHS 等级</span></h6><p><span>Ultra High Speed 超高速等级，目前有 UHS-I、UHS-II、UHS-III 三种版本，最低写入速度分别为 10、20、30 MB/s</span></p><p><span>实现该标准不仅需要卡支持，也需要设备的支持</span></p><h6 id='vsc-等级'><span>VSC 等级</span></h6><p><span>Video Speed Class 视频速度等级，由 V+数字 组成，数字代表最低写入速度，如 V30 代表视频拍摄时最低写入速度为 30MB/s</span></p><p>&nbsp;</p><p><span>三种标准可以出现在同一张卡上</span></p><p><span>录制 4K 视频一般需要 V30 以上的卡</span></p><p><img src="assets/image-20240613120947278.png" referrerpolicy="no-referrer" alt="image-20240613120947278"></p><h4 id='快门类型'><span>快门类型</span></h4><h6 id='机械快门'><span>机械快门</span></h6><p><span>使用机械快门，经典快门方案</span></p><ul><li><p><span>快门由前帘和后帘组成，前帘打开开始曝光，后帘关闭结束曝光。由于前帘的运动发生在曝光开始时，所以快门幕帘引发的震动可能影响到照片的清晰度，也会延长快门时滞</span></p></li><li><p><span>有两次快门声音</span></p></li></ul><h6 id='电子快门'><span>电子快门</span></h6><p><span>没有物理快门组件，前帘和后帘都由逐行扫描的方式完成</span></p><ul><li><p><span>没有机械快门动作，拍摄时完全静音</span></p></li><li><p><span>电子快门能将快门速度提升到比机械快门更高的水平</span></p></li><li><p><span>电子快门会产生果冻效应，发生畸变；此外，大部分相机在使用电子快门时会降低 RAW 的位数，如 14bit 降低到 12bit</span></p></li><li><p><span>手机全部都是电子快门</span></p></li></ul><h6 id='电子前帘快门'><span>电子前帘快门</span></h6><p><span>结合了电子快门和机械快门的特点，取长补短，但也产生了新问题</span></p><ul><li><p><span>以逐行扫描的形式代替机械前帘，消除了快门幕帘产生的机震</span></p></li><li><p><span>在大光圈、高速快门的时候会有切光斑的问题，即画面上下曝光变得不均匀，且容易造成焦外的画质劣化。使用电子前帘快门尽量不要使用 </span><span class='math-in-toc'>$\frac{1}{500}s$</span><span> 以上的快门</span></p></li><li><p><span>当大光圈或高速快门拍摄时，将电子前帘换成机械快门；大部分情况下均可使用电子前帘快门</span></p></li><li><p><span>默认电子前帘快门不会像电子快门那样影响 RAW 画质</span></p></li><li><p><span>电子前帘有一次快门声音</span></p></li></ul><h4 id='afmf-与-ael-切换拨杆'><span>AF/MF 与 AEL 切换拨杆</span></h4><ul><li><p><span>将拨杆拨到AF/MF，按住拨杆中心键，若原本是自动对焦，则会在按住的这一段时间切换为手动对焦（可先AF，再按住手动精对）；若原本是手动对焦，则会切换到自动对焦</span></p></li><li><p><span>将拨杆拨到AEL，按住拨杆中心键，则将当前曝光锁定，即使转变拍摄对象也不会改变曝光三参数</span></p></li></ul><h4 id='lut'><span>LUT</span></h4><p><span>LookUp Table，即颜色比对表，文件后缀为 .cube</span></p><ul><li><p><span>LUT 本质上是一个RAM，它把数据事先写入RAM后，每一个输入信号就等于一个地址查找表，找出地址对应的内容，然后输出</span></p></li><li><p><span>通过套用 LUT，可以快速地模拟胶片的色彩和质感特性，而通常这种特性是难以通过传统的调色方法实现的</span></p></li><li><p><span>通过使用模拟胶片的LUT可以快速达到不错的效果，尤其是针对Log拍摄的影响，基本都需要套用官方提供的LUT文件</span></p></li></ul><h4 id='传感器类型'><span>传感器类型</span></h4><h6 id='前照式fsi）'><span>前照式（FSI）</span></h6><p><span>传统CMOS的经典结构，入射光穿过片上透镜和滤色片，再穿过金属电路，最后到达二极管，被吸收</span></p><h6 id='背照式bsi）'><span>背照式（BSI）</span></h6><p><span>主要改善了画质和感光度</span></p><ul><li><p><span>基本组成和前照 CMOS 一致，只是排布顺序不一样</span></p></li><li><p><span>入射光穿过片上透镜和滤光片，然后到达光电二极管，不会到达最底层的金属电路</span></p></li><li><p><span>背照式大幅提升了CMOS的感光度（30%以上），并防止了光子在穿过金属电路层时的反射导致的像素之间的串扰等</span></p></li><li><p><span>工艺难度较大，没有FSI成熟</span></p></li></ul><h6 id='堆栈式堆叠式积层式）'><span>堆栈式（堆叠式、积层式）</span></h6><p><span>主要改善信号处理</span></p><ul><li><p><span>原本像素区域和金属电路都在同一块晶圆上进行蚀刻，而堆栈式将两者分开，可采用不同制造工艺，如金属电路采用比像素更小的工艺制程，最后将其组装堆叠在一起，以实现更出色的性能</span></p></li><li><p><span>堆栈式解放了电路的处理能力，在此之上还可以直接增大缓存，极大地提高速度，让HDR、8K、高速连拍成为现实</span></p></li></ul><p>&nbsp;</p><h1 id='5-拍摄技术与思路'><span>5. 拍摄技术与思路</span></h1><p>&nbsp;</p><h2 id='一技术'><span>一、技术</span></h2><h4 id='景深合成'><span>景深合成</span></h4><p><span>现在静物摄影、微距摄影中广泛使用的一种技术</span></p><p><span>有些情况，如微距摄影，传统的光圈值不够小，导致被摄物体只有一小部分位于焦内，这时候，为了让整个物体都位于焦内，就需要使用景深合成</span></p><h6 id='操作'><span>操作</span></h6><ul><li><p><span>设备：稳固的三脚架、快门线（若相机没有焦点包围功能）</span></p></li><li><p><span>拍摄：光圈优先，且将光圈调到比较小，以尽可能快的速度拍完一组照片，每张照片拍完后，把手动将焦点略微改变，继续拍，直到全部覆盖整个物体</span></p><p><span>关闭防抖、全局测光</span></p><p><span>拍摄需尽可能快，是因为某些时候光线变化较快，防止前面和后面的照片出现白平衡等的差异，后期调整比较麻烦</span></p><p><span>光圈越小，景深越大，所需要拍摄的张数就可以减少，但也不能太小，否则画质会降低、CMOS上的灰尘会显现</span></p></li><li><p><span>后期：</span></p><ol start='' ><li><p><span>将这组照片导入Lr，批量处理一番，调色</span></p><p><span>若照片出现了不同的亮度和白平衡，则需要手动调整</span></p></li><li><p><span>将完成调色的照片，导入PS（同一个画布上）</span></p><p><span>可以在Lr中全选图片，右键--在应用程序中编辑--在ps中作为图层打开</span></p></li><li><p><span>全选图层，上方工具栏--编辑--自动对齐图层</span></p><p><span>这一步是为了克服焦距改变时的呼吸效应</span></p></li><li><p><span>全选图层，编辑--自动混合图层，选择堆叠图像，并勾选“无缝色调和颜色”</span></p><p><span>融合完成之后，每张图旁边都多了一个蒙版，是抓取每个图层最清晰的部分进行融合的部分</span></p></li><li><p><span>合并所有图层</span></p></li></ol></li></ul><h4 id='最低快门速度'><span>最低快门速度</span></h4><p><span>也称 ISO Auto 最小速度，A档的延时摄影神器，轻松拍摄日转夜转星空</span></p><ul><li><p><span>在A档下，使用ISO AUTO，确定光圈后，当光线开始变弱时，会优先按：快门速度、ISO上限、快门速度来增加曝光值。即当光线不够时，优先降低到快门速度阈值（设置的安全快门），然后提高ISO，一直到ISO上限，之后再降低快门速度</span></p></li><li><p><span>两个问题：毕竟不是M档，因此相机还是会计算正确的曝光值，倘若有灯光等干扰，则画面可能会一闪一闪，且后期无法去除；另外若日转夜转星空，日落和星空所需要的曝光时间差距太大，导致间隔时间的设置会出现问题，若设置太长，则日落速度可能太快；若太短，则拍星空时会飙到很高的ISO</span></p></li><li><p><span>建议：日转夜转星空，还是牺牲ISO吧，把快门速度给保住</span></p></li></ul><h4 id='ael曝光锁定'><span>AEL：曝光锁定</span></h4><p><span>主要用途：在拍摄光比较大的场景，若想让某一物体曝光正常，而将主体转到另一个物体时即可使用</span></p><p><span>如在黄昏时，想要让天空曝光正常，而对焦、主体等落在前景人物身上，则可使用，拍出剪影效果</span></p><p><span>又如拍摄全景接片，若曝光不同容易造成接片困难。此时就可以考虑按住AEL，锁定曝光之后再多次拍摄照片</span></p><p><span>注意：在延时摄影中，AE意为“曝光锁定”。除非是自己布景，否则不要锁定AE。锁定曝光后，整个延时摄影中曝光参数都不会发生变化</span></p><h4 id='数码变焦'><span>数码变焦</span></h4><p><span>在手机摄像头的数字变焦过程中，使用了一个被称为“插值”的技术。这种技术可以根据原始图像中的像素信息，推算出裁切后的新图像的像素信息，从而使得裁切后的图像看起来像是通过光学变焦得到的图像一样</span></p><p><span>具体来说，数字变焦使用的是裁切加插值的方法，先通过裁切将图像的一部分进行放大，然后使用插值技术对被裁切的图像进行放大处理，从而得到所需的放大效果。这个过程中，插值技术会根据已有的像素信息和图像中的其他细节来推算出新像素的值，从而使得图像中的细节得以保留</span></p><p><span>在数字变焦的过程中，由于插值技术的使用，图像的分辨率不会发生改变。虽然经过裁切后，图像中的像素数量减少了，但是通过插值技术，每个像素都会被重新计算和填充，使得图像分辨率保持不变。数字变焦得到的图像虽然分辨率相同，但由于裁切和插值的影响，其细节和清晰度可能会受到一定的影响</span></p><h4 id='清晰影像缩放'><span>清晰影像缩放</span></h4><p><span>比原照片直接裁切画质保持得更好，如果实在需要拍摄非常远的东西，可以使用清晰影像缩放</span></p><ul><li><p><span>只能在拍摄jpg图片时使用该功能</span></p></li><li><p><span>可能会出现摩尔纹等情况，视情况使用</span></p></li></ul><h4 id='希区柯克变焦'><span>希区柯克变焦</span></h4><p><span>同时移动镜头位置并进行变焦，以达到主题大小不变而背景变化的效果</span></p><p><span>例如：把相机往朝着可乐的方向移动，同时把镜头以合适的变焦速率往广角方向推，即达到希区柯克变焦效果</span></p><p>&nbsp;</p><h2 id='二思路'><span>二、思路</span></h2><h4 id='逆光照片的拍摄'><span>逆光照片的拍摄</span></h4><ul><li><p><span>可以拍剪影，但是必须保证剪影（阴影）有明确的边界，否则会使照片看起来不通透</span></p></li><li><p><span>HDR或者包围曝光，后期合成</span></p></li><li><p><span>提前构想好要拍摄出什么效果，人像尤为需要注意，可以利用反光板补光</span></p></li></ul><h4 id='银河接片'><span>银河接片</span></h4><p><span>注意竖向接片时银河的高度会不会超过视角，且竖向接片的时候，至少留四分之一给地景</span></p><p><span>如果竖向接片时，银河没有垂直地面，可能会造成角度的歪斜</span></p><p><span>接片的每两张之间需要至少三分之一的重合</span></p><h4 id='拍摄星空'><span>拍摄星空</span></h4><ul><li><p><span>星空照片要保证不脱线，但是如果做成视频，则些微的脱线并不会影响观感</span></p></li><li><p><span>像素越高的相机，就需要更短的快门速度</span></p></li><li><p><span>如果 ISO 比较高，可进行缩图操作，牺牲像素降低噪点数目</span></p></li><li><p><span>长曝光时（不只是星空），需关闭：长时间曝光降噪、Steadyshot，并切换成M档、机械快门、RAW</span></p></li><li><p><span>延时拍摄时，间隔时间是指这次按下快门和下次按下快门的时间，因此间隔时间必须大于快门时间。如：单张曝光13s，则可以将间隔时间设置为15s</span></p></li><li><p><span>可拍摄一张超长曝光、低ISO的、前后景都清晰的照片充当地景，但需要注意不能用 B门 拍，会降 bit</span></p></li><li><p><span>选个好的前景，比如湖泊、山峰等，当然也可以是广阔的大地</span></p></li><li><p><span>利用好最低快门速度</span></p></li><li><p><span>可使用中焦镜头接片，如 35mm 就是很好的接片焦段，注意曝光、对焦都是准确且一致的</span></p></li><li><p><span>不一定非得拍延时日落，可对着另一侧拍日照金山，也是不一样的体验。使用长焦更有可能拍摄到日照金山或月照金山</span></p></li><li><p><span>银心部分并没有在天赤道上，而东西方向在。所以若拍东西方向的星空，则曝光需控制在最低的范围，而拍摄银河，可适当放宽一档。银心一般在南天半球-20°度左右</span></p></li><li><p><span>前景有时会过于暗淡，就算开ISO3200、最大光圈、15S曝光也不一定能拍出来。所以有月亮不一定是坏事，最好是弯月，可补充前景的光线。当然最好的还是选择湖面等有反射的</span></p></li><li><p><span>延时光拍银河其实没啥意思，要结合地景，这样拍出来的效果才更加震撼</span></p></li></ul></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>

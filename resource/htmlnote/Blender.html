@@ -1,0 +1,1710 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+
+/* FONTS */
+
+/* VARIABLES */
+
+:root {
+  --theme-0: rgb(255, 255, 255);
+
+  /* Slate grayscale */
+  --theme-50: #f8fafc;
+  --theme-100: #f1f5f9;
+  --theme-200: #e2e8f0;
+  --theme-300: #cbd5e1;
+  --theme-400: #94a3b8;
+  --theme-500: #64748b;
+  --theme-600: #475569;
+  --theme-700: #334155;
+  --theme-800: #1e293b;
+  --theme-900: #0f172a;
+
+  /* Tailwind variables */
+  --tw-primary: #62bbf3;
+
+  --tw-prose-body: var(--theme-700);
+  --tw-prose-headings: var(--theme-900);
+  --tw-prose-lead: var(--theme-600);
+  --tw-prose-links: var(--theme-900);
+  --tw-prose-bold: var(--theme-900);
+  --tw-prose-counters: var(--theme-500);
+  --tw-prose-bullets: var(--theme-300);
+  --tw-prose-hr: var(--theme-200);
+  --tw-prose-quotes: var(--theme-900);
+  --tw-prose-quote-borders: var(--theme-200);
+  --tw-prose-captions: var(--theme-500);
+  --tw-prose-code: var(--theme-900);
+  --tw-prose-pre-code: var(--theme-100);
+  --tw-prose-pre-bg: var(--theme-800);
+  --tw-prose-th-borders: var(--theme-300);
+  --tw-prose-td-borders: var(--theme-200);
+  --tw-prose-bg: var(--theme-0);
+  --tw-prose-meta: var(--theme-500);
+  --tw-prose-meta-bg: var(--theme-100);
+
+  --tw-prose-invert-body: var(--theme-300);
+  --tw-prose-invert-headings: var(--theme-0);
+  --tw-prose-invert-lead: var(--theme-400);
+  --tw-prose-invert-links: var(--theme-0);
+  --tw-prose-invert-bold: var(--theme-0);
+  --tw-prose-invert-counters: var(--theme-400);
+  --tw-prose-invert-bullets: var(--theme-600);
+  --tw-prose-invert-hr: var(--theme-700);
+  --tw-prose-invert-quotes: var(--theme-100);
+  --tw-prose-invert-quote-borders: var(--theme-700);
+  --tw-prose-invert-captions: var(--theme-400);
+  --tw-prose-invert-code: var(--theme-0);
+  --tw-prose-invert-pre-bg: var(--theme-900);
+  --tw-prose-invert-th-borders: var(--theme-600);
+  --tw-prose-invert-td-borders: var(--theme-700);
+  --tw-prose-invert-bg: var(--theme-800);
+  --tw-prose-invert-meta: var(--theme-400);
+  --tw-prose-invert-meta-bg: var(--theme-700);
+
+  --tw-highlight-color: #fde047; /* yellow-300 */
+  --tw-drop-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  --tw-button-hover-bg: var(--theme-100);
+
+  --tw-button-hover-bg-inverted: var(--theme-700);
+
+  /* Typora variables */
+
+  --background: var(--tw-prose-bg);
+  --bg-color: var(--tw-prose-bg);
+  --text-color: var(--tw-prose-body);
+  --primary-color: var(--tw-primary);
+  --md-char-color: var(--theme-400);
+  --meta-content-color: var(--theme-500);
+  --typora-source-body: var(--theme-800);
+  --heading-char-color: var(--md-char-color);
+  --mermaid-theme: neutral;
+  --active-toggle-btn-color: var(--theme-200);
+
+  --md-char-color-inverted: var(--theme-500);
+  --meta-content-color-inverted: var(--theme-400);
+  --typora-source-body-inverted: var(--theme-300);
+  --mermaid-theme-inverted: dark;
+  --active-toggle-btn-color-inverted: var(--theme-400);
+
+  /* Sidebar */
+  --side-bar-bg-color: var(--tw-prose-bg);
+  --active-file-bg-color: var(--theme-100);
+  --active-file-text-color: var(--tw-prose-bold);
+  --active-file-border-color: var(--theme-100);
+  --panel-border-color: var(--theme-300);
+  --blur-text-color: var(--theme-300);
+  --window-border: 1px solid var(--theme-200);
+  --item-hover-bg-color: var(--theme-100);
+  --search-hit-text-bg-color: var(--theme-200);
+  --search-hit-text-font-color: inherit;
+  --search-select-text-color: var(--select-text-font-color);
+  --search-select-bg-color: var(--select-text-bg-color);
+
+  --blur-text-color-inverted: var(--theme-500);
+  --panel-border-color-inverted: var(--theme-700);
+  --active-file-bg-color-inverted: var(--theme-700);
+  --window-border-inverted: 1px solid var(--theme-700);
+  --search-hit-text-bg-color-inverted: var(--theme-700);
+  --search-hit-text-font-color-inverted: var(--theme-0);
+  --search-select-bg-color-inverted: var(--theme-400);
+  --rawblock-edit-panel-bd: var(--tw-prose-pre-bg);
+  --item-hover-bg-color-inverted: var(--theme-700);
+
+  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Custom */
+  --footnote: var(--tw-prose-body);
+  /* I'd love to use the --theme grayscale for --footnote-bg, but there's (currently)
+  no way to add an alpha-channel to a CSS variable (and we need the transparency
+  because otherwise the caret wil not be visible), so I here just used a hardcoded
+  copy of --theme-500 */
+  --footnote-bg: #94a3b855;
+  --button-bg: var(--theme-200);
+
+  --button-bg-inverted: var(--theme-600);
+
+  --md-grid-header: var(--theme-100);
+  --md-grid-header-ext: var(--theme-400);
+  --md-grid-ext: var(--theme-300);
+  --md-grid-header-active: var(--theme-500);
+  --md-grid-active: var(--theme-400);
+  --md-grid-border-color: var(--theme-500);
+
+  --md-grid-header-inverted: var(--theme-600);
+  --md-grid-header-ext-inverted: var(--theme-500);
+  --md-grid-ext-inverted: var(--theme-600);
+  --md-grid-header-active-inverted: var(--theme-400);
+  --md-grid-active-inverted: var(--theme-500);
+  --md-grid-border-color-inverted: var(--theme-200);
+
+  --code-blocks-font-size: 0.9em;
+  --inline-code-font-size: 0.9em;
+}
+
+.ty-file-search-match-text {
+  background-color: var(--search-hit-text-bg-color);
+}
+
+/* TAILWIND RESET */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: currentColor;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: "";
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+*/
+
+#text {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+#text {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+#write {
+    background: #131b29;
+    color: #a9aaab;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 30px;
+    padding-bottom: 100px;
+    position: static;
+    width: 90%;
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+a {
+    color: #71bfd9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    cursor: text;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6,
+#write pre {
+    color: #dfb057;
+    width: auto;
+}
+
+#write h1::before,
+#write h2::before,
+#write h3::before,
+#write h4::before,
+#write h5::before,
+#write h6::before {
+    border-radius: 0;
+    bottom: 0;
+    color: #517090;
+    float: none;
+    font-size: 1rem;
+    font-variant: 'small-caps';
+    font-weight: bold;
+    left: auto;
+    line-height: 20px;
+    padding: 0;
+    position: absolute;
+    right: calc(100% + 10px);
+    vertical-align: baseline;
+}
+
+#write h1 {
+    font-size: 3.2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+#write h1::before {
+    bottom: 1.45rem;
+    content: 'H1';
+}
+
+#write h2 {
+    font-size: 2.2rem;
+    margin: 1.4rem 0;
+}
+
+#write h2::before {
+    bottom: 0.2rem;
+    content: 'H2';
+}
+
+#write h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+#write h3::before {
+    bottom: 0.18rem;
+    content: 'H3';
+}
+
+#write h4 {
+    font-size: 1.7rem;
+    margin: 0.8rem 3;
+}
+
+#write h4::before {
+    content: 'H4';
+    bottom: 0.15rem;
+}
+
+#write h5 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+#write h6 {
+    font-size: 1.3rem;
+    margin: 0.2rem,0;
+}
+
+#write h5::before,
+#write h6::before {
+    bottom: 0.1rem;
+}
+
+#write h5::before {
+    content: 'H5';
+}
+
+#write h6::before {
+    content: 'H6';
+}
+
+h1::after, h2::after {
+  content: ""; /* 必须设置 content */
+  display: block; /* 确保伪元素占据一行 */
+  border-bottom: 2px solid #ccc; /* 分割线样式：颜色为灰色，厚度为 1px */
+  margin-top: 4px; /* 分割线与标题的间距 */
+  margin-bottom: 8px; /* 分割线与下文的间距 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: "LXGWWenKai-Blod";
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--monospace);
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/* TAILWIND PROSE IMPLEMENTATION */
+
+#write {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  max-width: 80rem;
+}
+
+html,
+body {
+  font-family: "LXGWWenKai-Regular";
+}
+
+/* on Windows/Linux, it is the part that is not titlebar or status bar. */
+content,
+titlebar {
+  background: var(--tw-prose-bg);
+}
+
+#write {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: var(--tw-prose-body);
+  max-width: 60ch;
+}
+
+#write > :where(:first-child) {
+  margin-top: 0;
+}
+
+#write > :where(:last-child) {
+  margin-bottom: 0;
+}
+
+/**
+  * ---------------------
+  * Block Elements
+  */
+
+/* yaml */
+pre.md-meta-block {
+  color: var(--tw-prose-meta);
+  background-color: var(--tw-prose-meta-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+  margin-bottom: 2.8em;
+}
+
+/* headings */
+h1 {
+  color: var(--tw-prose-headings);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 2.75rem;
+  letter-spacing: -1.5px;
+}
+
+h1 strong {
+  font-weight: 900;
+}
+
+h2 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.63rem;
+  margin-top: 1.5555556em;
+  margin-bottom: 1.5rem;
+  line-height: 1.875rem;
+  letter-spacing: -1px;
+}
+
+h2 strong {
+  font-weight: 800;
+}
+
+h3 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.17rem;
+  margin-top: 1.6em;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: -1px;
+}
+
+h3 strong {
+  font-weight: 700;
+}
+
+h4 {
+  color: var(--tw-prose-headings);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-top: 1.8em;
+  margin-bottom: 1.5rem;
+  line-height: 1.375rem;
+}
+
+h4 strong {
+  font-weight: 700;
+}
+
+h2 code {
+  font-size: 0.8611111em;
+}
+
+h3 code {
+  font-size: 0.9em;
+}
+
+h2 + * {
+  margin-top: 0;
+}
+
+h3 + * {
+  margin-top: 0;
+}
+
+h4 + * {
+  margin-top: 0;
+}
+
+h5 {
+  font-size: 0.97rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 0.93rem;
+  line-height: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* table */
+
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1.5555556;
+}
+
+/* table header */
+
+thead {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-th-borders);
+}
+
+thead th {
+  color: var(--tw-prose-headings);
+  font-weight: 600;
+  vertical-align: bottom;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+thead th:first-child {
+  padding-left: 0;
+}
+
+thead th:last-child {
+  padding-right: 0;
+}
+
+tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-td-borders);
+}
+
+tbody tr:last-child {
+  border-bottom-width: 0;
+}
+
+tbody td {
+  vertical-align: baseline;
+  padding-top: 0.8888889em;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+tbody td:first-child {
+  padding-left: 0;
+}
+
+tbody td:last-child {
+  padding-right: 0;
+}
+
+.md-grid-board tr[row="1"] {
+  background-color: var(--md-grid-header);
+}
+
+.md-grid-board a:hover,
+.md-grid-board a.md-active {
+  background: var(--md-grid-active);
+}
+
+.md-grid-board tr[row="1"] a:hover,
+.md-grid-board tr[row="1"] a.md-active {
+  background: var(--md-grid-header-active);
+}
+
+.md-grid-board .md-grid-ext {
+  background: var(--md-grid-ext);
+}
+
+.md-grid-board tr[row="1"] .md-grid-ext {
+  background: var(--md-grid-header-ext);
+}
+
+.md-grid-board a {
+  border-color: var(--md-grid-border-color) !important;
+}
+
+/* lists */
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1em;
+}
+
+li {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+#write ul.task-list {
+  padding-left: 0;
+}
+
+#write li.task-list-item {
+  padding-left: 0.4em;
+}
+
+#write input[type="checkbox"] {
+  margin-left: -1em;
+}
+
+input[checked] ~ * {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+ol > li::marker {
+  font-weight: 400;
+  color: var(--tw-prose-counters);
+}
+
+ul > li::marker {
+  color: var(--tw-prose-bullets);
+}
+
+ul > li,
+ol > li {
+  padding-left: 0.4em;
+}
+
+ul > li p,
+ol > li p {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+#write > ul > li > :not(input):first-child,
+#write > ol > li > :not(input):first-child,
+#write > ul > li > input + *,
+#write > ol > li > input + * {
+  margin-top: 1.2em;
+}
+
+#write > ul > li > *:last-child,
+#write > ol > li > *:last-child {
+  margin-bottom: 1.2em;
+}
+
+#write ul > li > p:only-child,
+#write ol > li > p:only-child,
+#write ul > li > input + p:last-child,
+#write ol > li > input + p:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+/* blockquote */
+blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--tw-prose-quotes);
+  border-left-width: 0.25rem;
+  border-left-color: var(--tw-prose-quote-borders);
+  quotes: "\201C""\201D""\2018""\2019";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1.0666667em;
+}
+
+blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+blockquote p:last-of-type::after {
+  content: close-quote;
+}
+
+/* hr */
+hr {
+  border-color: var(--tw-prose-hr);
+  border-top-width: 1px;
+}
+
+[mdtype="hr"] {
+  margin-top: 2.8em;
+  margin-bottom: 2.8em;
+}
+
+p {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  color: #eeeeee;
+}
+
+.in-text-selection,::selection {
+  background-color: var(--select-text-bg-color);
+}
+
+/* diagram panel */
+.md-diagram-panel {
+  color: var(--tw-prose-body);
+}
+
+.enable-diagrams .md-diagram .code-tooltip {
+  bottom: -1.9em;
+  right: 0;
+}
+
+.md-fences-adv-panel {
+  margin-top: 1.3em;
+}
+
+/* footnote definition */
+sup.md-footnote {
+  color: var(--footnote);
+  background-color: var(--footnote-bg);
+}
+
+.footnotes {
+  font-size: 0.85em;
+}
+
+.md-reverse-footnote-area a {
+  font-family: "LXGWWenKai-Regular";
+  text-decoration: none;
+  color: var(--tw-primary);
+  border-radius: 3px;
+}
+
+.md-hover-tip .code-tooltip-content {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 0.8em 1.2em;
+}
+
+.md-reverse-footnote-area a:hover {
+  background-color: var(--item-hover-bg-color);
+}
+
+.md-def-name:before {
+  color: var(--md-char-color);
+}
+
+.md-rawblock.md-rawblock-on-edit,
+.md-rawblock:hover {
+  color: var(--tw-prose-pre-code);
+}
+
+.md-inline-math script {
+  color: var(--tw-prose-code);
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: var(--tw-highlight-color) !important;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+.code-tooltip {
+  color: var(--tw-prose-pre-code);
+}
+
+.code-tooltip .md-mathjax-preview {
+  color: var(--tw-prose-body);
+}
+
+.md-htmlblock-container,
+.md-rawblock-input.md-rawblock-control,
+.md-htmlblock-panel.md-rawblock-control,
+.md-math-container {
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.md-rawblock-input {
+  font-size: var(--code-blocks-font-size);
+  padding: 0 1.3333333em;
+}
+
+.md-mathblock-panel .md-rawblock-input.md-rawblock-control {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 0;
+}
+
+.md-mathblock-panel .md-rawblock-before {
+  padding-top: 1.1em;
+  border-top-left-radius: 0.5rem;
+}
+
+.md-mathblock-panel .md-rawblock-after {
+  padding-bottom: 1.1em;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.md-htmlblock-panel .md-rawblock-input {
+  padding-top: 1.1111111em;
+  padding-bottom: 1.1111111em;
+}
+
+.md-mathblock-panel .md-rawblock-before,
+.md-mathblock-panel .md-rawblock-after {
+  font-size: var(--code-blocks-font-size);
+  padding-left: calc(4px + 1.3333333em);
+  color: var(--code-bracket);
+}
+
+.md-rawblock-tooltip {
+  color: var(--tw-prose-pre-code);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.md-rawblock-tooltip-name {
+  opacity: 1;
+}
+
+.md-comment {
+  font-size: var(--inline-code-font-size);
+  color: var(--code-comment);
+}
+
+.md-raw-inline,
+.md-tag,
+[md-inline="linebreak"],
+.md-image > .md-meta,
+.md-inline-math.md-expand > .md-inline-math-container {
+  font-size: var(--code-blocks-font-size);
+}
+
+/**
+  * Code Fences
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.md-fences {
+  color: var(--tw-prose-pre-code);
+  background-color: var(--tw-prose-pre-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+}
+
+.md-fences.md-focus {
+  border-bottom-right-radius: 0;
+}
+
+.md-fences > .code-tooltip {
+  height: 1.8rem;
+  bottom: -1.8rem;
+  font-size: 0.9rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.code-tooltip .ty-input {
+  min-width: 10rem;
+}
+
+pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+pre code::before {
+  content: none;
+}
+
+pre code::after {
+  content: none;
+}
+
+/* SYNTAX HIGHLIGHTING */
+
+:root {
+  --code-neutral: var(--theme-800);
+  --code-cursor: var(--theme-900);
+  --code-string: rgb(14, 165, 233); /* sky-500 */
+  --code-number: rgb(245, 158, 11); /* amber-500 */
+  --code-tag: rgb(236, 72, 153); /* pink-500 */
+  --code-color: rgb(154, 154, 154);
+  --code-color-bg: rgb(213, 213, 205);
+  --code-variable: var(--theme-700);
+  --code-operator: var(--theme-600);
+  --code-comment: var(--theme-500);
+  --code-bracket: var(--theme-500);
+  --code-citation: var(--theme-500);
+
+  --code-neutral-inverted: var(--theme-100);
+  --code-cursor-inverted: var(--theme-50);
+  --code-string-inverted: #7dd4fc; /* sky-300 */
+  --code-number-inverted: #fde68a; /* amber-100 */
+  --code-tag-inverted: #f472b5; /* pink-400 */
+  --code-variable-inverted: var(--theme-200);
+  --code-operator-inverted: var(--theme-400);
+  --code-comment-inverted: var(--theme-400);
+  --code-bracket-inverted: var(--theme-500);
+  --code-citation-inverted: var(--theme-400);
+}
+
+#write .cm-s-inner {
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+}
+
+.CodeMirror-selectedtext {
+  background-color: transparent;
+}
+.CodeMirror-cursor {
+  border-left: 1px solid var(--code-cursor) !important;
+}
+.CodeMirror-gutters {
+  border-color: var(--code-comment);
+}
+.cm-s-inner span.cm-string {
+  color: var(--code-string);
+}
+
+.cm-s-inner span.cm-number {
+  color: var(--code-number);
+}
+
+.cm-s-inner span.cm-tag,
+.cm-s-inner span.cm-keyword,
+.cm-s-inner span.cm-qualifier {
+  color: var(--code-tag);
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner span.cm-comment.cm-def,
+.cm-s-inner span.cm-comment.cm-type,
+.cm-s-inner span.cm-builtin,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-header,
+.cm-s-inner span.cm-link,
+.cm-s-inner span.cm-error {
+  background: transparent;
+  color: var(--code-neutral);
+}
+
+.cm-s-inner span.cm-attribute,
+.cm-s-inner span.cm-property,
+.cm-s-inner span.cm-variable,
+.cm-s-inner span.cm-variable-2,
+.cm-s-inner span.cm-variable-3,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-atom,
+.cm-s-inner span.cm-def {
+  color: var(--code-variable);
+}
+.cm-s-inner span.cm-comment,
+.cm-s-inner .CodeMirror-linenumber {
+  color: var(--code-comment);
+}
+.cm-s-inner span.cm-operator {
+  color: var(--code-operator);
+}
+.cm-s-inner span.cm-bracket,
+.cm-s-inner span.cm-tag.cm-bracket,
+.cm-s-inner span.cm-meta {
+  color: var(--code-bracket);
+}
+
+.cm-s-inner span.cm-link {
+  text-decoration: underline;
+}
+
+/**
+  * Inline Elements
+  */
+
+/* basic styles */
+
+code {
+  color: rgb(47, 206, 47);
+  background-color: var(--code-color-bg);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.3rem;
+  margin: 0.1rem 0.1rem;
+}
+
+code::before {
+  content: none;
+}
+
+code::after {
+  content: none;
+}
+
+[md-inline="code"].md-expand > code::before,
+[md-inline="code"].md-expand > code::after {
+  content: "";
+}
+
+a code {
+  color: var(--tw-prose-links);
+}
+
+mark code {
+  color: inherit;
+}
+
+strong {
+  color: rgb(211, 211, 77);
+  font-weight: 600;
+}
+
+a {
+  color: var(--tw-prose-links);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* A block-level image should have a total top and bottom margin of 2em.
+It is always wrapped in a paragraph with 1.2em vertical margin, hence we
+add 0.8 here */
+p > .md-image:only-child {
+  margin-top: 0.8em !important;
+  margin-bottom: 0.8em !important;
+}
+
+.md-image > .md-meta {
+  color: var(--tw-prose-code);
+}
+
+/* extend styles */
+
+mark {
+  border-radius: 3px;
+  padding: 0 2px;
+  background-color: var(--tw-highlight-color);
+}
+
+/**
+  * Source Code Mode
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background-color: var(--item-hover-bg-color);
+}
+
+#typora-source {
+  font-family: var(--monospace);
+  color: var(--typora-source-body);
+}
+
+#typora-source .cm-header {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-link {
+  color: var(--code-string);
+}
+
+#typora-source .cm-string {
+  color: var(--code-string);
+}
+
+#typora-source .cm-comment {
+  color: var(--code-comment);
+}
+
+#typora-source .cm-atom {
+  color: var(--code-citation);
+}
+
+#typora-source .cm-tag {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-attribute {
+  color: var(--code-variable);
+}
+
+#typora-source .cm-bracket {
+  color: var(--code-bracket);
+}
+
+.file-list-item-file-ext-part {
+  opacity: 0.5;
+}
+
+#write div.md-toc-tooltip {
+  background-color: var(--tw-prose-bg);
+}
+
+.md-toc {
+  font-size: 0.8em;
+}
+
+.md-toc-h1 .md-toc-inner {
+  margin-left: 0;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left: 1em;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2em;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3em;
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left: 4em;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left: 5em;
+}
+
+#typora-sidebar {
+  border-right: var(--window-border);
+}
+
+.sidebar-tab {
+  text-transform: none;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.md-search-hit {
+  color: var(--search-hit-text-font-color);
+  background-color: var(--search-hit-text-bg-color);
+}
+
+#md-searchpanel {
+  box-shadow: none;
+  filter: var(--tw-drop-shadow-md);
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: var(--tw-button-hover-bg);
+}
+
+#md-searchpanel input,
+#md-searchpanel .btn,
+#searchpanel-msg {
+  border-radius: 5px;
+}
+
+#searchpanel-msg {
+  color: var(--theme-500);
+  border-color: var(--theme-300);
+  background: var(--theme-100);
+}
+
+.form-control {
+  border-color: var(--panel-border-color);
+}
+
+.btn-default {
+  background-color: var(--button-bg);
+}
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+@import "";
+
+:root {
+  --tw-prose-body: var(--tw-prose-invert-body);
+  --tw-prose-headings: var(--tw-prose-invert-headings);
+  --tw-prose-lead: var(--tw-prose-invert-lead);
+  --tw-prose-links: var(--tw-prose-invert-links);
+  --tw-prose-bold: var(--tw-prose-invert-bold);
+  --tw-prose-counters: var(--tw-prose-invert-counters);
+  --tw-prose-bullets: var(--tw-prose-invert-bullets);
+  --tw-prose-hr: var(--tw-prose-invert-hr);
+  --tw-prose-quotes: var(--tw-prose-invert-quotes);
+  --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+  --tw-prose-code: var(--tw-prose-invert-code);
+  --tw-prose-captions: var(--tw-prose-invert-captions);
+  --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+  --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+  --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+  --tw-prose-bg: var(--tw-prose-invert-bg);
+  --tw-prose-meta: var(--tw-prose-invert-meta);
+  --tw-prose-meta-bg: var(--tw-prose-invert-meta-bg); 
+  --select-text-bg-color: rgb(35, 92, 197);
+
+  --tw-button-hover-bg: var(--tw-button-hover-bg-inverted);
+
+  --md-char-color: var(--md-char-color-inverted);
+  --meta-content-color: var(--meta-content-color-inverted);
+  --panel-border-color: var(--panel-border-color-inverted);
+  --active-file-bg-color: var(--active-file-bg-color-inverted);
+  --window-border: var(--window-border-inverted);
+  --search-hit-text-bg-color: var(--search-hit-text-bg-color-inverted);
+  --search-hit-text-font-color: var(--search-hit-text-font-color-inverted);
+  --search-select-bg-color: var(--search-select-bg-color-inverted);
+  --blur-text-color: var(--blur-text-color-inverted);
+  --item-hover-bg-color: var(--item-hover-bg-color-inverted);
+  --typora-source-body: var(--typora-source-body-inverted);
+  --mermaid-theme: var(--mermaid-theme-inverted);
+  --active-toggle-btn-color: var(--active-toggle-btn-color-inverted);
+
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+  --code-color: rgb(237, 71, 89);
+  --code-color-bg: rgb(32, 41, 58);
+
+  --button-bg: var(--button-bg-inverted);
+
+  --md-grid-header: var(--md-grid-header-inverted);
+  --md-grid-header-ext: var(--md-grid-header-ext-inverted);
+  --md-grid-ext: var(--md-grid-ext-inverted);
+  --md-grid-header-active: var(--md-grid-header-active-inverted);
+  --md-grid-active: var(--md-grid-active-inverted);
+  --md-grid-border-color: var(--md-grid-border-color-inverted);
+}
+
+
+
+</style><title>Blender</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-概论">1. 概论</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#零相关成果">零、相关成果</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#硬表面建模">硬表面建模</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三只小猪">三只小猪</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#金币基站">金币基站</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#基本动画">基本动画</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#雕刻系统荧光树桩">雕刻系统：荧光树桩</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#粒子系统狂奔小车">粒子系统：狂奔小车</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#刚体系统子弹冲击">刚体系统：子弹冲击</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#几何节点猴头构建">几何节点：猴头构建</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#骨骼系统走路机器人">骨骼系统：走路机器人</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一默认界面">一、默认界面</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二基本操作">二、基本操作</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三基础知识">三、基础知识</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#摄像机">摄像机</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#渲染器">渲染器</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#eevee-渲染器">Eevee 渲染器</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#cycles-渲染器">Cycles 渲染器</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#物体的交互模式">物体的交互模式</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#物体模式对象模式）">物体模式（对象模式）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#编辑模式">编辑模式</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#雕刻模式">雕刻模式</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#常用修改器">常用修改器</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#常见修改器">常见修改器</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#修改器的堆叠顺序">修改器的堆叠顺序</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#应用与取消修改器">应用与取消修改器</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-应用领域">2. 应用领域</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一动画">一、动画</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#基本">基本</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#粒子系统">粒子系统</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#导入pmx文件">导入PMX文件</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#步骤">步骤</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#注意点">注意点</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二物理效果">二、物理效果</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#刚体">刚体</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三骨骼">三、骨骼</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#骨骼的属性">骨骼的属性</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#骨骼的使用">骨骼的使用</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#基本操作">基本操作</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#极骨">极骨</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#骨骼绑定">骨骼绑定</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ik反向运动学">IK：反向运动学</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-注意事项">3. 注意事项</a></div><ul class="outline-children"></ul></li></div></div><div id='write'  class=' first-line-indent'><h1 id='1-概论'><span>1. 概论</span></h1><p><span>Blender 是一款免费开源的 3D 建模软件，其小巧的体积能够支持整个3D创作流程：建模、雕刻、骨骼装配、动画、实时渲染、运动跟踪，甚至可用作视频编辑和游戏创作的全功能工具。目前由Blender基金会进行管理和开发 </span></p><p><span>VFX：视觉特效</span></p><h2 id='零相关成果'><span>零、相关成果</span></h2><p><span>若视频无法播放，则当前 md 渲染器不支持 Markdown 扩展语法，不支持视频</span></p><h4 id='硬表面建模'><span>硬表面建模</span></h4><h6 id='三只小猪'><span>三只小猪</span></h6><p><img src="assets/pigs.png" style="zoom: 20%;" /></p><h6 id='金币基站'><span>金币基站</span></h6><p><img src="assets/goldcoin (2).png" style="zoom:18%;" /></p><h4 id='基本动画'><span>基本动画</span></h4><video width=480 controls>
+  <source src="./assets/basicAnimition.mp4" type="video/mp4">
+  如果未显示视频，则当前 md 渲染器不支持视频
+</video><h4 id='雕刻系统荧光树桩'><span>雕刻系统：荧光树桩</span></h4><p><img src="assets/treeLight.png" style="zoom:25%;" /></p><h4 id='粒子系统狂奔小车'><span>粒子系统：狂奔小车</span></h4><video width=480 controls>
+  <source src="./assets/Car.mp4" type="video/mp4">
+  如果未显示视频，则当前 md 渲染器不支持视频
+</video><h4 id='刚体系统子弹冲击'><span>刚体系统：子弹冲击</span></h4><video width=480 controls>
+  <source src="./assets/bulletimpact.mp4" type="video/mp4">
+  如果未显示视频，则当前 md 渲染器不支持视频
+</video><h4 id='几何节点猴头构建'><span>几何节点：猴头构建</span></h4><video width=480 controls>
+  <source src="./assets/90.mp4" type="video/mp4">
+  如果未显示视频，则当前 md 渲染器不支持视频
+</video><h4 id='骨骼系统走路机器人'><span>骨骼系统：走路机器人</span></h4><video width=480 controls>
+  <source src="./assets/robotrunner.mp4" type="video/mp4">
+  如果未显示视频，则当前 md 渲染器不支持视频
+</video><p>&nbsp;</p><p>&nbsp;</p><h2 id='一默认界面'><span>一、默认界面</span></h2><p><img src="assets/image-20250109230214650.png" referrerpolicy="no-referrer" alt="image-20250109230214650"></p><ul><li><p><span>最顶端：工作区切换</span></p></li><li><p><span>上侧：主要模式设置等</span></p></li><li><p><span>左侧是物体常用工具，例如移动、游标、旋转，类似于PS</span></p></li><li><p><span>右上侧：大纲</span></p></li><li><p><span>右下侧：属性管理器（细节管理器），用于显示被选定的模型的属性</span></p></li><li><p><span>中央：3D展示区，也是我们主要的编辑区</span></p></li><li><p><span>中央下侧：动画区，类似于PR轨道，可以拖动边界隐藏或展示该界面（若有需要的时候）</span></p></li></ul><p><span>细节面板中，从上往下又细分为许多具体的属性，例如：工具、渲染属性、输出属性、视图层属性、场景属性、世界属性、集合属性、物体属性、修改器属性、粒子属性、物理属性、物体约束属性、物体数据属性、材质属性、纹理属性、灯光属性等。在选中特定类的时候可能有专属的属性出现，比如灯光具有灯光属性（非灯光无该属性），而没有粒子属性</span></p><p>&nbsp;</p><h2 id='二基本操作'><span>二、基本操作</span></h2><p><span>注意需要英文输入法，使用blender左手基本必放在shift和ctrl上</span></p><p><span>blender里Y轴是前轴X轴是侧轴，注意区分</span></p><ul><li><p><span>中键：旋转视角</span></p></li><li><p><span>左键：选中或批量框选物体</span></p></li><li><p><span>右键：物体上下文菜单</span></p></li><li><p><span>滚轮：放大缩小</span></p></li><li><p><span>a：全选（注意不是ctrl+a）</span></p></li><li><p><span>m：新建集合（组）</span></p></li><li><p><span>n：打开工具和插件窗口</span></p></li><li><p><span>i：在平面内新建一个内插面，或者记录一个关键帧</span></p></li><li><p><span>e：挤出</span></p><ul><li><p><span>i 和 e 配合，可做平面内凹效果。</span></p></li></ul></li><li><p><span>h：隐藏选中的物体</span></p></li><li><p><span>alt+h：显示被隐藏的物体</span></p></li><li><p><span>编辑模式下按 f：填充线段或圆环围成的面</span></p></li><li><p><span>ctrl+p：选中一些物体后，设置父子关系，父要最后一个选</span></p></li><li><p><span>开始线段+ctrl+结束线段：选择开始与结束的线段之间的线</span></p><ul><li><p><span>shift是多选，ctrl是连选，和Windows的操作刚好相反</span></p></li></ul></li><li><p><span>shift+中键：视角平移（必须先按下shift）</span></p></li><li><p><span>shift+s：转移游标的位置，最常用的就是游标到选中项</span></p></li><li><p><span>shift+a：快速添加物体</span></p></li><li><p><span>shift+r：重复上一步操作，在制作大规模的重复物体时非常有效，也是阵列修改器的一个替代操作</span></p></li><li><p><span>ctrl+j：合并多个物体，使其成为一个整体</span></p></li><li><p><span>shift+右键：点击，将游标移动到此处</span></p></li><li><p><span>alt+选择边：选择循环边</span></p></li><li><p><span>alt+d：关联复制：复制后只需要改动一个，其余复制体均会同步变化</span></p></li><li><p><span>x：删除（弹出确认框）</span></p></li><li><p><span>delete：删除（直接删除没有确认框）</span></p></li><li><p><span>ctrl+a：应用修改。比如立方体先进行了拉伸，再应用其他功能可能就会出现拉伸后的效果，这时就需要应用修改，这个时候这个立方体就等价于一个原长方体了</span></p></li><li><p><span>SHIFT+d：复制并移动</span></p></li><li><p><span>ctrl+c：复制到剪切板（用的不多）</span></p></li><li><p><span>ctrl+i：编辑模式下的反向选择</span></p></li><li><p><span>tab：切换模式，注意只能切换最近的两种模式</span></p></li><li><p><span>选中几个点或线或面后，按m：按条件合并（选择物体就是打组了）</span></p></li><li><p><span>shift+选择：批量选择物体</span></p></li><li><p><span>按住~：打开视图雷达，视图切换。Blender为单视图，没有多窗口的视图。要切换回来就按中键。同时还有查看所选的功能，也就是虚幻里的聚焦</span></p></li><li><p><span>/：对选中的物体进行隔离（单独）处理</span></p></li><li><p><span>选中某物体后：（会根据鼠标的位置调整参数）</span></p><ul><li><p><span>W：选择，重复按可切换具体的工具</span></p></li><li><p><span>S：缩放</span></p></li><li><p><span>G：移动</span></p></li><li><p><span>R：旋转。双击R自由旋转</span></p></li><li><p><span>T：变换（移动旋转缩放的合集）</span></p></li><li><p><span>以上按键，再次按下x、y或z，就会锁定某一个轴进行变换，如果想要更精确，选定该轴后还可以输入数字确定。</span></p></li><li><p><span>如果使用以上快捷键，则会直接跟着鼠标进行变换，只有在鼠标点击左侧的工具时才会出现三维轴的变换</span></p></li><li><p><span>游标：只有选中游标工具时，才能移动游标，游标的作业是当添加新物体时，游标在哪物体就加在哪</span></p></li></ul></li></ul><p>&nbsp;</p><h2 id='三基础知识'><span>三、基础知识</span></h2><h4 id='摄像机'><span>摄像机</span></h4><p><span>视角问题：进入摄像机视角，其右上方有个很小的箭头，展开（或直接按n），然后在视图-勾选：锁定摄像机到视图，即可自由移动摄像机视角，不用繁琐的去移动了。但这样的话就不能直接按中键退出摄像机视角了（可以做完了再关）</span></p><h4 id='渲染器'><span>渲染器</span></h4><p><span>渲染器是计算机图形学中用于生成图像、动画或视频的软件组件，它将三维模型、场景数据、材质、灯光等信息转换为二维图像或连续的图像序列</span></p><ul><li><p><span>选择渲染器前先保存工程文件！否则渲染的那一刻，负载过高可能直接闪退</span></p></li><li><p><span>可以改成GPU计算，如果没有，需要在偏好设置-系统手动打开CUDA</span></p></li><li><p><span>渲染器的视角是根据场景中所防止的摄像机来决定的。前期工作完成后，点击顶部的渲染-渲染图像，即可得到成品</span></p></li></ul><p><span>Blender 自带两种渲染器，大致特点为：</span></p><ul><li><p><span>Eevee：渲染速度快，但真实度不够，需要手动调整很多参数，经过调整可实现三渲二等特殊效果</span></p></li><li><p><span>Cycle：更真实，但吃性能，速度慢</span></p></li></ul><h6 id='eevee-渲染器'><span>Eevee 渲染器</span></h6><p><span>基于 OpenGL 的实时渲染引擎。主要通过屏幕空间技术来近似模拟光线效果。屏幕空间反射（Screen Space Reflection，SSR）技术是用于模拟反射的一种方法，它在屏幕空间内计算物体表面的反射效果，根据物体在屏幕上的位置和视角等信息，来估算反射光线的方向和强度</span></p><p><span>该渲染器提供了丰富的后期选项，能够增强画面的艺术效果，并且渲染速度快。不过在物理真实感方面不如Cycles，且无法精确表现出复杂的光纤交互现象（如多次反射、折射等）</span></p><h6 id='cycles-渲染器'><span>Cycles 渲染器</span></h6><p><span>基于光线追踪的渲染器，采用基于物理的渲染技术，模拟光线在场景中的传播过程，能够准确地模拟真实世界中的光照效果</span></p><p><span>可以实现高质量的渲染效果，但渲染速度相对较慢。可借助GPU加速渲染</span></p><h4 id='物体的交互模式'><span>物体的交互模式</span></h4><h6 id='物体模式对象模式）'><span>物体模式（对象模式）</span></h6><p><span>最常见的模式，可选中整个模型，并进行模型放置、对模型进行基本变换等常见操作</span></p><h6 id='编辑模式'><span>编辑模式</span></h6><p><span>该模式主要用于对模型的几何形状进行编辑。可以选择对象的顶点、边或面来操作</span></p><ul><li><p><span>先选中要编辑的物体然后进入编辑模式编辑</span></p></li><li><p><span>快捷键Tab编辑模式和物体模式相互切换；编辑模式下快捷键1、2、3分别对应选择点、线、面</span></p></li></ul><h6 id='雕刻模式'><span>雕刻模式</span></h6><p><span>雕刻模式提供了一套类似于传统雕刻的工具，可以使用笔刷（Brush）在模型表面进行雕刻</span></p><ul><li><p><span>缩放有问题的话，对后面的雕刻也会产生影响，所以必须先应用缩放</span></p></li><li><p><span>雕刻本质就是对布线进行细微调整，所以物体细分强度直接决定了雕刻的细节。细分级数越大，布线越密集，雕刻越精细（或者说光滑）</span></p></li></ul><p><span>雕刻模式常用工具：</span></p><ul><li><p><span>光滑：作用是将物体表面的不平整变得光滑，按住shift即可使用</span></p></li><li><p><span>自由线：推拉和挤出</span></p></li><li><p><span>黏条：表面膨胀出条状结构</span></p></li><li><p><span>膨胀：表面膨胀起来</span></p></li><li><p><span>球体：表面长痘痘</span></p></li><li><p><span>抓起：抓起一块，像小尖刺</span></p></li><li><p><span>弹性变形：适合整体塑性</span></p></li><li><p><span>蛇形钩：可变角度的“抓起”，可做恶魔弯曲的角等</span></p></li><li><p><span>平化：削铁如泥</span></p></li></ul><p><span>注意点：</span></p><ul><li><p><span>在顶部有“笔画”-笔画防抖，鼠标操作如果抖动建议打开“笔画防抖”</span></p></li><li><p><span>所有工具按ctrl都是产生的反方向效果</span></p></li><li><p><span>如果工具使用多了，物体可能产生一些布线交叉，这时可使用重构工具：顶部右边--重构网格，修复效果</span></p></li><li><p><span>笔画的大小，可以调整，当然也可以调整和物体的距离，来达到变笔画大小的效果，即笔画大小和距离是有联系的</span></p></li></ul><h4 id='常用修改器'><span>常用修改器</span></h4><p><span>修改器允许以非破坏性的方式对三维模型进行各种修改和变形，而不会直接改变模型的原始数据。建议在细节面板的”修改器“属性中使用修改器</span></p><p><img src="assets/image-20250112191722136.png" alt="image-20250112191722136" style="zoom: 67%;" /></p><h6 id='常见修改器'><span>常见修改器</span></h6><p><span>Blender 4.0中一共四种修改器类型：编辑类、生成类、形变类、物理类</span></p><ul><li><p><span>阵列：当需要大量重复元素，如一列立方体，可使用。系数表示两个之间的距离（1表示严丝合缝），数量为生成数量</span></p></li><li><p><span>倒角：让尖锐的多面体边缘变得更加平滑</span></p></li><li><p><span>镜像：可以选择关于x、y或z轴镜像，也可指定某个物体作为镜像，产生镜像。如果后期出现了一些小问题，可能需要先将镜像应用</span></p></li><li><p><span>线框：将某个物体的所有线提取出来，并赋予厚度</span></p></li><li><p><span>表面细分：应用了细分之后物体会有更多的布线，可以进行更加精细的建模。快捷键ctrl+1/2/3（只在物体模式下生效），分别对应三个级别的细分</span></p></li><li><p><span>缩裹：把某个平面图案贴到某个有褶皱的图形上时就可以用缩裹修改器</span></p></li><li><p><span>建形：基于内置的算法，在将形状随时间逐步构建出来，一般用在动画里</span></p></li></ul><h6 id='修改器的堆叠顺序'><span>修改器的堆叠顺序</span></h6><p><span>修改器可以按照一定的顺序堆叠在模型上，每个修改器都会在前一个修改器的基础上对模型进行进一步的修改，不同顺序添加的相同修改器，得到的结果不一定相同</span></p><p><span>曲面细分往往放在最下面</span></p><h6 id='应用与取消修改器'><span>应用与取消修改器</span></h6><p><span>当对模型的修改效果满意后，可以应用修改器。应用修改器后，修改器对模型的修改就会永久地改变模型的原始数据，且该修改器会从修改器列表中消失</span></p><p><span>如果对修改器的效果不满意，或者想要重新调整修改器的参数，可以取消修改器。取消修改器后，模型会恢复到添加该修改器之前的状态。在修改器列表中，点击修改器旁边的“X”按钮即可取消该修改器</span></p><p>&nbsp;</p><h1 id='2-应用领域'><span>2. 应用领域</span></h1><h2 id='一动画'><span>一、动画</span></h2><h4 id='基本'><span>基本</span></h4><p><span>动画编辑区主要是一个时间轴窗口，该窗口以“帧”为单位，位于主视口下方</span></p><p><span>动画的本质：记录不同时间点的 Actor 属性的变换。动画离不开时间、变量、属性，缺一不可。制作动画和PR制作关键帧动画高度相似</span></p><p><img src="assets/kp.png" referrerpolicy="no-referrer"></p><p><span>如上图所示，细节面板大部分属性参数的后面都有一个小圆点，其功能是在当前时间点打上这个属性的关键帧</span></p><p><img src="assets/lps.png" referrerpolicy="no-referrer"></p><p><span>当时间标处在的这一帧有某个属性的关键帧，则参数会变成黄色，圆点变成菱形；当这个参数有关键帧但时间标所处的这一帧没有，则显示绿色；当这个参数没有关键帧时保持灰色</span></p><p><span>如果出现橙色，则表示：这一帧没有打关键帧但是产生了意外的属性改变，如果不打上关键则该改动无效</span></p><p><span>如果想要改动参数时自动插帧，可打开自动插帧选项（下图第一个按钮）：</span></p><p><img src="assets/autokf.png" referrerpolicy="no-referrer"></p><p><span>注意第一个关键帧必须手动打。后面的按钮的功能为：跳转到第一（最后）帧、跳转到上（下）一个关键帧、往前反向播放、往后播放等</span></p><p><span>动画必须先改参数再打关键帧，否则无效</span></p><p><span>首先在”右上方-选项-仅影响原点“处，把所有需要的动画物体的原点确定好，之后就可以进行关联动画，更加高效</span></p><h4 id='粒子系统'><span>粒子系统</span></h4><p><span>位置为”属性管理器-粒子属性“，按”+“可新建一个粒子对象</span></p><p><span>拥有粒子系统的物体物体（称之为发射器）将展示粒子，粒子在这个物体上发出</span></p><p><span>有两种效果：</span></p><ul><li><p><span>发射体：是一个动画效果，不断散发出新的粒子。发射的粒子也称发射体。默认粒子都是有重力的，想要其他方向，则取力场权重改。重力（和其他力）可以为负，但必须手动改</span></p></li><li><p><span>毛发：静态效果，用于制作树林等大规模物体。需要指定渲染物体：粒子系统-渲染-渲染为。注意默认发射的时候以物体的轴心为基点</span></p></li></ul><h4 id='导入pmx文件'><span>导入PMX文件</span></h4><p><span>不要使用太高的blender版本，最好是2.93及以下，否则可能报错</span></p><p><span>使用一个叫CATS的插件，开启后在视窗和场景大纲、细节面板之间会出现cats和mmd工具的标志</span></p><h6 id='步骤'><span>步骤</span></h6><ol start='' ><li><p><span>使用mmd工具，导入模型。可以选择缩放为0.1。注意不要用cats的那个导入</span></p></li><li><p><span>选中模型或骨架，在cats上方的mmd工具中--Morph tools中找到顶点，点击+-下面的向下箭头，选择绑定，绑定骨骼</span></p></li><li><p><span>导入动作：选中同时选中骨架和模型，在mmd的工具栏中找到导入动作的按键，如下图所示。注意：导入的动作，缩放必须和选中的模型的缩放一致；若面部表情没有导入，则试试选中材质然后再次导入</span></p><p><img src="assets/import.png" referrerpolicy="no-referrer"></p></li><li><p><span>打开材质预览（右上角材质的第三个小球），可查看材质情况，若出现奇怪的粉色表示材质缺失</span></p></li><li><p><span>若材质缺失，则在mmd工具中的操作项，选择Convert materials for Cycles，并在视图左下角弹出的框中选择转变成BSDF的选项。注意：若不进行这一步，导入到虚幻引擎等其他软件时，可能会出现白模，即模型的材质没有被正确导入</span></p></li><li><p><span>点击Convert materials for Cycles下方的按钮，按材质分离模型</span></p></li><li><p><span>选中骨架，在MMD工具中，在导入动作的按钮正上方，有一个建形的按钮，点击build。注意！：建形只能在动作开始的第一帧处建形</span></p><p><img src="assets/build.png" referrerpolicy="no-referrer"></p></li><li><p><span>按材质分离后，可以对每个小部件比如头饰等进行单独调整，按tab进入编辑模式</span></p></li><li><p><span>如果调好了就可以导出FBX了，可选择是否导出动画：导出动画会极大加长渲染时间</span></p></li></ol><h6 id='注意点'><span>注意点</span></h6><ul><li><p><span>因为导入的模型本身就有很多隐藏的选项，所以千万不要用H和ALT+H隐藏和显示物体，只能去世界大纲里找，然后单独关闭。否则用ALT+H，所有隐藏物体都会出来，会使建形等工作出现问题，只能重新来过</span></p></li><li><p><span>动画时若刚体物体（比如场景中的物体）和人物模型有重叠，可能会导致模型出错，此时删掉这些物体就行了</span></p></li><li><p><span>若直接拖动时间线会出问题，或者打开时模型是乱的，可能是还没有缓存动画，导致模型不动，可以手动烘焙，或者让他从0帧开始播放</span></p></li><li><p><span>导出模型、加载模型时耗时都比较长，对于一个复杂的人物模型而言，前者约为4分钟，后者约为1分钟。虽然会提示无响应，但确实在运行。该问题同样适用于虚幻引擎导入携带有动画的复杂模型fbx文件，时间会非常长。若想只导出一部分，比如导出100-200帧的动画，可以把时间轴的入点和出点改变（只是计算可能仍需要计算0-100帧），毕竟后面的物理要以前面的为基础，和想要得到100帧的画面必须从0帧开始计算是一样的道理</span></p></li></ul><p>&nbsp;</p><h2 id='二物理效果'><span>二、物理效果</span></h2><p><span>位置：属性管理器--物理</span></p><p><span>物理属性能够建立与现实世界相似的物体特性，如力场、碰撞等，这些物理属性都是为动画服务的。如果只是建模，直接添加材质就好了，不需要物理属性，也正是这个原因，添加刚体等属性后，需要注意时间轴</span></p><h4 id='刚体'><span>刚体</span></h4><p><span>刚体是在运动中受力作用后，形状和大小都不变，而且内部各点的相对位置保持不变的物体</span></p><p><span>绝对刚体是不存在的，只是一种理想模型，但如果物体变形程度相比物体本身尺寸来说极其微小则可视为刚体</span></p><p><span>添加刚体属性后，物体会有一些诸如重力、碰撞等属性，且默认是活动项，对于某些静止的刚体，需要将其改成被动</span></p><ul><li><p><span>被动：有碰撞检测的普通物体，它是完全不动的，比如地面</span></p></li><li><p><span>活动项：不仅有碰撞检测，本身也会随着受力而运动。例如，需要做成被撞后倒塌的效果，则这个刚体必须是活动项</span></p></li></ul><p><span>刚体物体之间尽量不要有交叉，否则容易出现问题，比如弹起来</span></p><p><span>平面也可以是刚体，但是平面没有质量、体积等属性</span></p><p><span>复制刚体属性，即批量应用刚体属性，可在物体--刚体--从活动项复制</span></p><p><span>刚体的一些重要参数</span></p><ul><li><p><span>碰撞-形状：碰撞检测时候的外壳，越精细碰撞效果越好，但性能开销越大。如果碰撞表面存在凹陷的话，则需要将形状改成网格</span></p></li><li><p><span>设置-播放动画：不勾选该选项，物体同时具有动画和物理属性（如重力），勾选该选项，物体则会失去重力等属性，只有动画</span></p><ul><li><p><span>技巧：播放动画也是有关键帧的，可以在开始的时候播放动画，避免重力影响，有这样一个初速度之后，再取消播放动画，物体就以这个速度，以完全符合物理规律的状态运动下去</span></p></li></ul></li><li><p><span>属性管理器-场景属性-刚体世界环境-速率：表示模拟的世界的速率，降低则等价于延缓时间。可制作类似慢镜头的效果</span></p></li></ul><h2 id='三骨骼'><span>三、骨骼</span></h2><p><span>骨骼（Bone）是一种用于创建角色动画和控制模型变形的重要工具</span></p><p><span>骨骼是构成骨架的基本单元，它像现实世界中生物的骨骼一样，能够通过关节连接在一起，形成一个完整的骨架结构。在Blender中，骨骼可以被看作是一条有方向的线段，具有头部和尾部两个端点，头部是骨骼的起始点，尾部是骨骼的终点</span></p><p><span>在创建骨骼动画之前，要有骨架的整体控制关系（即父子关系）的认识</span></p><h4 id='骨骼的属性'><span>骨骼的属性</span></h4><p><strong><span>头部和尾部</span></strong><span>：骨骼的头部和尾部位置决定了骨骼的长度和方向。在编辑模式下，可以通过移动骨骼的头部或尾部来改变骨骼的形状和位置。Blender中，大的一端是头部，小的一端是尾部。所有连接到骨骼尾部的都属于它的子骨骼</span></p><p><strong><span>连接关系</span></strong><span>：骨骼之间可以通过父子关系进行连接。子骨骼会继承父骨骼的变换，这样可以形成一个层级化的骨架结构</span></p><p><strong><span>权重（Weight）</span></strong><span>：权重是骨骼与模型网格之间连接强度的度量。在骨骼绑定模型时，每个顶点都会被赋予一个或多个骨骼的权重值，权重值的范围通常在0到1之间。权重值越大，该骨骼对该顶点的控制力就越强。例如，对于手臂骨骼附近的网格顶点，手臂骨骼的权重值可能较高，这样在手臂骨骼移动时，这些顶点会跟随骨骼产生较大的变形</span></p><p><span>骨骼的右下角属性管理器，会有三个新的属性</span></p><ul><li><p><span>骨骼组：最常用的是视图显示，可调整为“在前面”和骨骼显示形状</span></p></li><li><p><span>单段骨骼</span></p></li><li><p><span>骨骼约束：姿态模式下特有</span></p></li></ul><h4 id='骨骼的使用'><span>骨骼的使用</span></h4><h6 id='基本操作'><span>基本操作</span></h6><p><span>删除骨骼有两个选项：</span></p><ul><li><p><span>直接删除某一段骨骼，注意就算骨骼删完了整个骨架还在</span></p></li><li><p><span>融并骨骼。若融并骨骼，则只保留根点和终点</span></p></li></ul><p><span>骨骼有姿态模式，可以较为容易地编辑骨骼姿态（调整骨骼），制作动画时主要在姿态模式下进行并打上关键帧，而编辑模式主要是创建身体的骨骼（做骨骼）</span></p><p><span>选中两个骨骼，”ctrl+p-保持偏移量“可绑定父子关系；”ctrl+p-相连项“是让骨骼首尾相连</span></p><p><span>shift+d以复制骨骼，但注意复制的骨骼和被复制的骨骼同为上一个骨骼的子骨骼，即两者是兄弟关系</span></p><p><span>alt+P删除父级，ctrl+p创建父级</span></p><p><span>骨架可以对称复制，编辑模式-右侧”骨架-对称“。但是注意，在对称复制之前，骨架的名字一定要规范，如xx_L或者_R都可以</span></p><p><span>骨骼轴向时常出错，需要注意</span></p><p><span>在创建骨骼的时候，比如腿部骨骼，则大腿和小腿之间的骨骼不能完全是一条直线，必须往前略有弯曲，让blender明白这里是向前弯曲的</span></p><p><span>ctrl+c和ctrl+v仍然可以复制和粘贴关键帧信息。复制之后，若目标动画为无限循环的，可考虑使用关键帧--粘贴翻转，可以将左腿的关键帧信息粘贴到右腿的</span></p><p><span>制作动画时：需要打开动作编辑器并新建动作，打关键帧时注意所有的骨骼要全选打关键帧</span></p><h6 id='极骨'><span>极骨</span></h6><p><span>极骨主要控制骨骼扭向，如膝盖不能往左右弯曲。如果骨骼的运动超过了极骨，则会翻转</span></p><p><span>极骨一定要有，不然会出错</span></p><h6 id='骨骼绑定'><span>骨骼绑定</span></h6><p><span>骨骼绑定即将骨骼和模型之间建立绑定关系，这样就可以通过控制骨骼来控制模型了</span></p><p><span>物体模式下，选中模型和骨架，然后在姿态模式下选中某一段骨骼，按“ctrl+p-骨骼”即可绑定</span></p><p><span>多个模型可以绑定同一个骨骼</span></p><h4 id='ik反向运动学'><span>IK：反向运动学</span></h4><p><span>反向运动学（Inverse Kinematics，IK）是机器人学、计算机图形学、动画设计和控制理论等领域中的关键概念。它涉及确定在给定末端执行器（例如机械臂的手爪或动画角色的手）的位置和方向的情况下，驱动该末端执行器到达目标位置所需的各种关节角度的过程，与正向运动学（FK）相对</span></p><p><span>IK 本质上是一个数学问题，要求解的不仅是单个关节的位置，而是多个关节间相互作用的组合。这个过程可能很复杂，因为它可能有多个解决方案，或者在某些情况下，可能根本不存在精确解。其求解有解析法和数值法两种</span></p><p><span>反向运动学的出现，简化了动画过程，并使得以更少的工作量制作更高级的动画成为可能</span></p><p><span>在Blender中，反向运动学可以通过添加骨骼约束来实现：</span></p><ol start='' ><li><p><span>在姿态模式中，选中骨架末端的骨骼，点击属性菜单栏的骨骼约束属性</span></p></li><li><p><span>在骨骼约束属性窗口中，打开添加列表，选择反向运动学</span></p></li><li><p><span>在反向运动学窗口中，将目标设定为视图的骨架，骨骼选择为末端骨骼相邻的独立骨骼</span></p></li></ol><p><span>Blender 中链长是反向运动学效果所在的骨骼，所能控制的周围的骨骼数量</span></p><p><span>如果在骨骼约束中使用反向运动学导致骨骼轴向发生了问题，可直接在下方极向角度调，一般调个90度就行了</span></p><p>&nbsp;</p><h1 id='3-注意事项'><span>3. 注意事项</span></h1><ul><li><p><span>低版本的不能打开高版本的文件，高版本的可以打开低版本的，这一点和虚幻是一样的</span></p></li><li><p><span>衰减模式可能会带着前一个调整的物体一起变换，注意创建新物体时先把衰减模式关掉</span></p></li><li><p><span>若选中多个物体，可选择顶部-变换轴心点-各自的原点，这样就可以批量在自己原点单独进行调整</span></p></li><li><p><span>当物体较多时，针对某个几何体，比如已经建好的小人，需要打组，方便管理：全选这个模型的所有部件后按m建立集合。建立后这些部件会自动移动到组中。当物体太多，要后悔就来不及了，所以必须及时打组</span></p></li><li><p><span>3D视角右上角有个很小的箭头，或者直接按n，可快捷调出工具和下载的插件</span></p></li><li><p><span>在边框处右键，会出现分割选项，之后可根据需要建立多窗口。这样的好处是，一边可以进行摄像机视角观察一边可实时进行调整</span></p></li><li><p><span>切换渲染器之前记得先保存工程文件，否则一旦则闪退血亏</span></p></li><li><p><span>对于多个Actor使用相同材质，可以选中这些材质，最后一个选择已经弄好了的，ctrl+l选择关联材质。材质不仅是颜色，修改器也能关联（比如倒角）</span></p></li><li><p><span>设计渲染图/动画的一般步骤：</span></p><ol start='' ><li><p><span>建模、上色、上材质、微调</span></p></li><li><p><span>建立场景、打造灯光、建立摄像机视角</span></p></li><li><p><span>在上材质之后环境光会发生变化，所以要再次调整灯光</span></p></li><li><p><span>使用合适的参数渲染并出图或动画</span></p></li></ol></li><li><p><span>后期微调的时候建议开两个窗口，一个是普通窗口，一个是摄像机视角的渲染窗口（在顶部工具栏最右侧可选择预览模式）</span></p></li><li><p><span>进入编辑模式，然后右上角可进入透视模式，方便选中物体背后的点或线，随后直接拖动（移动模式不是缩放）就能完成缩放（这种方法跟传统方法相比，可以单端缩放）</span></p></li><li><p><span>考虑到游标在哪物体就新建在哪，可以先在编辑模式下选中点或面，然后上部的网格-吸附-游标到选中点。之后即可精准创建</span></p></li><li><p><span>物体坐标移动到了其他地方，可选中并点击（物体模式下）：物体-设置原点</span></p></li><li><p><span>很多时候，删掉重建是个好办法</span></p></li><li><p><span>文本和物体相同方式建造，但只有在编辑模式下才能编辑文本。或者在细节面板可编辑-文本类可以编辑，也可以改字体啥的。文本需要在细节面板-修改器处添加实体化，不然没厚度。实体化即给某个面3维的属性（厚度）</span></p></li><li><p><span>快捷收藏夹快捷键：Q，可以将常用但不好按的键添加到收藏夹，然后按Q即可快速唤出</span></p></li><li><p><span>选择圆柱上下两个面，按i建立内圆，然后删除，即建立了类似鸟巢的模型，然后全选里面的边（按住alt再选择边），使其上下相连即可做成管道，然后在边-桥接循环边即可得到。事实上，按住alt还能选择循环边，但是注意，要是鼠标点的是靠近左右两条边就是选中的水平的循环面，而靠近上下边就是竖直的循环面</span></p></li><li><p><span>不要随意调整物体的属性，小心调不回来了</span></p></li><li><p><span>衰减编辑有奇效，但是：用完一定要关掉，否则可能波及其他actor一起放缩</span></p></li><li><p><span>如果方向轴跑到别的地方去了，则在顶端把3D游标设置回各自的原点。</span></p></li><li><p><span>自动补帧（打关键帧）在建模的时候不建议开</span></p></li><li><p><span>渲染之前，，可将所有物体平滑着色，这样着色后不会有棱角的感觉</span></p></li><li><p><span>右上角选项：可调整变换影响的参数，利用改工具可调整原点的位置，但是注意调整完成之后要及时改回来</span></p></li><li><p><span>进行参数的变换后（包括旋转、移动、放缩），必须立即ctrl+a应用变换，只有这样才能让物体参数还原成1，否则后期调整和动画不可能批量操作</span></p></li><li><p><span>在线条的细节面板，起始系数可以调线条的长度，若打上关键帧，则可以做成生长动画</span></p></li><li><p><span>渲染图像，采样和渲染可以选到1024，而动画则可适当降低，建议256或更低。另外动画渲染，注意结束点，放置后面没动画了的时间还在渲染。动画输出格式中，FFmepg就是MP4格式，输出质量为无损则会直接输出mkv格式（PR不支持直接导入）。注意！！！不要直接输出视频，最好一帧帧输出，然后再合成成视频，因为渲染时间很长，一旦发生意外，是无法暂停的。（短时间救急可以拔掉笔记本外接电源，进入睡眠模式，第二天再插上可继续输出）</span></p></li><li><p><span>建议使用alt+d进行复制，这种复制是带着属性关联复制的，不占用额外的内存，ctrl+d复制需要额外内存</span></p></li><li><p><span>借形：根据现有的形状（点线面），将其提取出来，即将我们所选择的点线面新建一个出来，快捷键p。之后可右键-由边创建面等快速创建图形。复制是在原物体上复制，所以分离是必要的操作。注意，由借形得到的物体可能和目标物体不一样，比如想得到样条曲线但直接得到的是网格，需要转换。或者直接选中然后复制这一个线段或面也是可以的。注意：直接选中然后分离不是借形，是直接将选中的东西从物体中分离出来了。复制非三维物体后，该物体还是属于原物体的范畴，要借面并新建一个物体，需要复制后进行分离。也可以不复制直接使用“分离”，这样本质是分成了两个物体，更加容易上材质。借形得到的物体，虽然和原物体可能不是连在一起的，但仍然是同一个物体，除非将其分离</span></p></li><li><p><span>使用布尔运算（减去）插件，需要选定两个物体，且选择前后有要求，后选中的减去先选中的</span></p></li><li><p><span>遇到平面、圆圈不平，可以全选，然后收缩-z-0，即可变得水平</span></p></li><li><p><span>给物体添加材质，可以控制金属感、光泽、糙度、投射、Alpha等</span></p><ul><li><p><span>Alpha和透射的区别是，前者是对整个物体变得透明，而后者是针对糙度不高的物体使其变成玻璃球的质感</span></p></li></ul></li><li><p><span>给同一个物体添加两种材质，可以选择需要两种材质的区域（在编辑模式），点击材质右侧的+，设置好材质后点“指定”</span></p></li><li><p><span>对于对称的物体，比如车、杯子等，可以删掉一边，直接应用镜像修改器，更加方便。如果删掉一边进行镜像建模，建议勾选镜像修改器的：范围限制，放置误操作使物体从中间画面撕裂</span></p></li><li><p><span>ctrl+1或2或3使用曲面细分，不同程度的曲面细分使物体的整体外观是一样的，但细分的曲面面数不同。曲面细分应用后，可以对物体进行细微的调整</span></p></li><li><p><span>所有修改器上方下拉箭头都有“应用”的功能，即应用并将其从修改器列表删除。注意：就算没有点击应用，也会产生效果，而点击了应用可能产生其他效果，如曲面细分，应用后我们就得到了曲面细分创造的点线面，如果不应用虽然也有细分效果，但节点还是原来的节点。要应用曲面细分，最好把层级弄低一点。下图：曲面细分应用前和后。注意细分在边少的时候可能会出现问题，可以先添加一个适合的倒角，将面数分多一点，即可解决</span></p><p><img src="assets/car1.png" style="zoom: 33%;" /></p><p><img src="assets/car2.png" style="zoom:33%;" /></p></li><li><p><span>Blender做的非常人性化的一点，就是在使用工具的时候，比如编辑模式下按i建立内插面，这时顶部或者底部会出现文字提示，按xxx做成xx功能，等等</span></p></li><li><p><span>修改器修改参数，（有的）不在可撤销的范围：如果修改器参数不对，必须手动调回去或直接删掉</span></p></li><li><p><span>注意选中的到底是哪个物体：黄线边框代表当前选中物体，如果想要选中某个物体，不是黄线的（没有线框或是橙色的）都代表没选中或选中的不是这个物体</span></p></li><li><p><span>使用镜像修改器的时候，可以指定镜像物体（沿着这个物体镜像，不是被镜像物），此时还要注意镜像物体是沿x、y还是z镜像的</span></p></li><li><p><span>blender默认插值自带有缓入缓出的贝塞尔曲线，有的时候需要修改：选中关键帧-插值模式-线性</span></p><ul><li><p><span>在时间轴左上角将显示面板改成曲线编辑器，可以进一步修改关键帧属性。很多问题都是因为插值是贝塞尔曲线造成的，注意一下，建议直接改成线性，有需要再改成贝塞尔</span></p></li></ul></li><li><p><span>无论哪个模式下，都可以拉动左侧的工具栏，会显示中文名称，更加方便理解</span></p></li><li><p><span>在雕刻模式下是很吃物体细分程度的，如果细分不够，先考虑添加级别更高的曲面细分并应用，再考虑重构网格（将体素大小调低），即可达到更高细分。但是细分非常吃性能，且容易闪退，注意电脑性能</span></p></li><li><p><span>注意：在主界面3D视图里最小的一个单位是1m，而在正交视图里可以以10cm作为单位，即切换正交视角并点击顶部的磁铁，选择增量，可以方便对齐</span></p></li><li><p><span>有的动画，比如刚体撞击，必须一边播放刚体一边才能进行演算，直接拖动时间轴是不能进行演算的，要想随意拖动时间线并产生运动的效果，需要预先烘焙。烘焙完后，想要再次调整物体，需要先把烘焙删除</span></p></li><li><p><span>动画渲染，可以把采样降低，可以把采样上面的噪波阈值拉高（到0.2左右），动画看不出来很明显的效果，渲染时间却少很多</span></p></li><li><p><span>实例化：根据选择的点、面等实例化物体，实例化物体就是将该物体代替了原本所选择的点、面等。使用该技术可以非常容易地制作特效。一般实例化是在几何节点中添加该效果节点：shift+a-实例-实例化于点上，再新建所需实例化的物体，并将其节点连接到实例化节点的“实例”上即可</span></p></li><li><p><span>渲染时，若在cycles时使用GPU渲染模型出错，有的部分没有被渲染出来，但是cpu渲染却能正常，可尝试分离材质separate by material，或许能修复。这应该是个BUG</span></p></li><li><p><span>blender可直接导入FBX，但导入FBX时好像本身是不带材质的，就是白模……但blender导出FBX时若使用复制+选中导出材质的话，是可以正常导出材质的</span></p></li></ul></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>

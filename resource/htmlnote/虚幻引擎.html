@@ -1,0 +1,1942 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+
+/* FONTS */
+
+/* VARIABLES */
+
+:root {
+  --theme-0: rgb(255, 255, 255);
+
+  /* Slate grayscale */
+  --theme-50: #f8fafc;
+  --theme-100: #f1f5f9;
+  --theme-200: #e2e8f0;
+  --theme-300: #cbd5e1;
+  --theme-400: #94a3b8;
+  --theme-500: #64748b;
+  --theme-600: #475569;
+  --theme-700: #334155;
+  --theme-800: #1e293b;
+  --theme-900: #0f172a;
+
+  /* Tailwind variables */
+  --tw-primary: #62bbf3;
+
+  --tw-prose-body: var(--theme-700);
+  --tw-prose-headings: var(--theme-900);
+  --tw-prose-lead: var(--theme-600);
+  --tw-prose-links: var(--theme-900);
+  --tw-prose-bold: var(--theme-900);
+  --tw-prose-counters: var(--theme-500);
+  --tw-prose-bullets: var(--theme-300);
+  --tw-prose-hr: var(--theme-200);
+  --tw-prose-quotes: var(--theme-900);
+  --tw-prose-quote-borders: var(--theme-200);
+  --tw-prose-captions: var(--theme-500);
+  --tw-prose-code: var(--theme-900);
+  --tw-prose-pre-code: var(--theme-100);
+  --tw-prose-pre-bg: var(--theme-800);
+  --tw-prose-th-borders: var(--theme-300);
+  --tw-prose-td-borders: var(--theme-200);
+  --tw-prose-bg: var(--theme-0);
+  --tw-prose-meta: var(--theme-500);
+  --tw-prose-meta-bg: var(--theme-100);
+
+  --tw-prose-invert-body: var(--theme-300);
+  --tw-prose-invert-headings: var(--theme-0);
+  --tw-prose-invert-lead: var(--theme-400);
+  --tw-prose-invert-links: var(--theme-0);
+  --tw-prose-invert-bold: var(--theme-0);
+  --tw-prose-invert-counters: var(--theme-400);
+  --tw-prose-invert-bullets: var(--theme-600);
+  --tw-prose-invert-hr: var(--theme-700);
+  --tw-prose-invert-quotes: var(--theme-100);
+  --tw-prose-invert-quote-borders: var(--theme-700);
+  --tw-prose-invert-captions: var(--theme-400);
+  --tw-prose-invert-code: var(--theme-0);
+  --tw-prose-invert-pre-bg: var(--theme-900);
+  --tw-prose-invert-th-borders: var(--theme-600);
+  --tw-prose-invert-td-borders: var(--theme-700);
+  --tw-prose-invert-bg: var(--theme-800);
+  --tw-prose-invert-meta: var(--theme-400);
+  --tw-prose-invert-meta-bg: var(--theme-700);
+
+  --tw-highlight-color: #fde047; /* yellow-300 */
+  --tw-drop-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  --tw-button-hover-bg: var(--theme-100);
+
+  --tw-button-hover-bg-inverted: var(--theme-700);
+
+  /* Typora variables */
+
+  --background: var(--tw-prose-bg);
+  --bg-color: var(--tw-prose-bg);
+  --text-color: var(--tw-prose-body);
+  --primary-color: var(--tw-primary);
+  --md-char-color: var(--theme-400);
+  --meta-content-color: var(--theme-500);
+  --typora-source-body: var(--theme-800);
+  --heading-char-color: var(--md-char-color);
+  --mermaid-theme: neutral;
+  --active-toggle-btn-color: var(--theme-200);
+
+  --md-char-color-inverted: var(--theme-500);
+  --meta-content-color-inverted: var(--theme-400);
+  --typora-source-body-inverted: var(--theme-300);
+  --mermaid-theme-inverted: dark;
+  --active-toggle-btn-color-inverted: var(--theme-400);
+
+  /* Sidebar */
+  --side-bar-bg-color: var(--tw-prose-bg);
+  --active-file-bg-color: var(--theme-100);
+  --active-file-text-color: var(--tw-prose-bold);
+  --active-file-border-color: var(--theme-100);
+  --panel-border-color: var(--theme-300);
+  --blur-text-color: var(--theme-300);
+  --window-border: 1px solid var(--theme-200);
+  --item-hover-bg-color: var(--theme-100);
+  --search-hit-text-bg-color: var(--theme-200);
+  --search-hit-text-font-color: inherit;
+  --search-select-text-color: var(--select-text-font-color);
+  --search-select-bg-color: var(--select-text-bg-color);
+
+  --blur-text-color-inverted: var(--theme-500);
+  --panel-border-color-inverted: var(--theme-700);
+  --active-file-bg-color-inverted: var(--theme-700);
+  --window-border-inverted: 1px solid var(--theme-700);
+  --search-hit-text-bg-color-inverted: var(--theme-700);
+  --search-hit-text-font-color-inverted: var(--theme-0);
+  --search-select-bg-color-inverted: var(--theme-400);
+  --rawblock-edit-panel-bd: var(--tw-prose-pre-bg);
+  --item-hover-bg-color-inverted: var(--theme-700);
+
+  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Custom */
+  --footnote: var(--tw-prose-body);
+  /* I'd love to use the --theme grayscale for --footnote-bg, but there's (currently)
+  no way to add an alpha-channel to a CSS variable (and we need the transparency
+  because otherwise the caret wil not be visible), so I here just used a hardcoded
+  copy of --theme-500 */
+  --footnote-bg: #94a3b855;
+  --button-bg: var(--theme-200);
+
+  --button-bg-inverted: var(--theme-600);
+
+  --md-grid-header: var(--theme-100);
+  --md-grid-header-ext: var(--theme-400);
+  --md-grid-ext: var(--theme-300);
+  --md-grid-header-active: var(--theme-500);
+  --md-grid-active: var(--theme-400);
+  --md-grid-border-color: var(--theme-500);
+
+  --md-grid-header-inverted: var(--theme-600);
+  --md-grid-header-ext-inverted: var(--theme-500);
+  --md-grid-ext-inverted: var(--theme-600);
+  --md-grid-header-active-inverted: var(--theme-400);
+  --md-grid-active-inverted: var(--theme-500);
+  --md-grid-border-color-inverted: var(--theme-200);
+
+  --code-blocks-font-size: 0.9em;
+  --inline-code-font-size: 0.9em;
+}
+
+.ty-file-search-match-text {
+  background-color: var(--search-hit-text-bg-color);
+}
+
+/* TAILWIND RESET */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: currentColor;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: "";
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+*/
+
+#text {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+#text {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+#write {
+    background: #131b29;
+    color: #a9aaab;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 30px;
+    padding-bottom: 100px;
+    position: static;
+    width: 90%;
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+a {
+    color: #71bfd9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    cursor: text;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6,
+#write pre {
+    color: #dfb057;
+    width: auto;
+}
+
+#write h1::before,
+#write h2::before,
+#write h3::before,
+#write h4::before,
+#write h5::before,
+#write h6::before {
+    border-radius: 0;
+    bottom: 0;
+    color: #517090;
+    float: none;
+    font-size: 1rem;
+    font-variant: 'small-caps';
+    font-weight: bold;
+    left: auto;
+    line-height: 20px;
+    padding: 0;
+    position: absolute;
+    right: calc(100% + 10px);
+    vertical-align: baseline;
+}
+
+#write h1 {
+    font-size: 3.2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+#write h1::before {
+    bottom: 1.45rem;
+    content: 'H1';
+}
+
+#write h2 {
+    font-size: 2.2rem;
+    margin: 1.4rem 0;
+}
+
+#write h2::before {
+    bottom: 0.2rem;
+    content: 'H2';
+}
+
+#write h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+#write h3::before {
+    bottom: 0.18rem;
+    content: 'H3';
+}
+
+#write h4 {
+    font-size: 1.7rem;
+    margin: 0.8rem 3;
+}
+
+#write h4::before {
+    content: 'H4';
+    bottom: 0.15rem;
+}
+
+#write h5 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+#write h6 {
+    font-size: 1.3rem;
+    margin: 0.2rem,0;
+}
+
+#write h5::before,
+#write h6::before {
+    bottom: 0.1rem;
+}
+
+#write h5::before {
+    content: 'H5';
+}
+
+#write h6::before {
+    content: 'H6';
+}
+
+h1::after, h2::after {
+  content: ""; /* 必须设置 content */
+  display: block; /* 确保伪元素占据一行 */
+  border-bottom: 2px solid #ccc; /* 分割线样式：颜色为灰色，厚度为 1px */
+  margin-top: 4px; /* 分割线与标题的间距 */
+  margin-bottom: 8px; /* 分割线与下文的间距 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: "LXGWWenKai-Blod";
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--monospace);
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/* TAILWIND PROSE IMPLEMENTATION */
+
+#write {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  max-width: 80rem;
+}
+
+html,
+body {
+  font-family: "LXGWWenKai-Regular";
+}
+
+/* on Windows/Linux, it is the part that is not titlebar or status bar. */
+content,
+titlebar {
+  background: var(--tw-prose-bg);
+}
+
+#write {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: var(--tw-prose-body);
+  max-width: 60ch;
+}
+
+#write > :where(:first-child) {
+  margin-top: 0;
+}
+
+#write > :where(:last-child) {
+  margin-bottom: 0;
+}
+
+/**
+  * ---------------------
+  * Block Elements
+  */
+
+/* yaml */
+pre.md-meta-block {
+  color: var(--tw-prose-meta);
+  background-color: var(--tw-prose-meta-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+  margin-bottom: 2.8em;
+}
+
+/* headings */
+h1 {
+  color: var(--tw-prose-headings);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 2.75rem;
+  letter-spacing: -1.5px;
+}
+
+h1 strong {
+  font-weight: 900;
+}
+
+h2 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.63rem;
+  margin-top: 1.5555556em;
+  margin-bottom: 1.5rem;
+  line-height: 1.875rem;
+  letter-spacing: -1px;
+}
+
+h2 strong {
+  font-weight: 800;
+}
+
+h3 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.17rem;
+  margin-top: 1.6em;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: -1px;
+}
+
+h3 strong {
+  font-weight: 700;
+}
+
+h4 {
+  color: var(--tw-prose-headings);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-top: 1.8em;
+  margin-bottom: 1.5rem;
+  line-height: 1.375rem;
+}
+
+h4 strong {
+  font-weight: 700;
+}
+
+h2 code {
+  font-size: 0.8611111em;
+}
+
+h3 code {
+  font-size: 0.9em;
+}
+
+h2 + * {
+  margin-top: 0;
+}
+
+h3 + * {
+  margin-top: 0;
+}
+
+h4 + * {
+  margin-top: 0;
+}
+
+h5 {
+  font-size: 0.97rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 0.93rem;
+  line-height: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* table */
+
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1.5555556;
+}
+
+/* table header */
+
+thead {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-th-borders);
+}
+
+thead th {
+  color: var(--tw-prose-headings);
+  font-weight: 600;
+  vertical-align: bottom;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+thead th:first-child {
+  padding-left: 0;
+}
+
+thead th:last-child {
+  padding-right: 0;
+}
+
+tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-td-borders);
+}
+
+tbody tr:last-child {
+  border-bottom-width: 0;
+}
+
+tbody td {
+  vertical-align: baseline;
+  padding-top: 0.8888889em;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+tbody td:first-child {
+  padding-left: 0;
+}
+
+tbody td:last-child {
+  padding-right: 0;
+}
+
+.md-grid-board tr[row="1"] {
+  background-color: var(--md-grid-header);
+}
+
+.md-grid-board a:hover,
+.md-grid-board a.md-active {
+  background: var(--md-grid-active);
+}
+
+.md-grid-board tr[row="1"] a:hover,
+.md-grid-board tr[row="1"] a.md-active {
+  background: var(--md-grid-header-active);
+}
+
+.md-grid-board .md-grid-ext {
+  background: var(--md-grid-ext);
+}
+
+.md-grid-board tr[row="1"] .md-grid-ext {
+  background: var(--md-grid-header-ext);
+}
+
+.md-grid-board a {
+  border-color: var(--md-grid-border-color) !important;
+}
+
+/* lists */
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1em;
+}
+
+li {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+#write ul.task-list {
+  padding-left: 0;
+}
+
+#write li.task-list-item {
+  padding-left: 0.4em;
+}
+
+#write input[type="checkbox"] {
+  margin-left: -1em;
+}
+
+input[checked] ~ * {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+ol > li::marker {
+  font-weight: 400;
+  color: var(--tw-prose-counters);
+}
+
+ul > li::marker {
+  color: var(--tw-prose-bullets);
+}
+
+ul > li,
+ol > li {
+  padding-left: 0.4em;
+}
+
+ul > li p,
+ol > li p {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+#write > ul > li > :not(input):first-child,
+#write > ol > li > :not(input):first-child,
+#write > ul > li > input + *,
+#write > ol > li > input + * {
+  margin-top: 1.2em;
+}
+
+#write > ul > li > *:last-child,
+#write > ol > li > *:last-child {
+  margin-bottom: 1.2em;
+}
+
+#write ul > li > p:only-child,
+#write ol > li > p:only-child,
+#write ul > li > input + p:last-child,
+#write ol > li > input + p:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+/* blockquote */
+blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--tw-prose-quotes);
+  border-left-width: 0.25rem;
+  border-left-color: var(--tw-prose-quote-borders);
+  quotes: "\201C""\201D""\2018""\2019";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1.0666667em;
+}
+
+blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+blockquote p:last-of-type::after {
+  content: close-quote;
+}
+
+/* hr */
+hr {
+  border-color: var(--tw-prose-hr);
+  border-top-width: 1px;
+}
+
+[mdtype="hr"] {
+  margin-top: 2.8em;
+  margin-bottom: 2.8em;
+}
+
+p {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  color: #eeeeee;
+}
+
+.in-text-selection,::selection {
+  background-color: var(--select-text-bg-color);
+}
+
+/* diagram panel */
+.md-diagram-panel {
+  color: var(--tw-prose-body);
+}
+
+.enable-diagrams .md-diagram .code-tooltip {
+  bottom: -1.9em;
+  right: 0;
+}
+
+.md-fences-adv-panel {
+  margin-top: 1.3em;
+}
+
+/* footnote definition */
+sup.md-footnote {
+  color: var(--footnote);
+  background-color: var(--footnote-bg);
+}
+
+.footnotes {
+  font-size: 0.85em;
+}
+
+.md-reverse-footnote-area a {
+  font-family: "LXGWWenKai-Regular";
+  text-decoration: none;
+  color: var(--tw-primary);
+  border-radius: 3px;
+}
+
+.md-hover-tip .code-tooltip-content {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 0.8em 1.2em;
+}
+
+.md-reverse-footnote-area a:hover {
+  background-color: var(--item-hover-bg-color);
+}
+
+.md-def-name:before {
+  color: var(--md-char-color);
+}
+
+.md-rawblock.md-rawblock-on-edit,
+.md-rawblock:hover {
+  color: var(--tw-prose-pre-code);
+}
+
+.md-inline-math script {
+  color: var(--tw-prose-code);
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: var(--tw-highlight-color) !important;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+.code-tooltip {
+  color: var(--tw-prose-pre-code);
+}
+
+.code-tooltip .md-mathjax-preview {
+  color: var(--tw-prose-body);
+}
+
+.md-htmlblock-container,
+.md-rawblock-input.md-rawblock-control,
+.md-htmlblock-panel.md-rawblock-control,
+.md-math-container {
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.md-rawblock-input {
+  font-size: var(--code-blocks-font-size);
+  padding: 0 1.3333333em;
+}
+
+.md-mathblock-panel .md-rawblock-input.md-rawblock-control {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 0;
+}
+
+.md-mathblock-panel .md-rawblock-before {
+  padding-top: 1.1em;
+  border-top-left-radius: 0.5rem;
+}
+
+.md-mathblock-panel .md-rawblock-after {
+  padding-bottom: 1.1em;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.md-htmlblock-panel .md-rawblock-input {
+  padding-top: 1.1111111em;
+  padding-bottom: 1.1111111em;
+}
+
+.md-mathblock-panel .md-rawblock-before,
+.md-mathblock-panel .md-rawblock-after {
+  font-size: var(--code-blocks-font-size);
+  padding-left: calc(4px + 1.3333333em);
+  color: var(--code-bracket);
+}
+
+.md-rawblock-tooltip {
+  color: var(--tw-prose-pre-code);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.md-rawblock-tooltip-name {
+  opacity: 1;
+}
+
+.md-comment {
+  font-size: var(--inline-code-font-size);
+  color: var(--code-comment);
+}
+
+.md-raw-inline,
+.md-tag,
+[md-inline="linebreak"],
+.md-image > .md-meta,
+.md-inline-math.md-expand > .md-inline-math-container {
+  font-size: var(--code-blocks-font-size);
+}
+
+/**
+  * Code Fences
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.md-fences {
+  color: var(--tw-prose-pre-code);
+  background-color: var(--tw-prose-pre-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+}
+
+.md-fences.md-focus {
+  border-bottom-right-radius: 0;
+}
+
+.md-fences > .code-tooltip {
+  height: 1.8rem;
+  bottom: -1.8rem;
+  font-size: 0.9rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.code-tooltip .ty-input {
+  min-width: 10rem;
+}
+
+pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+pre code::before {
+  content: none;
+}
+
+pre code::after {
+  content: none;
+}
+
+/* SYNTAX HIGHLIGHTING */
+
+:root {
+  --code-neutral: var(--theme-800);
+  --code-cursor: var(--theme-900);
+  --code-string: rgb(14, 165, 233); /* sky-500 */
+  --code-number: rgb(245, 158, 11); /* amber-500 */
+  --code-tag: rgb(236, 72, 153); /* pink-500 */
+  --code-color: rgb(154, 154, 154);
+  --code-color-bg: rgb(213, 213, 205);
+  --code-variable: var(--theme-700);
+  --code-operator: var(--theme-600);
+  --code-comment: var(--theme-500);
+  --code-bracket: var(--theme-500);
+  --code-citation: var(--theme-500);
+
+  --code-neutral-inverted: var(--theme-100);
+  --code-cursor-inverted: var(--theme-50);
+  --code-string-inverted: #7dd4fc; /* sky-300 */
+  --code-number-inverted: #fde68a; /* amber-100 */
+  --code-tag-inverted: #f472b5; /* pink-400 */
+  --code-variable-inverted: var(--theme-200);
+  --code-operator-inverted: var(--theme-400);
+  --code-comment-inverted: var(--theme-400);
+  --code-bracket-inverted: var(--theme-500);
+  --code-citation-inverted: var(--theme-400);
+}
+
+#write .cm-s-inner {
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+}
+
+.CodeMirror-selectedtext {
+  background-color: transparent;
+}
+.CodeMirror-cursor {
+  border-left: 1px solid var(--code-cursor) !important;
+}
+.CodeMirror-gutters {
+  border-color: var(--code-comment);
+}
+.cm-s-inner span.cm-string {
+  color: var(--code-string);
+}
+
+.cm-s-inner span.cm-number {
+  color: var(--code-number);
+}
+
+.cm-s-inner span.cm-tag,
+.cm-s-inner span.cm-keyword,
+.cm-s-inner span.cm-qualifier {
+  color: var(--code-tag);
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner span.cm-comment.cm-def,
+.cm-s-inner span.cm-comment.cm-type,
+.cm-s-inner span.cm-builtin,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-header,
+.cm-s-inner span.cm-link,
+.cm-s-inner span.cm-error {
+  background: transparent;
+  color: var(--code-neutral);
+}
+
+.cm-s-inner span.cm-attribute,
+.cm-s-inner span.cm-property,
+.cm-s-inner span.cm-variable,
+.cm-s-inner span.cm-variable-2,
+.cm-s-inner span.cm-variable-3,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-atom,
+.cm-s-inner span.cm-def {
+  color: var(--code-variable);
+}
+.cm-s-inner span.cm-comment,
+.cm-s-inner .CodeMirror-linenumber {
+  color: var(--code-comment);
+}
+.cm-s-inner span.cm-operator {
+  color: var(--code-operator);
+}
+.cm-s-inner span.cm-bracket,
+.cm-s-inner span.cm-tag.cm-bracket,
+.cm-s-inner span.cm-meta {
+  color: var(--code-bracket);
+}
+
+.cm-s-inner span.cm-link {
+  text-decoration: underline;
+}
+
+/**
+  * Inline Elements
+  */
+
+/* basic styles */
+
+code {
+  color: rgb(47, 206, 47);
+  background-color: var(--code-color-bg);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.3rem;
+  margin: 0.1rem 0.1rem;
+}
+
+code::before {
+  content: none;
+}
+
+code::after {
+  content: none;
+}
+
+[md-inline="code"].md-expand > code::before,
+[md-inline="code"].md-expand > code::after {
+  content: "";
+}
+
+a code {
+  color: var(--tw-prose-links);
+}
+
+mark code {
+  color: inherit;
+}
+
+strong {
+  color: rgb(211, 211, 77);
+  font-weight: 600;
+}
+
+a {
+  color: var(--tw-prose-links);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* A block-level image should have a total top and bottom margin of 2em.
+It is always wrapped in a paragraph with 1.2em vertical margin, hence we
+add 0.8 here */
+p > .md-image:only-child {
+  margin-top: 0.8em !important;
+  margin-bottom: 0.8em !important;
+}
+
+.md-image > .md-meta {
+  color: var(--tw-prose-code);
+}
+
+/* extend styles */
+
+mark {
+  border-radius: 3px;
+  padding: 0 2px;
+  background-color: var(--tw-highlight-color);
+}
+
+/**
+  * Source Code Mode
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background-color: var(--item-hover-bg-color);
+}
+
+#typora-source {
+  font-family: var(--monospace);
+  color: var(--typora-source-body);
+}
+
+#typora-source .cm-header {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-link {
+  color: var(--code-string);
+}
+
+#typora-source .cm-string {
+  color: var(--code-string);
+}
+
+#typora-source .cm-comment {
+  color: var(--code-comment);
+}
+
+#typora-source .cm-atom {
+  color: var(--code-citation);
+}
+
+#typora-source .cm-tag {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-attribute {
+  color: var(--code-variable);
+}
+
+#typora-source .cm-bracket {
+  color: var(--code-bracket);
+}
+
+.file-list-item-file-ext-part {
+  opacity: 0.5;
+}
+
+#write div.md-toc-tooltip {
+  background-color: var(--tw-prose-bg);
+}
+
+.md-toc {
+  font-size: 0.8em;
+}
+
+.md-toc-h1 .md-toc-inner {
+  margin-left: 0;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left: 1em;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2em;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3em;
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left: 4em;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left: 5em;
+}
+
+#typora-sidebar {
+  border-right: var(--window-border);
+}
+
+.sidebar-tab {
+  text-transform: none;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.md-search-hit {
+  color: var(--search-hit-text-font-color);
+  background-color: var(--search-hit-text-bg-color);
+}
+
+#md-searchpanel {
+  box-shadow: none;
+  filter: var(--tw-drop-shadow-md);
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: var(--tw-button-hover-bg);
+}
+
+#md-searchpanel input,
+#md-searchpanel .btn,
+#searchpanel-msg {
+  border-radius: 5px;
+}
+
+#searchpanel-msg {
+  color: var(--theme-500);
+  border-color: var(--theme-300);
+  background: var(--theme-100);
+}
+
+.form-control {
+  border-color: var(--panel-border-color);
+}
+
+.btn-default {
+  background-color: var(--button-bg);
+}
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+@import "";
+
+:root {
+  --tw-prose-body: var(--tw-prose-invert-body);
+  --tw-prose-headings: var(--tw-prose-invert-headings);
+  --tw-prose-lead: var(--tw-prose-invert-lead);
+  --tw-prose-links: var(--tw-prose-invert-links);
+  --tw-prose-bold: var(--tw-prose-invert-bold);
+  --tw-prose-counters: var(--tw-prose-invert-counters);
+  --tw-prose-bullets: var(--tw-prose-invert-bullets);
+  --tw-prose-hr: var(--tw-prose-invert-hr);
+  --tw-prose-quotes: var(--tw-prose-invert-quotes);
+  --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+  --tw-prose-code: var(--tw-prose-invert-code);
+  --tw-prose-captions: var(--tw-prose-invert-captions);
+  --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+  --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+  --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+  --tw-prose-bg: var(--tw-prose-invert-bg);
+  --tw-prose-meta: var(--tw-prose-invert-meta);
+  --tw-prose-meta-bg: var(--tw-prose-invert-meta-bg); 
+  --select-text-bg-color: rgb(35, 92, 197);
+
+  --tw-button-hover-bg: var(--tw-button-hover-bg-inverted);
+
+  --md-char-color: var(--md-char-color-inverted);
+  --meta-content-color: var(--meta-content-color-inverted);
+  --panel-border-color: var(--panel-border-color-inverted);
+  --active-file-bg-color: var(--active-file-bg-color-inverted);
+  --window-border: var(--window-border-inverted);
+  --search-hit-text-bg-color: var(--search-hit-text-bg-color-inverted);
+  --search-hit-text-font-color: var(--search-hit-text-font-color-inverted);
+  --search-select-bg-color: var(--search-select-bg-color-inverted);
+  --blur-text-color: var(--blur-text-color-inverted);
+  --item-hover-bg-color: var(--item-hover-bg-color-inverted);
+  --typora-source-body: var(--typora-source-body-inverted);
+  --mermaid-theme: var(--mermaid-theme-inverted);
+  --active-toggle-btn-color: var(--active-toggle-btn-color-inverted);
+
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+  --code-color: rgb(237, 71, 89);
+  --code-color-bg: rgb(32, 41, 58);
+
+  --button-bg: var(--button-bg-inverted);
+
+  --md-grid-header: var(--md-grid-header-inverted);
+  --md-grid-header-ext: var(--md-grid-header-ext-inverted);
+  --md-grid-ext: var(--md-grid-ext-inverted);
+  --md-grid-header-active: var(--md-grid-header-active-inverted);
+  --md-grid-active: var(--md-grid-active-inverted);
+  --md-grid-border-color: var(--md-grid-border-color-inverted);
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>虚幻引擎</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-游戏引擎基础">1. 游戏引擎基础</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一简介">一、简介</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二基本术语">二、基本术语</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-虚幻基础">2. 虚幻基础</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一虚幻界面">一、虚幻界面</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#界面概览">界面概览</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#各面板详细说明">各面板详细说明</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#菜单栏">菜单栏</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主工具栏">主工具栏</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#关卡视口">关卡视口</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#内容侧滑菜单内容浏览器）">内容侧滑菜单（内容浏览器）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#底部菜单栏">底部菜单栏</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#大纲">大纲</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#细节面板">细节面板</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二工具和编辑器">二、工具和编辑器</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三ue-基础信息">三、UE 基础信息</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#基础操作">基础操作</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#游戏打包">游戏打包</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#初学者内容包">初学者内容包</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#虚幻工程文件夹的结构蓝图工程）">虚幻工程文件夹的结构（蓝图工程）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#单位和度量">单位和度量</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#文件格式fbxojbabc">文件格式：fbx、ojb、abc</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#bsp画刷">BSP画刷</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#光源的种类">光源的种类</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#光源的可移动性">光源的可移动性</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#指数级高度雾和体积雾">指数级高度雾和体积雾</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ue-中游戏的层级结构划分">UE 中游戏的层级结构划分</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四虚幻-5-新技术">四、虚幻 5 新技术</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#nanite虚拟几何体">Nanite：虚拟几何体</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#lumen动态全局光照">Lumen：动态全局光照</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#megalights">MegaLights</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-蓝图与cpp">3. 蓝图与cpp</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一蓝图blueprints）">一、蓝图（Blueprints）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#概念">概念</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#操作">操作</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#节点nodes）和引脚pins）">节点（Nodes）和引脚（Pins）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#时间轴结点">时间轴结点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#其它常用节点">其它常用节点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#蓝图类">蓝图类</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一个蓝图例子开关门">一个蓝图例子：开关门</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#umg">UMG</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二ue-with-c基础">二、UE with C++：基础</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#蓝图与c的关系">蓝图与C++的关系</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#虚幻引擎项目文件结构">虚幻引擎项目文件结构</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ue-的数据缓存">UE 的数据缓存</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#c类的层级结构">C++类的层级结构</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#vs-中的解决方案solution）">VS 中的解决方案（Solution）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#反射系统reflection-system）">反射系统（Reflection system）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#垃圾回收系统garbage-collection-mechanism）">垃圾回收系统（Garbage Collection mechanism）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#uobject类与智能指针">UObject类与智能指针</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ubt和uht">UBT和UHT</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#虚幻引擎中的数据类型">虚幻引擎中的数据类型</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#runtime">Runtime</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三ue-with-c基本使用">三、UE with C++：基本使用</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#基本流程">基本流程</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#例子1创建object类">例子1：创建Object类</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#头文件">头文件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#源文件">源文件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#蓝图">蓝图</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#例子2创建actor类">例子2：创建Actor类</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#头文件-2">头文件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#源文件-2">源文件</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#注意事项">注意事项</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四引入第三方库">四、引入第三方库</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#例子">例子：</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#五蓝图项目调用chatgpt-api">五、蓝图项目：调用ChatGPT API</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#基本步骤">基本步骤</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#umg-的使用">UMG 的使用</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4-注意事项">4. 注意事项</a></div><ul class="outline-children"></ul></li></div></div><div id='write'  class=' first-line-indent'><h1 id='1-游戏引擎基础'><span>1. 游戏引擎基础</span></h1><h2 id='一简介'><span>一、简介</span></h2><p><span>虚幻引擎（Unreal Engine）是由美国 Epic 公司开发的一款游戏引擎。除了制作游戏以外，还能够制作逼真的立体模型、动画CG、电影效果等</span></p><p><span>使用游戏引擎开发游戏，主要有两个方面的开发：</span></p><ul><li><p><span>编程开发：游戏主逻辑、物体行为等</span></p></li><li><p><span>美术开发：场景地图、过场动画、模型和材质、特效等</span></p></li></ul><p><span>不过美术开发更多地还是在其他专业软件如 Blender、C4D 中进行</span></p><p><span>虚幻引擎默认项目缓存在C盘，就算在创建时把项目路径设置在其他位置，若不修改默认缓存，则仍会占用大量C盘空间。可在epic launch的</span><code>设置--编辑保管库--缓存位置</code><span>修改</span></p><h2 id='二基本术语'><span>二、基本术语</span></h2><p><span>基本术语主要来自于Epic的Unreal Engine官方文档，以术语的英文首字母进行排序</span></p><ol start='' ><li><p><span>Actor：一个物体，或者对象。所有可以放入关卡的对象都是一个Actor，比如摄像机、静态网格体、玩家起始位置的标记等。Actor支持三维变换，例如平移、缩放和旋转等，可以通过游戏逻辑代码（C++或蓝图）创建或销毁Actor</span></p></li><li><p><span>AI：人工智能的简称，是由一组程序指令而非人工输入控制的行为。这里的AI是广义上的AI，不仅仅是“深度”的AI，所有 NPC 都是由AI控制的</span></p></li><li><p><span>AIController：AI控制器，是控制游戏内AI物体（如NPC）的装置。</span></p></li><li><p><span>动画（Animation）</span></p></li><li><p><span>动画序列（Animation Sequence）</span></p></li><li><p><span>资产（Asset）是用于构建游戏的元素，比如各种材质、静态网格体、纹理、粒子系统等。各资产都保存在单独的.uasset文件中</span></p></li><li><p><span>蓝图（BluePrint）：全称：蓝图可视化脚本（BluePrint Viusal Scripting），是一种功能齐全且强大的脚本系统，允许你在虚幻编辑器（Unreal Editor）中通过基于节点的界面来创建游戏元素。可以用它在引擎中定义面向对象的类或object。使用虚幻引擎时，蓝图定义的类一般也统称蓝图</span></p></li><li><p><span>蓝图编辑器（Blueprint Editor）是一个基于节点的图标编辑器，它还有几个其他窗口，可以提供针对性的信息，并允许对蓝图及其图标进行其他修改</span></p></li><li><p><span>蓝图接口（Blueprint Interface）是一种资产类型，可以在其中创建未经定义的函数，任何蓝图都可以实现这个接口，然后为这些函数实现自己的定义。它是蓝图之间相互通信的一种方式，特别是当一个蓝图与许多其他蓝图交互时</span></p></li><li><p><span>蓝图宏库（Blueprint Macro Library）是一个蓝图容器，它包含一组宏或一组完整的图标，可以作为节点防止在其他蓝图中。</span></p></li><li><p><span>笔刷（Brush）是一种Actor，用于描述一个3D几何体，例如方形或圆形，可以简单理解为画下的形状就是之前定义的形状的特殊画笔，可以快速、粗略地创建关卡</span></p></li><li><p><span>Cascade：是虚幻编辑器中的粒子系统编辑器，可以通过在内容浏览器（Content Browser）中创建或打开一个粒子系统来访问Cascade。在这里面，可以添加、修改和删除例子发射器（Particle Emitter），向粒子发射器添加模块，以及修改模块属性</span></p></li><li><p><span>类型转换（Casting）本质上是获取某个特定的Actor（或类），然后将它视作另一种类进行处理，类型转换可以成功也可以失败，如果成功则就能访问目标Actor的特有函数和功能</span></p><p><span>例如，你希望在游戏中创建多种体积，让它们以不同方式影响玩家。其中一个体积是 </span><strong><span>火焰</span></strong><span>，它会不断伤害玩家生命值。当玩家遇到关卡中的体积时，你可以将该体积 </span><strong><span>转换</span></strong><span> 成 </span><strong><span>火焰</span></strong><span>，以此访问它的&quot;伤害玩家&quot;函数。</span></p><ul><li><p><span>如果转换成功，表示玩家站在火中，那么玩家生命值就会开始减少。</span></p></li><li><p><span>如果转换失败，表示玩家站在其他体积中，那么生命值不会减少。</span></p></li></ul></li><li><p><span>角色（Charactor）是Pawn Actor的子类，旨在用作玩家角色。角色子类包括：碰撞设置、双足运动的输入绑定、用于控制运动的附加代码</span></p></li><li><p><span>过场动画序列（cinematic sequence）也称过场动画，是游戏中播放的动画，一些过场动画会暂停游戏进程，并会设计摄像机视口中的一个或多个改变，这些叫做剧情动画（cutscene）。过场动画序列可以由Matinee创建和控制，也可以导入自外部应用程序中创建的预渲染视频，即过场动画分为：实时渲染和预渲染视频</span></p></li><li><p><span>类（Class）用于定义虚幻引擎中Actor或对象的行为和属性，类可以被继承，这意味着某个类可以从其父类（衍生或派生出该类的类）获取信息，然后再将信息传递给子类。类可以用C++代码或蓝图创建</span></p></li><li><p><span>蓝图类（Blueprint Class）是一种资产，内容创建者可以使用它在现有的游戏类上轻松添加功能。它通常简称为</span><em><span>blueprint</span></em><span>。蓝图在虚幻编辑器中以可视化方式而非代码方式创建，并作为资产保存在内容包中，它们本质上是在定义一种新的类或Actor，蓝图的实例可以放置在地图中，其行为与其他类型的Actor类似</span></p></li><li><p><span>碰撞（Collision）是在物理模拟过程中防止对象重叠的一种编程方式，给人一种实心物体的错觉，它也可以值碰撞网格体，即集合体的简化版本，通常以不可见的壳体或外壳的形式存在于网格体周围，这种简化有助于提高性能，允许具有大量多边形计数的复杂对象使用更为简单的几何体来计算他们之间的碰撞，从而加快运行速度</span></p><ul><li><p><span>对象需要一个碰撞面才能模拟物理计算</span></p></li><li><p><span>计算机图形学中，所显示的多边形，或复杂几何体是由无数顶点和三角形绘制的，一般的三维物体都是空心的，只有一个由三角形和顶点组成的外壳</span></p></li></ul></li><li><p><span>组件（Component）是可以添加到Actor上的一项功能，当为Actor添加组件后，该Actor就获得了该组件提供的所有功能，例如：旋转移动组件：能够使你的Actor四处旋转，可以理解为一个新功能</span></p></li><li><p><span>组件模式（Components Mode），可以将组件添加到蓝图中，管理现有组件的详细信息，并安排组件，组件模式中的组件列表具有层级性。组件模式是三种模式之一，其他两种为：默认模式（Default Mode）和图表模式（Graph Mode）</span></p></li><li><p><span>构造脚本（Construction Script），看见“构造”两字就应该想到些什么。构造脚本在创建蓝图类的实例对象时，执行初始化操作</span></p></li><li><p><span>内容浏览器（Content Browser）是虚幻编辑器的主要区域，用于子啊虚幻编辑器中创建、导入、组织、查看及修改内容资产。它还提供了管理内容文件夹和对资产执行其他操作的能力（例如重命名、移动、复制等）。另外，它还可以搜索游戏中所有资产并与其进行交互</span></p><ul><li><p><span>在内容浏览器中，可以按类型对资产进行搜索和分类，也可以通过筛选器（Filters）下拉列表中选择特定类型的资产，或者搜索资产（Search Assets）框键入文本，以筛选资产视图</span></p></li></ul></li><li><p><span>控制器（Controller）是一种可以控制Pawn（或Pawn的派生类，如Charactor）从而控制器动作的非实体Actor。人类玩家通过使用PlayerController控制Pawn，而AIController则对它们控制的Pawn施加人工智能效果。控制器使用Possess函数控制Pawn，用Unpossess放弃控制Pawn</span></p></li><li><p><span>数据引脚（Data Pins）用于将数据导入节点或从节点输出数据，数据引脚只能与同类型的相连接，可以连接到同一类型的变量（这些变量有自带数据引脚），也可以连接到其他节点上同类型数据引脚。与执行引脚一样，数据引脚在未连接到任何对象时会显示为空心，连接对象后则是实心</span></p><ul><li><p><img src="assets/datapins.png" style="zoom: 67%;" /></p></li><li><p><span>节点可以有任意数量的输入或输出数据引脚，函数调用（Function Call）节点的数据引脚对应于相应函数的参数和返回值</span></p></li></ul></li><li><p><span>默认模式（Default Mode）会显示</span><code>_blueprint_</code><span>的所有属性，包含其中包含的变量、本地代码中定义的组件以及复制、导航和碰撞属性。在创建蓝图类新实例时，将使用默认模式下为这些属性设置的值</span></p></li><li><p><span>细节面板（Details panel）主要指的是关卡编辑器（Level Editor）中的一个面板，其中包含各个元素的属性信息。当然，虚幻引擎中的许多工具和编辑器都包含细节面板：关卡编辑器、Matinee、Persina等</span></p></li><li><p><span>导演组（Director Group）是一种控制摄像机视点的特定类型Matinee组，可以使用导演组来切换镜头之间的摄像机视点，每个Matinee序列只能有一个导演组</span></p></li><li><p><span>事件（Event）</span></p></li><li><p><span>事件图表（EventGraph）包含一个节点图表，节点图标使用事件和函数调用来执行操作，从而响应与该蓝图有关的游戏事件。它添加的功能会对该蓝图的所有实例产生影响。你可以在这里设置交互功能和动态响应。</span></p></li><li><p><span>执行引脚（Execution pins）用于将节点连接在一起，以创建执行流程。当输入执行引脚被激活时，节点将被执行，一旦节点的执行完成，他将激活一个输出执行引脚来继续执行流程。执行引脚在未连接的状态显示为空心的状态，连接到另一个之心引脚时则显示为实心。函数调用节点始终只有一个输入执行引脚和一个输出执行引脚，因为函数只有一个进入点和一个退出点。其他类型的节点可以有多个输入执行引脚和输出执行引脚，从而允许不同的行为，具体取决于哪个引脚被激活</span></p><ul><li><p><img src="assets/exepins.png" style="zoom: 80%;" /></p></li></ul></li><li><p><span>FBX文件：是Autodesk开发的一种文件格式，该文件格式用于静态网格体（Static Meshes）、骨架网格体（Skeletal Meshes）和动画序列（Animation Sequence）导入虚幻编辑器</span></p></li><li><p><span>流程控制（Flow Control）操作允许在蓝图中显式控制执行流程，这种控制可以表现为如下形式：根据某个条件是否为阵来选择要执行的图表分支、多次执行某个特定分支、按特定顺序执行多个分支等。默认的流程控制操作包括分支（if语句）、循环（for 和while）、门和序列。</span></p></li><li><p><span>框架（Framework）系统构成了虚幻引擎游戏逻辑（gameplay）的基础。游戏逻辑框架可以划分为三大类：游戏类型、玩家和界面。每个类别负责游戏逻辑的某个特定方面，每个类别又由一个多多个系统和类组成，这些系统和类定义了不同的部分以及他们的协作方式</span></p></li><li><p><span>游戏模式（GameMode）类负责设置当前的游戏规则，包括：</span></p><ul><li><p><span>玩家如何加入游戏</span></p></li><li><p><span>是否可以暂停游戏</span></p></li><li><p><span>任何与游戏相关的行为，如获胜条件</span></p></li><li><p><span>可以在“项目设置”中设置默认的游戏模式，也可以关卡中覆盖这些设置。无论如何实现游戏模式，每个关卡只能有一个游戏模式</span></p></li><li><p><span>在多人游戏中，游戏模式只存在服务器上，规则会被复制（发送）到所有联网的客户端</span></p></li><li><p><span>相关的C++类是GameMode</span></p></li></ul></li><li><p><span>游戏状态（GameState）是一种容器，保存着你希望在游戏中复制给每个客户端的信息，简而言之，它表示每个联网玩家的“游戏状态”。</span></p><ul><li><p><span>游戏状态包含的部分信息包含：</span></p></li><li><p><span>游戏分数、比赛是否已经开始】根据场景中玩家的人数，需要生成多少AI</span></p></li><li><p><span>如果是多人游戏，则每个玩家的电脑上都只有一个游戏状态实例，而服务器的实例为权威实例（即客户端的信息更新来源）</span></p></li><li><p><span>相关的C++类是GameState</span></p></li></ul></li><li><p><span>图表（Graph）以可视化形式展现了特定节点，它显示了图表中包含的所有结点和它们的连接关系。它提供了添加和删除结点、排列结点以及在节点之间创建连线的编辑功能。你还可以子啊图表中设置断点来帮助调试蓝图</span></p></li><li><p><span>蓝图编辑器模式已经移除</span></p></li><li><p><span>组（Group）：在Matinee中，组是一个用于特定Actor的动画和视觉效果的容器。在关卡编辑器中，组是一个组织对象，选定的Actor可以被组合在一起，一遍将他们转化为一个单位</span></p><ul><li><p><span>类似于创建一个文件夹，有关联的Actor放到一起</span></p></li></ul></li><li><p><span>键（key）或关键帧（keyframe）是指特定事件记录下的某个值或多个值，后期将对这些关键帧进行插值并生成曲线，从而产生随时间变化的动画效果</span></p></li><li><p><span>键绑定（keybindings）是自定义的键盘快捷键</span></p></li><li><p><span>销毁z（kill z）是一个z轴方向上的高度值，如果Actor或玩家低于这个高度就会被自动销毁，可以避免玩家因掉出地图而被卡住并无法重生</span></p></li><li><p><span>关卡（level）是用户定义的游戏区域，关卡包含了玩家所能看到的所有内容，例如集合体、pawn和actor等。虚幻编辑器中，每个关卡都被保存为单独的.umap文件，有时也被称为地图。开放世界地图就是一整个大关卡</span></p></li><li><p><span>LOD（levels of details）细节层次，是一个场景优化方案。该技术根据该物体与摄像机之间的距离，合理分配资源来渲染。大部分游戏都会针对一个实例准备多个不同精度的模型，距离远时自动渲染低模以提高性能表现</span></p></li><li><p><span>材质（Material）是应用于网格体从而控制场景视觉效果的资产。总的来说，包括物体表面上的颜色、纹理等各种样式。专业地说，当场景中的光源照射到对象表面时，材质将被用来计算该光源如何与该表面相互作用。</span></p></li><li><p><span>Matinee：该动画工具允许Actor的属性随时间发生变化，还能创建动态游戏逻辑或游戏内的过场动画。该系统基于特殊的轨迹，可以在该轨迹上放置关键帧来设置关卡中Actor某些属性的值。Matinee编辑器类似于用于视频编辑的非线性编辑器，使得视频专业制作人员感觉很熟悉</span></p></li><li><p><span>Matinee Actor：Matinee动画的一种特定实例，作为Actor创建并放置在场景中</span></p></li><li><p><span>Mesh：网格组件（网格体），可以简单理解为一般的模型</span></p></li><li><p><span>迁移工具（Migrate Tool）：内容浏览器包含一个迁移工具，该工具允许你将资产连同相关依赖性资产从一个项目复制到另一个项目。</span></p></li><li><p><span>移动性（Mobility）是静态网格体和光源Actor的一个属性，该属性可以在细节（Details）面板中进行设置，它决定了Actor在游戏中是否可移动，此外，如果是光源Actor，移动性属性还能决定投射的光源和阴影类型。移动性包含：静态（Static）、固定（Stationary）（仅限光源Actor）和可移动（Movable）</span></p><ul><li><p><span>在世界大纲视图（World Outliner）中，Actor的移动性设置由左侧的一个彩色小圆点表示：橙色表示可移动，黄色表示固定，无色表示静态</span></p></li><li><p><span>可移动：对静态网格体而言，表示该资产可以移动，包括开关门、人物走动等都是可移动；对于光源而言，不仅可以调整强度和颜色还可以将其移动位置，如游戏中的太阳</span></p></li><li><p><span>固定：对于静态网格体而言，不能移动，但可以被改变。在被静态或固定光源照射时，会像移动Actor一样被照亮。对于光源而言，可以改变颜色或强度</span></p></li><li><p><span>静态：对静态网格体而言，不能移动但仍可以为其材质设置动画，一般用作装饰，比如一个恒定灯光下的装饰品；对于光源，意味着使用预计算光照贴图，利用间接照明法来照亮物体</span></p></li><li><p><span>可移动类型的Actor通用性最强，但性能影响最大，静态类型的通用性最低，但性能影响最小</span></p></li></ul></li><li><p><span>模式面板：模式（Modes）会针对特定任务，更改关卡编辑器主要行为，例如在场景中移动变换某个资产、雕刻地形、生成植被、创建几何笔刷和体积，以及在网格体上绘制。模式面板包含一组工具，并且这些工具会根据你选择的编辑模式而调整</span></p></li><li><p><span>节点（node）是可视化脚本代码中的基本模块，一般来说可以把他看作一种连接了各种数据或执行连线的图形</span></p></li><li><p><span>object：虚幻引擎中最基本的类，大多数类都继承自object，在虚幻引擎的C++编辑中，UObject是所有Object的基类，包含各类功能，例如垃圾回收等</span></p></li><li><p><span>面板（panel）是UI的一部分，它包含与关卡相关的信息，可以移动、停靠或者拖动成单独的窗口，常见的面板包含：细节面板和内容浏览器</span></p></li><li><p><span>Pawn：是Actor的子类，它可以充当游戏中的化身或人物（例如游戏中的角色）。Pawn可以由玩家控制，也可以由程序AI控制，称为NPC</span></p><ul><li><p><span>当Pawn被控制时，它被视为已被控制（Possessed），否则视为（Unpossessed）</span></p></li></ul></li><li><p><span>Persona：是Unreal中的动画编辑工具集，它是一个用于编辑骨架、骨架网格体、动画蓝图和其他动画资产的系统。在虚幻引擎中大部分动画工作都是在此编辑器中进行的。它是一个多用途的工具，包含各类面板，可以分别实现下列操作：编辑骨架插槽、预览动画序列、设置动画混合空间和蒙太奇、编辑动画蓝图等。</span></p><ul><li><p><span>可以通过双击如何与动画相关的资产（例如骨架网格体、混合空间、动画蓝图等）来打开Persona</span></p></li></ul></li><li><p><span>PhAT是虚幻编辑器中的物理资产（Physics Asset）编辑工具，用于修改骨架网格体Actor（Skeletal Mesh Actors）的物理属性和碰撞属性</span></p></li><li><p><span>物理材质（Physical Materials）用于定义物理对象与场景动态交互时的方式</span></p></li><li><p><span>引脚（Pin）是可视化脚本节点的一部分，引脚可以用导线与其他节点相连。若要执行节点，则必须连接该节点的执行引脚，数据引脚会根据其类型用不同颜色标记，它们的作用是输入数据或将数据输出到其他节点</span></p></li><li><p><span>枢轴点（Pivot point）（或原点）是静态网格体Actor或骨架网格体Actor上的一个点，这个点的位置一般由创建网格体的三维建模软件定义，可以用于对其网格体的位置。枢轴点可以位于对象的中心、底部甚至外部</span></p></li><li><p><span>在编辑器中运行（PIE）是一种模式，在该模式下，可以直接在虚幻编辑器窗口中的指定位置开始运行关卡并进行测试，在该模式下，你体验到的效果和你在游戏中体验到的完全一样，这样你就能测试游戏逻辑，例如测试玩家的控制效果、或者测试玩家是否能触发某些关卡事件</span></p></li><li><p><span>玩家控制器（PlayController）会获取游戏中玩家的输入信息，然后转换为交互效果，每个游戏中至少有一个玩家控制器，玩家控制器通常会控制一个Pawn或角色，将其作为玩家在游戏中的化身</span></p><ul><li><p><span>玩家控制器还是多人游戏中的主要网络交互节点，在多人游戏中，服务器会为游戏中的每个玩家生成一个玩家控制器实例，因为它必须对每个玩家进行网络函数调用，每个客户端只拥有与其玩家相对应的玩家控制器，并且只能使用其玩家控制器与服务器进行通信</span></p></li><li><p><span>相关的C++类是PlayController</span></p></li></ul></li><li><p><span>玩家状态（Player State）表示某个游戏参与者的状态，可以是人类玩家，也可以是模拟玩家的机器人，作为游戏场景的一部分而存在的非玩家类AI不会有玩家状态</span></p><ul><li><p><span>典型的玩家状态包含：名称、血量、分数等</span></p></li><li><p><span>在多人游戏中，所有电脑都保存着所有玩家的玩家状态，并且玩家状态可以将数据从服务器复制到客户端以保持同步，这点和玩家控制器不同，他只会保存在玩家所在的客户端上</span></p></li><li><p><span>相关的C++类是PlayState</span></p></li></ul></li><li><p><span>项目（project）保存着构成游戏所需的所有内容和代码，项目在你的电脑上由许多目录构成，例如蓝图和材质。虚幻编辑器的内容浏览器所展示的目录结构和硬盘上看到的目录结构相同</span></p><ul><li><p><span>每个项目都有一个与之对应的.uproject文件，它是创建、打开或保存项目必须用到的文件</span></p></li></ul></li><li><p><span>旋转工具（Rotate tool）是用于在场景中沿x、y和z轴旋转Actor的变换控件</span></p><ul><li><p><span>unity的第三维（纵轴）用y表示，而虚幻引擎则是用z表示</span></p></li></ul></li><li><p><span>安全帧（safe frame），是Matinee中由视点摄像机的视野定义的视图，将在过场动画中播放</span></p></li><li><p><span>缩放工具（Scale tool）是一个变换控件，可以沿x、y和z轴缩放场景中的Actor</span></p></li><li><p><span>在编辑器中模拟（SIE）：使用模拟（simulate）按钮在当前活动的窗口中启动在编辑器中模拟（Simulate in Editor）会话。在模拟期间，可以完全访问编辑器中的工具，即可以随意修改场景及其内容，甚至放置新建的Actor</span></p></li><li><p><span>骨架网格体（Skeletal Mesh Actor）是一种3D模型资源，可以在外部3D建模程序中进行动画处理，然后导入虚幻编辑器。骨架网格体由两个部分组成：网格体本身和一个分层级的骨架，其中骨骼可以根据3D建模程序规定的规则将网格体变形以创建动画。骨架网格体可以作为资源导入内容浏览器</span></p></li><li><p><span>插槽（Sockets）：通常在游戏中，需要将object附加到角色的骨骼上，里路附在手上的武器和头上的帽子。在这种情况下虚幻引擎会在动画工具集角色（Persona）中创建插槽</span></p></li><li><p><span>sound cue是一种音频资源，其中包含针对音频文件的引用，而音频文件是在已导入项目的外部程序中创建的</span></p></li><li><p><span>静态（static）是三种可能的移动性属性设置之一，此设置可应用于静态网格体和光源组件</span></p></li><li><p><span>静态光源（static lights）是在运行时完全无法更改或移动的光源，这些光源仅在光照贴图中计算，一旦处理完，对性能没有进一步影响。可移动对象不能与静态光源继承，因此静态光源的用途是有限的</span></p></li><li><p><span>静态网格体（Static Mesh）是由一系列多边形构成的集合体的组成部分，缓存在视频存储器中，可以使用显卡进行渲染。这些静态网格体渲染效率更高，因此可以设计得较为复杂而不是特别影响性能。静态网格体缓存在视频存储器中，可以对其进行平移、旋转和缩放，但不能为顶点设置动画</span></p><ul><li><p><span>静态网格体是用于虚幻引擎中创建关卡世界场景的几何体基础单元，它们是在第三方建模软件（如maya、3dsMax等）创建的3D模型。</span></p></li><li><p><span>注意：静态网格体没有骨骼，其本身不能设置动画，但是我们可以整体移动他，静态网格体可用于门、电梯等可移动对象，刚体物理对象（如石头）、植被等</span></p></li></ul></li><li><p><span>固定（stationary）是三种可能的移动性属性设置之一，此设置仅可用于光源组件</span></p></li><li><p><span>固定光源（stationary lights）是保持固定位置不变的光源，但你可以改变光源的亮度和颜色等，这时和静态光源的主要不同之处。</span></p><ul><li><p><span>静态光源在设置之后，gameplay期间不会发生任何变化</span></p></li><li><p><span>但是，如果在运行时更改亮度，注意它只影响直接光照，间接光照（反射）不会改变，因为它是在光照系统（lightmass）中预先计算的</span></p></li><li><p><span>三种光源的可移动性中，固定光源一般拥有最好的品质、中等的变化程度、中等的性能开销</span></p></li></ul></li><li><p><span>切线句柄（tangent handle）是在关键帧编辑中用于调整连接两个关键帧的线条形状和曲线的工具</span></p></li><li><p><span>纹理（Textures）是材质中使用的图像，它们被映射至应用了该材质的表面，纹理被直接应用（例如基本颜色纹理），或者纹理像素（</span><em><span>texels</span></em><span>）的值在材质中被用作遮罩或其他算法。</span></p></li><li><p><span>时间光标（time cursor）是时间轴底部的黑色竖条，用于指示动画播放的时间位置。可以拖动事件光标以在三维视口中预览动画</span></p></li><li><p><span>时间轴（timeline）是Matinee中对时间的可视化表示。可以使用它来设置和修改关键帧动画的键并预览你的电影。它与蓝图中的时间轴节点不同</span></p></li><li><p><span>时间轴节点（Timeline Nodes）是蓝图中的特殊节点，允许你快速设计出基于时间的动画效果，并在时间轴上设置关键帧，触发事件，或调整浮点数、颜色等</span></p><ul><li><p><span>可以直接在蓝图编辑器中编辑时间轴，只需要在图表（Graph）选项卡或我的蓝图（My Blueprint）选项卡中双击时间轴（Timeline）。他们呢主要用于处理一些简单的、非动画任务，例如开门、改变光源或在场景中对Actor执行其他基于相关的操作</span></p></li></ul></li><li><p><span>虚幻前端（Unreal Frontend）（UFE）是一个用来简化和加快游戏日常开发及测试任务的工具，它可以用来准备游戏的构建版本，将游戏部署到设备上，以及游戏启动。</span></p></li><li><p><span>视口（viewport）是关卡编辑器中可视化关卡的界面，在构建关卡时，你可以使用3D视口、2D视口 或同时使用两者，视口包含了可帮助你查看所需数据的各类工具</span></p></li><li><p><span>体积（Volumes）是一种存在边框的3D空间，会根据施加给他们呢的效果产生不同的用途，例如：</span></p><ul><li><p><span>阻挡体积（Blocking Volumes）：不可见的体积，放置Actor穿过他们</span></p></li><li><p><span>伤害生成体积</span></p></li><li><p><span>触发体积</span></p></li></ul></li><li><p><span>控件（widget）是在关卡编辑器中的一种可视化工具，控件通常会在视口中以某种形状表示，例如移动（Move）控件就包含红色、绿色、蓝色箭头，分别指x、y、z轴</span></p></li><li><p><span>导线（wire）用于将可视化脚本（如蓝图）图表中的两个节点连接起来，你可以拖动节点上的引脚来创建导线，可以将导线从一个节点的引脚拖动到另一个节点的引脚，也可以从引脚拖动至空白区，然后再选择节点添加到图表然后连接。导线和引脚同样有颜色</span></p></li><li><p><span>世界场景（World）是一个容器，包含了游戏中所有关卡，它可以处理关卡流送，还能创建动态Actor</span></p></li></ol><p>&nbsp;</p><h1 id='2-虚幻基础'><span>2. 虚幻基础</span></h1><h2 id='一虚幻界面'><span>一、虚幻界面</span></h2><h4 id='界面概览'><span>界面概览</span></h4><p><span>以虚幻5为例</span></p><p><img src="assets/ui.png" referrerpolicy="no-referrer"></p><figure class='table-figure'><table><thead><tr><th><span>编号</span></th><th><span>名称</span></th><th><span>说明</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>主菜单（Menu Bar）</span></td><td><span>使用这些菜单访问编辑器专用的命令和功能</span></td></tr><tr><td><span>2</span></td><td><span>主工具栏（Main Toolbar）</span></td><td><span>包含虚幻引擎中最常用工具和编辑器的快捷方式，以及进入播放（play）模式（在虚幻编辑器中运行游戏）和用于将项目部署到其它平台的快捷方式</span></td></tr><tr><td><span>3</span></td><td><span>关卡视口（Level Viewport）</span></td><td><span>显示关卡的内容，如摄像机、Actor、静态网格体等</span></td></tr><tr><td><span>4</span></td><td><span>内容侧滑菜单（Content Drawer）</span></td><td><span>旧称内容浏览器，可在其中访问项目中的所有资产</span></td></tr><tr><td><span>5</span></td><td><span>底部菜单栏（Botton Toolbar）</span></td><td><span>包含命令控制台、输出日志和派生数据功能的快捷方式，此外还显示源控制状态</span></td></tr><tr><td><span>6</span></td><td><span>大纲（Outline）</span></td><td><span>显示关卡中所有内容的分层树状图</span></td></tr><tr><td><span>7</span></td><td><span>细节面板（Details）</span></td><td><span>选择Actor时显示。显示该Actor的各种属性，如变换（Transform）（在关卡中的位置）、静态网格体、材质和物理设置。此面板显示不同设置，具体取决于在关卡视口中所选择的内容</span></td></tr></tbody></table></figure><p>&nbsp;</p><h4 id='各面板详细说明'><span>各面板详细说明</span></h4><h6 id='菜单栏'><span>菜单栏</span></h6><p><span>虚幻引擎中的每一个编辑器都有一个位于该编辑器窗口右上角或屏幕顶部的菜单栏（Menu Bar）。主要功能包含：File、Edit、Tool、Window、Help等</span></p><h6 id='主工具栏'><span>主工具栏</span></h6><p><span>（Main Toolbar）包含虚幻编辑器中部分最常使用的工具和命令的快捷方式，其中包含以下几个区域：</span></p><p><img src="assets/maintoolbar.png" referrerpolicy="no-referrer"></p><ol start='' ><li><p><span>点击保存当前打开的关卡</span></p><ul><li><p><span>只能保存当前关卡，用的最多的是内容浏览器的保存所有关卡</span></p></li></ul></li><li><p><span>模式选择：包含的快捷方式用于再不同模式之间快速切换，以编辑关卡中的内容：</span></p><ul><li><p><span>选择编辑</span></p></li><li><p><span>地形编辑</span></p><ul><li><p><span>按shift是反操作，如shift+雕刻就是向下雕刻出坑来</span></p></li></ul></li><li><p><span>植被编辑</span></p><ul><li><p><span>先添加植被到这个小窗口中，然后可以根据具体需要调整参数（尤其是密度，默认是很高的）</span></p></li><li><p><span>注意选定的物体，可以选择多种不同的一起编辑，一起绘制（左上角的小对勾）</span></p></li><li><p><span>套索可以批量选择场景中的物体，但只能选择在小窗里选定的物体</span></p></li><li><p><span>对齐到法线：比如屋顶是斜的，则放上去的东西也是斜的</span></p></li><li><p><span>实例设置-剔除距离：在此距离之外该物体会不可见，即节省性能</span></p></li><li><p><span>注意一开始无论是植被还是石头都是没有碰撞的，要加上碰撞，需要：</span></p><ol start='' ><li><p><span>在该植被下方的设置界面，设置碰撞预设，常用（block all）阻挡所有物体</span></p></li><li><p><span>点击植物图像（需要在网格体中点击），然后在碰撞一栏添加碰撞。但是直接添加碰撞是非常不精准的，这时可以在碰撞-自动凸包分解，调节凸包数量等，以此达到非常好的碰撞效果，但性能开销也会加大</span></p></li></ol></li></ul></li><li><p><span>网格体绘制</span></p></li><li><p><span>破裂编辑</span></p></li><li><p><span>笔刷编辑</span></p><ul><li><p><span>只能对笔刷放置得到的物体进行编辑，对静态网格体是无效的</span></p></li></ul></li><li><p><span>相比虚幻4，虚幻5“构建”选项移除了，即会默认自动进行光照烘焙</span></p></li></ul></li><li><p><span>内容快捷方式：包含用于添加和打开编辑器中常见内容类型的快捷方式，主要有以下三种快捷方式（Shortcut）：</span></p><ul><li><p><span>创建（create）：从常见资产列表中进行选择，以快速添加到关卡，此外还可以在此菜单中访问“放置Actor（Place Actor）”面板，以此将物体，如光源等放置到关卡中</span></p></li><li><p><span>蓝图（blueprint）：创建和访问蓝图</span></p></li><li><p><span>过场动画（cinematics）：创建关卡序列或主序列过场动画</span></p></li><li><p><span>此外，放置Actor面板就是虚幻4中的笔刷工具，点开之后就可以放置几何体，并在细节面板编辑笔刷，Additive增加（创建），Subtractive减去：减去也称挖空，前提是这两个都是BSP笔刷的对象。挖空型必须要位于另一个笔刷实体大纲目录的下方才能减去。默认新建一个物体都是在下方。可以在画刷设置的下方，选择排序，更改到最后绘制，这样就能减去</span></p></li></ul></li><li><p><span>播放模式控制：包含用于在编辑器中运行游戏的快捷方式按钮（播放、跳过、停止和弹出）</span></p><ul><li><p><span>模拟和运行：两者都是接近游戏的模式，会运行已经设置好的逻辑，区别在于运行就是常理解的运行，模拟是不获得玩家控制权的运行，即能够以上帝视角看到游戏的运行。在模拟的时候可以获得玩家控制器在，这样就变成运行了</span></p></li></ul></li><li><p><span>平台菜单：包含一系列选项，可以用于配置、准备项目并将其部署到不同的平台，例如台式机或主机</span></p></li><li><p><span>设置：包含虚幻编辑器、关卡编辑器视口和游戏行为的各种设置</span></p></li></ol><h6 id='关卡视口'><span>关卡视口</span></h6><p><span>显示当前打开的关卡内容，在虚幻引擎中打开项目时，项目的默认关卡默认在关卡视口中打开，在这里可以查看和编辑活跃关卡的内容，无论是在游戏环境中、产品可视化应用中还是其他位置</span></p><p><span>关卡视口通常使用两种不同的方式显示关卡的内容：</span></p><ul><li><p><span>视角（perspective）：3D视图，默认的视图，也称透视模式</span></p></li><li><p><span>直角（ortographic）：2D视图，沿着一个主轴俯视，最常用应该就是z轴的俯视吧。也称正交模式。以下为直角视图：</span></p></li></ul><p><img src="assets/orto.png" referrerpolicy="no-referrer"></p><ul><li><p><span>按G键进入游戏模式，会隐藏在真正游戏过程中看不到的东西，如灯光</span></p></li><li><p><span>书签可以记录某个摄像机的位置，如果想回去，使用书签会非常方便</span></p></li><li><p><span>选定某物体后，可切换局部（物体的坐标轴）和世界的坐标轴（总是保持水平的，无论从哪个方向上看都是一个样子），更加方便变换物体</span></p></li><li><p><span>网格对齐：其值的含义为一次移动多少单位或旋转多少角度</span></p></li><li><p><span>光照一项，可以选择不同的光照以及显示线框（所有顶点和线段）</span></p></li></ul><h6 id='内容侧滑菜单内容浏览器）'><span>内容侧滑菜单（内容浏览器）</span></h6><p><span>是文件浏览器窗口，可以显示项目中包含的所有资产、蓝图和其他文件。可以使用内容浏览器来浏览内容、将资产拖动到关卡中、在项目之间迁移资产以及执行其他操作</span></p><p><span>默认情况下内容浏览器在未处于焦点状态下会自动最小化，想要常驻则可以点击右上角的“停靠在布局中”（Dock in Layout）</span></p><p><span>多使用“保存所有”，防止意外崩溃损失所有编辑数据</span></p><p><span>搜索旁边有个小过滤器，可以筛选资产，新建过滤器后，可以单击暂时禁止该过滤，也可以允许多个过滤</span></p><h6 id='底部菜单栏'><span>底部菜单栏</span></h6><p><span>底部菜单栏包含命令控制台、输出日志和派生数据功能的快捷方式，此外还显示源控制状态</span></p><h6 id='大纲'><span>大纲</span></h6><p><span>以前被称为“世界大纲视图”，显示关卡所有内容的分层视图。默认情况下此面板位于虚幻编辑器窗口的右上角</span></p><p><span>除了显示功能外，还可以在此进行以下操作：</span></p><ul><li><p><span>通过点击关联的眼睛（eye）图标，快速隐藏或显示Actor</span></p></li><li><p><span>右键点击该Actor即可访问其上下文菜单（context menu），然年后可以在该菜单中执行其他特定于Actor的操作</span></p></li><li><p><span>创建、移动和删除文件夹</span></p></li></ul><h6 id='细节面板'><span>细节面板</span></h6><p><span>在关卡视口中选择一个Actor之后，细节面板将会显示影响所选Actor的设置和属性。默认情况下，该面板位于虚幻编辑器窗口右侧的大纲视图面板下</span></p><p><span>选定某物体后，细节面板可以手动进行物体移动、放缩、旋转的变换，更加精准</span></p><p>&nbsp;</p><h2 id='二工具和编辑器'><span>二、工具和编辑器</span></h2><p><span>虚幻引擎提供了工具、编辑器和系统组合，用于创建游戏或应用程序</span></p><p><span>虚幻引擎中的部分工具和编辑器是内置的，而其他工具和编辑器则是可选的插件（plugins），这些插件可以根据项目需求来启用或禁用</span></p><ul><li><p><span>工具：用来执行特定小任务的用具，如放置Actor、绘制地形等</span></p></li><li><p><span>编辑器：是完成某一类特定功能的工具集合，和“系统”类似</span></p></li></ul><p><span>以下是将在虚幻引擎中使用的主要工具和编辑器，以及其主要使用场景</span></p><figure class='table-figure'><table><thead><tr><th><span>编辑器</span></th><th><span>使用场景</span></th></tr></thead><tbody><tr><td><span>关卡编辑器</span></td><td><span>Gameplay</span><strong><span>关卡</span></strong></td></tr><tr><td><span>静态网格体编辑器</span></td><td><span>针对</span><strong><span>静态网格体</span></strong><span>，预览外观、碰撞和UV贴图等</span></td></tr><tr><td><span>材质编辑器</span></td><td><span>创建和编辑</span><strong><span>材质</span></strong></td></tr><tr><td><span>蓝图编辑器</span></td><td><span>是使用</span><strong><span>蓝图</span></strong><span>和修改蓝图的地方，这些资产可以用来创建Gameplay元素（如控制Actor或对事件编写脚本），修改材质或执行其他虚幻引擎功能，省去编写C++代码的过程</span></td></tr><tr><td><span>物理资源编辑器</span></td><td><span>使用其创建</span><strong><span>物理</span></strong><span>资产，以配合骨架网格体使用，在实践中，可以使用此方法实现变形和碰撞等物理特性</span></td></tr><tr><td><span>行为树编辑器</span></td><td><span>通过可视化的基于节点脚本系统（类似于蓝图）为关卡中的Actor编写人工智能（这里是</span><strong><span>广义的人工智能</span></strong><span>）脚本的地方，可以为敌人、非游戏角色NPC、载具等创建任意数量的不同行为</span></td></tr><tr><td><span>Niagara编辑器</span></td><td><span>利用由分离</span><strong><span>粒子</span></strong><span>发射器组成的全套模块化粒子效果系统，为每个效果创建特殊效果。可将发射器保存在内容浏览器中，以备后用</span></td></tr><tr><td><span>UMG界面编辑器</span></td><td><strong><span>视觉UI</span></strong><span>创作工具，可以用来创建UI元素，如在游戏内头顶显示、菜单或其他界面相关的图形</span></td></tr><tr><td><span>字体编辑器</span></td><td><span>使用</span><strong><span>字体</span></strong><span>编辑器添加、组织和预览字体资产。可以自定义字体参数，如字体资产布局和提示策略</span></td></tr><tr><td><span>Sequencer编辑器</span></td><td><span>通过专用多轨道编辑器创建游戏</span><strong><span>过场动画</span></strong></td></tr><tr><td><span>动画编辑器</span></td><td><span>编辑骨骼资产、骨骼网格体、动画蓝图，以及其他各种</span><strong><span>动画资产</span></strong></td></tr><tr><td><span>Control Rig编辑器</span></td><td><span>是</span><strong><span>动画工具套件</span></strong><span>，可以用于直接在引擎中操纵角色并实现其动画</span></td></tr><tr><td><span>Sound Cue编辑器</span></td><td><span>虚幻引擎中</span><strong><span>音频播放</span></strong><span>行为在Sound Cue中得到定义，可使用Sound Cue编辑器对其进行编辑，在此编辑器中，你可以组合多个声音资产后混音，一次生成单混音输出</span></td></tr><tr><td><span>媒体播放器</span></td><td><span>使用</span><strong><span>媒体播放</span></strong><span>器来定义媒体文件或URL，以作为虚幻引擎内部播放的源媒体使用。可以定义源媒体播放方式设置，如自动播放、播放速度和循环等，但不能直接编辑媒体</span></td></tr><tr><td><span>nDisplay 3D配置编辑器</span></td><td><span>用于</span><strong><span>虚拟制作和实时事件</span></strong></td></tr><tr><td><span>DMX库编辑器</span></td><td><span>用于</span><strong><span>实时事件</span></strong><span>。DMX含义为数字多路复用</span></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='三ue-基础信息'><span>三、UE 基础信息</span></h2><h4 id='基础操作'><span>基础操作</span></h4><ul><li><p><span>左键单击：选择</span></p><p><span>选中某个物体后（这时不要按住鼠标了）：</span></p><ul><li><p><span>按Q选择</span></p></li><li><p><span>按W移动</span></p></li><li><p><span>按E旋转</span></p></li><li><p><span>按R放缩，鼠标移动到中间时可以对3维方向进行等比例缩放</span></p></li></ul></li><li><p><span>长按左键+alt：围绕这个物体旋转</span></p></li><li><p><span>左键双击世界大纲里面的物体：聚焦，可用于快速移动到某物体</span></p></li><li><p><span>左键长按：左右移动调整视角，前后移动调整距离</span></p></li><li><p><span>右键单击：打开选项</span></p></li><li><p><span>右键长按：360度旋转视角</span></p></li><li><p><span>中键长按：固定视角朝向不变，左右或上下移动</span></p><ul><li><p><span>左右键同时按下等价于按中键</span></p></li></ul></li><li><p><span>中键（滚轮）滚动：放缩</span></p></li><li><p><span>鼠标左键/右键按住+E：向上移动</span></p></li><li><p><span>鼠标左键/右键按住+Q：向下移动</span></p></li><li><p><span>ESC：退出游戏播放（运行）</span></p></li><li><p><span>F11：播放游戏时全屏或退出全屏</span></p></li><li><p><span>ctrl+点击，：在场景中选取多个目标</span></p></li><li><p><span>ctrl+alt+鼠标左键：框选多个目标</span></p></li><li><p><span>alt+拖动模型：快速复制该模型（鼠标必须在某个轴上拖动）</span></p></li><li><p><span>ctrl+拖动：锁定x轴，在x轴上移动模型</span></p></li><li><p><span>ctrl+s：保存资源</span></p></li></ul><h4 id='游戏打包'><span>游戏打包</span></h4><p><span>将游戏打包成在目标平台上可直接运行的文件</span></p><ol start='' ><li><p><span>首先需要确定是否添加了玩家、玩家的出生点是否合理</span></p></li><li><p><span>设置默认加载的关卡和游戏模式</span></p><ul><li><p><span>主工具栏-设置-项目设置-地图和模式，基本都需要手动改一下，这也是为什么不设置直接打包会出现问题，不要打包打错了！！！</span></p></li></ul></li><li><p><span>然后在主工具栏-平台-windows64位</span></p><ul><li><p><span>其中开发版（debug）还包含一些调试组件，可以继续调试，发行版（release）是即将上线的</span></p></li><li><p><span>注意打包的时候若未保存关卡可能会先提示保存关卡（将关卡另存为）</span></p></li><li><p><span>打包之前记得把退出游戏的逻辑做一下，否则就只能强制退出了</span></p></li></ul></li></ol><h4 id='初学者内容包'><span>初学者内容包</span></h4><p><span>虚幻引擎中的初学者内容包自带一些素材，供学习使用，具体为如下分类</span></p><ul><li><p><span>Architecture：建筑实体，例如墙</span></p></li><li><p><span>Audio：音频</span></p></li><li><p><span>Blueprint：蓝图</span></p></li><li><p><span>HDRI：一张hdr演示图</span></p></li><li><p><span>Maps：场景地图</span></p></li><li><p><span>Materials：材质</span></p></li><li><p><span>Particles：粒子等特效</span></p></li><li><p><span>Props：小道具，如椅子、板凳等</span></p></li><li><p><span>Shapes：基本的几何体，如球、立方体等</span></p></li><li><p><span>Texture：纹理</span></p></li></ul><p><span>其中 Material 和 Texture 的区别：</span></p><ul><li><p><span>纹理是材质的一部分，纹理是一个图片，用来描述表面的样子</span></p></li><li><p><span>材质描述物体表面的物理细节，包括纹理、光滑度、金属质感等</span></p></li></ul><h4 id='虚幻工程文件夹的结构蓝图工程）'><span>虚幻工程文件夹的结构（蓝图工程）</span></h4><ul><li><p><span>config：包含了项目设置，键盘输入之类的配置文件</span></p></li><li><p><span>Content：存放引擎或游戏的内容，包含地图、贴图、材质、模型、蓝图等</span></p></li><li><p><span>Intermediate：包含了在编译引擎时生成的临时文件，可直接删除</span></p></li><li><p><span>Saved：包含了自动保存内容，配置文件以及日志文件，可直接删除</span></p></li><li><p><span>.uproject：项目启动程序，打开我们的项目</span></p></li></ul><h4 id='单位和度量'><span>单位和度量</span></h4><p><span>虚幻引擎基本单位是</span><strong><span>厘米</span></strong><span>，即1个虚幻单位 == 现实世界1cm</span></p><p><span>一般在虚幻引擎中见到的小方块都是10cm，默认移动单位也是10cm</span></p><p><span>虚幻里自带的基本人物模型，高度为180cm</span></p><h4 id='文件格式fbxojbabc'><span>文件格式：fbx、ojb、abc</span></h4><p><span>三者都是三维通用模型格式，都支持三个点以上的面，都可以用在几乎所有主流三维软件中</span></p><p><span>区别在于：</span></p><ul><li><p><span>fbx中：可以包含动画、材质特性、贴图、骨骼动画、灯光、摄像机等信息</span></p></li><li><p><span>obj：不包含动画、材质特性、贴图路径、动力学、粒子等信息</span></p></li><li><p><span>abc格式：支持动画、粒子等</span></p></li></ul><h4 id='bsp画刷'><span>BSP画刷</span></h4><p><span>本质就是一个可以自由放置、修改多面体的一个工具，使用方便</span></p><p><span>位置：主工具栏-放置Actor-放置Actor面板-几何体</span></p><p><span>注意，放置actor面板里，只有几何体里的才是笔刷，其他的，包括”形状“，均不是笔刷，全是静态网格体</span></p><p><span>设置笔刷在细节面板，需要先选中笔刷或笔刷得到的物体</span></p><p><span>固体性：</span></p><ul><li><p><span>固体：默认类型，可以阻挡玩家和射弹，在周围画刷中创建BSP分割</span></p></li><li><p><span>半固体：阻挡玩家和子弹，只能是添加型，不会创建BSP分割</span></p></li><li><p><span>非固体：只有视觉效果不会阻挡任何东西，只能是添加型，不会创建BSP分割</span></p></li></ul><p><span>笔刷创建的多面体，可以在细节面板的“几何体”栏，快速选择面，以及”对齐“，使材质不再拉伸（如果已经拉伸了物体，又不想手动去细节面板调长度就能使用），但是要注意对齐方向</span></p><p><span>表面属性：可以将表面的材质等平移、旋转等操作</span></p><p><span>在选择模式-笔刷编辑模式，可以对笔刷得到的几何体进行编辑（对静态网格体无效）。该模式可以针对每一个顶点、每一个面都单独进行编辑。这些功能有的只针对面、或线或点，注意区分</span></p><p><span>画刷编辑中选择匹配的画刷可以选中这个物体的所有面</span></p><p><span>画刷得到的物体，若是形状、材质等都做好了，则可以选中它（可以在大纲里一起选择），然后在笔刷设置里转换成静态网格体，但是注意：若是多个物体一起创建静态网格体，则它们会完全变成一个整体。注意需要设置碰撞（可在做成静态网格体后设置）：具体设置为：选中该静态网格体，然后在细节面板找到静态网格体一栏，双击小图，即可打开静态网格体详情面板进行设置。所有静态网格体都可以这样设置</span></p><h4 id='光源的种类'><span>光源的种类</span></h4><ul><li><p><span>定向光源：平行光，比如太阳光</span></p></li><li><p><span>点光源：从一个点散发出的光线，类似灯泡</span></p></li><li><p><span>聚光源：从一个点发出圆锥形的光源，类似家里的吊灯</span></p></li><li><p><span>矩形光源：类似电脑屏幕这些矩形发出的光源，但性能开销较大，游戏中用的少</span></p></li><li><p><span>天空光照：天光，即把天空想象成一个半球，从半球上的每一点沿法线射来的光线</span></p></li></ul><h4 id='光源的可移动性'><span>光源的可移动性</span></h4><p><span>光源可移动和网格体的可移动性不相同，它指的是：</span></p><ul><li><p><span>可移动：游戏中的完全实时动态光照，完全动态，能在游戏中进行移动和修改，全场景动态阴影，渲染速度最慢</span></p></li><li><p><span>固定：和静态一样无法移动，允许部分烘焙，可以有可移动对象的动态阴影，可在游戏中改变颜色和强度</span></p></li><li><p><span>静态：无法对可移动的模型产生阴影，性能开销最小，无法在游戏中修改参数，完全烘焙光照，只有这种模式需要每次修改了就要在此构建（烘焙）</span></p></li></ul><h4 id='指数级高度雾和体积雾'><span>指数级高度雾和体积雾</span></h4><p><span>指数级高度雾可以营造真实的氛围，包括远处山峰的若隐若现、光线的丁达尔效应、大雾天的路灯等</span></p><p><span>体积雾是指数级高度雾的一个小功能。指数级高度雾可能出现不真实的效果，比如完全看不到房子但却能看到玻璃材质的窗户，这个时候就可打开体积雾。注意添加体积雾非常吃性能</span></p><h4 id='ue-中游戏的层级结构划分'><span>UE 中游戏的层级结构划分</span></h4><ul><li><p><span>项目（Project）是虚幻引擎中最高级别的组织单位，一个项目可以包含多个关卡</span></p></li><li><p><span>世界（World）是游戏中的虚拟场景，是所有关卡的父级和容器，也是游戏中所有元素的根容器</span></p></li><li><p><span>场景（Sence）用来指代游戏世界的一个特定区域或游戏场景，一个场景可包含多个关卡</span></p></li><li><p><span>关卡（level）是游戏世界的一部分，可以包含场景、地图、角色等游戏元素。每个关卡有且仅有一个关卡蓝图。同时，一个关卡可以包含多个子关卡，但子关卡中没有关卡蓝图</span></p></li><li><p><span>地图（Map）是关卡中的一种资源，属于关卡的一部分</span></p></li><li><p><span>世界分区（World Partition）是虚幻引擎中用于处理大型开放世界的一种技术，将游戏世界分成许多小区块，每个区块成为世界分区。只有玩家所在的附近区域才会被加载和处理，可以提高游戏性能和加载速度，同时支持大规模游戏地图</span></p></li></ul><p>&nbsp;</p><h2 id='四虚幻-5-新技术'><span>四、虚幻 5 新技术</span></h2><h4 id='nanite虚拟几何体'><span>Nanite：虚拟几何体</span></h4><p><span>是LOD技术的进一步发展。它允许开发者直接导入高分辨率的3D模型，并通过如下原理进行极低性能成本的即时渲染：</span></p><ol start='' ><li><p><span>细节流式传输：Nanite 能根据视图距离和视角动态调整模型的细节级别，只渲染玩家可见的细节，并通过对传统LOD的优化和引入新的减面算法，使得LOD模型更新时平滑过渡</span></p></li><li><p><span>消除手动优化：开发者无需手动创建多级细节模型或将细节烘焙到法线贴图中</span></p></li></ol><h4 id='lumen动态全局光照'><span>Lumen：动态全局光照</span></h4><p><span>一种全动态全局光照的解决方案，能实时计算场景中的间接光照，可以认为是软件模拟的低精度光追，能生成逼真的光照效果，其优势在于：</span></p><ol start='' ><li><p><span>动态适应性：场景中的直接光照发生变化时，Lumen 能实时更新间接光照</span></p></li><li><p><span>无需烘焙：开发者无需手动编写光照贴入UV或等待烘焙，可以直接在编辑器中调整光照，并实时看到最终结果</span></p></li></ol><h4 id='megalights'><span>MegaLights</span></h4><p><span>虚幻 5.5 中所引入的一项全新光照技术，能够支持场景中使用高达百万级别的动态光源，并生成逼真的区域阴影，而不会显著影响性能</span></p><p>&nbsp;</p><h1 id='3-蓝图与cpp'><span>3. 蓝图与cpp</span></h1><p><span>蓝图和C++是虚幻引擎两种开发模式，其中C++是根本，蓝图是建立在C++之上的可视化界面</span></p><h2 id='一蓝图blueprints）'><span>一、蓝图（Blueprints）</span></h2><h4 id='概念'><span>概念</span></h4><ul><li><p><span>蓝图本质上是可视化编程，是虚幻引擎特色之一，它通过设置不同节点和按照特定逻辑连接它们，使得初学者不需要接触C++代码即可构建目标逻辑，方便了开发。但蓝图终究是“表面”，要想深入学习，必须接触代码。此外，当游戏逻辑过于复杂时，蓝图往往也会变得十分复杂</span></p></li><li><p><span>蓝图不是类，蓝图类才是通常意义上理解的类，通过蓝图类做出来的东西都是一个个实例对象</span></p></li></ul><h4 id='操作'><span>操作</span></h4><ul><li><p><span>新建项目时选择蓝图开发</span></p></li><li><p><span>可在主工具栏-蓝图列表-打开关卡蓝图</span></p></li><li><p><span>关卡蓝图中左键移动选中的节点，右键移动蓝图平面</span></p></li><li><p><span>要在蓝图中为某个物体添加功能（比如碰撞盒子添加碰撞），需要先选中该物体，然后在关卡蓝图中右键才会出现有关操作</span></p></li><li><p><span>一般流程：选中物体-回到蓝图-右键创建该物体的引用-根据想要实现的功能创建新节点-设置好节点的参数-与其他物体的节点相关联-调整细节-完成</span></p></li><li><p><span>更改蓝图参数后每次都需要编译</span></p></li><li><p><span>虚幻引擎汉化越来越好，在关卡蓝图中搜索节点，大部分节点搜索时用中英文均可</span></p></li></ul><h4 id='节点nodes）和引脚pins）'><span>节点（Nodes）和引脚（Pins）</span></h4><p><span>节点和引脚是蓝图中的基本组件，不同节点之间通过不同引脚相连，形成数据流和游戏逻辑。此外，还有注释等其它元素。</span></p><p><img src="assets/blueprint.png" referrerpolicy="no-referrer"></p><p><span>一个具体的节点可以同时被划分为多个类别，主要节点的种类：</span></p><ol start='' ><li><p><span>功能节点：执行数据的操作和计算，一般是调用函数的节点</span></p></li><li><p><span>事件节点：响应游戏中的事件，如玩家输入、碰撞事件等</span></p></li><li><p><span>流程节点：控制游戏逻辑（蓝图）的流程，主要用于流程控制，并可进行功能节点、事件节点等其它节点的调用，其中的代表为</span><em><span>事件开始运行</span></em><span>节点，该节点往往作为关卡蓝图的开始节点：</span></p><ul><li><p><img src="assets/start.png" referrerpolicy="no-referrer"></p></li><li><p><span>该种类节点以具有五边形白色曲线所连接的流程线为特点，没有这种接口的节点只能被调用</span></p></li><li><p><span>只有这种节点开头，整个流程才能走起来，不然后面的节点都无法正常运行</span></p></li><li><p><em><span>事件开始运行</span></em><span>不仅是流程节点也是事件节点</span></p></li></ul></li><li><p><span>值节点：存储和提供数据值，如变量、常量等。此类节点往往只有一个输出引脚</span></p></li><li><p><span>转换节点：将一个对象转化为另一个对象</span></p></li></ol><p><span>除了上述节点，可自行编写函数并将其转化为节点，从而作为自定义节点进行调用</span></p><p><span>引脚的种类和所传递数据的数据类型有关，如下：</span></p><ol start='' ><li><p><span>基本数据类型：bool、int、float、string等</span></p></li><li><p><span>复合数据类型：vector、rotator（旋转）、transform（变换）等</span></p></li><li><p><span>对象类型：Actor（游戏对象）、component（组件）、class</span></p></li><li><p><span>其他类型：color、texture、sound等</span></p></li></ol><p><span>不同种类的引脚颜色是不同的，无法直接连接</span></p><h4 id='时间轴结点'><span>时间轴结点</span></h4><p><span>蓝图中某些节点（如时间轴）可以双击点开，进一步设置</span></p><p><span>时间轴设置：先建立轨道，然后右键添加关键帧（第一个关键帧一般打在0时刻的位置），时间就是关键帧所在的时间点，值就是这个时间轴的事件的值，比如要门旋转5度，值就是5。甚至可以设置平滑切线，缓入缓出</span></p><p><span>按 F 聚焦，轨道上所有关键帧都会进入界面</span></p><p><span>一般需要把时间轴长度设置成关键帧的长度，不然如果需要反向播放这个操作的话，会有“前摇”或“后摇” </span></p><p><span>注意轴的位置，比如设置旋转85度，但触发后只动了一点点，这时候就可能是轴相对位置变了，设置成5度反而能达到预期效果</span></p><p><span>右键事件节点可以将三个轴拆分成单独的，然后使用时间轴节点新建多个轨道，这样就可以对每个轴单独进行设置，这个时候每个轴的值就不用设置了，因为时间轴里的设置会进行覆盖</span></p><p><span>单独对某个物体（实例）设置蓝图逻辑，当场景中存在很多这样的实例时，就必须把这个蓝图逻辑写到类中去</span></p><h4 id='其它常用节点'><span>其它常用节点</span></h4><ul><li><p><span>设置游戏开始、暂停：Set Game Paused</span></p></li><li><p><span>鼠标的显示和隐藏：ShowMouseCursor节点（必须获取角色控制器）</span></p></li><li><p><span>游戏退出：Quit Game节点</span></p></li><li><p><span>播放（直接搜播放）：包含音频、动画等播放</span></p></li><li><p><span>print：可以在屏幕左上角打印文本或字符串啥的，但仅供测试使用</span></p></li><li><p><span>append附加系列蓝图，直接搜append，用于各种元素的合并</span></p></li><li><p><span>reate widegt系列：创建控件，可具体选择创建UMG控件，注意：必须接添加到视口节点，且value和目标值要相连</span></p></li></ul><p><span>此外，虚幻引擎也可以安装插件，以获取更多功能。比如在虚幻商城里安装varest插件后，可使用json等数据类型，并发送HTTP请求</span></p><ul><li><p><span>make json：创建json数据</span></p></li><li><p><span>construct json request：创建json请求，目标为Varest系统</span></p></li><li><p><span>set request object：创建请求主体</span></p></li><li><p><span>set header：创建请求头，可多次创建（不需要分支）</span></p></li><li><p><span>apply url：发送请求，return即返回的数据</span></p></li></ul><p><span>在虚幻商城里安装 readlocaltxt 这个插件后，可使用五个常用的和 txt 有关的节点，如readtxt、createtxt等，直接搜txt即可弹出节点，默认文件位置在存放引擎的位置</span><code>UE_5.1\Engine\Binaries\Win64\</code><span>里面</span></p><h4 id='蓝图类'><span>蓝图类</span></h4><p><span>蓝图类即将类蓝图化，能在蓝图中轻松调用</span></p><p><span>重要的通用蓝图类：</span></p><ul><li><p><span>Acotr：是一种可以在世界中放置或动态生成的对象</span></p></li><li><p><span>Pawn：是可以被控制的Actor，且可以接收来自Controller的输入，例如：象棋中的象棋子</span></p></li><li><p><span>角色：是Pawn的一种类型，增加了可以四处走动的功能（注意四处走动是比可移动更高级的）</span></p></li><li><p><span>玩家控制器：PlayController是Actor的一种子类，负责控制玩家所使用的Pawn</span></p></li><li><p><span>游戏模式基础：GameModeBase定义了正在进行的游戏、其规则、得分一级游戏类型的其他方面</span></p></li><li><p><span>Actor组件：ActorComponent是一种可复用组件，能被附加到任意Actor上</span></p></li><li><p><span>场景组件：SceneComponent是一种组件，能够进行场景变换并可被附加到其他场景组件下</span></p></li></ul><h4 id='一个蓝图例子开关门'><span>一个蓝图例子：开关门</span></h4><p><img src="assets/ocdoor.png" referrerpolicy="no-referrer"></p><p><span>实现按键 E 开关门的蓝图</span></p><ul><li><p><span>gate节点：此门非彼门，虽然叫“门”，但它实际上是一个判断节点，即判断正确就让你通过的这样的一扇门，控制流程节点</span></p></li><li><p><span>启用/禁用输入：获取来自某个控制器的输入，如键盘、鼠标输入。需要获取玩家控制器</span></p><ul><li><p><span>进入时启用，离开时禁止，即离开后按E无效</span></p></li></ul></li><li><p><span>Flip Flot：在A和B之间轮替进行，从A开始，即按第一下是开门，第二下就关门</span></p></li></ul><h4 id='umg'><span>UMG</span></h4><p><span>UMG通信方式：UMG是UI，也是蓝图的一种</span></p><p><span>打开UMG，在图表视图中，我的蓝图--变量，新建一个变量，并把右边的小眼睛打开，然后在下面的细节面板中，把这个变量的“生成时公开”勾选，此时再创建UMG时，会需要传入参数</span></p><p>&nbsp;</p><h2 id='二ue-with-c基础'><span>二、UE with C++：基础</span></h2><p><span>打开虚幻引擎，选择C++开发，在生成项目时将自动打开VS，且VS会自动生成一个项目并在后台搜索项目依赖</span></p><h4 id='蓝图与c的关系'><span>蓝图与C++的关系</span></h4><p><span>蓝图建立在 C++ 代码之上、可以和 C++ 很好的进行协作</span></p><p><span>理论平衡：</span></p><ul><li><p><span>C++由游戏逻辑程序员使用，完成 UE 未封装或需要自定义的功能</span></p></li><li><p><span>蓝图由游戏设计人员使用，完成功能测试、项目迭代、设计其他游戏资源等</span></p></li></ul><h4 id='虚幻引擎项目文件结构'><span>虚幻引擎项目文件结构</span></h4><p><span>项目名称.uproject：可以用文本文档打开，是一个JSON数据结构的文件，里面包含项目的基本信息（如引擎版本）。它默认打开选项是UE，双击打开可打开项目</span></p><ul><li><p><span>config文件夹：配置文件，都是.ini文件，也就是UE中的各种设置</span></p></li><li><p><span>content文件夹：引擎资源文件夹</span></p></li><li><p><span>saves文件夹：临时东西，包含备份文件、自动保存等</span></p></li><li><p><span>.vs文件夹：C++项目独有，用于编写代码时的智能提示等</span></p></li><li><p><span>.sln：C++项目独有，C++解决方案的文件</span></p></li><li><p><span>Binaries：C++项目独有，用于UE编辑器热加载C++类，删除后会重建</span></p></li><li><p><span>Source：C++项目独有，存放C++源文件</span></p></li></ul><h4 id='ue-的数据缓存'><span>UE 的数据缓存</span></h4><ol start='' ><li><p><span>保管库：</span></p><ul><li><p><span>在自己的项目使用其它项目时（如导入UE商城里下的各种场景等），都会在ValutCache文件夹里建立一个副本</span></p></li></ul></li><li><p><span>C盘的AppData部分：</span></p><ul><li><p><span>在local/UnrealEngine里，缓存着一些文件，主要是之前导入的各种特效、模型文件的材质的编译文件，删除后再次导入时需要重新编译</span></p></li></ul></li></ol><h4 id='c类的层级结构'><span>C++类的层级结构</span></h4><p><span>往下是子类，往上是父类</span></p><ol start='' ><li><p><span>Object：存放数据，不能放置在场景（level）中</span></p><ul><li><p><span>有UStaticMesh、UTexture等派生子类</span></p></li></ul></li><li><p><span>Actor：可以防止在场景中，可以被看到</span></p><ul><li><p><span>有ACameraActor、AHUD等派生子类</span></p></li></ul></li><li><p><span>Pawn：可以被控制器（Controller）操控</span></p><ul><li><p><span>有AWheeledVehicle等派生子类</span></p></li></ul></li><li><p><span>Character：具有角色移动组件，具有角色的封装好的一系列功能（跑、游泳等动作）</span></p><ul><li><p><span>有APaperCharacter等派生子类</span></p></li></ul></li></ol><h4 id='vs-中的解决方案solution）'><span>VS 中的解决方案（Solution）</span></h4><ul><li><p><span>是一个组织项目和相关资源的容器。它是一个用于开发和管理多个项目的工作区。在解决方案中，可以包含一个或多个项目（Project），以及可能的配置信息、共享资源、NuGet 包等</span></p></li><li><p><span>解决方案文件（.sln）是一个文本文件，其中包含了解决方案的配置信息以及各个项目之间的关联关系。每个项目则有其自己的项目文件（例如，C# 项目的.csproj文件），其中包含了该项目的构建配置、引用的文件、编译选项等</span></p></li></ul><h4 id='反射系统reflection-system）'><span>反射系统（Reflection system）</span></h4><ul><li><p><span>反射是一种编程语言特性，允许在运行时（Runtime）获取、检查和操作类、方法、属性等代码结构的信息</span></p></li><li><p><span>在虚幻引擎中，反射系统允许开发者在运行时通过代码来查询和操作类、对象和蓝图等元素。这为虚幻引擎提供了强大的动态性和灵活性，使得开发者能够在运行时动态地创建、修改和管理对象</span></p></li></ul><h4 id='垃圾回收系统garbage-collection-mechanism）'><span>垃圾回收系统（Garbage Collection mechanism）</span></h4><p><span>一般垃圾回收由语言自己实现，但C++中并没有实现这一系统，导致可能会有内存泄漏等风险，而这一风险在游戏开发中又非常重要，所以虚幻帮我们实现了这一功能</span></p><h4 id='uobject类与智能指针'><span>UObject类与智能指针</span></h4><p><span>UE 中所有的类都继承自UObject，而 UObject 类是用于自动释放资源的，不需要手动释放。即UE中的类，只要声明一下宏，就可以免去手动构建和释放</span></p><p><span>智能指针：用于原生的类（用户自定义）而非继承自UObject的类</span></p><h4 id='ubt和uht'><span>UBT和UHT</span></h4><p><span>UBT（Unreal Build Tool）： 是虚幻引擎的构建工具，用于将源代码和资源转换成可执行游戏或项目。UBT 负责编译 C++ 代码、处理资源文件（如纹理、模型等），生成所需的二进制文件和链接库等。开发者通常在修改 C++ 代码或添加新模块时需要运行 UBT 来重新构建项目</span></p><p><span>UHT （Unreal header Tool）：是虚幻引擎的头文件处理工具，用于处理蓝图类和其他一些特殊类的元信息。虚幻引擎使用了预处理的头文件（.generated.h）来处理反射系统和蓝图的元数据。UHT 负责扫描特定的源文件，提取元信息，并生成相应的.generated.h 头文件。这些生成的头文件包含了反射系统所需的元数据，以便在运行时可以正确地访问和操作蓝图和反射信息</span></p><h4 id='虚幻引擎中的数据类型'><span>虚幻引擎中的数据类型</span></h4><p><span>虚幻引擎中的C++，是传统C++的一个超集，包含了C++的特性以及引擎所自定义的一些属性</span></p><p><span>在虚幻引擎中，直接使用 string、vector 等容器将在编译时报错，UE对针对游戏，对容器进行了优化，其容器包含FString、TArray等类型，必须使用UE支持的数据类型才能正常编译</span></p><h4 id='runtime'><span>Runtime</span></h4><p><span>运行时，是程序生命周期中的一部分，通常指代程序的运行时期或执行期间</span></p><p><span>与此对应的还有compile time（编译时）、Link time（链接时）等</span></p><p>&nbsp;</p><h2 id='三ue-with-c基本使用'><span>三、UE with C++：基本使用</span></h2><h4 id='基本流程'><span>基本流程</span></h4><ol start='' ><li><p><span>新建C++工程，在C++类文件夹中，右键新建一个Object类型的C++类，之后双击它即可打开Visual Studio</span></p></li><li><p><span>若是 UE5.0 以上，在虚幻编辑器右下方的那排按钮中，启用live coding。编译按钮也移动至此，可直接点击进行编译。注意：启动live coding后，在 VS 中 build 将失败，此时直接点击虚幻编辑器中的编译按钮即可</span></p></li><li><p><span>在 VS 中进行指定的操作后，例如定义函数并将函数设置为可调用时，即可在UE中打开这个C++类的蓝图，并进行调用</span></p></li></ol><h4 id='例子1创建object类'><span>例子1：创建Object类</span></h4><p><span>实现自定义函数和蓝图节点，并输出文本</span></p><h6 id='头文件'><span>头文件</span></h6><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="cpp" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 40px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; min-width: 1128.8px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>25</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#pragma once</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include "CoreMinimal.h"</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include "UObject/NoExportTypes.h"</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include "MyObject.generated.h"    </span><span class="cm-comment">// 该头文件的名字取决于我们的Object的名字</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/**</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">* </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">*/</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">UCLASS</span>(<span class="cm-variable">Blueprintable</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">//UCLASS()宏是一个标记，使得UHT能够识别它，将它的信息识别后生成对应的类型信息。像UPROPERTY,UFUNCTION之类的宏，也起到类似的作用</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">MY_PROJECTS_API</span> <span class="cm-def">UMyObject</span> : <span class="cm-keyword">public</span> <span class="cm-variable">UObject</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// 可以注意到我们的项目名原本是MyObject，但这里加了一个U，这是UE的命名规范，代表继承自UObject这个类，若是建立的actor，则有AActor</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">GENERATED_BODY</span>()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// GENERATED_BODY()是一个宏，用于帮助生成类的一些必要元数据，以支持蓝图系统和反射</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span>:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">UMyObject</span>();    <span class="cm-comment">// 类的构造函数</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">UPROPERTY</span>(<span class="cm-variable">BlueprintReadWrite</span>, <span class="cm-variable">Category</span> <span class="cm-operator">=</span> <span class="cm-string">"My variables"</span>)    <span class="cm-comment">// 这个宏代表以下的变量将加入反射系统，第一个参数代表变量可以在蓝图中进行读写</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable-3">float</span> <span class="cm-variable">Myfloat</span>;                        <span class="cm-comment">// Category参数代表在蓝图中建立节点时，这个变量或者函数归在哪一类，可以是自定定义的一个分类</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">UFUNCTION</span>(<span class="cm-variable">BlueprintCallable</span>, <span class="cm-variable">Category</span> <span class="cm-operator">=</span> <span class="cm-string">"My functions"</span>)    <span class="cm-comment">// UFUNCTION宏代表将以下函数加入反射系统，第一个参数代表可在蓝图中被调用</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable-3">void</span> <span class="cm-variable">Myfunction</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">};</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 700px;"></div><div class="CodeMirror-gutters" style="height: 700px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>需要注意：</span></p><ul><li><p><span>宏一般不写分号，但本质是单独的一行代码。建议先写下面的函数再写宏</span></p></li><li><p><span>在写宏里面的参数时，它可能会提示带有</span><code>CPF_</code><span>前缀的参数，但它是不能使用的，使用它之后进行编译会报错，例如：</span><code>Error: Unknown specifier &#39;CPF_BlueprintReadOnly&#39;</code></p></li></ul><h6 id='源文件'><span>源文件</span></h6><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="cpp" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 40px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; min-width: 448.594px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>16</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include "MyObject.h"</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">UMyObject::UMyObject</span>()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{    <span class="cm-comment">// 类::类的方法，指定了某个类中的函数，即类外实现</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">Myfloat</span> <span class="cm-operator">=</span> <span class="cm-number">0.0f</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">UMyObject::Myfunction</span>()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">UE_LOG</span>(<span class="cm-variable">LogTemp</span>, <span class="cm-variable">Log</span>, <span class="cm-variable">TEXT</span>(<span class="cm-string">"Hello World!"</span>));</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">UE_LOG</span>(<span class="cm-variable">LogTemp</span>, <span class="cm-variable">Warning</span>, <span class="cm-variable">TEXT</span>(<span class="cm-string">"Hello World!"</span>));</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">UE_LOG</span>(<span class="cm-variable">LogTemp</span>, <span class="cm-variable">Error</span>, <span class="cm-variable">TEXT</span>(<span class="cm-string">"Hello World!"</span>));</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// UE_LOG是UE中输出日志的一个函数，它有三个参数</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// 第一个参数是日志类型，LogTemp表示临时输出，第二个参数为输出级别，第三个为输出内容</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// 第三个参数为输出的内容，这里需要使用TEXT函数（也是UE的）传入字符串而不能直接传</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 448px;"></div><div class="CodeMirror-gutters" style="height: 448px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><h6 id='蓝图'><span>蓝图</span></h6><p><span>在蓝图中，仅有值连线的节点对应为读，而set变量的节点对应为写</span></p><p><img src="assets/bp.png" referrerpolicy="no-referrer"></p><p><span>在该C++类的蓝图中放置这些节点，再在关卡蓝图将其实例化并调用：</span></p><p><img src="assets/bp2.png" referrerpolicy="no-referrer"></p><p><span>编译并运行，即可在输出日志里找到：</span></p><p><img src="assets/logout.png" referrerpolicy="no-referrer"></p><h4 id='例子2创建actor类'><span>例子2：创建Actor类</span></h4><ul><li><p><span>和创建 object 类是一样的步骤，只不过自动生成的代码会有些许不同</span></p></li><li><p><span>当通过创建的Actor C++类创建蓝图类时，这个由于蓝图是空的，UE会默认给蓝图类加上一个根组件，但C++类是没有的，所以直接拖拽它们到场景中是会有不同</span></p><p><img src="assets/cp.png" referrerpolicy="no-referrer"></p></li><li><p><span>Component：组件是继承自Object的特殊类，用于辅助创造可在场景中展示的各种类，例如用于Actor、Character等。根组件是这整个蓝图类的局部做坐标的标识（Transform的基础）。当然，根组件是可以修改的，将新加的组件拖动到根组件处即可替换掉。测试阶段，可以添加一个最基本的组件，StaticMesh，也就是静态网格体组件</span></p></li><li><p><span>使用C++类而不是蓝图类：两者功能一致，只是创建方法不同</span></p></li></ul><h6 id='头文件-2'><span>头文件</span></h6><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="cpp" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 40px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; min-width: 803.625px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>24</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#pragma once</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include "CoreMinimal.h"</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include "GameFramework/Actor.h"</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include "MyActor.generated.h"</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">UCLASS</span>()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">MY_PROJECTS_API</span> <span class="cm-def">AMyActor</span> : <span class="cm-keyword">public</span> <span class="cm-variable">AActor</span>    <span class="cm-comment">// AActor已经写了Blueprintable等，不需要再写</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">GENERATED_BODY</span>()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span>:    </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// Sets default values for this actor's properties</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">AMyActor</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">UPROPERTY</span>(<span class="cm-variable">VisibleAnywhere</span>, <span class="cm-variable">Category</span> <span class="cm-operator">=</span> <span class="cm-string">"My Actor Components"</span>)    <span class="cm-comment">// 标识任何地方均可见</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">UStaticMeshComponent</span><span class="cm-operator">*</span> <span class="cm-variable">StaticMesh</span>;    <span class="cm-comment">// 添加组件，继承于object所以类型以U开头，且是一个指针    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">                                        <span class="cm-comment">// 这个指针的名字就是后面所添加的组件的名字</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// Called when the game starts or when spawned（生成）</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">virtual</span> <span class="cm-variable-3">void</span> <span class="cm-variable">BeginPlay</span>() <span class="cm-keyword">override</span>;        <span class="cm-comment">// 重写的虚函数，在游戏开始或actor生成时调用</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// Called every frame        // 每帧都调用的函数</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">virtual</span> <span class="cm-variable-3">void</span> <span class="cm-variable">Tick</span>(<span class="cm-variable-3">float</span> <span class="cm-variable">DeltaTime</span>) <span class="cm-keyword">override</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">};</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 672px;"></div><div class="CodeMirror-gutters" style="height: 672px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><h6 id='源文件-2'><span>源文件</span></h6><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="cpp" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 40px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; min-width: 1028.6px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>25</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include "MyActor.h"</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Sets default values</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">AMyActor::AMyActor</span>()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">     <span class="cm-comment">// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">PrimaryActorTick</span>.<span class="cm-variable">bCanEverTick</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// 这个默认值代表actor是否启用每一帧的更新，如果为true，则Tick函数每一帧都将调用，关闭可提升性能</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">StaticMesh</span> <span class="cm-operator">=</span> <span class="cm-variable">CreateDefaultSubobject</span><span class="cm-operator">&lt;</span><span class="cm-variable">UStaticMeshComponent</span><span class="cm-operator">&gt;</span>(<span class="cm-variable">TEXT</span>(<span class="cm-string">"My StaticMesh"</span>));</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-comment">// 创建StaticMesh，使用UE中的创建子对象的函数，是一个模板函数，类型为UStaticMeshComponent，参数为标识符（是一个字符串），建议是组件的名字</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Called when the game starts or when spawned</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">AMyActor::BeginPlay</span>()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">Super::BeginPlay</span>();        <span class="cm-comment">// 作用域为Super表示调用父类的方法</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">// Called every frame</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">AMyActor::Tick</span>(<span class="cm-variable-3">float</span> <span class="cm-variable">DeltaTime</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">Super::Tick</span>(<span class="cm-variable">DeltaTime</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 700px;"></div><div class="CodeMirror-gutters" style="height: 700px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p><span>实现的效果：创建了一个C++类，包含一个静态网格体组件，可以直接拖动到场景中</span></p><p><span>在任何一个C++类中实现了函数后，进行编译，在关卡蓝图中也可以调用，只需要把情景相关取消勾选即可</span></p><h4 id='注意事项'><span>注意事项</span></h4><ul><li><p><span>例如UPROPERTY、UFUNCTION仅对下面的一个变量或函数有效，如何有两个或多个，则每个都要在前面加上对应的宏的声明，才能加入到反射系统，否则无效</span></p></li><li><p><span>反射重复编译问题：就算代码改动得很少，甚至没有改动，都重复编译整个项目。但只要使用UE高版本，使用热启动，就不会出现重复编译，消耗多余的时间</span></p></li><li><p><span>蓝图命名规范：以 BP_ 开头</span></p></li><li><p><span>需要记忆一些名称，例如UPROPERTY()这种宏，且由于项目文件比较庞大，智能提示可以不起效，甚至正确输入后，代码也不变颜色（例如宏的名称），需要等待一段时间</span></p></li><li><p><span>建议在每次打开项目后，进行编译一次，否则可能在C++中的更改不会生效</span></p></li><li><p><span>删除自定义C++类的步骤（注意是C++类而不是由它构建的蓝图类）：</span></p><ol start='' ><li><p><span>找到所有依赖该类的其它资源，解除引用（例如关卡蓝图中的调用）</span></p></li><li><p><span>关掉UE Editor以及VS，打开工程文件夹，也就是VS编辑的文件所在的地方，删掉这个类为名的源文件和头文件</span></p></li><li><p><span>删除整个binaries文件夹</span></p></li><li><p><span>重新对项目进行编译</span></p></li></ol></li><li><p><span>关于C++中继承自UE中某些类的命名规范：</span></p><ol start='' ><li><p><span>派生自Actor的类带有A前缀，如Acontroller</span></p></li><li><p><span>派生自Object的类带有U前缀，如Ucomponent</span></p></li><li><p><span>Enums（枚举类）的前缀是E</span></p></li><li><p><span>Interface（接口类）的前缀通常是I</span></p></li><li><p><span>Template（泛型类、模板）的前缀是T，如TArray</span></p></li><li><p><span>派生自SWidget的类带有前缀S</span></p></li><li><p><span>其它类的前缀为F，如Fvector</span></p></li></ol></li><li><p><span>建立蓝图类后，可以拖动到场景中生成多个实例，实例之间的差异性修改可以在details面板进行，实例之间的统一性修改可以直接修改蓝图类。一个静态网格体或骨架网格体同样可以转化为蓝图类</span></p></li><li><p><code>GENERATED_BODY()</code><span>这一行在VS中可能报错（红色波浪线警告），但可以编译成功，实际上不影响后续的工作</span></p></li><li><p><span>关于模块(module)：</span></p><ol start='' ><li><p><span>模块是位于Source文件夹下的多个文件或文件夹，是虚幻引擎项目中的一个逻辑单元，是一个代码库，可以包含 C++ 类、蓝图、资源以及其他相关文件，每个虚幻引擎项目由一个或多个模块组成。在虚幻引擎中，模块和 C++ 类通常一起使用，以实现项目的功能和逻辑。开发者可以在模块中组织 C++ 类，将相关功能放在同一个模块中，使代码更有组织性和可维护性</span></p></li><li><p><span>在新建一个C++类时，虚幻引擎将自动在Source文件夹下新建一个以项目为名称的文件夹，作为第一个模块，里面存放的是新建的C++类的代码</span></p></li><li><p><img src="assets/module.png" referrerpolicy="no-referrer"></p><p><span>一个C++类就是一个模块，例如上图中ProjectY就是一个模块（该模块名称和项目名称相同，实际上是引擎自动创建的）</span></p></li></ol></li><li><p><span>关于中文乱码：</span></p><ol start='' ><li><p><span>在C++代码中包含了中文，在编译的过程中出现乱码且无法编译完成</span></p></li><li><p><span>产生该项问题的原因是UE中在进行字符串传递的时候默认把传进来的字符串视作UTF-8编码，然而在Windows中中文以GBK编码</span></p></li><li><p><span>在控制面板--时钟和区域，选择管理--更改系统区域设置，勾选提供全球语言支持，如下。并进行重启即可完美解决该问题</span></p><p><img src="assets/chs.png" style="zoom:50%;" /></p></li></ol></li></ul><p>&nbsp;</p><h2 id='四引入第三方库'><span>四、引入第三方库</span></h2><p><span>虚幻引擎导入第三方库时，相对路径很可能会报错，这是由于其源文件和编译得到的执行文件不一定在同一个目录下，导致搜索不到文件进而报错。一般是报内存地址错误：</span><code>EXCEPTION_ACCESS_VIOLATION reading address</code><span>，这一点需格外注意</span></p><h4 id='例子'><span>例子：</span></h4><ol start='' ><li><p><span>首先将需要引入的 libs 文件夹和 include（头文件夹）复制到虚幻引擎安装位置（不是项目位置）的第三方库中，例如一个叫CobraX的库：</span><code>D:\Games\UE_5.1\Engine\Source\ThirdParty\CobraX</code></p><p><img src="assets/cobrax.png" referrerpolicy="no-referrer"></p></li><li><p><span>创建CobraX.build.cs中，该文件用于引擎寻找第三方库，在里面写上：</span></p><ul><li><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="cpp" style="break-inside: unset;"><div class="CodeMirror cm-s-inner cm-s-null-scroll" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 40px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; min-width: 976.698px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>15</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">using</span> <span class="cm-variable">UnrealBuildTool</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">nb</span> : <span class="cm-variable">ModuleRules</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">public</span> <span class="cm-variable">nb</span>(<span class="cm-variable">ReadOnlyTargetRules</span> <span class="cm-variable">Target</span>) : <span class="cm-variable">base</span>(<span class="cm-variable">Target</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PCHUsage</span> <span class="cm-operator">=</span> <span class="cm-variable">PCHUsageMode</span>.<span class="cm-variable">UseExplicitOrSharedPCHs</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PublicDependencyModuleNames</span>.<span class="cm-variable">AddRange</span>(<span class="cm-keyword">new</span> <span class="cm-variable">string</span>[] { <span class="cm-string">"Core"</span>, <span class="cm-string">"CoreUObject"</span>, <span class="cm-string">"Engine"</span>, <span class="cm-string">"InputCore"</span>});</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PrivateDependencyModuleNames</span>.<span class="cm-variable">AddRange</span>(<span class="cm-keyword">new</span> <span class="cm-variable">string</span>[] {  });</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-comment">// 添加需要的具体的库文件，使用绝对路径</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PublicSystemLibraries</span>.<span class="cm-variable">Add</span>(<span class="cm-string">"D:\\Games\\UE_5.1\\Engine\\Source\\ThirdParty\\CobraX\\libs\\python310.lib"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-comment">// 添加头文件的路径，同样使用绝对路径</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PublicIncludePaths</span>.<span class="cm-variable">Add</span>(<span class="cm-string">"D:\\Games\\UE_5.1\\Engine\\Source\\ThirdParty\\CobraX\\include"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 420px;"></div><div class="CodeMirror-gutters" style="height: 420px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre><p>&nbsp;</p></li></ul></li><li><p><span>在需要使用第三方库的.build.cs文件中添加对第三方库路径，例如在一个叫nb的模块中，更改nb.build.cs：</span></p><ul><li><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="cpp"><div class="CodeMirror cm-s-inner cm-s-null-scroll" lang="cpp"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 12px; left: 40px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 36px; margin-bottom: 0px; border-right-width: 0px; min-width: 976.698px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>13</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -36px; width: 36px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">using</span> <span class="cm-variable">UnrealBuildTool</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">nb</span> : <span class="cm-variable">ModuleRules</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">public</span> <span class="cm-variable">nb</span>(<span class="cm-variable">ReadOnlyTargetRules</span> <span class="cm-variable">Target</span>) : <span class="cm-variable">base</span>(<span class="cm-variable">Target</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PCHUsage</span> <span class="cm-operator">=</span> <span class="cm-variable">PCHUsageMode</span>.<span class="cm-variable">UseExplicitOrSharedPCHs</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PublicDependencyModuleNames</span>.<span class="cm-variable">AddRange</span>(<span class="cm-keyword">new</span> <span class="cm-variable">string</span>[] { <span class="cm-string">"Core"</span>, <span class="cm-string">"CoreUObject"</span>, <span class="cm-string">"Engine"</span>, <span class="cm-string">"InputCore"</span>});</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PrivateDependencyModuleNames</span>.<span class="cm-variable">AddRange</span>(<span class="cm-keyword">new</span> <span class="cm-variable">string</span>[] {  });</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PublicSystemLibraries</span>.<span class="cm-variable">Add</span>(<span class="cm-string">"D:\\Games\\UE_5.1\\Engine\\Source\\ThirdParty\\CobraX\\libs\\python310.lib"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">PublicIncludePaths</span>.<span class="cm-variable">Add</span>(<span class="cm-string">"D:\\Games\\UE_5.1\\Engine\\Source\\ThirdParty\\CobraX\\include"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 27px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -36px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 27px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 364px;"></div><div class="CodeMirror-gutters" style="height: 364px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 35px;"></div></div></div></div></pre></li><li><p><span>其中要加上的为</span><code>PublicSystemLibraries.Add</code><span>和</span><code>PublicIncludePaths.Add</code><span>两行</span></p></li><li><p><span>需要注意：</span><code>PublicDependencyModuleNames.AddRange</code><span>是添加该模块所依赖的模块的名字的，所以在依赖第三方库时不需要把第三方库的名字写进去，网上很多教程都是有问题的</span></p></li></ul></li></ol><h2 id='五蓝图项目调用chatgpt-api'><span>五、蓝图项目：调用ChatGPT API</span></h2><p><span>注意：ChatGPT的 API 发生了变化，原本的 API 调用可能无法成功</span></p><h4 id='基本步骤'><span>基本步骤</span></h4><ol start='' ><li><p><span>导入模型，包括场景和人物，以及人物的动作</span></p></li><li><p><span>实现虚幻引擎中调用API：载体是一个UMG控件蓝图，最终效果是调用该UI时，可以进行对话（在 UI 里写调用逻辑）</span></p></li><li><p><span>建立人物类，并添加到关卡中。它们有的关键属性：人物名字（催眠文件的读取要用），模型、动作等。并且在人物类中实现调用 UMG，使得进行指定事件之后，例如按下某个按键，可调用 UMG 进行对话</span></p></li><li><p><span>为游戏添加更多的细节，例如BGM、走路的声音，场景切换，利用蓝图、基本模型和几何体等设置一些小机关等</span></p></li></ol><h4 id='umg-的使用'><span>UMG 的使用</span></h4><p><span>在设计器里设计UI的样式，在图表里设计UI的功能</span></p><p><span>设计器里右上角有最常用的一些UI元素，比如文本框、按钮等</span></p><p><img src="assets/umg.png" referrerpolicy="no-referrer"></p><p><span>一般先需要建立一个画布面板，代表我们的屏幕。之后可直接拖动元素到画布上。左下角可管理现有的元素和父子关系，右边细节面板可设置元素的具体内容。勾选“是变量”，可在图表中进行调用和赋值等</span></p><p><span>图表里的蓝图的设计思路：先在设计器里创建可编辑文本，设为变量。然后当文本提交时（按下enter），调用自己写的调用 API 的函数，该函数返回chatgpt返回的文本到某个变量，并在界面中显示出来</span></p><p><span>调用API的函数的思路：</span></p><ol start='' ><li><p><span>先读取特定角色数据，再和用户输入拼接起来作为content，然后make json，创建数组，再次make json，作为json object，创建请求体。再创建请求头，然后发送请求</span></p></li><li><p><span>获取返回的数据，逐步解析，得到文本，然后显示在屏幕上</span></p></li><li><p><span>要想实现多轮对话（不熟练UE的情况），可创建多个变量，分别存储多轮对话的信息，在每一轮对话中加一系列迭代的节点，一个个赋值给前面的变量，然后一起发送出去。变量的数量决定记忆轮数</span></p></li></ol><p><span>详见：</span><a href='https://www.bilibili.com/video/BV1mv4y18778/' target='_blank' class='url'>https://www.bilibili.com/video/BV1mv4y18778/</a><span>   建议5.1及以上的虚幻引擎版本</span></p><p>&nbsp;</p><h1 id='4-注意事项'><span>4. 注意事项</span></h1><ul><li><p><span>虚幻引擎高版本可以打开低版本的工程，但低版本的无法打开高版本的工程</span></p></li><li><p><span>项目名称不支持除了下划线以外的特殊符号，尽量不要使用中文</span></p></li><li><p><span>所有在引擎中使用到的资源，例如本地文件，都需要先导入虚幻引擎的内容浏览器，否则就算在蓝图中读取了这个文件，在项目打包时也不会包含本文件，造成出错</span></p></li><li><p><span>虚幻引擎中可以导入的文件都是虚幻引擎能直接利用的，例如材质、模型，导入后可以虚幻引擎将其作为虚幻引擎资产.uasset进行保存。但是，许多文件无法导入，例如.model，包括.py和.cpp。此时需要新建C++类，将文件放到cpp源文件所在的位置，在C++里进行调用，然后编译</span></p></li><li><p><span>导入的资源必须保存，否则重启编辑器将消失，内容浏览器的资源左下角若有个小星号则表示资源尚未保存。选中内容浏览器的资源然后点击引用查看器，可查看该actor所依赖的所有actor和蓝图</span></p></li><li><p><span>其他建模软件如blender、c4d、maya等，导出fbx模型文件时需要勾选“嵌入的媒体”才能顺利导出材质</span></p></li><li><p><span>导入模型的时候，若是有动画的，必须勾选骨骼网格体，当然静态的也可以勾选这个，他会转变成骨骼网格体。另外需要勾选合并网格体，因为在3D建模软件里模型是打散的，导入虚幻后整合成一个整体更加方便</span></p></li><li><p><span>如果直接R然后拖拽缩放，会使物体表面的材质也会发生缩放，这时可以选定该物体，然后在细节面板中更改笔刷设置，而不是transform板块</span></p></li><li><p><span>先选中材质，再放置物体，则物体每一个面都会使用该材质。直接拖拽材质到物体上，静态网格体所有面都会使用该材质，而笔刷对象只有当前面才会使用，这时可以先选中再放置</span></p></li><li><p><span>添加第三人称工具包，然后选择包内的蓝图的小人，拖动到游戏场景内，选中并在细节面板搜索”poss“，给予控制权即可操作。注意将小人拖动到场景中时只要点一次，点两次就是选中整个蓝图类</span></p></li><li><p><span>在世界大纲中搜索某种类型（如静态网格体staticmesh）就可以将其全部筛选出来，再ctrl+A就可快速全选所有静态网格体。之后在工具-合并Actor就可合并所有静态网格体</span></p></li><li><p><span>地形模式-管理-样条，按住ctrl后，在地形上单击多次即可创建条状地形选区，可以借此创建河流、道路等。选中样条上某一点后ctrl+a可全选该样条，然后在细节面板的地形样条网格体中选取模型加入到这个样条中。同样可以添加材质。另外，可以点击每一个”小山“进行单独的微调（拉高等操作）。在样条曲线工具一栏”使地貌变形为样条曲线”，即让地形自动匹配样条曲线的高度，防止“立交桥”</span></p></li><li><p><span>可导入16位灰度图作为地形</span></p></li><li><p><span>双击内容浏览器中的资产图像，可以进入该资产的调整面板，对碰撞等进行调整</span></p></li><li><p><span>关卡都放在内容浏览器里，如果一个项目有多个关卡，则正在浏览的这个关卡会用橙色表示，其余用蓝绿色表示</span></p></li><li><p><span>静态网格体只是说它没有骨骼，不能进行“内”运动，但可以把他改成可移动的，即作为一个整体可以移动，比如静态网格体的门，可以开关。静态网格体和静态、固定不是一个概念，注意区分。当设置可运动的物体时，比如门，首先就要检查其移动性和碰撞</span></p></li><li><p><span>蓝图里的坐标（以及旋转等）一定要注意，貌似里面的坐标是根据世界绝对坐标来的，而不是物体的相对坐标。蓝图编辑出现问题至少有80%以上都是由坐标轴引起的</span></p></li><li><p><span>若想要修改物体坐标轴原点：选中该物体，alt+鼠标中键拖动，随后右键-锚点-设置为枢轴偏移。注意在已编译的蓝图中使用的还是原来的坐标轴，且该方法并不一定对所有物体都生效。因此最好在Blender里就把坐标轴给弄好</span></p></li><li><p><span>注意世界坐标和相对坐标的区别：世界坐标是永远不会被改变的，恒定方向和原点，而相对坐标是可以改变的。相对坐标由蓝图类或C++类的根组件决定</span></p></li><li><p><span>若导入fbx模型后材质缺失，可自己手动添加材质，首先将材质图片（一般是png）拖动到虚幻的内容浏览器里，然后对于缺失材质的材质球，双击，删除原有的白色参数结点，按住T，点击任意位置即可创建新的材质结点。选中这个节点，在左侧的细节面板，材质表达式纹理基础，纹理中的右侧None，点击并搜索纹理。记得保存</span></p></li><li><p><span>导入带有动画的骨架网格体后，直接拖动动画到场景中即有模型</span></p></li><li><p><span>可以先把骨骼网格体导入到世界场景中，然后选中，在右下角细节面板中的动画板块，动画模式中，选择动画资产，选择我们的动画序列，同样可以导入具有动作的模型</span></p></li><li><p><span>要控制自己的人物移动，可使用以下步骤：</span></p><ol start='' ><li><p><span>在内容浏览器中新建一个蓝图类--角色</span></p></li><li><p><span>双击，在左上角选中网格体，然后在右侧找到mesh（网格体），并导入我们自己的骨骼网格体</span></p></li><li><p><span>还是在左上角，需新建一个弹簧臂和camera，上面有添加的按钮</span></p></li><li><p><span>选中弹簧臂，然后在右边，摄像机选项中，勾选使用Pawn的控制旋转</span></p></li><li><p><span>可以自己写运动的蓝图，也可以在初学者包中的角色蓝图中，直接把蓝图给复制过来</span></p></li><li><p><span>右下角，世界场景设置，游戏模式中，游戏模式重载选择需要的游戏模式，并在选中的游戏模式中，默认的pawn类选择我们自己创建的蓝图、想要控制的角色的名字（此时只能动和跳跃，也就是平移，但没有动作）</span></p></li></ol></li><li><p><span>两个资源下载网站</span></p><ol start='' ><li><p><a href='http://www.mixamo.com'><span>www.mixamo.com</span></a><span> 注意：下载的都是fbx文件，下载时最好选择二进制fbx，以及下载skin。如果不下载skin则没有骨骼，不能直接导入虚幻引擎中</span></p></li><li><p><a href='http://www.aplaybox.com/model/'><span>www.aplaybox.com/model/</span></a><span> 模型下载，包括人物和场景模型，也有一些动作</span></p></li></ol></li><li><p><span>双击内容浏览器的物体可打开编辑界面，在这里添加碰撞等效果，不要在实例中去弄</span></p></li><li><p><span>物体中心轴不在想要的位置上：创建一个空物体作为这个物体的父级，把空物体移动到合适位置，这时运动空物体就可以移动子物体</span></p></li><li><p><span>Actor可以理解为所有模型的基类，可以放置具体的模型和逻辑，形成一个类</span></p></li><li><p><span>显卡占用高的四种解决方法：</span></p><ol start='' ><li><p><span>前往设置--项目设置--帧率里，锁定帧率运行</span></p></li><li><p><span>设置--引擎可扩展性设置，按需把画质调低</span></p></li><li><p><span>项目设置--编辑器性能--把分辨率调低</span></p></li><li><p><span>游戏视口的左上角，关闭实时，按需打开</span></p></li></ol></li><li><p><span>如果在内容浏览器中，想要删掉某个文件，总是出现内存中有引用，但在游戏场景中实在没有放置，这种情况可能是在项目设置中仍然存在引用，比如基础游戏设置中还有这个关卡的选项，即使可能没有打开，想把它删了。遇到这种情况可以直接去文件夹里把想要删的文件删了，但在此之前必须克隆项目。操作任何可能出问题的改变之前都必须备份，否则一旦出错整个项目都可能无法打开</span></p></li><li><p><span>不需要的文件，在打包之前需要删掉，因为会一起打包进去，即使没有任何使用</span></p></li><li><p><span>导入的模型和动作不兼容，常常表现在骨骼使用动画资产时无法搜索到动作，这是一个复杂的问题，目前已发现blender导入虚幻的模型、虚幻自己的小白人、网上下载的动作+模型都不能搜索到彼此，即都不能直接通用。甚至blender导入的模型之间都不能使用彼此的动作</span></p></li><li><p><span>要添加音频，若是场景音乐，可直接把音乐放在场景中，根据需要在细节面板中看是否勾选空间衰减。若是和具体物体有关的，则在蓝图中添加音频组件</span></p></li><li><p><span>常见问题：无访问正在尝试读取属性</span></p></li><li><p><span>虚幻引擎中的插件是额外的C++代码或者静态/动态库，可以给项目添加一些其它的功能。插件中的代码将会暴露在外，其它类可以直接调用</span></p></li></ul><p>&nbsp;</p></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>

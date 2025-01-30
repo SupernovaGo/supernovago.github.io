@@ -1,0 +1,1843 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+
+/* FONTS */
+
+/* VARIABLES */
+
+:root {
+  --theme-0: rgb(255, 255, 255);
+
+  /* Slate grayscale */
+  --theme-50: #f8fafc;
+  --theme-100: #f1f5f9;
+  --theme-200: #e2e8f0;
+  --theme-300: #cbd5e1;
+  --theme-400: #94a3b8;
+  --theme-500: #64748b;
+  --theme-600: #475569;
+  --theme-700: #334155;
+  --theme-800: #1e293b;
+  --theme-900: #0f172a;
+
+  /* Tailwind variables */
+  --tw-primary: #62bbf3;
+
+  --tw-prose-body: var(--theme-700);
+  --tw-prose-headings: var(--theme-900);
+  --tw-prose-lead: var(--theme-600);
+  --tw-prose-links: var(--theme-900);
+  --tw-prose-bold: var(--theme-900);
+  --tw-prose-counters: var(--theme-500);
+  --tw-prose-bullets: var(--theme-300);
+  --tw-prose-hr: var(--theme-200);
+  --tw-prose-quotes: var(--theme-900);
+  --tw-prose-quote-borders: var(--theme-200);
+  --tw-prose-captions: var(--theme-500);
+  --tw-prose-code: var(--theme-900);
+  --tw-prose-pre-code: var(--theme-100);
+  --tw-prose-pre-bg: var(--theme-800);
+  --tw-prose-th-borders: var(--theme-300);
+  --tw-prose-td-borders: var(--theme-200);
+  --tw-prose-bg: var(--theme-0);
+  --tw-prose-meta: var(--theme-500);
+  --tw-prose-meta-bg: var(--theme-100);
+
+  --tw-prose-invert-body: var(--theme-300);
+  --tw-prose-invert-headings: var(--theme-0);
+  --tw-prose-invert-lead: var(--theme-400);
+  --tw-prose-invert-links: var(--theme-0);
+  --tw-prose-invert-bold: var(--theme-0);
+  --tw-prose-invert-counters: var(--theme-400);
+  --tw-prose-invert-bullets: var(--theme-600);
+  --tw-prose-invert-hr: var(--theme-700);
+  --tw-prose-invert-quotes: var(--theme-100);
+  --tw-prose-invert-quote-borders: var(--theme-700);
+  --tw-prose-invert-captions: var(--theme-400);
+  --tw-prose-invert-code: var(--theme-0);
+  --tw-prose-invert-pre-bg: var(--theme-900);
+  --tw-prose-invert-th-borders: var(--theme-600);
+  --tw-prose-invert-td-borders: var(--theme-700);
+  --tw-prose-invert-bg: var(--theme-800);
+  --tw-prose-invert-meta: var(--theme-400);
+  --tw-prose-invert-meta-bg: var(--theme-700);
+
+  --tw-highlight-color: #fde047; /* yellow-300 */
+  --tw-drop-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  --tw-button-hover-bg: var(--theme-100);
+
+  --tw-button-hover-bg-inverted: var(--theme-700);
+
+  /* Typora variables */
+
+  --background: var(--tw-prose-bg);
+  --bg-color: var(--tw-prose-bg);
+  --text-color: var(--tw-prose-body);
+  --primary-color: var(--tw-primary);
+  --md-char-color: var(--theme-400);
+  --meta-content-color: var(--theme-500);
+  --typora-source-body: var(--theme-800);
+  --heading-char-color: var(--md-char-color);
+  --mermaid-theme: neutral;
+  --active-toggle-btn-color: var(--theme-200);
+
+  --md-char-color-inverted: var(--theme-500);
+  --meta-content-color-inverted: var(--theme-400);
+  --typora-source-body-inverted: var(--theme-300);
+  --mermaid-theme-inverted: dark;
+  --active-toggle-btn-color-inverted: var(--theme-400);
+
+  /* Sidebar */
+  --side-bar-bg-color: var(--tw-prose-bg);
+  --active-file-bg-color: var(--theme-100);
+  --active-file-text-color: var(--tw-prose-bold);
+  --active-file-border-color: var(--theme-100);
+  --panel-border-color: var(--theme-300);
+  --blur-text-color: var(--theme-300);
+  --window-border: 1px solid var(--theme-200);
+  --item-hover-bg-color: var(--theme-100);
+  --search-hit-text-bg-color: var(--theme-200);
+  --search-hit-text-font-color: inherit;
+  --search-select-text-color: var(--select-text-font-color);
+  --search-select-bg-color: var(--select-text-bg-color);
+
+  --blur-text-color-inverted: var(--theme-500);
+  --panel-border-color-inverted: var(--theme-700);
+  --active-file-bg-color-inverted: var(--theme-700);
+  --window-border-inverted: 1px solid var(--theme-700);
+  --search-hit-text-bg-color-inverted: var(--theme-700);
+  --search-hit-text-font-color-inverted: var(--theme-0);
+  --search-select-bg-color-inverted: var(--theme-400);
+  --rawblock-edit-panel-bd: var(--tw-prose-pre-bg);
+  --item-hover-bg-color-inverted: var(--theme-700);
+
+  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Custom */
+  --footnote: var(--tw-prose-body);
+  /* I'd love to use the --theme grayscale for --footnote-bg, but there's (currently)
+  no way to add an alpha-channel to a CSS variable (and we need the transparency
+  because otherwise the caret wil not be visible), so I here just used a hardcoded
+  copy of --theme-500 */
+  --footnote-bg: #94a3b855;
+  --button-bg: var(--theme-200);
+
+  --button-bg-inverted: var(--theme-600);
+
+  --md-grid-header: var(--theme-100);
+  --md-grid-header-ext: var(--theme-400);
+  --md-grid-ext: var(--theme-300);
+  --md-grid-header-active: var(--theme-500);
+  --md-grid-active: var(--theme-400);
+  --md-grid-border-color: var(--theme-500);
+
+  --md-grid-header-inverted: var(--theme-600);
+  --md-grid-header-ext-inverted: var(--theme-500);
+  --md-grid-ext-inverted: var(--theme-600);
+  --md-grid-header-active-inverted: var(--theme-400);
+  --md-grid-active-inverted: var(--theme-500);
+  --md-grid-border-color-inverted: var(--theme-200);
+
+  --code-blocks-font-size: 0.9em;
+  --inline-code-font-size: 0.9em;
+}
+
+.ty-file-search-match-text {
+  background-color: var(--search-hit-text-bg-color);
+}
+
+/* TAILWIND RESET */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: currentColor;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: "";
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+*/
+
+#text {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+#text {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+#write {
+    background: #131b29;
+    color: #a9aaab;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 30px;
+    padding-bottom: 100px;
+    position: static;
+    width: 90%;
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+a {
+    color: #71bfd9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    cursor: text;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6,
+#write pre {
+    color: #dfb057;
+    width: auto;
+}
+
+#write h1::before,
+#write h2::before,
+#write h3::before,
+#write h4::before,
+#write h5::before,
+#write h6::before {
+    border-radius: 0;
+    bottom: 0;
+    color: #517090;
+    float: none;
+    font-size: 1rem;
+    font-variant: 'small-caps';
+    font-weight: bold;
+    left: auto;
+    line-height: 20px;
+    padding: 0;
+    position: absolute;
+    right: calc(100% + 10px);
+    vertical-align: baseline;
+}
+
+#write h1 {
+    font-size: 3.2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+#write h1::before {
+    bottom: 1.45rem;
+    content: 'H1';
+}
+
+#write h2 {
+    font-size: 2.2rem;
+    margin: 1.4rem 0;
+}
+
+#write h2::before {
+    bottom: 0.2rem;
+    content: 'H2';
+}
+
+#write h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+#write h3::before {
+    bottom: 0.18rem;
+    content: 'H3';
+}
+
+#write h4 {
+    font-size: 1.7rem;
+    margin: 0.8rem 3;
+}
+
+#write h4::before {
+    content: 'H4';
+    bottom: 0.15rem;
+}
+
+#write h5 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+#write h6 {
+    font-size: 1.3rem;
+    margin: 0.2rem,0;
+}
+
+#write h5::before,
+#write h6::before {
+    bottom: 0.1rem;
+}
+
+#write h5::before {
+    content: 'H5';
+}
+
+#write h6::before {
+    content: 'H6';
+}
+
+h1::after, h2::after {
+  content: ""; /* 必须设置 content */
+  display: block; /* 确保伪元素占据一行 */
+  border-bottom: 2px solid #ccc; /* 分割线样式：颜色为灰色，厚度为 1px */
+  margin-top: 4px; /* 分割线与标题的间距 */
+  margin-bottom: 8px; /* 分割线与下文的间距 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: "LXGWWenKai-Blod";
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--monospace);
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/* TAILWIND PROSE IMPLEMENTATION */
+
+#write {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  max-width: 80rem;
+}
+
+html,
+body {
+  font-family: "LXGWWenKai-Regular";
+}
+
+/* on Windows/Linux, it is the part that is not titlebar or status bar. */
+content,
+titlebar {
+  background: var(--tw-prose-bg);
+}
+
+#write {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: var(--tw-prose-body);
+  max-width: 60ch;
+}
+
+#write > :where(:first-child) {
+  margin-top: 0;
+}
+
+#write > :where(:last-child) {
+  margin-bottom: 0;
+}
+
+/**
+  * ---------------------
+  * Block Elements
+  */
+
+/* yaml */
+pre.md-meta-block {
+  color: var(--tw-prose-meta);
+  background-color: var(--tw-prose-meta-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+  margin-bottom: 2.8em;
+}
+
+/* headings */
+h1 {
+  color: var(--tw-prose-headings);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 2.75rem;
+  letter-spacing: -1.5px;
+}
+
+h1 strong {
+  font-weight: 900;
+}
+
+h2 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.63rem;
+  margin-top: 1.5555556em;
+  margin-bottom: 1.5rem;
+  line-height: 1.875rem;
+  letter-spacing: -1px;
+}
+
+h2 strong {
+  font-weight: 800;
+}
+
+h3 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.17rem;
+  margin-top: 1.6em;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: -1px;
+}
+
+h3 strong {
+  font-weight: 700;
+}
+
+h4 {
+  color: var(--tw-prose-headings);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-top: 1.8em;
+  margin-bottom: 1.5rem;
+  line-height: 1.375rem;
+}
+
+h4 strong {
+  font-weight: 700;
+}
+
+h2 code {
+  font-size: 0.8611111em;
+}
+
+h3 code {
+  font-size: 0.9em;
+}
+
+h2 + * {
+  margin-top: 0;
+}
+
+h3 + * {
+  margin-top: 0;
+}
+
+h4 + * {
+  margin-top: 0;
+}
+
+h5 {
+  font-size: 0.97rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 0.93rem;
+  line-height: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* table */
+
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1.5555556;
+}
+
+/* table header */
+
+thead {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-th-borders);
+}
+
+thead th {
+  color: var(--tw-prose-headings);
+  font-weight: 600;
+  vertical-align: bottom;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+thead th:first-child {
+  padding-left: 0;
+}
+
+thead th:last-child {
+  padding-right: 0;
+}
+
+tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-td-borders);
+}
+
+tbody tr:last-child {
+  border-bottom-width: 0;
+}
+
+tbody td {
+  vertical-align: baseline;
+  padding-top: 0.8888889em;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+tbody td:first-child {
+  padding-left: 0;
+}
+
+tbody td:last-child {
+  padding-right: 0;
+}
+
+.md-grid-board tr[row="1"] {
+  background-color: var(--md-grid-header);
+}
+
+.md-grid-board a:hover,
+.md-grid-board a.md-active {
+  background: var(--md-grid-active);
+}
+
+.md-grid-board tr[row="1"] a:hover,
+.md-grid-board tr[row="1"] a.md-active {
+  background: var(--md-grid-header-active);
+}
+
+.md-grid-board .md-grid-ext {
+  background: var(--md-grid-ext);
+}
+
+.md-grid-board tr[row="1"] .md-grid-ext {
+  background: var(--md-grid-header-ext);
+}
+
+.md-grid-board a {
+  border-color: var(--md-grid-border-color) !important;
+}
+
+/* lists */
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1em;
+}
+
+li {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+#write ul.task-list {
+  padding-left: 0;
+}
+
+#write li.task-list-item {
+  padding-left: 0.4em;
+}
+
+#write input[type="checkbox"] {
+  margin-left: -1em;
+}
+
+input[checked] ~ * {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+ol > li::marker {
+  font-weight: 400;
+  color: var(--tw-prose-counters);
+}
+
+ul > li::marker {
+  color: var(--tw-prose-bullets);
+}
+
+ul > li,
+ol > li {
+  padding-left: 0.4em;
+}
+
+ul > li p,
+ol > li p {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+#write > ul > li > :not(input):first-child,
+#write > ol > li > :not(input):first-child,
+#write > ul > li > input + *,
+#write > ol > li > input + * {
+  margin-top: 1.2em;
+}
+
+#write > ul > li > *:last-child,
+#write > ol > li > *:last-child {
+  margin-bottom: 1.2em;
+}
+
+#write ul > li > p:only-child,
+#write ol > li > p:only-child,
+#write ul > li > input + p:last-child,
+#write ol > li > input + p:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+/* blockquote */
+blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--tw-prose-quotes);
+  border-left-width: 0.25rem;
+  border-left-color: var(--tw-prose-quote-borders);
+  quotes: "\201C""\201D""\2018""\2019";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1.0666667em;
+}
+
+blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+blockquote p:last-of-type::after {
+  content: close-quote;
+}
+
+/* hr */
+hr {
+  border-color: var(--tw-prose-hr);
+  border-top-width: 1px;
+}
+
+[mdtype="hr"] {
+  margin-top: 2.8em;
+  margin-bottom: 2.8em;
+}
+
+p {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  color: #eeeeee;
+}
+
+.in-text-selection,::selection {
+  background-color: var(--select-text-bg-color);
+}
+
+/* diagram panel */
+.md-diagram-panel {
+  color: var(--tw-prose-body);
+}
+
+.enable-diagrams .md-diagram .code-tooltip {
+  bottom: -1.9em;
+  right: 0;
+}
+
+.md-fences-adv-panel {
+  margin-top: 1.3em;
+}
+
+/* footnote definition */
+sup.md-footnote {
+  color: var(--footnote);
+  background-color: var(--footnote-bg);
+}
+
+.footnotes {
+  font-size: 0.85em;
+}
+
+.md-reverse-footnote-area a {
+  font-family: "LXGWWenKai-Regular";
+  text-decoration: none;
+  color: var(--tw-primary);
+  border-radius: 3px;
+}
+
+.md-hover-tip .code-tooltip-content {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 0.8em 1.2em;
+}
+
+.md-reverse-footnote-area a:hover {
+  background-color: var(--item-hover-bg-color);
+}
+
+.md-def-name:before {
+  color: var(--md-char-color);
+}
+
+.md-rawblock.md-rawblock-on-edit,
+.md-rawblock:hover {
+  color: var(--tw-prose-pre-code);
+}
+
+.md-inline-math script {
+  color: var(--tw-prose-code);
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: var(--tw-highlight-color) !important;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+.code-tooltip {
+  color: var(--tw-prose-pre-code);
+}
+
+.code-tooltip .md-mathjax-preview {
+  color: var(--tw-prose-body);
+}
+
+.md-htmlblock-container,
+.md-rawblock-input.md-rawblock-control,
+.md-htmlblock-panel.md-rawblock-control,
+.md-math-container {
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.md-rawblock-input {
+  font-size: var(--code-blocks-font-size);
+  padding: 0 1.3333333em;
+}
+
+.md-mathblock-panel .md-rawblock-input.md-rawblock-control {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 0;
+}
+
+.md-mathblock-panel .md-rawblock-before {
+  padding-top: 1.1em;
+  border-top-left-radius: 0.5rem;
+}
+
+.md-mathblock-panel .md-rawblock-after {
+  padding-bottom: 1.1em;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.md-htmlblock-panel .md-rawblock-input {
+  padding-top: 1.1111111em;
+  padding-bottom: 1.1111111em;
+}
+
+.md-mathblock-panel .md-rawblock-before,
+.md-mathblock-panel .md-rawblock-after {
+  font-size: var(--code-blocks-font-size);
+  padding-left: calc(4px + 1.3333333em);
+  color: var(--code-bracket);
+}
+
+.md-rawblock-tooltip {
+  color: var(--tw-prose-pre-code);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.md-rawblock-tooltip-name {
+  opacity: 1;
+}
+
+.md-comment {
+  font-size: var(--inline-code-font-size);
+  color: var(--code-comment);
+}
+
+.md-raw-inline,
+.md-tag,
+[md-inline="linebreak"],
+.md-image > .md-meta,
+.md-inline-math.md-expand > .md-inline-math-container {
+  font-size: var(--code-blocks-font-size);
+}
+
+/**
+  * Code Fences
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.md-fences {
+  color: var(--tw-prose-pre-code);
+  background-color: var(--tw-prose-pre-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+}
+
+.md-fences.md-focus {
+  border-bottom-right-radius: 0;
+}
+
+.md-fences > .code-tooltip {
+  height: 1.8rem;
+  bottom: -1.8rem;
+  font-size: 0.9rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.code-tooltip .ty-input {
+  min-width: 10rem;
+}
+
+pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+pre code::before {
+  content: none;
+}
+
+pre code::after {
+  content: none;
+}
+
+/* SYNTAX HIGHLIGHTING */
+
+:root {
+  --code-neutral: var(--theme-800);
+  --code-cursor: var(--theme-900);
+  --code-string: rgb(14, 165, 233); /* sky-500 */
+  --code-number: rgb(245, 158, 11); /* amber-500 */
+  --code-tag: rgb(236, 72, 153); /* pink-500 */
+  --code-color: rgb(154, 154, 154);
+  --code-color-bg: rgb(213, 213, 205);
+  --code-variable: var(--theme-700);
+  --code-operator: var(--theme-600);
+  --code-comment: var(--theme-500);
+  --code-bracket: var(--theme-500);
+  --code-citation: var(--theme-500);
+
+  --code-neutral-inverted: var(--theme-100);
+  --code-cursor-inverted: var(--theme-50);
+  --code-string-inverted: #7dd4fc; /* sky-300 */
+  --code-number-inverted: #fde68a; /* amber-100 */
+  --code-tag-inverted: #f472b5; /* pink-400 */
+  --code-variable-inverted: var(--theme-200);
+  --code-operator-inverted: var(--theme-400);
+  --code-comment-inverted: var(--theme-400);
+  --code-bracket-inverted: var(--theme-500);
+  --code-citation-inverted: var(--theme-400);
+}
+
+#write .cm-s-inner {
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+}
+
+.CodeMirror-selectedtext {
+  background-color: transparent;
+}
+.CodeMirror-cursor {
+  border-left: 1px solid var(--code-cursor) !important;
+}
+.CodeMirror-gutters {
+  border-color: var(--code-comment);
+}
+.cm-s-inner span.cm-string {
+  color: var(--code-string);
+}
+
+.cm-s-inner span.cm-number {
+  color: var(--code-number);
+}
+
+.cm-s-inner span.cm-tag,
+.cm-s-inner span.cm-keyword,
+.cm-s-inner span.cm-qualifier {
+  color: var(--code-tag);
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner span.cm-comment.cm-def,
+.cm-s-inner span.cm-comment.cm-type,
+.cm-s-inner span.cm-builtin,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-header,
+.cm-s-inner span.cm-link,
+.cm-s-inner span.cm-error {
+  background: transparent;
+  color: var(--code-neutral);
+}
+
+.cm-s-inner span.cm-attribute,
+.cm-s-inner span.cm-property,
+.cm-s-inner span.cm-variable,
+.cm-s-inner span.cm-variable-2,
+.cm-s-inner span.cm-variable-3,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-atom,
+.cm-s-inner span.cm-def {
+  color: var(--code-variable);
+}
+.cm-s-inner span.cm-comment,
+.cm-s-inner .CodeMirror-linenumber {
+  color: var(--code-comment);
+}
+.cm-s-inner span.cm-operator {
+  color: var(--code-operator);
+}
+.cm-s-inner span.cm-bracket,
+.cm-s-inner span.cm-tag.cm-bracket,
+.cm-s-inner span.cm-meta {
+  color: var(--code-bracket);
+}
+
+.cm-s-inner span.cm-link {
+  text-decoration: underline;
+}
+
+/**
+  * Inline Elements
+  */
+
+/* basic styles */
+
+code {
+  color: rgb(47, 206, 47);
+  background-color: var(--code-color-bg);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.3rem;
+  margin: 0.1rem 0.1rem;
+}
+
+code::before {
+  content: none;
+}
+
+code::after {
+  content: none;
+}
+
+[md-inline="code"].md-expand > code::before,
+[md-inline="code"].md-expand > code::after {
+  content: "";
+}
+
+a code {
+  color: var(--tw-prose-links);
+}
+
+mark code {
+  color: inherit;
+}
+
+strong {
+  color: rgb(211, 211, 77);
+  font-weight: 600;
+}
+
+a {
+  color: var(--tw-prose-links);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* A block-level image should have a total top and bottom margin of 2em.
+It is always wrapped in a paragraph with 1.2em vertical margin, hence we
+add 0.8 here */
+p > .md-image:only-child {
+  margin-top: 0.8em !important;
+  margin-bottom: 0.8em !important;
+}
+
+.md-image > .md-meta {
+  color: var(--tw-prose-code);
+}
+
+/* extend styles */
+
+mark {
+  border-radius: 3px;
+  padding: 0 2px;
+  background-color: var(--tw-highlight-color);
+}
+
+/**
+  * Source Code Mode
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background-color: var(--item-hover-bg-color);
+}
+
+#typora-source {
+  font-family: var(--monospace);
+  color: var(--typora-source-body);
+}
+
+#typora-source .cm-header {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-link {
+  color: var(--code-string);
+}
+
+#typora-source .cm-string {
+  color: var(--code-string);
+}
+
+#typora-source .cm-comment {
+  color: var(--code-comment);
+}
+
+#typora-source .cm-atom {
+  color: var(--code-citation);
+}
+
+#typora-source .cm-tag {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-attribute {
+  color: var(--code-variable);
+}
+
+#typora-source .cm-bracket {
+  color: var(--code-bracket);
+}
+
+.file-list-item-file-ext-part {
+  opacity: 0.5;
+}
+
+#write div.md-toc-tooltip {
+  background-color: var(--tw-prose-bg);
+}
+
+.md-toc {
+  font-size: 0.8em;
+}
+
+.md-toc-h1 .md-toc-inner {
+  margin-left: 0;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left: 1em;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2em;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3em;
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left: 4em;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left: 5em;
+}
+
+#typora-sidebar {
+  border-right: var(--window-border);
+}
+
+.sidebar-tab {
+  text-transform: none;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.md-search-hit {
+  color: var(--search-hit-text-font-color);
+  background-color: var(--search-hit-text-bg-color);
+}
+
+#md-searchpanel {
+  box-shadow: none;
+  filter: var(--tw-drop-shadow-md);
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: var(--tw-button-hover-bg);
+}
+
+#md-searchpanel input,
+#md-searchpanel .btn,
+#searchpanel-msg {
+  border-radius: 5px;
+}
+
+#searchpanel-msg {
+  color: var(--theme-500);
+  border-color: var(--theme-300);
+  background: var(--theme-100);
+}
+
+.form-control {
+  border-color: var(--panel-border-color);
+}
+
+.btn-default {
+  background-color: var(--button-bg);
+}
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+@import "";
+
+:root {
+  --tw-prose-body: var(--tw-prose-invert-body);
+  --tw-prose-headings: var(--tw-prose-invert-headings);
+  --tw-prose-lead: var(--tw-prose-invert-lead);
+  --tw-prose-links: var(--tw-prose-invert-links);
+  --tw-prose-bold: var(--tw-prose-invert-bold);
+  --tw-prose-counters: var(--tw-prose-invert-counters);
+  --tw-prose-bullets: var(--tw-prose-invert-bullets);
+  --tw-prose-hr: var(--tw-prose-invert-hr);
+  --tw-prose-quotes: var(--tw-prose-invert-quotes);
+  --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+  --tw-prose-code: var(--tw-prose-invert-code);
+  --tw-prose-captions: var(--tw-prose-invert-captions);
+  --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+  --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+  --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+  --tw-prose-bg: var(--tw-prose-invert-bg);
+  --tw-prose-meta: var(--tw-prose-invert-meta);
+  --tw-prose-meta-bg: var(--tw-prose-invert-meta-bg); 
+  --select-text-bg-color: rgb(35, 92, 197);
+
+  --tw-button-hover-bg: var(--tw-button-hover-bg-inverted);
+
+  --md-char-color: var(--md-char-color-inverted);
+  --meta-content-color: var(--meta-content-color-inverted);
+  --panel-border-color: var(--panel-border-color-inverted);
+  --active-file-bg-color: var(--active-file-bg-color-inverted);
+  --window-border: var(--window-border-inverted);
+  --search-hit-text-bg-color: var(--search-hit-text-bg-color-inverted);
+  --search-hit-text-font-color: var(--search-hit-text-font-color-inverted);
+  --search-select-bg-color: var(--search-select-bg-color-inverted);
+  --blur-text-color: var(--blur-text-color-inverted);
+  --item-hover-bg-color: var(--item-hover-bg-color-inverted);
+  --typora-source-body: var(--typora-source-body-inverted);
+  --mermaid-theme: var(--mermaid-theme-inverted);
+  --active-toggle-btn-color: var(--active-toggle-btn-color-inverted);
+
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+  --code-color: rgb(237, 71, 89);
+  --code-color-bg: rgb(32, 41, 58);
+
+  --button-bg: var(--button-bg-inverted);
+
+  --md-grid-header: var(--md-grid-header-inverted);
+  --md-grid-header-ext: var(--md-grid-header-ext-inverted);
+  --md-grid-ext: var(--md-grid-ext-inverted);
+  --md-grid-header-active: var(--md-grid-header-active-inverted);
+  --md-grid-active: var(--md-grid-active-inverted);
+  --md-grid-border-color: var(--md-grid-border-color-inverted);
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style><title>综合知识</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2022">2022</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三渲二技术">三渲二技术</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#lts版本">LTS版本</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#解释和编译的效率差异">解释和编译的效率差异</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#xml">XML</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#计算机的科学计数法表示">计算机的科学计数法表示</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#dll动态链接库">DLL：动态链接库</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#伪代码pseudocode）">伪代码（Pseudocode）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#网络数据包相关">网络数据包相关</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#加密算法">加密算法</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#单向加密">单向加密</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#双向加密">双向加密</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#数字签名">数字签名</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#核心破解">核心破解</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#avx指令集">AVX指令集</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#宏macro）">宏（Macro）</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2023">2023</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#固件">固件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#镜像文件">镜像文件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#chip更精密制程的好处">chip更精密制程的好处</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#www开头的域名">www开头的域名</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#svchostexe">svchost.exe</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#nodejs">Node.js</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#php">PHP</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#脚本语言和解释型语言">脚本语言和解释型语言</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#curl">curl</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#jsonl">jsonl</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#bat和cmd">.bat和.cmd</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#命令提示符cmd）">命令提示符（cmd）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#git和github">git和github</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#pdf加锁">pdf加锁</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#延迟windows更新时间">延迟Windows更新时间</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#使用github新建个人网站">使用github新建个人网站</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#前后端与全栈">前后端与全栈</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#minecraft生成世界的过程">Minecraft生成世界的过程</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#arxiv网站">arxiv网站</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#net-和-c">.NET 和 C#</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#语法糖syntactic-sugar）">语法糖（syntactic sugar）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二维码">二维码</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#蓝牙音频编码">蓝牙音频编码</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#github自行编译项目">github自行编译项目</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#jar文件">jar文件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#war文件">war文件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#独显直连">独显直连</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#tts">TTS</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#注册表">注册表</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#分卷压缩">分卷压缩</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#dns污染">DNS污染</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#绿色版软件">绿色版软件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#下载方式">下载方式</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2024">2024</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#隐藏文件">隐藏文件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#adbandroid-debug-bridge安卓调试桥">ADB：Android Debug Bridge，安卓调试桥</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#网卡相关">网卡相关</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#美国国会制度">美国国会制度</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#小tips">小tips</a></div><ul class="outline-children"></ul></li></div></div><div id='write'  class=' first-line-indent'><h1 id='2022'><span>2022</span></h1><h4 id='三渲二技术'><span>三渲二技术</span></h4><p><span>一种非真实感渲染的艺术风格，该技术通过在三维物体的基本颜色上创建平面颜色，使物体看起来有着三维透视，同时又保持着二维效果</span></p><p><span>简单来说就是先通过3D技术，然后将3D模型渲染成2D的色块效果</span></p><h4 id='lts版本'><span>LTS版本</span></h4><p><span>Long Term Support 的简写，即长期支持版本，具有最好的稳定性和支持性</span></p><h4 id='解释和编译的效率差异'><span>解释和编译的效率差异</span></h4><p><span>解释不需要编译过程，省了一道工序</span></p><p><span>首先注意到，在编译的时候，如果出现了一个错误，则得不到任何结果，就算错误出现在最后面也不行；而解释性语言如Python，则是逐行解释的，只要还没有碰到错误的地方，前面所有的代码都是可以正常输出的</span></p><p><span>编译时先分析后综合，从而得到目标程序，编译完成后直接运行不需要再翻译，解释语言虽然省了一道工序，但每次运行时都需要逐行解释，因此效率更低</span></p><h4 id='xml'><span>XML</span></h4><p><span>可拓展标记语言，被设计用来传输和存储数据，不用于表现和展示数据，该文件的拓展名为 .xml</span></p><p><span>而HTML与之相对，是被设计成用来展示数据的</span></p><p><span>HTTP 协议被设计成用于传输数据的</span></p><h4 id='计算机的科学计数法表示'><span>计算机的科学计数法表示</span></h4><p><span>2.5e+18，该格式是科学计数法在计算机上的表示方法，表示为 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="9.078ex" height="2.005ex" role="img" focusable="false" viewBox="0 -864 4012.6 886" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><defs><path id="MJX-4417-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-4417-TEX-N-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path id="MJX-4417-TEX-N-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path id="MJX-4417-TEX-N-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path><path id="MJX-4417-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-4417-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-4417-TEX-N-38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-4417-TEX-N-32"></use><use data-c="2E" xlink:href="#MJX-4417-TEX-N-2E" transform="translate(500,0)"></use><use data-c="35" xlink:href="#MJX-4417-TEX-N-35" transform="translate(778,0)"></use></g><g data-mml-node="mo" transform="translate(1500.2,0)"><use data-c="2217" xlink:href="#MJX-4417-TEX-N-2217"></use></g><g data-mml-node="msup" transform="translate(2222.4,0)"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-4417-TEX-N-31"></use><use data-c="30" xlink:href="#MJX-4417-TEX-N-30" transform="translate(500,0)"></use></g><g data-mml-node="TeXAtom" transform="translate(1033,393.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-4417-TEX-N-31"></use><use data-c="38" xlink:href="#MJX-4417-TEX-N-38" transform="translate(500,0)"></use></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2.5</mn><mo>∗</mo><msup><mn>10</mn><mrow data-mjx-texclass="ORD"><mn>18</mn></mrow></msup></math></mjx-assistive-mml></mjx-container><script type="math/tex">2.5*10^{18}</script><span>，如果是指数为正，则+可省略</span></p><h4 id='dll动态链接库'><span>DLL：动态链接库</span></h4><p><span>DLL文件是一些封装好的类和函数，可以让别的程序调用</span></p><p><span>它没有main函数，也就没有程序开始和结束的完整流程。它和可执行文件类似，但需要依赖于其它程序才能执行</span></p><p><span>现在大型软件基本是一个.exe和一堆.dll文件组成，这就是使用的动态链接</span></p><p><span>dll优缺点：</span></p><ul><li><p><span>软件版本更新时只需要更换部分文件，用户更新压力校</span></p></li><li><p><span>容易损坏和丢失</span></p></li></ul><p><span>与 .dll 对应的 .lib 是静态链接库</span></p><h4 id='伪代码pseudocode）'><span>伪代码（Pseudocode）</span></h4><p><span>一种非正式的、类似于英语结构的、用于描述算法的语言，而不依赖于任何具体的编程语言</span></p><p><span>使用伪代码的目的是使得被描述的算法可以很容易地被任何一种编程语言实现，因此伪代码必须结构清晰、代码简单、可读性好、介于自然语言和编程语言之间</span></p><h4 id='网络数据包相关'><span>网络数据包相关</span></h4><p><span>本地回环地址：127.0.0.1，地址为本地回环地址的任何数据包都不会离开本计算机</span></p><p><span>程序关闭后，其pid和分配的端口号均会改变，而不是固定的</span></p><p><span>每次登录应用程序，服务器的 IP 地址可能是不一样的，通过任务管理器得到进程 pid，然后在cmd输入</span><code>netstat -ano|findstr pid</code><span>即可得到端口号和一堆 IP 地址，一般第四个就是服务器 IP</span></p><p><span>在 wireshark 中，通过筛选 ip.addr==ip ，可筛选出所有来自或通往该 IP 地址的全部数据包</span></p><h4 id='加密算法'><span>加密算法</span></h4><p><span>加密后的数据称为密文，被加密的数据称为明文</span></p><p><span>算法可分为单向加密和双向加密</span></p><h6 id='单向加密'><span>单向加密</span></h6><p><span>通过对数据摘要计算生成密文，这一过程不可逆</span></p><p><span>代表：MD5、SHA、MAC、CRC等</span></p><h6 id='双向加密'><span>双向加密</span></h6><p><span>可通过密文反推出明文，也就是可逆的</span></p><ul><li><p><span>对称式加密：加密和解密使用同一把密钥</span></p><p><span>代表：异或加密、AES、RC系列、DES等</span></p><p><span>特点：计算量小，速度快，适合对大量数据进行加密</span></p></li><li><p><span>非对称式加密</span></p><p><span>有公开密钥和私有密钥，公钥加密的只有私钥才能解密，私钥加密的只有公钥才能解密</span></p><p><span>代表：RSA、ECC等</span></p><p><span>特点：安全性更好，但加密时间长，速度慢，只适合加密少部分数据</span></p><p><span>流程：</span></p><ol start='' ><li><p><span>乙方生成一对密钥（公钥和私钥），并将公钥向其它方公开</span></p></li><li><p><span>得到该公钥的甲方使用该密钥对机密信息加密后发送给乙方</span></p></li><li><p><span>乙方使用私钥对密文进行解密</span></p></li></ol><p><span>在传输过程中，即使攻击者截获了传输的密文和公钥，也无法破解密文</span></p></li></ul><h4 id='数字签名'><span>数字签名</span></h4><p><span>基于非对称加密体制，解决的核心问题是：确保文件没有受到更改</span></p><ul><li><p><span>A 对文件生成一个128位的摘要，然后使用私钥对这个摘要进行加密，加密后的密文就是数字签名</span></p></li><li><p><span>B 也对文件生成一份摘要，然后使用公钥对密文进行解密得到A的摘要，签名验证就是比较两份摘要是否相同</span></p></li></ul><h4 id='核心破解'><span>核心破解</span></h4><p><span>全名为核心校验破解，实质是绕开数字签名和版本的校验</span></p><p><span>所有安卓应用程序都要求开发人员用一个证书进行数字签名，安卓系统不会安装没有进行签名的应用程序</span></p><p><span>正常情况下，软件被破解后，数字签名就会失效，因此无法正常安装，低版本也无法安装回去</span></p><p><span>核心破解后，可以应用降级、覆盖安装和无签名安装</span></p><p><span>核心破解必须要root</span></p><h4 id='avx指令集'><span>AVX指令集</span></h4><p><span>全称高级矢量扩展指令集</span></p><p><span>指令集是CPU所能执行的所有基本指令的集合，直接关系到CPU性能</span></p><p><span>扩展指令集：增加的特殊指令以满足时代的进步，提高CPU在某些方面的性能</span></p><p><span>SIMD是第一个扩展指令集，单指令多数据，即在一个周期内一个指令可以完成多个数据操作</span></p><p><span>SSE流式单指令多数据扩展指令集，为SIMD增强版本，从SSE到SSE4均为Intel出品，SSE5由AMD开发</span></p><p><span>AVX借鉴了一些SSE5的思想，形成了新一代的完整SIMD指令集规范，目前大部分CPU都已支持AVX指令集</span></p><p><span>初代Intel AVX指令集的扩充和加强：</span></p><ul><li><p><span>支持256位矢量运算，浮点性能最大提升两倍</span></p></li><li><p><span>增强的数据重排，更有效存取数据</span></p></li><li><p><span>支持3操作数和4操作数，在矢量和标量代码中能更好使用寄存器</span></p></li><li><p><span>支持灵活的不对齐地址访问</span></p></li><li><p><span>支持灵活的扩展性强的VEX编码方式，可减少代码</span></p></li></ul><p><span>AVX（2008）、AVX2（2011）、AVX512（2013，本质就是第三代）均为AVX指令集的版本</span></p><p><span>AVX512指令集，将指令宽度进一步扩展到了512位，支持它的CPU运算速度大幅提升，理论上浮点性能翻倍，整数计算也有较大提升，因为宽指令和速度快等特性，非常适合用于深度学习等密集型计算</span></p><h4 id='宏macro）'><span>宏（Macro）</span></h4><p><span>一种批处理的称谓，简单而言，就是一些命令组织在一起，作为一个单独命令完成一个特定任务</span></p><p>&nbsp;</p><h1 id='2023'><span>2023</span></h1><h4 id='固件'><span>固件</span></h4><p><span>固件（Firmware）介于软硬件之间，是写入 EPROM 或 EEPROM 中的程序，可视为软件也可视为硬件</span></p><p><span>可理解为设备内部保存的设备“驱动程序”，通过固件，操作系统才能按照标准的设备驱动实现特定的运行动作</span></p><p><span>固件是担任着一个系统最基础最底层工作的软件，而在硬件设备中，固件就是硬件设备的灵魂，因为一些设备除了固件以外，没有其它软件组成，因此固件也就决定着硬件设备的功能和性能</span></p><p><span>诸如主板（bios）、相机、手机、U盘等都有固件</span></p><h4 id='镜像文件'><span>镜像文件</span></h4><p><span>后缀名一般为 .ISO，它将一系列特定的文件按照一定的格式制作成单一的文件，方便用户的下载和使用，本质上和压缩包类似，但只能通过特定的软件（如虚拟光驱工具）进行解压</span></p><p><span>常见的有系统镜像、游戏镜像等</span></p><h4 id='chip更精密制程的好处'><span>chip更精密制程的好处</span></h4><ul><li><p><span>晶体管更小，要移动的电荷量就越少，就能更快地切换状态，耗电更少</span></p></li><li><p><span>电路更精凑，距离变短，信号延迟更低，导致时钟速度可以加快</span></p></li></ul><h4 id='www开头的域名'><span>www开头的域名</span></h4><p><span>有的网站没有 www 开头的域名，是正常的，它们仍然使用万维网的各种协议（如http）</span></p><p><span>现在越来越多网站不再添加 www 这个最底级的域名。现在加不加其实没有太大区别，建站时想加就加。但在输入网址的时候，必须分清有没有 www</span></p><h4 id='svchostexe'><span>svchost.exe</span></h4><p><span>位于</span><code>C:\windows\System32</code><span>中，是Windows运行所必不可少的软件，许多进程都需要依赖它（而不仅仅是update进程），删了它将导致无法开机</span></p><h4 id='nodejs'><span>Node.js</span></h4><p><span>是一个开源的跨平台 JavaScript 运行时环境，或者说是一个 js 语言解释器，侧重于服务器端和网络应用。它让 JavaScript 的触角伸到了服务器端，直接对标PHP等语言</span></p><h4 id='php'><span>PHP</span></h4><p><span>Hypertext Preprocessor：超文本预处理器，是在服务端执行的脚本语言，尤其适合于web开发并可嵌入HTML中，或者说，PHP 是一种用于web开发（服务端）的脚本语言</span></p><p><span>PHP语法学习了C语言，吸纳了Java、Perl等多个语言的特色并发展出了自己的特色语法</span></p><p><span>支持面向过程和面向对象开发</span></p><h4 id='脚本语言和解释型语言'><span>脚本语言和解释型语言</span></h4><p><span>两者基本可理解为同一个东西，只是侧重点略有不同</span></p><ul><li><p><span>脚本语言强调“脚本”，也就是强调某种编程语言能用于编写脚本来自动化批处理任务等。“脚本”一词通常指一系列指令（可以是编程语言或自然语言）、命令的集合，用于自动执行特定任务或操作</span></p></li><li><p><span>解释型语言强调在运行时由解释器逐行解释并执行这一特性，被编译型语言相对应</span></p></li></ul><h4 id='curl'><span>curl</span></h4><p><span>curl是一个常用的命令行工具，用来请求 web 服务器，可直接在命令行或终端中使用</span></p><p><code>curl https://www.example.com</code><span>：不带任何参数，此时发送的就是get请求</span></p><p><span>在 Pycharm 的终端中若报错无法使用curl，可能需要将curl改为curl.exe</span></p><h4 id='jsonl'><span>jsonl</span></h4><p><span>jsonlines的缩写，它和json的主要区别在于格式略有不同。jsonl是一行一个json对象，每个对象之间用换行符进行分割，便于阅读，比json更容易处理大型数据集</span></p><h4 id='bat和cmd'><span>.bat和.cmd</span></h4><ul><li><p><span>bat文件：自动运行批处理文件，是一个文本文件，可使用记事本打开并修改</span></p><p><span>该文件中每一行都是一条DOS命令，可视作可执行文件，由一系列命令构成，其中可包含对其他程序的调用</span></p></li><li><p><span>cmd文件：Windows命令脚本文件，同样可以用文本修改器修改</span></p></li></ul><h4 id='命令提示符cmd）'><span>命令提示符（cmd）</span></h4><p><span>cmd 是在操作系统中，提示进行命令输入的一种工作提示符。在不同操作系统环境下，命令提示符各不相同。在Windows环境下，命令行程序为 cmd.exe，是一个32位的命令行程序</span></p><p><span>cmd可方便、快捷地输入命令并对电脑进行控制。小黑窗口，高手必备</span></p><p><span>cmd中常用的基础命令：</span></p><ul><li><p><span>tracert -d ip：跟踪路由信息，使用此命令可查出数据从本地传输到目标主机中所经过的所有途径，这对了解网络布局和结构很有帮助</span></p><p><img src="assets/image-20240612095755787.png" alt="image-20240612095755787" style="zoom:50%;" /></p></li><li><p><span>telnet：远程登录命令，在以 Administrator 身份连接远程机器后，就可以用它来做很多事情</span></p></li><li><p><span>ping：用于获取和目的主机之间的网络数据包的流通性等情况，比如是否可达、中间穿过了几个路由器（通过TTL值可看出）</span></p></li><li><p><span>net：该命令是网络命令中最重要的一个，功能非常强大</span></p></li><li><p><span>dir：列出该目录系啊所有文件</span></p></li><li><p><span>ipconfig：查看本机的网络适配器属性、本机ip地址等</span></p></li><li><p><span>calc：启动计算器</span></p></li><li><p><span>explorer：打开资源管理器</span></p></li><li><p><span>logoff：注销命令</span></p></li><li><p><span>osk：打开屏幕键盘</span></p></li><li><p><span>regedt32：打开注册表编辑器</span></p></li><li><p><span>services.msc：本地服务设置</span></p></li><li><p><span>shutdown系列：和关机、重启等有关</span></p></li></ul><p>&nbsp;</p><h4 id='git和github'><span>git和github</span></h4><p><span>在程序开发中，需要记录每个开发出来的版本，即版本控制。修复bug时可提交一个新版本，在完成不同任务时也可分别维护专用的分支，避免混乱。如果当前版本在操作过程中意外损坏，还能够还原曾经的版本。版本控制可以极大促进团队合作和大项目的开发</span></p><p><span>git是一个著名的版本控制工具</span></p><p><span>github是基于git的代码托管网站。可以说git是用来控制版本的，而github就是存放不同版本的地方。开发者在开发新项目时，可以将代码放到github上，如果要用就使用git直接clone到本地，不仅利于开发者，也便于代码的分享</span></p><p><span>代码托管是面向软件开发者的一种在线代码托管服务，即提供安全管控、成员/权限管理、分支保护/合并、在线编辑和统计服务等功能的云端代码仓库</span></p><h4 id='pdf加锁'><span>pdf加锁</span></h4><p><span>若pdf加上了保护，表现为能选中pdf中的文字，但不能复制。若要获得读写权限，需要键入密码</span></p><p><span>pdf 是图片型的，或者说是扫描件，此时的pdf可视为多张图片的集合，因此文字不能选中，而文件搜索关键字也无法运行</span></p><p><span>OCR：optical character recognition，光学字符识别，可识别图片中或pdf中的打印文字（非手写文字），便于后续操作</span></p><h4 id='延迟windows更新时间'><span>延迟Windows更新时间</span></h4><p><span>在cmd输入：</span></p><p><code>reg add “HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings” /v FlightSettingsMaxPauseDays /t reg_dword /d 3000 /f</code></p><p><span>可延长 Windows 自动更新时间，其具体含义是：</span></p><ul><li><p><span>red add：用于向Windows注册表中添加或修改注册表项的值</span></p></li><li><p><span>目的：HKEY开头的一串字符串</span></p></li><li><p><span>/v：创建或修改一个指定名称的值，这里是FlightSettingsMaxPauseDays，即最大暂停更新时间</span></p></li><li><p><span>/t：指定该值的数据类型，这里是 reg_dword</span></p></li><li><p><span>/d：指定一个值，这里是3000，代表3000天</span></p></li><li><p><span>/f：强制执行无需确认</span></p></li></ul><p><span>此外还有其他方法，比如去</span><a href='https://www.sordum.org' target='_blank' class='url'>https://www.sordum.org</a><span>下载工具来屏蔽更新</span></p><h4 id='使用github新建个人网站'><span>使用github新建个人网站</span></h4><ol start='' ><li><p><span>创建</span></p><ol start='' ><li><p><span>创建新仓库，在命名的时候必须带有github.io，否则不会创建网站，此外仓库名就是网站域名</span></p></li><li><p><span>在项目里新建index.html文件，并且在文件中随便写点东西，提交保存</span></p></li><li><p><span>setting里面，code and automation部分，选择pages</span></p><p><span>source 选择 deploy from a branch，branch选择想要的分支，一般是main，点击save，此时显示网站已经运行了</span></p></li></ol></li><li><p><span>下载git工具，将项目拖到本地，在本地进行建站</span></p></li><li><p><span>建站完成后，利用工具将项目 pull 到github，完成</span></p></li></ol><p><span>注意：</span></p><ul><li><p><span>提交更改后，需等待几分钟网页才会更新</span></p></li><li><p><span>如果直接输入分配到的域名，会进入index.html网页，如果没有则访问失败</span></p></li><li><p><span>和本地一样，网页同样支持相对位置</span></p></li></ul><h4 id='前后端与全栈'><span>前后端与全栈</span></h4><ul><li><p><span>前端开发</span></p><p><span>主要设计网站和app，即用户能够从app或浏览器上看到的东西，主要关心界面的设计和用户的交互，一般使用VUE、swift、kotlin等技术</span></p></li><li><p><span>后端开发</span></p><p><span>后端设计搭建服务器，保存和获取数据，以及用于连接前端的接口</span></p><p><span>主要关注业务的实现、数据的处理和服务器的速度和响应能力等</span></p></li><li><p><span>全栈开发</span></p><p><span>有些人可同时从事前端和后端开发，称为全栈开发者</span></p><p><span>全栈开发需要懂得多项互联网技术，有着丰富的技术积累和经验才能胜任</span></p></li></ul><h4 id='minecraft生成世界的过程'><span>Minecraft生成世界的过程</span></h4><ol start='' ><li><p><span>生成生物群系</span></p></li><li><p><span>生成地形</span></p><ul><li><p><span>利用生物群系图决定每个区域的高度，画出基本轮廓</span></p></li><li><p><span>得到的是地形（全是石头）</span></p></li><li><p><span>所有低于 y=62 的区域，都将填上水成为海洋</span></p></li></ul></li><li><p><span>生成地表</span></p><ul><li><p><span>将表面的石头替换成符合特定生物群系的方块</span></p></li><li><p><span>品源是草方块，沙漠是沙块等</span></p></li></ul></li><li><p><span>生成洞穴</span></p></li><li><p><span>生成较为复杂的结构</span></p><p><span>包含各种建筑，如村庄、海底神殿等</span></p></li><li><p><span>生成各种装饰</span></p><p><span>包含树、草、各种动物等</span></p></li></ol><h4 id='arxiv网站'><span>arxiv网站</span></h4><p><span>是世界上最大的预印本网站，由康奈尔大学维护，可在上面找到许多论文并免费下载</span></p><p><span>该网站的本意是“预印”。投稿论文到期刊发表是有时间的，为了防止自己的idea在论文被收录前被别人剽窃，可以将预稿上传到arxiv作为预收录。即arxiv可以证明论文原创性（通过上传时间戳）的文档收录网站</span></p><h4 id='net-和-c'><span>.NET 和 C#</span></h4><p><span>.NET 是一个用于开发的框架</span></p><p><span>提高 .NET 就不得不说起 .NET framework，它是一个开发平台，包含公共语言运行库（CLR）和基类库（BCL），CLR负责管理代码的执行，BCL提供了丰富的类库供开发者构建应用程序，支持多种语言的开发。但 .NET framework 和Windows深度绑定，不支持跨平台</span></p><p><span>为了解决跨平台问题，微软推出了 .NET core，并在 .NET core 5.0 之后去掉了 core 字眼，统称为 .NET</span></p><p><span>C# 是微软开发的一个现代的、通用的、面向对象的编程语言，基于C系语言，效率较高，且支持C++不支持的垃圾回收等功能</span></p><p><span>C#的开发和 .NET 深度绑定，即使用C#必须使用 .NET框架，但这个框架本身不仅能开发C#</span></p><h4 id='语法糖syntactic-sugar）'><span>语法糖（syntactic sugar）</span></h4><p><span>指编程语言中可以更容易表达一个操作的语法，相当于汉语中的一大堆文字用一个成语来表示，也可以理解为简写</span></p><p><span>语法糖可以让程序员更加容易地使用编程语言，让操作可以变得更加清晰、方便或是符合程序员的编程习惯</span></p><p><span>比如 lambda 匿名函数就是一个语法糖，事实上很多语法其实都是语法糖</span></p><p><span>语法糖并不能优化程序的性能，但可以方便程序员的代码编写</span></p><h4 id='二维码'><span>二维码</span></h4><p><span>二维码的内容由其中的数据决定，不同的数据会生成不同的二维码，因此不同应用生成的二维码，只要数据不冲突，其二维码就不会冲突</span></p><p><span>二维码本身是一种编码，即将数据编码成二维码，当扫描的时候，将进行解码得到原始数据</span></p><p><span>二维码的标准是统一的，由国际标准化组织 ISO 制定。最常见的二维码标准是 QR（Quick Response Code，快速响应矩阵图码），它保证了不同的设备、应用程序和生成器能理解和生成相同的二维码</span></p><p><span>二维码的容错率：二维码中的数据具有部分冗余的特点，使得其具有一定容错能力。在某些情况下，二维码的一部分被损坏，扫描设备仍然能够正确解码出其中的数据。例如30%容错率，表示二维码被损坏最大30%时仍然能够被解码</span></p><h4 id='蓝牙音频编码'><span>蓝牙音频编码</span></h4><ul><li><p><span>音乐播放中的编解码：手机中的音频文件如 .mp3、.flac等都是由 PCM 音频编码的基础上二次编码来的，目的是为了减少文件体积。在音频播放的时候，需要将 mp3 等格式还原成 PCM 编码</span></p></li><li><p><span>蓝牙播放过程中的编解码</span></p><p><span>使用蓝牙时，相比直接播放多了一道编解码步骤，这个步骤决定了蓝牙音乐的音质</span></p><p><img src="assets/image-20240612151657841.png" referrerpolicy="no-referrer" alt="image-20240612151657841"></p></li><li><p><span>蓝牙编码类型</span></p><ul><li><p><span>SBC：Subband Coding，子带编码，是支持蓝牙的设备中必须支持的编码类型，其复杂度低，质量最差</span></p></li><li><p><span>AAC：Advanced Audio Coding，高级音频编码，其压缩比高，质量较好</span></p></li><li><p><span>Aptx：根据高音质、低延迟等特性，分化出了四个版本，质量比 AAC 更好。目前由高通握有该项技术的专利</span></p></li><li><p><span>LDAC：由索尼开发，最高能以 990 Kbps 的比特率传输高分辨率音频，质量是当前主流编码中最高的一种，是第一种通过 HiRes Audio认证的编码技术</span></p></li><li><p><span>LHDC：Low-Latency Hi-Definition Audio Codec，支持高达900Kbps的传输速率，且延迟比较低，同样通过了 Hi Res Audio 认证</span></p></li></ul></li><li><p><span>Hi Res Audio认证</span></p><p><span>全称 High-Resolution Audio，即高解析度音频，最开始是音乐和音响设备商的营销术语，通常表示比 CD 音质更好的音频，由日本音响学会提出，目前仅有 LDAC 和 LHDC 两种蓝牙编码通过了 wireless 的认证</span></p><p><span>获得认证的产品可贴上以下标识，俗称小金标</span></p><p><img src="assets/image-20240612152445557.png" referrerpolicy="no-referrer" alt="image-20240612152445557"></p></li><li><p><span>开启更好音频编解码</span></p><p><span>手机打开开发者模式，在里面找到“蓝牙音频编解码器”，选择耳机最高支持的编解码方案，然后在已连接的蓝牙设备中打开该解码方案。若退出开发者选项后，又回到了原本的编解码方案，可能是系统的问题，重启手机或更新系统</span></p></li></ul><h4 id='github自行编译项目'><span>github自行编译项目</span></h4><p><span>clone 下来的，或者直接下载的zip，一般需要本地手动编译：cmd中cd到源码文件夹，按照项目的readme文件或网上查找编译命令，C++项目就用g++编译，java就使用java编译</span></p><p><span>预编译：有时指编译过程中的处理 #include 这一步；有时也指别人帮你编译好了，如预编译文件就是别人已经编译了而你不需要再次编译的文件，与之相对的即手动编译</span></p><h4 id='jar文件'><span>jar文件</span></h4><p><span>Java Archive File，是 Java 的一种和平台无关的文档格式</span></p><p><span>jar 文件和 zip 文件十分相似，或者说它以 zip 文件为基础，额外包含了一些 java 相关的文件。jar文件主要打包了别人已经写好的类，它可以像 .py 文件那样被引入自己的工程中，也可做其他用途</span></p><h4 id='war文件'><span>war文件</span></h4><p><span>是一个可以直接运行的web&#39;模块，通常用于网站，也可以认为是一种压缩包，通常包含 html文件、xml文件等，可以说一个war文件就是一个web应用程序</span></p><h4 id='独显直连'><span>独显直连</span></h4><ul><li><p><span>核显直连：画面由核显渲染且由核显输出到显示器中，优点是节能省电</span></p></li><li><p><span>混合模式：画面由独显渲染但由核显输出至显示器中，性能较好且相对节能，但多了一个交付工作必然影响了性能</span></p></li><li><p><span>独显直连：完全由独显渲染且由独显输出，性能最好但功耗也最高，目前游戏本逐步采用了该项技术。而不支持独显直连的电脑也可以外接一个显示器，这个显示器就相当于是独显直连的</span></p></li></ul><h4 id='tts'><span>TTS</span></h4><p><span>text to speech，语音合成技术</span></p><p><span>Vits：全称“Variational Inference with adversarial learning for end-to-end Text-to-Speech”，即“使用变分推断和对抗学习实现端到端的语音合成”，是目前语音合成最好的模型</span></p><h4 id='注册表'><span>注册表</span></h4><p><span>是一个存储有关系统配置的数据库文件，位于</span><code>windows/System32/config</code><span>文件夹内，这些文件都没有后缀名，无法直接编辑，必须通过系统提供的特定程序，即 regedit（注册表编辑器）</span></p><p><span>注册表编辑器中，右侧每一项称为 key，最高级的键以 HKEY_ 开头，每个键可以有多个子键，键和值对应，值有名称、包含的数据以及数据类型三个属性</span></p><p><span>总的来说，注册表包含 key、subkey、value 三个东西</span></p><p><span>常见用法之一是在选中文件时，添加右键菜单的“用xx打开”或将其删掉：</span><code>\HKEY_CLASSES_ROOT\*\shell</code><span>、</span><code>HKEY_CLASSES_ROOT\Directory\Background\shell</code><span>等地方，其子项即右键菜单中的应用，可以新建或删除项以达到更改右键菜单的目的（根据右键空白区域、右键文件夹、右键文件等右键菜单处于不同位置）</span></p><h4 id='分卷压缩'><span>分卷压缩</span></h4><p><span>分卷压缩主要目的是为了降低单个文件的大小，在某些限制文件大小的情况有效（如Fat32只支持4G最大文件，网盘上传最大文件4G等）</span></p><p><span>分卷压缩相当于将文件压缩后分割成大小相同的几个小压缩包（最后一个除外），解压时再合并成一个完整的压缩包，因此解压时每个分卷都不能少，否则将无法解压</span></p><p><span>分卷压缩后得到的是一个 .zip 文件和若干个后缀名以 z 开头的文件，可直接解压 .zip 文件</span></p><h4 id='dns污染'><span>DNS污染</span></h4><p><span>也可称为 DNS 劫持，是DNS系统遭到入侵且入侵者取得域名解析记录控制，修改了域名的解析结果，使得其由 域名-正确IP 映射关系，编程 域名-错误IP 的映射，结果不仅会导致无法访问正确的网址，还会诱导进入假网站</span></p><h4 id='绿色版软件'><span>绿色版软件</span></h4><p><span>一般是小型的免费软件，其特点是无需安装即可使用，可存在于移动存储媒体中（因此也称便携软件），移除后也不会将任何记录如注册表消息留在本机上。绿色版和免安装版是类似的概念</span></p><h4 id='下载方式'><span>下载方式</span></h4><ul><li><p><span>HTTP下载：HTTP 中的“超文本”就是指 HTML。在网站中如果打开了一个链接，而这个链接是浏览器支持的类型（例如HTML文件），就会直接打开，如果不支持，浏览器就调用HTTP下载。如果浏览器装有下载插件，就会将下载任务交给插件进行</span></p></li><li><p><span>断点续传：HTTP1.1 在请求头和响应头分别添加了range和content-range两个字段，以实现断点续传。这两个字段是确定中断下载后再次下载开始的文件位置</span></p></li><li><p><span>多线程下载：是断点续传的变相应用，下载工具在下载时建立多个线程，每个线程下载文件的一部分，最后合并起来。这种方法可以提升下载速度，但资源提供者并不鼓励这种方式，因为抢占了传输带宽，被检测到后可能会禁IP</span></p></li><li><p><span>FTP：文件传输协议，公网上用的不多，主要是团体内部使用</span></p></li><li><p><span>BT下载：HTTP 下载是从内容提供商那下载的，下载人数越多速度就越慢。BT即Bittorrent，是一种基于P2P的传输协议，也可指第一个实现BT协议的软件。BT下载利用BitTorrent协议，优先从已下载该资源的另一台主机上下载，某份资源下载的人数越多反而会提升下载速度</span></p></li><li><p><span>种子：后缀名为 .torrent 的文件，存储有文件的文件名、哈希值、Tracker信息。哈希值是一串十六进制数字，用于判断文件的完整性和正确性。下载完成后会重新计算文件的哈希值，并与种子内的哈希值比较，两者一致即代表文件完整且正确</span></p></li><li><p><span>Tracker：是一个服务器地址，但与HTTP服务器不同，Tracker服务器不保存文件内容，只保存文件的哈希值和已下载过该文件的所有用户的IP地址。种子资源下载完成后，BT软件会自动做种，即BT软件告诉Tracker服务器本电脑也有了这个文件资源</span></p></li><li><p><span>PT：全称Privite Tracker BT，一般以论坛的形式存在，是私有化的BT，仅对内部人员开放。PT一般会计算下载量和上传量，因此氛围较好，出现死种的情况低的多</span></p></li><li><p><span>BT2.0：BT 的文件虽然是分布式存储的，但 Tracker 是中心化的，因此端掉了 Tracker 就能让这一部分的BT传输完全瘫痪。Kademlia协议使用DHT（分布式哈希表网络），其原理是将 Tracker 服务器保存的信息分散存储在DHT网络的各个节点中，并且留有冗余</span></p></li><li><p><span>ed2k：全称 eDonkey2000，中文名电驴，是使用BT技术的软件，同时也是其协议 ed2k:// 的名称，但在2005年被迫关闭。它不需要种子文件，所有重要信息（文件名、哈希值、Tracker地址等）都保存在ed2k链接中，因此这个链接会非常长</span></p></li><li><p><span>磁力链：是协议名为 magnet: 的下载链接，其原理和用法与 ed2k:// 几乎是一样的。磁力链可以与BT种子搭配使用，即为多个文件制作好 BT 种子之后（种子也是一个文件），再为种子文件制作一个磁力链接。ed2k 和磁力链的优势是不需要文件，只需要链接即可传输文件，而种子的优势是可以关联多个文件</span></p><p><span>一个典型的磁力链为：magnet:?xt=urn:btih:哈希值&amp;dn=文件名&amp;tr=Tracker服务器地址</span></p></li><li><p><span>专用下载链接：除了 magnet 之外，还有 thunder（迅雷）、qqdl（QQ旋风）等专用链接，只能使用专用软件下载文件</span></p></li><li><p><span>离线下载：指别人从内容提供商下载完资源后，再从别人那传输到本地，一般是网盘的增值服务。若有人已经下载了该资源，则离线下载速度几乎就是瞬间完成，这个时候就相当于将资源存储到了网盘里，等方便的时候再传输到本地</span></p></li></ul><p>&nbsp;</p><h1 id='2024'><span>2024</span></h1><h4 id='隐藏文件'><span>隐藏文件</span></h4><p><span>以 </span><code>.</code><span>开头的文件夹是隐藏文件夹，在Windows系统中不会被自动隐藏，但在某些软件里进行路径跳转则不会看到此文件夹，包含cmd中的cd命令，以及Pycharm无法打开 .venv 中的文件</span></p><h4 id='adbandroid-debug-bridge安卓调试桥'><span>ADB：Android Debug Bridge，安卓调试桥</span></h4><p><span>活动（Activity）：可理解为手机商 app 各个界面的名称，相当于Windows中的窗口</span></p><p><span>降级法安装安卓旧版本软件：以保留数据的形式删掉原软件，之后重启，并下载旧版本后直接安装，即可跳过登录直接进入</span></p><p><span>用户可在电脑上安装 Android SDK 后，通过输入命令的方式实现对手机高权限的控制。权限范围因手机品牌而异</span></p><ul><li><p><span>配置：PC端安装 android sdk，添加环境变量，打开 cmd 输入 adb version 后显示版本详情即配置好；android端打开开发者选项，打开usb调试和其它需要打开的开关（不同手机设置不一定相同）</span></p></li></ul><p><span>Adb 有两种格式的命令：</span></p><ul><li><p><span>adb+命令，一般只能在电脑上运行</span></p></li><li><p><span>adb shell +命令，通过调用手机里的shell.apk运行，可在手机上执行，但需要root权限。该命令也可先输入 adb shell进入shell，再直接输入命令。可输入exit退出shell</span></p></li></ul><p><span>常见命令：</span></p><ul><li><p><code>adb devices</code><span>：授权，或者显示已连接的设备</span></p></li><li><p><code>adb install + 软件名</code><span>：安装软件</span></p><p><span>注意若adb目录和apk目录不一致，需要将apk拖动到cmd中得到路径</span></p><p><span>-d：该参数允许降级安装，这里的降级不是直接安装低版本的软件，而是先保留数据卸载，再使用-r命令安装低版本软件，跳过登录实现降级</span></p><p><span>-r：覆盖安装，替换已经存在的应用程序</span></p></li><li><p><code>adb uninstall+参数+包名</code><span>：强制卸载软件，注意这里是包名</span></p><p><span>-k：该参数为保留数据卸载</span></p></li><li><p><code>adb shell ps | findstr com.tencent.mobileqq</code><span>：指定包名查看其 pid，这里以QQ为例，其输出第二列就是pid</span></p></li></ul><p><span>包管理器（pm）命令：可实现对系统和第三方软件的高权限控制，如禁用（即冻结）、卸载、清除数据、授予权限等</span></p><ul><li><p><code>adb shell pm list packages</code><span>：查看所有安装程序的包名</span></p></li><li><p><code>adb shell pm disable-user+包名</code><span>：强制禁用软件且失去所有权限，无法被启动</span></p></li><li><p><code>adb shell pm enbale+包名</code><span>：启用软件</span></p></li><li><p><code>adb shell pm uninstall --user 0 +包名</code><span>：删除app，注意0前面有个空格</span></p></li></ul><h4 id='网卡相关'><span>网卡相关</span></h4><p><span>一台设备可以有多个ip地址，也可以有多个mac地址</span></p><p><span>一些软件会创建一些新的适配器，如UU加速器等，这样就会出现多个物理地址，当卸载该软件时可直接将该适配器删掉</span></p><p><span>MAC地址也称局域网地址，它是由本机上报的，故本机可每次采用随机MAC地址（可保护隐私），上报给路由器，路由器根据发来的MAC地址进行转发数据包。所以MAC地址尽管是每个设备唯一的，但不能作为定位码；IP地址是上级下发的，如果不采用会上不了网，因此一般使用IP地址进行定位</span></p><ul><li><p><span>一般有线网卡和无线网卡各一个mac地址，此外还有一些软件也会创建以太网或无线适配器，一台电脑往往有多个MAC地址</span></p></li></ul><p><span>可在CMD中输入</span><code>ipconfig /all</code><span>查看适配器属性</span></p><h4 id='美国国会制度'><span>美国国会制度</span></h4><p><span>参众两院共同组成美国国会，行使立法权，同时具有法案的发起（众议院）、否决（参议院）的权利</span></p><ul><li><p><span>参议院（Sanate）：和英国“上议院”类似，对应罗马的“元老院”，以“各州平等”为理念，共100个席位，每州席位个数相同，均为两席。参议员任期六年，每两年改选约三分之一，拿下参议院多数席位（51席）的党派成为参议院多数党并获得参议院控制权。参议院议长一般为副总统，但无投票权，仅在投票打平时进行表决</span></p></li><li><p><span>参议院（House）：和英国“下议院”类似，对应罗马的“国民大会”，以“少数服从多数”为理念，共435个席位，按每州人口分配席位，但至少有一名议员。众议员任期两年，每两年进行改选。拿下超过一半席位（218席）的党派成为众议院多数党并获得众议院控制权。众议院议长由议员选举产生，传统上为多数党领导人，而多数党领袖则由党内第二重要的领导人担任</span></p></li></ul><p>&nbsp;</p><h1 id='小tips'><span>小tips</span></h1><ul><li><p><span>文件资源管理器的地址栏直接输入cmd并回车，可在此目录直接打开cmd</span></p></li><li><p><span>隐藏媒体文件：在包含媒体文件的文件夹中新建名为.nomedia的文件夹，然后将文件夹随便改一个名字，然后再改回去，以便第三方软件重新扫描</span></p><p><span>该方法对本体软件无效（如隐藏ehviewer的文件夹，ehviewer自己还能扫描到）</span></p></li><li><p><span>QQ摇骰子：断网，多次摇骰子，直到出现自己想要的数字。此时直接退出QQ（关掉后台），然后再重新进入，并打开网络，骰子前面会出现红色感叹号，点击要发送的骰子的感叹号即可</span></p></li><li><p><span>微信文件位置：</span><code>/storage/emulated/0/Android/data/com.tencent.mm/MicroMsg/Download</code></p></li><li><p><span>QQ 闪照路径：</span><code>/Android/data/com.Tencent.mobileQQ/Tencent/mobileQQ/chatimg</code></p></li><li><p><span>chrome的实验室：</span><code>chrome://flags/</code><span>，在网址栏输入即可打开，然后搜索 Dark 即可找到打开深色模式的选项</span></p></li><li><p><span>Edge的实验室：</span><code>Edge://flags</code></p></li><li><p><span>全屏/窗口模式切换：</span><code>alt+enter</code></p></li><li><p><span>窗口移动到了屏幕外边，先在进程中选中这个窗口，然后alt+空格（把powertoy先关掉），此时会出现窗口有关的小窗口，且鼠标可以移动该窗口</span></p><p><span>让powertoy一直开着也不是好事，它会占用调一些快捷键，让某些操作无法进行，比如窗口的强制移动</span></p></li><li><p><span>常用网站</span></p><p><code>http://www.ydowns.net/down/</code><span>：下载youtube视频</span></p><p><code>https://www.birme.net</code><span>：批量裁切图片</span></p><p><code>https://www.desmos.com/calculator?lang=zh-CN</code><span>：数学画图</span></p></li><li><p><span>若连接公共网络后不弹出认证窗口，可打开浏览器，然后在网络连接的wifi属性中找到本地IPv4/6地址，或者DNS服务器地址，复制到浏览器并打开即是登录窗口</span></p><p><span>！！必须关闭VPN。弹出登录窗口本质是类似劫持的手段</span></p></li><li><p><span>使用篡改猴、以及直链助手等脚本，获取夸克网盘直链，从而将其弄到第三方下载器快速下载，如Motrix。注意必须登录网页版的夸克网盘</span></p></li><li><p><span>Windows端，可单独调整每个进程的音量：任务栏右键音量，打开音量合成器</span></p></li><li><p><span>PPT的录制功能：该功能可以实现给PPT配音等操作，在放映PPT时，根据录制自动放映PPT</span></p></li><li><p><span>C盘清理：</span></p><ol start='' ><li><p><span>C盘 Appdata-local-temp 文件夹，该文件夹存放临时文件</span></p></li><li><p><span>删除 C 盘下 Local、Roaming 文件下已删除的程序所创建的文件夹</span></p></li><li><p><span>删除Windows更新文件</span><code>C:\windows\SoftwareDistribution\Download</code></p></li></ol></li></ul></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>
