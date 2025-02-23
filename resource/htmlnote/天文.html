@@ -1,0 +1,1695 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+
+/* FONTS */
+
+/* VARIABLES */
+
+:root {
+  --theme-0: rgb(255, 255, 255);
+
+  /* Slate grayscale */
+  --theme-50: #f8fafc;
+  --theme-100: #f1f5f9;
+  --theme-200: #e2e8f0;
+  --theme-300: #cbd5e1;
+  --theme-400: #94a3b8;
+  --theme-500: #64748b;
+  --theme-600: #475569;
+  --theme-700: #334155;
+  --theme-800: #1e293b;
+  --theme-900: #0f172a;
+
+  /* Tailwind variables */
+  --tw-primary: #62bbf3;
+
+  --tw-prose-body: var(--theme-700);
+  --tw-prose-headings: var(--theme-900);
+  --tw-prose-lead: var(--theme-600);
+  --tw-prose-links: var(--theme-900);
+  --tw-prose-bold: var(--theme-900);
+  --tw-prose-counters: var(--theme-500);
+  --tw-prose-bullets: var(--theme-300);
+  --tw-prose-hr: var(--theme-200);
+  --tw-prose-quotes: var(--theme-900);
+  --tw-prose-quote-borders: var(--theme-200);
+  --tw-prose-captions: var(--theme-500);
+  --tw-prose-code: var(--theme-900);
+  --tw-prose-pre-code: var(--theme-100);
+  --tw-prose-pre-bg: var(--theme-800);
+  --tw-prose-th-borders: var(--theme-300);
+  --tw-prose-td-borders: var(--theme-200);
+  --tw-prose-bg: var(--theme-0);
+  --tw-prose-meta: var(--theme-500);
+  --tw-prose-meta-bg: var(--theme-100);
+
+  --tw-prose-invert-body: var(--theme-300);
+  --tw-prose-invert-headings: var(--theme-0);
+  --tw-prose-invert-lead: var(--theme-400);
+  --tw-prose-invert-links: var(--theme-0);
+  --tw-prose-invert-bold: var(--theme-0);
+  --tw-prose-invert-counters: var(--theme-400);
+  --tw-prose-invert-bullets: var(--theme-600);
+  --tw-prose-invert-hr: var(--theme-700);
+  --tw-prose-invert-quotes: var(--theme-100);
+  --tw-prose-invert-quote-borders: var(--theme-700);
+  --tw-prose-invert-captions: var(--theme-400);
+  --tw-prose-invert-code: var(--theme-0);
+  --tw-prose-invert-pre-bg: var(--theme-900);
+  --tw-prose-invert-th-borders: var(--theme-600);
+  --tw-prose-invert-td-borders: var(--theme-700);
+  --tw-prose-invert-bg: var(--theme-800);
+  --tw-prose-invert-meta: var(--theme-400);
+  --tw-prose-invert-meta-bg: var(--theme-700);
+
+  --tw-highlight-color: #fde047; /* yellow-300 */
+  --tw-drop-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  --tw-button-hover-bg: var(--theme-100);
+
+  --tw-button-hover-bg-inverted: var(--theme-700);
+
+  /* Typora variables */
+
+  --background: var(--tw-prose-bg);
+  --bg-color: var(--tw-prose-bg);
+  --text-color: var(--tw-prose-body);
+  --primary-color: var(--tw-primary);
+  --md-char-color: var(--theme-400);
+  --meta-content-color: var(--theme-500);
+  --typora-source-body: var(--theme-800);
+  --heading-char-color: var(--md-char-color);
+  --mermaid-theme: neutral;
+  --active-toggle-btn-color: var(--theme-200);
+
+  --md-char-color-inverted: var(--theme-500);
+  --meta-content-color-inverted: var(--theme-400);
+  --typora-source-body-inverted: var(--theme-300);
+  --mermaid-theme-inverted: dark;
+  --active-toggle-btn-color-inverted: var(--theme-400);
+
+  /* Sidebar */
+  --side-bar-bg-color: var(--tw-prose-bg);
+  --active-file-bg-color: var(--theme-100);
+  --active-file-text-color: var(--tw-prose-bold);
+  --active-file-border-color: var(--theme-100);
+  --panel-border-color: var(--theme-300);
+  --blur-text-color: var(--theme-300);
+  --window-border: 1px solid var(--theme-200);
+  --item-hover-bg-color: var(--theme-100);
+  --search-hit-text-bg-color: var(--theme-200);
+  --search-hit-text-font-color: inherit;
+  --search-select-text-color: var(--select-text-font-color);
+  --search-select-bg-color: var(--select-text-bg-color);
+
+  --blur-text-color-inverted: var(--theme-500);
+  --panel-border-color-inverted: var(--theme-700);
+  --active-file-bg-color-inverted: var(--theme-700);
+  --window-border-inverted: 1px solid var(--theme-700);
+  --search-hit-text-bg-color-inverted: var(--theme-700);
+  --search-hit-text-font-color-inverted: var(--theme-0);
+  --search-select-bg-color-inverted: var(--theme-400);
+  --rawblock-edit-panel-bd: var(--tw-prose-pre-bg);
+  --item-hover-bg-color-inverted: var(--theme-700);
+
+  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Custom */
+  --footnote: var(--tw-prose-body);
+  /* I'd love to use the --theme grayscale for --footnote-bg, but there's (currently)
+  no way to add an alpha-channel to a CSS variable (and we need the transparency
+  because otherwise the caret wil not be visible), so I here just used a hardcoded
+  copy of --theme-500 */
+  --footnote-bg: #94a3b855;
+  --button-bg: var(--theme-200);
+
+  --button-bg-inverted: var(--theme-600);
+
+  --md-grid-header: var(--theme-100);
+  --md-grid-header-ext: var(--theme-400);
+  --md-grid-ext: var(--theme-300);
+  --md-grid-header-active: var(--theme-500);
+  --md-grid-active: var(--theme-400);
+  --md-grid-border-color: var(--theme-500);
+
+  --md-grid-header-inverted: var(--theme-600);
+  --md-grid-header-ext-inverted: var(--theme-500);
+  --md-grid-ext-inverted: var(--theme-600);
+  --md-grid-header-active-inverted: var(--theme-400);
+  --md-grid-active-inverted: var(--theme-500);
+  --md-grid-border-color-inverted: var(--theme-200);
+
+  --code-blocks-font-size: 0.9em;
+  --inline-code-font-size: 0.9em;
+}
+
+.ty-file-search-match-text {
+  background-color: var(--search-hit-text-bg-color);
+}
+
+/* TAILWIND RESET */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: currentColor;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: "";
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+*/
+
+#text {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+#text {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+#write {
+    background: #131b29;
+    color: #a9aaab;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 30px;
+    padding-bottom: 100px;
+    position: static;
+    width: 90%;
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+a {
+    color: #71bfd9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    cursor: text;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6,
+#write pre {
+    color: #dfb057;
+    width: auto;
+}
+
+#write h1::before,
+#write h2::before,
+#write h3::before,
+#write h4::before,
+#write h5::before,
+#write h6::before {
+    border-radius: 0;
+    bottom: 0;
+    color: #517090;
+    float: none;
+    font-size: 1rem;
+    font-variant: 'small-caps';
+    font-weight: bold;
+    left: auto;
+    line-height: 20px;
+    padding: 0;
+    position: absolute;
+    right: calc(100% + 10px);
+    vertical-align: baseline;
+}
+
+#write h1 {
+    font-size: 3.2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+#write h1::before {
+    bottom: 1.45rem;
+    content: 'H1';
+}
+
+#write h2 {
+    font-size: 2.2rem;
+    margin: 1.4rem 0;
+}
+
+#write h2::before {
+    bottom: 0.2rem;
+    content: 'H2';
+}
+
+#write h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+#write h3::before {
+    bottom: 0.18rem;
+    content: 'H3';
+}
+
+#write h4 {
+    font-size: 1.7rem;
+    margin: 0.8rem 3;
+}
+
+#write h4::before {
+    content: 'H4';
+    bottom: 0.15rem;
+}
+
+#write h5 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+#write h6 {
+    font-size: 1.3rem;
+    margin: 0.2rem,0;
+}
+
+#write h5::before,
+#write h6::before {
+    bottom: 0.1rem;
+}
+
+#write h5::before {
+    content: 'H5';
+}
+
+#write h6::before {
+    content: 'H6';
+}
+
+h1::after, h2::after {
+  content: ""; /* 必须设置 content */
+  display: block; /* 确保伪元素占据一行 */
+  border-bottom: 2px solid #ccc; /* 分割线样式：颜色为灰色，厚度为 1px */
+  margin-top: 4px; /* 分割线与标题的间距 */
+  margin-bottom: 8px; /* 分割线与下文的间距 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: "LXGWWenKai-Blod";
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--monospace);
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/* TAILWIND PROSE IMPLEMENTATION */
+
+#write {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  max-width: 80rem;
+}
+
+html,
+body {
+  font-family: "LXGWWenKai-Regular";
+}
+
+/* on Windows/Linux, it is the part that is not titlebar or status bar. */
+content,
+titlebar {
+  background: var(--tw-prose-bg);
+}
+
+#write {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: var(--tw-prose-body);
+  max-width: 60ch;
+}
+
+#write > :where(:first-child) {
+  margin-top: 0;
+}
+
+#write > :where(:last-child) {
+  margin-bottom: 0;
+}
+
+/**
+  * ---------------------
+  * Block Elements
+  */
+
+/* yaml */
+pre.md-meta-block {
+  color: var(--tw-prose-meta);
+  background-color: var(--tw-prose-meta-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+  margin-bottom: 2.8em;
+}
+
+/* headings */
+h1 {
+  color: var(--tw-prose-headings);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 2.75rem;
+  letter-spacing: -1.5px;
+}
+
+h1 strong {
+  font-weight: 900;
+}
+
+h2 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.63rem;
+  margin-top: 1.5555556em;
+  margin-bottom: 1.5rem;
+  line-height: 1.875rem;
+  letter-spacing: -1px;
+}
+
+h2 strong {
+  font-weight: 800;
+}
+
+h3 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.17rem;
+  margin-top: 1.6em;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: -1px;
+}
+
+h3 strong {
+  font-weight: 700;
+}
+
+h4 {
+  color: var(--tw-prose-headings);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-top: 1.8em;
+  margin-bottom: 1.5rem;
+  line-height: 1.375rem;
+}
+
+h4 strong {
+  font-weight: 700;
+}
+
+h2 code {
+  font-size: 0.8611111em;
+}
+
+h3 code {
+  font-size: 0.9em;
+}
+
+h2 + * {
+  margin-top: 0;
+}
+
+h3 + * {
+  margin-top: 0;
+}
+
+h4 + * {
+  margin-top: 0;
+}
+
+h5 {
+  font-size: 0.97rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 0.93rem;
+  line-height: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* table */
+
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1.5555556;
+}
+
+/* table header */
+
+thead {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-th-borders);
+}
+
+thead th {
+  color: var(--tw-prose-headings);
+  font-weight: 600;
+  vertical-align: bottom;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+thead th:first-child {
+  padding-left: 0;
+}
+
+thead th:last-child {
+  padding-right: 0;
+}
+
+tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-td-borders);
+}
+
+tbody tr:last-child {
+  border-bottom-width: 0;
+}
+
+tbody td {
+  vertical-align: baseline;
+  padding-top: 0.8888889em;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+tbody td:first-child {
+  padding-left: 0;
+}
+
+tbody td:last-child {
+  padding-right: 0;
+}
+
+.md-grid-board tr[row="1"] {
+  background-color: var(--md-grid-header);
+}
+
+.md-grid-board a:hover,
+.md-grid-board a.md-active {
+  background: var(--md-grid-active);
+}
+
+.md-grid-board tr[row="1"] a:hover,
+.md-grid-board tr[row="1"] a.md-active {
+  background: var(--md-grid-header-active);
+}
+
+.md-grid-board .md-grid-ext {
+  background: var(--md-grid-ext);
+}
+
+.md-grid-board tr[row="1"] .md-grid-ext {
+  background: var(--md-grid-header-ext);
+}
+
+.md-grid-board a {
+  border-color: var(--md-grid-border-color) !important;
+}
+
+/* lists */
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1em;
+}
+
+li {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+#write ul.task-list {
+  padding-left: 0;
+}
+
+#write li.task-list-item {
+  padding-left: 0.4em;
+}
+
+#write input[type="checkbox"] {
+  margin-left: -1em;
+}
+
+input[checked] ~ * {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+ol > li::marker {
+  font-weight: 400;
+  color: var(--tw-prose-counters);
+}
+
+ul > li::marker {
+  color: var(--tw-prose-bullets);
+}
+
+ul > li,
+ol > li {
+  padding-left: 0.4em;
+}
+
+ul > li p,
+ol > li p {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+#write > ul > li > :not(input):first-child,
+#write > ol > li > :not(input):first-child,
+#write > ul > li > input + *,
+#write > ol > li > input + * {
+  margin-top: 1.2em;
+}
+
+#write > ul > li > *:last-child,
+#write > ol > li > *:last-child {
+  margin-bottom: 1.2em;
+}
+
+#write ul > li > p:only-child,
+#write ol > li > p:only-child,
+#write ul > li > input + p:last-child,
+#write ol > li > input + p:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+/* blockquote */
+blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--tw-prose-quotes);
+  border-left-width: 0.25rem;
+  border-left-color: var(--tw-prose-quote-borders);
+  quotes: "\201C""\201D""\2018""\2019";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1.0666667em;
+}
+
+blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+blockquote p:last-of-type::after {
+  content: close-quote;
+}
+
+/* hr */
+hr {
+  border-color: var(--tw-prose-hr);
+  border-top-width: 1px;
+}
+
+[mdtype="hr"] {
+  margin-top: 2.8em;
+  margin-bottom: 2.8em;
+}
+
+p {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  color: #eeeeee;
+}
+
+.in-text-selection,::selection {
+  background-color: var(--select-text-bg-color);
+}
+
+/* diagram panel */
+.md-diagram-panel {
+  color: var(--tw-prose-body);
+}
+
+.enable-diagrams .md-diagram .code-tooltip {
+  bottom: -1.9em;
+  right: 0;
+}
+
+.md-fences-adv-panel {
+  margin-top: 1.3em;
+}
+
+/* footnote definition */
+sup.md-footnote {
+  color: var(--footnote);
+  background-color: var(--footnote-bg);
+}
+
+.footnotes {
+  font-size: 0.85em;
+}
+
+.md-reverse-footnote-area a {
+  font-family: "LXGWWenKai-Regular";
+  text-decoration: none;
+  color: var(--tw-primary);
+  border-radius: 3px;
+}
+
+.md-hover-tip .code-tooltip-content {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 0.8em 1.2em;
+}
+
+.md-reverse-footnote-area a:hover {
+  background-color: var(--item-hover-bg-color);
+}
+
+.md-def-name:before {
+  color: var(--md-char-color);
+}
+
+.md-rawblock.md-rawblock-on-edit,
+.md-rawblock:hover {
+  color: var(--tw-prose-pre-code);
+}
+
+.md-inline-math script {
+  color: var(--tw-prose-code);
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: var(--tw-highlight-color) !important;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+.code-tooltip {
+  color: var(--tw-prose-pre-code);
+}
+
+.code-tooltip .md-mathjax-preview {
+  color: var(--tw-prose-body);
+}
+
+.md-htmlblock-container,
+.md-rawblock-input.md-rawblock-control,
+.md-htmlblock-panel.md-rawblock-control,
+.md-math-container {
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.md-rawblock-input {
+  font-size: var(--code-blocks-font-size);
+  padding: 0 1.3333333em;
+}
+
+.md-mathblock-panel .md-rawblock-input.md-rawblock-control {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 0;
+}
+
+.md-mathblock-panel .md-rawblock-before {
+  padding-top: 1.1em;
+  border-top-left-radius: 0.5rem;
+}
+
+.md-mathblock-panel .md-rawblock-after {
+  padding-bottom: 1.1em;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.md-htmlblock-panel .md-rawblock-input {
+  padding-top: 1.1111111em;
+  padding-bottom: 1.1111111em;
+}
+
+.md-mathblock-panel .md-rawblock-before,
+.md-mathblock-panel .md-rawblock-after {
+  font-size: var(--code-blocks-font-size);
+  padding-left: calc(4px + 1.3333333em);
+  color: var(--code-bracket);
+}
+
+.md-rawblock-tooltip {
+  color: var(--tw-prose-pre-code);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.md-rawblock-tooltip-name {
+  opacity: 1;
+}
+
+.md-comment {
+  font-size: var(--inline-code-font-size);
+  color: var(--code-comment);
+}
+
+.md-raw-inline,
+.md-tag,
+[md-inline="linebreak"],
+.md-image > .md-meta,
+.md-inline-math.md-expand > .md-inline-math-container {
+  font-size: var(--code-blocks-font-size);
+}
+
+/**
+  * Code Fences
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.md-fences {
+  color: var(--tw-prose-pre-code);
+  background-color: var(--tw-prose-pre-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+}
+
+.md-fences.md-focus {
+  border-bottom-right-radius: 0;
+}
+
+.md-fences > .code-tooltip {
+  height: 1.8rem;
+  bottom: -1.8rem;
+  font-size: 0.9rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.code-tooltip .ty-input {
+  min-width: 10rem;
+}
+
+pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+pre code::before {
+  content: none;
+}
+
+pre code::after {
+  content: none;
+}
+
+/* SYNTAX HIGHLIGHTING */
+
+:root {
+  --code-neutral: var(--theme-800);
+  --code-cursor: var(--theme-900);
+  --code-string: rgb(14, 165, 233); /* sky-500 */
+  --code-number: rgb(245, 158, 11); /* amber-500 */
+  --code-tag: rgb(236, 72, 153); /* pink-500 */
+  --code-color: rgb(154, 154, 154);
+  --code-color-bg: rgb(213, 213, 205);
+  --code-variable: var(--theme-700);
+  --code-operator: var(--theme-600);
+  --code-comment: var(--theme-500);
+  --code-bracket: var(--theme-500);
+  --code-citation: var(--theme-500);
+
+  --code-neutral-inverted: var(--theme-100);
+  --code-cursor-inverted: var(--theme-50);
+  --code-string-inverted: #7dd4fc; /* sky-300 */
+  --code-number-inverted: #fde68a; /* amber-100 */
+  --code-tag-inverted: #f472b5; /* pink-400 */
+  --code-variable-inverted: var(--theme-200);
+  --code-operator-inverted: var(--theme-400);
+  --code-comment-inverted: var(--theme-400);
+  --code-bracket-inverted: var(--theme-500);
+  --code-citation-inverted: var(--theme-400);
+}
+
+#write .cm-s-inner {
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+}
+
+.CodeMirror-selectedtext {
+  background-color: transparent;
+}
+.CodeMirror-cursor {
+  border-left: 1px solid var(--code-cursor) !important;
+}
+.CodeMirror-gutters {
+  border-color: var(--code-comment);
+}
+.cm-s-inner span.cm-string {
+  color: var(--code-string);
+}
+
+.cm-s-inner span.cm-number {
+  color: var(--code-number);
+}
+
+.cm-s-inner span.cm-tag,
+.cm-s-inner span.cm-keyword,
+.cm-s-inner span.cm-qualifier {
+  color: var(--code-tag);
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner span.cm-comment.cm-def,
+.cm-s-inner span.cm-comment.cm-type,
+.cm-s-inner span.cm-builtin,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-header,
+.cm-s-inner span.cm-link,
+.cm-s-inner span.cm-error {
+  background: transparent;
+  color: var(--code-neutral);
+}
+
+.cm-s-inner span.cm-attribute,
+.cm-s-inner span.cm-property,
+.cm-s-inner span.cm-variable,
+.cm-s-inner span.cm-variable-2,
+.cm-s-inner span.cm-variable-3,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-atom,
+.cm-s-inner span.cm-def {
+  color: var(--code-variable);
+}
+.cm-s-inner span.cm-comment,
+.cm-s-inner .CodeMirror-linenumber {
+  color: var(--code-comment);
+}
+.cm-s-inner span.cm-operator {
+  color: var(--code-operator);
+}
+.cm-s-inner span.cm-bracket,
+.cm-s-inner span.cm-tag.cm-bracket,
+.cm-s-inner span.cm-meta {
+  color: var(--code-bracket);
+}
+
+.cm-s-inner span.cm-link {
+  text-decoration: underline;
+}
+
+/**
+  * Inline Elements
+  */
+
+/* basic styles */
+
+code {
+  color: rgb(47, 206, 47);
+  background-color: var(--code-color-bg);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.3rem;
+  margin: 0.1rem 0.1rem;
+}
+
+code::before {
+  content: none;
+}
+
+code::after {
+  content: none;
+}
+
+[md-inline="code"].md-expand > code::before,
+[md-inline="code"].md-expand > code::after {
+  content: "";
+}
+
+a code {
+  color: var(--tw-prose-links);
+}
+
+mark code {
+  color: inherit;
+}
+
+strong {
+  color: rgb(211, 211, 77);
+  font-weight: 600;
+}
+
+a {
+  color: var(--tw-prose-links);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* A block-level image should have a total top and bottom margin of 2em.
+It is always wrapped in a paragraph with 1.2em vertical margin, hence we
+add 0.8 here */
+p > .md-image:only-child {
+  margin-top: 0.8em !important;
+  margin-bottom: 0.8em !important;
+}
+
+.md-image > .md-meta {
+  color: var(--tw-prose-code);
+}
+
+/* extend styles */
+
+mark {
+  border-radius: 3px;
+  padding: 0 2px;
+  background-color: var(--tw-highlight-color);
+}
+
+/**
+  * Source Code Mode
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background-color: var(--item-hover-bg-color);
+}
+
+#typora-source {
+  font-family: var(--monospace);
+  color: var(--typora-source-body);
+}
+
+#typora-source .cm-header {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-link {
+  color: var(--code-string);
+}
+
+#typora-source .cm-string {
+  color: var(--code-string);
+}
+
+#typora-source .cm-comment {
+  color: var(--code-comment);
+}
+
+#typora-source .cm-atom {
+  color: var(--code-citation);
+}
+
+#typora-source .cm-tag {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-attribute {
+  color: var(--code-variable);
+}
+
+#typora-source .cm-bracket {
+  color: var(--code-bracket);
+}
+
+.file-list-item-file-ext-part {
+  opacity: 0.5;
+}
+
+#write div.md-toc-tooltip {
+  background-color: var(--tw-prose-bg);
+}
+
+.md-toc {
+  font-size: 0.8em;
+}
+
+.md-toc-h1 .md-toc-inner {
+  margin-left: 0;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left: 1em;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2em;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3em;
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left: 4em;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left: 5em;
+}
+
+#typora-sidebar {
+  border-right: var(--window-border);
+}
+
+.sidebar-tab {
+  text-transform: none;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.md-search-hit {
+  color: var(--search-hit-text-font-color);
+  background-color: var(--search-hit-text-bg-color);
+}
+
+#md-searchpanel {
+  box-shadow: none;
+  filter: var(--tw-drop-shadow-md);
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: var(--tw-button-hover-bg);
+}
+
+#md-searchpanel input,
+#md-searchpanel .btn,
+#searchpanel-msg {
+  border-radius: 5px;
+}
+
+#searchpanel-msg {
+  color: var(--theme-500);
+  border-color: var(--theme-300);
+  background: var(--theme-100);
+}
+
+.form-control {
+  border-color: var(--panel-border-color);
+}
+
+.btn-default {
+  background-color: var(--button-bg);
+}
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+@import "";
+
+:root {
+  --tw-prose-body: var(--tw-prose-invert-body);
+  --tw-prose-headings: var(--tw-prose-invert-headings);
+  --tw-prose-lead: var(--tw-prose-invert-lead);
+  --tw-prose-links: var(--tw-prose-invert-links);
+  --tw-prose-bold: var(--tw-prose-invert-bold);
+  --tw-prose-counters: var(--tw-prose-invert-counters);
+  --tw-prose-bullets: var(--tw-prose-invert-bullets);
+  --tw-prose-hr: var(--tw-prose-invert-hr);
+  --tw-prose-quotes: var(--tw-prose-invert-quotes);
+  --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+  --tw-prose-code: var(--tw-prose-invert-code);
+  --tw-prose-captions: var(--tw-prose-invert-captions);
+  --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+  --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+  --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+  --tw-prose-bg: var(--tw-prose-invert-bg);
+  --tw-prose-meta: var(--tw-prose-invert-meta);
+  --tw-prose-meta-bg: var(--tw-prose-invert-meta-bg); 
+  --select-text-bg-color: rgb(35, 92, 197);
+
+  --tw-button-hover-bg: var(--tw-button-hover-bg-inverted);
+
+  --md-char-color: var(--md-char-color-inverted);
+  --meta-content-color: var(--meta-content-color-inverted);
+  --panel-border-color: var(--panel-border-color-inverted);
+  --active-file-bg-color: var(--active-file-bg-color-inverted);
+  --window-border: var(--window-border-inverted);
+  --search-hit-text-bg-color: var(--search-hit-text-bg-color-inverted);
+  --search-hit-text-font-color: var(--search-hit-text-font-color-inverted);
+  --search-select-bg-color: var(--search-select-bg-color-inverted);
+  --blur-text-color: var(--blur-text-color-inverted);
+  --item-hover-bg-color: var(--item-hover-bg-color-inverted);
+  --typora-source-body: var(--typora-source-body-inverted);
+  --mermaid-theme: var(--mermaid-theme-inverted);
+  --active-toggle-btn-color: var(--active-toggle-btn-color-inverted);
+
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+  --code-color: rgb(237, 71, 89);
+  --code-color-bg: rgb(32, 41, 58);
+
+  --button-bg: var(--button-bg-inverted);
+
+  --md-grid-header: var(--md-grid-header-inverted);
+  --md-grid-header-ext: var(--md-grid-header-ext-inverted);
+  --md-grid-ext: var(--md-grid-ext-inverted);
+  --md-grid-header-active: var(--md-grid-header-active-inverted);
+  --md-grid-active: var(--md-grid-active-inverted);
+  --md-grid-border-color: var(--md-grid-border-color-inverted);
+}
+
+
+
+</style><title>天文</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-星体">1. 星体</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一超新星">一、超新星</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#i-型超新星">I 型超新星</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ia-型超新星">Ia 型超新星</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ib-型超新星">Ib 型超新星</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ic-型超新星">Ic 型超新星</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#ii-型超新星">II 型超新星</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二马卡良星系链">二、马卡良星系链</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三彗尾与彗发">三、彗尾与彗发</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四太阳系外围构成">四、太阳系外围构成</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#柯伊伯带">柯伊伯带</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#离散盘">离散盘</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#奥尔特云">奥尔特云</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-理论">2. 理论</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一光度和星等">一、光度和星等</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#光度luminosity）">光度（Luminosity）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#星等magnitude）">星等（magnitude）</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#视星等">视星等</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#绝对星等">绝对星等</a></div><ul class="outline-children"></ul></li></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二赫罗图">二、赫罗图</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三日食">三、日食</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#全环食">全环食</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四月相变化">四、月相变化</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#五潮汐锁定">五、潮汐锁定</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=' first-line-indent'><h1 id='1-星体'><span>1. 星体</span></h1><h2 id='一超新星'><span>一、超新星</span></h2><p><span>根据光谱吸收线分为 I 型超新星和 II 型超新星</span></p><h4 id='i-型超新星'><span>I 型超新星</span></h4><p><span>没有氢吸收线</span></p><h6 id='ia-型超新星'><span>Ia 型超新星</span></h6><p><span>没有氢、氦吸收线，有硅吸收线</span></p><p><span>吸收伴星的氢后，质量增大温度上升，然后引发氢聚变，一路走下去，最终高温足以引发碳核，造成爆发。在这过程中，星体质量和体积都比较小，从伴星那吸收来的外层氢能燃烧得比较完全，因此没有氢线</span></p><p><span>Ia型超新星是核崩溃型超新星，一般是白矮星达到临界质量即钱德拉塞卡极限时发生的超新星爆炸。因为爆发时质量、组成都是一致的，因此具有特征性的光度曲线，爆发之后光度是时间的函数，即峰值亮度固定为绝对星等-19.44等，持续一段时间后开始下降，被称为标准烛光。是能量最强的超新星之一，之后会形成一个中子星或者直接变成星云消散。一般是双星中的一颗白矮星吸收伴星的质量，从而再次在表面点燃聚变反应，从而爆发；当然也有两颗白矮星相撞而产生的Ia型超新星，不过非常罕见</span></p><h6 id='ib-型超新星'><span>Ib 型超新星</span></h6><p><span>没有氢吸收线，有氦吸收线</span></p><h6 id='ic-型超新星'><span>Ic 型超新星</span></h6><p><span>Ib 和 Ic 型超新星的形成机制很可能类似于大质量恒星内部核反应燃料耗尽而形成II型超新星的过程；但有所不同的是，形成 Ib 或 Ic 型超新星的恒星由于强烈的恒星风或与其伴星的相互作用而失去了由氢元素构成的外层</span></p><h4 id='ii-型超新星'><span>II 型超新星</span></h4><p><span>有氢吸收线，根据光度变化情况分为II-P、II-L、II-n超新星，II-b型超新星接近 Ib 超新星的变种</span></p><p><span>II 型超新星是核坍缩型超新星，它是大质量恒星晚年的爆发。大质量恒星其外层的氢是没有烧完全的，因此有光谱中存在氢线</span></p><p><span>轻元素不断剧聚变成重元素，星体逐渐形成了洋葱一样的结构，越往深元素越重，温度更高燃烧更快。当燃烧到铁时，只需要很短时间便能燃烧殆尽。并且，由于铁聚变是吸收能量的，在这一瞬间辐射压就降到了0，比较靠近的深层迅速坍缩，挤压到核心时速度又瞬间降为0。联想一个网球放在篮球上然后自由落下的实验，篮球质量大动量大，他顶到内核时会将动量传递给上层，由此往外爆炸，随即碰撞至外壳，引发超新星爆发</span></p><p>&nbsp;</p><h2 id='二马卡良星系链'><span>二、马卡良星系链</span></h2><p><span>是室女座的一系列星系</span></p><p><span>该星系链以亚美尼亚天体物理学家本杰明·马卡良的名字命名，他在20世纪60年代早期发现了它们的共同运功</span></p><p><span>马卡良星系链是室女座星系团的一部分，室女座星系团是最近的星系群，包含2000多个星系。通过望远镜长时间曝光可观测到众多星系，其中不乏众多梅西耶天体，如M84、M87</span></p><p>&nbsp;</p><h2 id='三彗尾与彗发'><span>三、彗尾与彗发</span></h2><p><span>彗星接近太阳的时候，受到太阳的加热和吹拂作用，造成彗核内部挥发性物质蒸发，并且向外喷射，同时带走一些尘埃微粒</span></p><p><span>彗核被尘埃和气体形成的稀薄大气所围绕，这一层物质称为彗发，即“彗星的头发”</span></p><p><span>同时气体和尘埃会形成两条指向不同方向的彗尾：</span></p><ul><li><p><span>离子尾：即气体被太阳风电离所形成的尾巴，主要由气体离子组成，因为气体收到太阳风微粒和其形成的磁场的作用，因此一般总是背对着太阳，相较于尘埃尾更长也更直。也称第一型彗尾</span></p></li><li><p><span>尘埃尾：即尘埃形成的尾巴，一般是弯曲的，出现在彗星轨道的后方。也称第二型彗尾</span></p></li></ul><p><span>某些特殊情况（如地球穿越过彗星的轨道平面，或者从侧向看向彗星）还可能看到两条指向相反的彗尾，指向太阳的尾巴称为反尾，本质是离子彗尾</span></p><p>&nbsp;</p><h2 id='四太阳系外围构成'><span>四、太阳系外围构成</span></h2><h4 id='柯伊伯带'><span>柯伊伯带</span></h4><p><span>海王星轨道以外、距太阳45亿千米至80亿千米的区域，著名天体有冥王星</span></p><p><span>短周期彗星即起源柯伊伯带或离散盘</span></p><h4 id='离散盘'><span>离散盘</span></h4><p><span>位于柯伊伯带外侧，散布着零星的主要由冰组成的黄道离散天体，它们的运行轨道不在黄道面附近，而是和黄道面有着不一样的倾角，他们共同组成“离散盘”。著名天体有阋神星</span></p><p><span>当前主流观点是太阳系形成过程中，海王星的外移造成的引力扰动，使柯伊伯带的部分天体射入高倾斜和高离心率的轨道内</span></p><h4 id='奥尔特云'><span>奥尔特云</span></h4><p><span>被认为是一个围绕着太阳的、由微小的冰球体组成的球形云团。奥尔特云内接离散盘，而其外边缘标志着太阳系结构上的边缘和太阳引力范围的边缘</span></p><p><span>被认为是长周期彗星的发源地。当太阳系的附近有恒星或其它星体经过时，其引力可能会对奥尔特云星体造成扰动，使其进入内太阳系，成为彗星</span></p><p><span>有天文学家将赛德娜认为是人类发现的第一颗奥尔特云天体，其公转轨道离心率非常大</span></p><p>&nbsp;</p><p>&nbsp;</p><h1 id='2-理论'><span>2. 理论</span></h1><h2 id='一光度和星等'><span>一、光度和星等</span></h2><h4 id='光度luminosity）'><span>光度（Luminosity）</span></h4><p><span>这里特指天文学中的光度含义，即物体每单位时间内辐射出的总能量，也就是辐射通量，可用来衡量恒星发光强度</span></p><p><span>光度与亮度不同，亮度单位为 nit，且与距离有关，而光度与距离无关，单位一般用瓦特、尔格每秒或太阳光度来表示</span></p><p><span>恒星光度取决于两个因素：</span></p><ul><li><p><span>恒星体积：体积越大表面积越大，从而导致辐射面积大</span></p></li><li><p><span>恒星温度：温度越高，光度越高</span></p></li></ul><p><span>光度、视星等、距离是三个相关的参数，只要知道其中两个就能推算出第三个</span></p><p><span>光度和绝对星等都可以衡量恒星发光强度，它们之间也存在简单的常数关系：绝对星等相差1，光度相差2.512倍，一等星和六等星之间差约100倍的光度（对于视星等来说，差100的亮度）</span></p><h4 id='星等magnitude）'><span>星等（magnitude）</span></h4><p><span>衡量天体亮度（视星等）和光度（绝对星等）的量，星等越低，光度或亮度就越高</span></p><h6 id='视星等'><span>视星等</span></h6><p><span>衡量看到的星星的明暗程度，和星星光度、距离有关</span></p><p><span>很明显，若一颗星离地球很远，就算它很亮其视星等也可能比较低</span></p><p><span>一般在观星的时候用视星等较多，天文学测量也会用到</span></p><h6 id='绝对星等'><span>绝对星等</span></h6><p><span>衡量星星真实发光能力，只和光度有关，和距离无关</span></p><p><span>将天体假想放置于距离为10秒差距处所得到的视星等，称为绝对星等</span></p><p>&nbsp;</p><h2 id='二赫罗图'><span>二、赫罗图</span></h2><p><span>赫罗图（H-R diagram）是以恒星的绝对星等或光度相对于光谱类型或有效温度绘制的散布图</span></p><p><span>它将每颗恒星绘制在一张图表上，可以测量它的温度（颜色）和光度，而它与每颗恒星的位置无关。该图由赫茨普龙和罗素在1910年代创建，是了解恒星演化很重要的一步</span></p><p><img src="assets/image-20240614134803354.png" alt="image-20240614134803354" style="zoom: 67%;" /></p><p><span>赫罗图横坐标为：恒星温度，单位开尔文：K；赫罗图纵坐标为：恒星光度，一般以太阳光度为单位1</span></p><p><span>赫罗图显示了不同类型恒星的演化过程：</span></p><ul><li><p><span>主序带：</span></p><p><span>大约90%的恒星位于赫罗图左上角至右下角的带状上，这条线称为主序带。位于主序带上的恒星一般称之为”主序星“，其在主序带上的时期称为主序期</span></p></li><li><p><span>分子云区：</span></p><p><span>位于图中极右，但随着分子云开始收缩，其温度将开始上升，会慢慢移向主序带</span></p></li><li><p><span>超巨星区：</span></p><p><span>位于主序带右上方，具体可细分为红超巨星区、蓝超巨星区和黄超巨星区等，它们都是恒星离开主序阶段后，进入到演化晚期的阶段。事实上，这些超巨星区，并没有绝对的演化界限，如一颗蓝巨星可逐次演化为蓝超巨星--黄超巨星--红超巨星等。注意和红巨星、蓝巨星区分</span></p></li><li><p><span>白矮星、中子星区：</span></p><p><span>位于主序带左下方。演化到晚期的恒星，在离开超巨星阶段后，将越过主序带，往赫罗图的左下方演化</span></p></li></ul><p><span>与赫罗图相关的颜色-星等图（CMD）绘制的是颜色的视星等和颜色，通常针对恒星都在相同距离上的星团绘制</span></p><p>&nbsp;</p><h2 id='三日食'><span>三、日食</span></h2><h4 id='全环食'><span>全环食</span></h4><p><span>又称混合食、复合食</span></p><p><span>指一次日食中，一部分地区可见日全食，另一部分可见日环食，则称此次日食为日全环食，简称全环食</span></p><p>&nbsp;</p><h2 id='四月相变化'><span>四、月相变化</span></h2><p><img src="assets/image-20240614134958302.png" alt="image-20240614134958302" style="zoom:67%;" /></p><ul><li><p><span>依次经历：新月（朔月，几乎不可见）、峨眉月（傍晚，反C形）、上弦月（上半月）、盈凸月、满月（望月）、亏凸月、下弦月（下半月）、残月（早晨，C形）</span></p></li><li><p><span>无论是哪一种月相，其亮的一部分永远指向太阳</span></p></li></ul><p>&nbsp;</p><h2 id='五潮汐锁定'><span>五、潮汐锁定</span></h2><p><span>中心天体对环绕天体的潮汐作用，使得环绕天体的自转周期与公转周期到达一致，使得环绕天体始终只能以某个面面对中心天体，此即潮汐锁定</span></p><p><span>潮汐锁定是自然规律，以下均以地月系统为例：</span></p><ul><li><p><span>潮汐力和扁球体：地球对月球的引力是不均匀的（有梯度），月球背面受到的引力比中心小，而中心引力又比月球正面更小，对月球形成拉扯作用：中心对月球正面、月球背面对中心，即在引力轴线上形成隆起，形成轻微的扁球体</span></p></li><li><p><span>潮汐拖拽：环绕天体对潮汐力引起的周期性的重塑会产生抵抗，但需要一些时间来重塑重力的平衡，而在这段时间，两个天体的轴向因为环绕天体的旋转已经改变，所以形成的隆起会与引力轴向有一段距离。从太空中的瞭望点来看，隆起最高点的方向与指向主星的方向已经有了偏差。如果环绕天体的自转周期短于它的轨道周期，这个隆起将超前于引力轴的指向；反过来如果环绕天体的自转周期较长，取而代之的是隆起将落后</span></p></li><li><p><span>速度变化：若自转速度较快，则该隆起会落后，即将自转速度减慢，反之则拖拽使其自转速度上升</span></p></li><li><p><span>轨道变化：总角动量守恒，因此当月球自转速度降低失去角动量时，得出月球的轨道会提升</span></p></li><li><p><span>中心天体的锁定：环绕天体对中心天体同样有潮汐力的作用，但一般非常微小。而在某些特殊系统：例如行星和卫星质量相差没有过于悬殊（如冥王星和卡戎），或是其他双星情况，可能也会使中心天体被潮汐锁定，此时在另一颗星球上同样只能看到一面的主星</span></p></li><li><p><span>轨道共振：事实上潮汐锁定是轨道共振在1:1时的一种特殊情况。在轨道离心率较高的情况下，潮汐力变化较大，在这种情况下，轨道周期和自转周期的比率是一些明确的分数，一个著名的例子是水星的自转-锁定到与公转太阳周期为3:2的共振</span></p></li></ul><p><span>超大质量黑洞其视界上的潮汐力并没有想象中的那么大，事实上，黑洞质量越大，其视界上的潮汐力就越小。因为引力是和距离成平方反比关系，和质量只是正比（一次）关系</span></p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>
