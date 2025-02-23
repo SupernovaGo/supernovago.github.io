@@ -1,0 +1,1697 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+
+/* FONTS */
+
+/* VARIABLES */
+
+:root {
+  --theme-0: rgb(255, 255, 255);
+
+  /* Slate grayscale */
+  --theme-50: #f8fafc;
+  --theme-100: #f1f5f9;
+  --theme-200: #e2e8f0;
+  --theme-300: #cbd5e1;
+  --theme-400: #94a3b8;
+  --theme-500: #64748b;
+  --theme-600: #475569;
+  --theme-700: #334155;
+  --theme-800: #1e293b;
+  --theme-900: #0f172a;
+
+  /* Tailwind variables */
+  --tw-primary: #62bbf3;
+
+  --tw-prose-body: var(--theme-700);
+  --tw-prose-headings: var(--theme-900);
+  --tw-prose-lead: var(--theme-600);
+  --tw-prose-links: var(--theme-900);
+  --tw-prose-bold: var(--theme-900);
+  --tw-prose-counters: var(--theme-500);
+  --tw-prose-bullets: var(--theme-300);
+  --tw-prose-hr: var(--theme-200);
+  --tw-prose-quotes: var(--theme-900);
+  --tw-prose-quote-borders: var(--theme-200);
+  --tw-prose-captions: var(--theme-500);
+  --tw-prose-code: var(--theme-900);
+  --tw-prose-pre-code: var(--theme-100);
+  --tw-prose-pre-bg: var(--theme-800);
+  --tw-prose-th-borders: var(--theme-300);
+  --tw-prose-td-borders: var(--theme-200);
+  --tw-prose-bg: var(--theme-0);
+  --tw-prose-meta: var(--theme-500);
+  --tw-prose-meta-bg: var(--theme-100);
+
+  --tw-prose-invert-body: var(--theme-300);
+  --tw-prose-invert-headings: var(--theme-0);
+  --tw-prose-invert-lead: var(--theme-400);
+  --tw-prose-invert-links: var(--theme-0);
+  --tw-prose-invert-bold: var(--theme-0);
+  --tw-prose-invert-counters: var(--theme-400);
+  --tw-prose-invert-bullets: var(--theme-600);
+  --tw-prose-invert-hr: var(--theme-700);
+  --tw-prose-invert-quotes: var(--theme-100);
+  --tw-prose-invert-quote-borders: var(--theme-700);
+  --tw-prose-invert-captions: var(--theme-400);
+  --tw-prose-invert-code: var(--theme-0);
+  --tw-prose-invert-pre-bg: var(--theme-900);
+  --tw-prose-invert-th-borders: var(--theme-600);
+  --tw-prose-invert-td-borders: var(--theme-700);
+  --tw-prose-invert-bg: var(--theme-800);
+  --tw-prose-invert-meta: var(--theme-400);
+  --tw-prose-invert-meta-bg: var(--theme-700);
+
+  --tw-highlight-color: #fde047; /* yellow-300 */
+  --tw-drop-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  --tw-button-hover-bg: var(--theme-100);
+
+  --tw-button-hover-bg-inverted: var(--theme-700);
+
+  /* Typora variables */
+
+  --background: var(--tw-prose-bg);
+  --bg-color: var(--tw-prose-bg);
+  --text-color: var(--tw-prose-body);
+  --primary-color: var(--tw-primary);
+  --md-char-color: var(--theme-400);
+  --meta-content-color: var(--theme-500);
+  --typora-source-body: var(--theme-800);
+  --heading-char-color: var(--md-char-color);
+  --mermaid-theme: neutral;
+  --active-toggle-btn-color: var(--theme-200);
+
+  --md-char-color-inverted: var(--theme-500);
+  --meta-content-color-inverted: var(--theme-400);
+  --typora-source-body-inverted: var(--theme-300);
+  --mermaid-theme-inverted: dark;
+  --active-toggle-btn-color-inverted: var(--theme-400);
+
+  /* Sidebar */
+  --side-bar-bg-color: var(--tw-prose-bg);
+  --active-file-bg-color: var(--theme-100);
+  --active-file-text-color: var(--tw-prose-bold);
+  --active-file-border-color: var(--theme-100);
+  --panel-border-color: var(--theme-300);
+  --blur-text-color: var(--theme-300);
+  --window-border: 1px solid var(--theme-200);
+  --item-hover-bg-color: var(--theme-100);
+  --search-hit-text-bg-color: var(--theme-200);
+  --search-hit-text-font-color: inherit;
+  --search-select-text-color: var(--select-text-font-color);
+  --search-select-bg-color: var(--select-text-bg-color);
+
+  --blur-text-color-inverted: var(--theme-500);
+  --panel-border-color-inverted: var(--theme-700);
+  --active-file-bg-color-inverted: var(--theme-700);
+  --window-border-inverted: 1px solid var(--theme-700);
+  --search-hit-text-bg-color-inverted: var(--theme-700);
+  --search-hit-text-font-color-inverted: var(--theme-0);
+  --search-select-bg-color-inverted: var(--theme-400);
+  --rawblock-edit-panel-bd: var(--tw-prose-pre-bg);
+  --item-hover-bg-color-inverted: var(--theme-700);
+
+  --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Custom */
+  --footnote: var(--tw-prose-body);
+  /* I'd love to use the --theme grayscale for --footnote-bg, but there's (currently)
+  no way to add an alpha-channel to a CSS variable (and we need the transparency
+  because otherwise the caret wil not be visible), so I here just used a hardcoded
+  copy of --theme-500 */
+  --footnote-bg: #94a3b855;
+  --button-bg: var(--theme-200);
+
+  --button-bg-inverted: var(--theme-600);
+
+  --md-grid-header: var(--theme-100);
+  --md-grid-header-ext: var(--theme-400);
+  --md-grid-ext: var(--theme-300);
+  --md-grid-header-active: var(--theme-500);
+  --md-grid-active: var(--theme-400);
+  --md-grid-border-color: var(--theme-500);
+
+  --md-grid-header-inverted: var(--theme-600);
+  --md-grid-header-ext-inverted: var(--theme-500);
+  --md-grid-ext-inverted: var(--theme-600);
+  --md-grid-header-active-inverted: var(--theme-400);
+  --md-grid-active-inverted: var(--theme-500);
+  --md-grid-border-color-inverted: var(--theme-200);
+
+  --code-blocks-font-size: 0.9em;
+  --inline-code-font-size: 0.9em;
+}
+
+.ty-file-search-match-text {
+  background-color: var(--search-hit-text-bg-color);
+}
+
+/* TAILWIND RESET */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: currentColor;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: "";
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+*/
+
+#text {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4;
+  /* 3 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+#text {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+#write {
+    background: #131b29;
+    color: #a9aaab;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 30px;
+    padding-bottom: 100px;
+    position: static;
+    width: 90%;
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+a {
+    color: #71bfd9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    cursor: text;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6,
+#write pre {
+    color: #dfb057;
+    width: auto;
+}
+
+#write h1::before,
+#write h2::before,
+#write h3::before,
+#write h4::before,
+#write h5::before,
+#write h6::before {
+    border-radius: 0;
+    bottom: 0;
+    color: #517090;
+    float: none;
+    font-size: 1rem;
+    font-variant: 'small-caps';
+    font-weight: bold;
+    left: auto;
+    line-height: 20px;
+    padding: 0;
+    position: absolute;
+    right: calc(100% + 10px);
+    vertical-align: baseline;
+}
+
+#write h1 {
+    font-size: 3.2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+#write h1::before {
+    bottom: 1.45rem;
+    content: 'H1';
+}
+
+#write h2 {
+    font-size: 2.2rem;
+    margin: 1.4rem 0;
+}
+
+#write h2::before {
+    bottom: 0.2rem;
+    content: 'H2';
+}
+
+#write h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+#write h3::before {
+    bottom: 0.18rem;
+    content: 'H3';
+}
+
+#write h4 {
+    font-size: 1.7rem;
+    margin: 0.8rem 3;
+}
+
+#write h4::before {
+    content: 'H4';
+    bottom: 0.15rem;
+}
+
+#write h5 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+#write h6 {
+    font-size: 1.3rem;
+    margin: 0.2rem,0;
+}
+
+#write h5::before,
+#write h6::before {
+    bottom: 0.1rem;
+}
+
+#write h5::before {
+    content: 'H5';
+}
+
+#write h6::before {
+    content: 'H6';
+}
+
+h1::after, h2::after {
+  content: ""; /* 必须设置 content */
+  display: block; /* 确保伪元素占据一行 */
+  border-bottom: 2px solid #ccc; /* 分割线样式：颜色为灰色，厚度为 1px */
+  margin-top: 4px; /* 分割线与标题的间距 */
+  margin-bottom: 8px; /* 分割线与下文的间距 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: "LXGWWenKai-Blod";
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--monospace);
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/* TAILWIND PROSE IMPLEMENTATION */
+
+#write {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  max-width: 80rem;
+}
+
+html,
+body {
+  font-family: "LXGWWenKai-Regular";
+}
+
+/* on Windows/Linux, it is the part that is not titlebar or status bar. */
+content,
+titlebar {
+  background: var(--tw-prose-bg);
+}
+
+#write {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: var(--tw-prose-body);
+  max-width: 60ch;
+}
+
+#write > :where(:first-child) {
+  margin-top: 0;
+}
+
+#write > :where(:last-child) {
+  margin-bottom: 0;
+}
+
+/**
+  * ---------------------
+  * Block Elements
+  */
+
+/* yaml */
+pre.md-meta-block {
+  color: var(--tw-prose-meta);
+  background-color: var(--tw-prose-meta-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+  margin-bottom: 2.8em;
+}
+
+/* headings */
+h1 {
+  color: var(--tw-prose-headings);
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 2.75rem;
+  letter-spacing: -1.5px;
+}
+
+h1 strong {
+  font-weight: 900;
+}
+
+h2 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.63rem;
+  margin-top: 1.5555556em;
+  margin-bottom: 1.5rem;
+  line-height: 1.875rem;
+  letter-spacing: -1px;
+}
+
+h2 strong {
+  font-weight: 800;
+}
+
+h3 {
+  color: var(--tw-prose-headings);
+  font-weight: bold;
+  font-size: 1.17rem;
+  margin-top: 1.6em;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: -1px;
+}
+
+h3 strong {
+  font-weight: 700;
+}
+
+h4 {
+  color: var(--tw-prose-headings);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-top: 1.8em;
+  margin-bottom: 1.5rem;
+  line-height: 1.375rem;
+}
+
+h4 strong {
+  font-weight: 700;
+}
+
+h2 code {
+  font-size: 0.8611111em;
+}
+
+h3 code {
+  font-size: 0.9em;
+}
+
+h2 + * {
+  margin-top: 0;
+}
+
+h3 + * {
+  margin-top: 0;
+}
+
+h4 + * {
+  margin-top: 0;
+}
+
+h5 {
+  font-size: 0.97rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 0.93rem;
+  line-height: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* table */
+
+table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.9em;
+  line-height: 1.5555556;
+}
+
+/* table header */
+
+thead {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-th-borders);
+}
+
+thead th {
+  color: var(--tw-prose-headings);
+  font-weight: 600;
+  vertical-align: bottom;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+thead th:first-child {
+  padding-left: 0;
+}
+
+thead th:last-child {
+  padding-right: 0;
+}
+
+tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--tw-prose-td-borders);
+}
+
+tbody tr:last-child {
+  border-bottom-width: 0;
+}
+
+tbody td {
+  vertical-align: baseline;
+  padding-top: 0.8888889em;
+  padding-right: 0.6666667em;
+  padding-bottom: 0.8888889em;
+  padding-left: 0.6666667em;
+}
+
+tbody td:first-child {
+  padding-left: 0;
+}
+
+tbody td:last-child {
+  padding-right: 0;
+}
+
+.md-grid-board tr[row="1"] {
+  background-color: var(--md-grid-header);
+}
+
+.md-grid-board a:hover,
+.md-grid-board a.md-active {
+  background: var(--md-grid-active);
+}
+
+.md-grid-board tr[row="1"] a:hover,
+.md-grid-board tr[row="1"] a.md-active {
+  background: var(--md-grid-header-active);
+}
+
+.md-grid-board .md-grid-ext {
+  background: var(--md-grid-ext);
+}
+
+.md-grid-board tr[row="1"] .md-grid-ext {
+  background: var(--md-grid-header-ext);
+}
+
+.md-grid-board a {
+  border-color: var(--md-grid-border-color) !important;
+}
+
+/* lists */
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1em;
+}
+
+li {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+#write ul.task-list {
+  padding-left: 0;
+}
+
+#write li.task-list-item {
+  padding-left: 0.4em;
+}
+
+#write input[type="checkbox"] {
+  margin-left: -1em;
+}
+
+input[checked] ~ * {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+ol > li::marker {
+  font-weight: 400;
+  color: var(--tw-prose-counters);
+}
+
+ul > li::marker {
+  color: var(--tw-prose-bullets);
+}
+
+ul > li,
+ol > li {
+  padding-left: 0.4em;
+}
+
+ul > li p,
+ol > li p {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+#write > ul > li > :not(input):first-child,
+#write > ol > li > :not(input):first-child,
+#write > ul > li > input + *,
+#write > ol > li > input + * {
+  margin-top: 1.2em;
+}
+
+#write > ul > li > *:last-child,
+#write > ol > li > *:last-child {
+  margin-bottom: 1.2em;
+}
+
+#write ul > li > p:only-child,
+#write ol > li > p:only-child,
+#write ul > li > input + p:last-child,
+#write ol > li > input + p:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+/* blockquote */
+blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--tw-prose-quotes);
+  border-left-width: 0.25rem;
+  border-left-color: var(--tw-prose-quote-borders);
+  quotes: "\201C""\201D""\2018""\2019";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1.0666667em;
+}
+
+blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+blockquote p:last-of-type::after {
+  content: close-quote;
+}
+
+/* hr */
+hr {
+  border-color: var(--tw-prose-hr);
+  border-top-width: 1px;
+}
+
+[mdtype="hr"] {
+  margin-top: 2.8em;
+  margin-bottom: 2.8em;
+}
+
+p {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  color: #eeeeee;
+}
+
+.in-text-selection,::selection {
+  background-color: var(--select-text-bg-color);
+}
+
+/* diagram panel */
+.md-diagram-panel {
+  color: var(--tw-prose-body);
+}
+
+.enable-diagrams .md-diagram .code-tooltip {
+  bottom: -1.9em;
+  right: 0;
+}
+
+.md-fences-adv-panel {
+  margin-top: 1.3em;
+}
+
+/* footnote definition */
+sup.md-footnote {
+  color: var(--footnote);
+  background-color: var(--footnote-bg);
+}
+
+.footnotes {
+  font-size: 0.85em;
+}
+
+.md-reverse-footnote-area a {
+  font-family: "LXGWWenKai-Regular";
+  text-decoration: none;
+  color: var(--tw-primary);
+  border-radius: 3px;
+}
+
+.md-hover-tip .code-tooltip-content {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 0.8em 1.2em;
+}
+
+.md-reverse-footnote-area a:hover {
+  background-color: var(--item-hover-bg-color);
+}
+
+.md-def-name:before {
+  color: var(--md-char-color);
+}
+
+.md-rawblock.md-rawblock-on-edit,
+.md-rawblock:hover {
+  color: var(--tw-prose-pre-code);
+}
+
+.md-inline-math script {
+  color: var(--tw-prose-code);
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: var(--tw-highlight-color) !important;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+.code-tooltip {
+  color: var(--tw-prose-pre-code);
+}
+
+.code-tooltip .md-mathjax-preview {
+  color: var(--tw-prose-body);
+}
+
+.md-htmlblock-container,
+.md-rawblock-input.md-rawblock-control,
+.md-htmlblock-panel.md-rawblock-control,
+.md-math-container {
+  border-radius: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.md-rawblock-input {
+  font-size: var(--code-blocks-font-size);
+  padding: 0 1.3333333em;
+}
+
+.md-mathblock-panel .md-rawblock-input.md-rawblock-control {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 0;
+}
+
+.md-mathblock-panel .md-rawblock-before {
+  padding-top: 1.1em;
+  border-top-left-radius: 0.5rem;
+}
+
+.md-mathblock-panel .md-rawblock-after {
+  padding-bottom: 1.1em;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.md-htmlblock-panel .md-rawblock-input {
+  padding-top: 1.1111111em;
+  padding-bottom: 1.1111111em;
+}
+
+.md-mathblock-panel .md-rawblock-before,
+.md-mathblock-panel .md-rawblock-after {
+  font-size: var(--code-blocks-font-size);
+  padding-left: calc(4px + 1.3333333em);
+  color: var(--code-bracket);
+}
+
+.md-rawblock-tooltip {
+  color: var(--tw-prose-pre-code);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.md-rawblock-tooltip-name {
+  opacity: 1;
+}
+
+.md-comment {
+  font-size: var(--inline-code-font-size);
+  color: var(--code-comment);
+}
+
+.md-raw-inline,
+.md-tag,
+[md-inline="linebreak"],
+.md-image > .md-meta,
+.md-inline-math.md-expand > .md-inline-math-container {
+  font-size: var(--code-blocks-font-size);
+}
+
+/**
+  * Code Fences
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.md-fences {
+  color: var(--tw-prose-pre-code);
+  background-color: var(--tw-prose-pre-bg);
+  font-weight: 400;
+  font-size: var(--code-blocks-font-size);
+  line-height: 1.7777778;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.5rem /* 8px */;
+  padding: 1.1111111em 1.3333333em;
+}
+
+.md-fences.md-focus {
+  border-bottom-right-radius: 0;
+}
+
+.md-fences > .code-tooltip {
+  height: 1.8rem;
+  bottom: -1.8rem;
+  font-size: 0.9rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.code-tooltip .ty-input {
+  min-width: 10rem;
+}
+
+pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+pre code::before {
+  content: none;
+}
+
+pre code::after {
+  content: none;
+}
+
+/* SYNTAX HIGHLIGHTING */
+
+:root {
+  --code-neutral: var(--theme-800);
+  --code-cursor: var(--theme-900);
+  --code-string: rgb(14, 165, 233); /* sky-500 */
+  --code-number: rgb(245, 158, 11); /* amber-500 */
+  --code-tag: rgb(236, 72, 153); /* pink-500 */
+  --code-color: rgb(154, 154, 154);
+  --code-color-bg: rgb(213, 213, 205);
+  --code-variable: var(--theme-700);
+  --code-operator: var(--theme-600);
+  --code-comment: var(--theme-500);
+  --code-bracket: var(--theme-500);
+  --code-citation: var(--theme-500);
+
+  --code-neutral-inverted: var(--theme-100);
+  --code-cursor-inverted: var(--theme-50);
+  --code-string-inverted: #7dd4fc; /* sky-300 */
+  --code-number-inverted: #fde68a; /* amber-100 */
+  --code-tag-inverted: #f472b5; /* pink-400 */
+  --code-variable-inverted: var(--theme-200);
+  --code-operator-inverted: var(--theme-400);
+  --code-comment-inverted: var(--theme-400);
+  --code-bracket-inverted: var(--theme-500);
+  --code-citation-inverted: var(--theme-400);
+}
+
+#write .cm-s-inner {
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+}
+
+.CodeMirror-selectedtext {
+  background-color: transparent;
+}
+.CodeMirror-cursor {
+  border-left: 1px solid var(--code-cursor) !important;
+}
+.CodeMirror-gutters {
+  border-color: var(--code-comment);
+}
+.cm-s-inner span.cm-string {
+  color: var(--code-string);
+}
+
+.cm-s-inner span.cm-number {
+  color: var(--code-number);
+}
+
+.cm-s-inner span.cm-tag,
+.cm-s-inner span.cm-keyword,
+.cm-s-inner span.cm-qualifier {
+  color: var(--code-tag);
+}
+
+.cm-s-inner .CodeMirror-guttermarker,
+.cm-s-inner .CodeMirror-guttermarker-subtle,
+.cm-s-inner span.cm-comment.cm-def,
+.cm-s-inner span.cm-comment.cm-type,
+.cm-s-inner span.cm-builtin,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-header,
+.cm-s-inner span.cm-link,
+.cm-s-inner span.cm-error {
+  background: transparent;
+  color: var(--code-neutral);
+}
+
+.cm-s-inner span.cm-attribute,
+.cm-s-inner span.cm-property,
+.cm-s-inner span.cm-variable,
+.cm-s-inner span.cm-variable-2,
+.cm-s-inner span.cm-variable-3,
+.cm-s-inner span.cm-type,
+.cm-s-inner span.cm-atom,
+.cm-s-inner span.cm-def {
+  color: var(--code-variable);
+}
+.cm-s-inner span.cm-comment,
+.cm-s-inner .CodeMirror-linenumber {
+  color: var(--code-comment);
+}
+.cm-s-inner span.cm-operator {
+  color: var(--code-operator);
+}
+.cm-s-inner span.cm-bracket,
+.cm-s-inner span.cm-tag.cm-bracket,
+.cm-s-inner span.cm-meta {
+  color: var(--code-bracket);
+}
+
+.cm-s-inner span.cm-link {
+  text-decoration: underline;
+}
+
+/**
+  * Inline Elements
+  */
+
+/* basic styles */
+
+code {
+  color: rgb(47, 206, 47);
+  background-color: var(--code-color-bg);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.3rem;
+  margin: 0.1rem 0.1rem;
+}
+
+code::before {
+  content: none;
+}
+
+code::after {
+  content: none;
+}
+
+[md-inline="code"].md-expand > code::before,
+[md-inline="code"].md-expand > code::after {
+  content: "";
+}
+
+a code {
+  color: var(--tw-prose-links);
+}
+
+mark code {
+  color: inherit;
+}
+
+strong {
+  color: rgb(211, 211, 77);
+  font-weight: 600;
+}
+
+a {
+  color: var(--tw-prose-links);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* A block-level image should have a total top and bottom margin of 2em.
+It is always wrapped in a paragraph with 1.2em vertical margin, hence we
+add 0.8 here */
+p > .md-image:only-child {
+  margin-top: 0.8em !important;
+  margin-bottom: 0.8em !important;
+}
+
+.md-image > .md-meta {
+  color: var(--tw-prose-code);
+}
+
+/* extend styles */
+
+mark {
+  border-radius: 3px;
+  padding: 0 2px;
+  background-color: var(--tw-highlight-color);
+}
+
+/**
+  * Source Code Mode
+  * see http://support.typora.io/Code-Block-Styles
+  */
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+  background-color: var(--item-hover-bg-color);
+}
+
+#typora-source {
+  font-family: var(--monospace);
+  color: var(--typora-source-body);
+}
+
+#typora-source .cm-header {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-link {
+  color: var(--code-string);
+}
+
+#typora-source .cm-string {
+  color: var(--code-string);
+}
+
+#typora-source .cm-comment {
+  color: var(--code-comment);
+}
+
+#typora-source .cm-atom {
+  color: var(--code-citation);
+}
+
+#typora-source .cm-tag {
+  color: var(--code-tag);
+}
+
+#typora-source .cm-attribute {
+  color: var(--code-variable);
+}
+
+#typora-source .cm-bracket {
+  color: var(--code-bracket);
+}
+
+.file-list-item-file-ext-part {
+  opacity: 0.5;
+}
+
+#write div.md-toc-tooltip {
+  background-color: var(--tw-prose-bg);
+}
+
+.md-toc {
+  font-size: 0.8em;
+}
+
+.md-toc-h1 .md-toc-inner {
+  margin-left: 0;
+}
+
+.md-toc-h2 .md-toc-inner {
+  margin-left: 1em;
+}
+
+.md-toc-h3 .md-toc-inner {
+  margin-left: 2em;
+}
+
+.md-toc-h4 .md-toc-inner {
+  margin-left: 3em;
+}
+
+.md-toc-h5 .md-toc-inner {
+  margin-left: 4em;
+}
+
+.md-toc-h6 .md-toc-inner {
+  margin-left: 5em;
+}
+
+#typora-sidebar {
+  border-right: var(--window-border);
+}
+
+.sidebar-tab {
+  text-transform: none;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.md-search-hit {
+  color: var(--search-hit-text-font-color);
+  background-color: var(--search-hit-text-bg-color);
+}
+
+#md-searchpanel {
+  box-shadow: none;
+  filter: var(--tw-drop-shadow-md);
+}
+
+#md-searchpanel .btn:not(.close-btn):hover {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background-color: var(--tw-button-hover-bg);
+}
+
+#md-searchpanel input,
+#md-searchpanel .btn,
+#searchpanel-msg {
+  border-radius: 5px;
+}
+
+#searchpanel-msg {
+  color: var(--theme-500);
+  border-color: var(--theme-300);
+  background: var(--theme-100);
+}
+
+.form-control {
+  border-color: var(--panel-border-color);
+}
+
+.btn-default {
+  background-color: var(--button-bg);
+}
+
+/* you can override the default max-width size here or override each style by your custom css */
+
+#write {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    max-width: 80rem;
+}
+
+p {
+    line-height: 2rem;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.875em;
+}
+@import "";
+@import "";
+@import "";
+
+:root {
+  --tw-prose-body: var(--tw-prose-invert-body);
+  --tw-prose-headings: var(--tw-prose-invert-headings);
+  --tw-prose-lead: var(--tw-prose-invert-lead);
+  --tw-prose-links: var(--tw-prose-invert-links);
+  --tw-prose-bold: var(--tw-prose-invert-bold);
+  --tw-prose-counters: var(--tw-prose-invert-counters);
+  --tw-prose-bullets: var(--tw-prose-invert-bullets);
+  --tw-prose-hr: var(--tw-prose-invert-hr);
+  --tw-prose-quotes: var(--tw-prose-invert-quotes);
+  --tw-prose-quote-borders: var(--tw-prose-invert-quote-borders);
+  --tw-prose-code: var(--tw-prose-invert-code);
+  --tw-prose-captions: var(--tw-prose-invert-captions);
+  --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+  --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
+  --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+  --tw-prose-bg: var(--tw-prose-invert-bg);
+  --tw-prose-meta: var(--tw-prose-invert-meta);
+  --tw-prose-meta-bg: var(--tw-prose-invert-meta-bg); 
+  --select-text-bg-color: rgb(35, 92, 197);
+
+  --tw-button-hover-bg: var(--tw-button-hover-bg-inverted);
+
+  --md-char-color: var(--md-char-color-inverted);
+  --meta-content-color: var(--meta-content-color-inverted);
+  --panel-border-color: var(--panel-border-color-inverted);
+  --active-file-bg-color: var(--active-file-bg-color-inverted);
+  --window-border: var(--window-border-inverted);
+  --search-hit-text-bg-color: var(--search-hit-text-bg-color-inverted);
+  --search-hit-text-font-color: var(--search-hit-text-font-color-inverted);
+  --search-select-bg-color: var(--search-select-bg-color-inverted);
+  --blur-text-color: var(--blur-text-color-inverted);
+  --item-hover-bg-color: var(--item-hover-bg-color-inverted);
+  --typora-source-body: var(--typora-source-body-inverted);
+  --mermaid-theme: var(--mermaid-theme-inverted);
+  --active-toggle-btn-color: var(--active-toggle-btn-color-inverted);
+
+  --code-neutral: var(--code-neutral-inverted);
+  --code-cursor: var(--code-cursor-inverted);
+  --code-string: var(--code-string-inverted);
+  --code-number: var(--code-number-inverted);
+  --code-tag: var(--code-tag-inverted);
+  --code-variable: var(--code-variable-inverted);
+  --code-operator: var(--code-operator-inverted);
+  --code-comment: var(--code-comment-inverted);
+  --code-bracket: var(--code-bracket-inverted);
+  --code-citation: var(--code-citation-inverted);
+  --code-color: rgb(237, 71, 89);
+  --code-color-bg: rgb(32, 41, 58);
+
+  --button-bg: var(--button-bg-inverted);
+
+  --md-grid-header: var(--md-grid-header-inverted);
+  --md-grid-header-ext: var(--md-grid-header-ext-inverted);
+  --md-grid-ext: var(--md-grid-ext-inverted);
+  --md-grid-header-active: var(--md-grid-header-active-inverted);
+  --md-grid-active: var(--md-grid-active-inverted);
+  --md-grid-border-color: var(--md-grid-border-color-inverted);
+}
+
+
+
+</style><title>AIGC</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-stable-diffusion-概论">1. Stable Diffusion 概论</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#零相关成果">零、相关成果</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#风景">风景</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#人物">人物</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#视频">视频</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一框架">一、框架</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#diffusion-库">diffusion 库</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#webuiautomatic1111）">WebUI（Automatic1111）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#comfyui">ComfyUI</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#sdnext框架">SD.NEXT框架</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#webui-forge">WebUI Forge</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二基本模型">二、基本模型</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#base-model基底模型">base model：基底模型</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#checkpoint模型检查点">checkpoint：模型检查点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#lora大语言模型的低秩适应">LoRA：大语言模型的低秩适应</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#使用-lora">使用 LoRA</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#训练lora">训练LoRA</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#dreambooth">Dreambooth</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#vae变分自编码器">VAE：变分自编码器</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#textual-inversion文本反演">Textual Inversion：文本反演</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#controlnet控制网络">Controlnet：控制网络</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#upscale-model放大模型">upscale model：放大模型</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三调度器与采样器">三、调度器与采样器</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#调度器">调度器</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#采样器sampler）">采样器（sampler）</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四常用插件">四、常用插件</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#xformers">xformers</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#五各种新模型">五、各种新模型</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#sdxl">SDXL</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#特点">特点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#架构">架构</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#sdxl-turbo">SDXL Turbo</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#flux">FLUX</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#六注意点">六、注意点</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-comfyui">2. ComfyUI</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一文生图">一、文生图</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#画图要点">画图要点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#提示词">提示词</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#提示词的进阶使用">提示词的进阶使用</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#采样方法和采样步长">采样方法和采样步长</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三种优化技术">三种优化技术</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#restore-face">Restore face</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#tiling">Tiling</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#highres">Highres</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#batch-count和batch-size">batch count和batch size</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#cfg-scale">CFG scale</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#加载lora">加载LoRA</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#一图分区域编写prompt">一图分区域编写prompt</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#多参数同时生成图片">多参数同时生成图片</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#脚本">脚本</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#webui中的脚本">webui中的脚本</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#comfyui实现脚本">comfyui实现脚本</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#clip跳过层">clip跳过层</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#二图生图">二、图生图</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#关键节点">关键节点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#反推提示词">反推提示词</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#其他设置">其他设置</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#局部重绘">局部重绘</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#控制出图尺寸">控制出图尺寸</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#图片放大">图片放大</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#直接放大模型放大）">直接放大（模型放大）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h6 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#潜在放大">潜在放大</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#智能扩图">智能扩图</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#三controlnet">三、ControlNet</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#预处理器系列">预处理器系列</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#apply-controlnet高级）节点">Apply ControlNet（高级）节点</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#四deforum">四、Deforum</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主要功能板块">主要功能板块</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#五注意点">五、注意点</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h1"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-sora">3. Sora</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#特点-2">特点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#核心架构扩散transformer">核心架构：扩散Transformer</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=' first-line-indent'><h1 id='1-stable-diffusion-概论'><span>1. Stable Diffusion 概论</span></h1><p><span>以AI绘图为代表的AIGC发展迅速，笔记可能已过时，但大体上的知识点仍然是互通的</span></p><p><span>关于 SD 模型原理，在</span><strong><span>大模型-Latent Diffusion中</span></strong></p><h2 id='零相关成果'><span>零、相关成果</span></h2><h4 id='风景'><span>风景</span></h4><p><img src="assets/00005-4227851877.jpg" style="zoom: 33%;" /></p><p><img src="assets/00016-2165643783.jpg" style="zoom: 33%;" /></p><h4 id='人物'><span>人物</span></h4><p><img src="assets/00045-3176394084.jpg" style="zoom:25%;" /></p><h4 id='视频'><span>视频</span></h4><p><span>该视频于2023.05.30使用SD+Defourm插件制作</span></p><video width=480>
+    <source src='./assets/20230530155840.mp4'>
+</video><p>&nbsp;</p><p>&nbsp;</p><h2 id='一框架'><span>一、框架</span></h2><p><span>要使用 Stable Diffusion，有下列主流框架</span></p><h4 id='diffusion-库'><span>diffusion 库</span></h4><p><code>pip install diffusion</code><span>，即可通过代码跑SD</span></p><h4 id='webuiautomatic1111）'><span>WebUI（Automatic1111）</span></h4><p><span>基于官方SD模型而打造的开源项目，可通过界面交互的方式来使用Stable Diffusion，而且集成了各种必要的模块，方便使用模型和使用各种插件</span></p><h4 id='comfyui'><span>ComfyUI</span></h4><p><span>一个基于SD的节点式、工作流式的图形界面（同样是一个web界面）。它提高了使用SD的自由度，各种节点可自由组合，将各种不同板块组合到了一起，形成了一个完整的工作流，和虚幻引擎的蓝图、Blender的工作流编辑非常像</span></p><p><span>使用：</span></p><ol start='' ><li><p><span>去github下载官方整合包，解压后双击cun_nvidia_gpu.bat这个批处理文件，即可启动ComfyUI，不需要额外安装各种依赖。或者选择一些up主（如秋叶）的整合包</span></p></li><li><p><span>这里安装的是秋叶整合包，打开启动器后跳转到浏览器，点击右侧设置按钮，调整语言为中文</span></p></li></ol><h4 id='sdnext框架'><span>SD.NEXT框架</span></h4><p><span>原本是WebUI的一个分支，不断迭代后成为了一个独立版本</span></p><h4 id='webui-forge'><span>WebUI Forge</span></h4><p><span>由WebUI改进而来的新框架</span></p><p>&nbsp;</p><h2 id='二基本模型'><span>二、基本模型</span></h2><p><span>在使用 AI 绘图过程中，往往会接触到下列模型</span></p><h4 id='base-model基底模型'><span>base model：基底模型</span></h4><p><span>一般指最原始的模型，也就是诸如SD1.5、SDXL1.0、FLUX.1的模型</span></p><h4 id='checkpoint模型检查点'><span>checkpoint：模型检查点</span></h4><p><span>它通常是在base model之上经过Fine Tuning所得到的一个保存点，在Civitai.com上所看到的基础模型一般都是checkpoint。一般来说，也没人直接拿原始SD模型来直接开发下游应用，而是经过微调后得到checkpoint，再运用到下游</span></p><p><span>checkpoint一般是后缀名为safetensor、ckpt的文件，可视作魔改版的SD原模型</span></p><h4 id='lora大语言模型的低秩适应'><span>LoRA：大语言模型的低秩适应</span></h4><p><span>具体原理见：大模型-Fine Tuning部分</span></p><p><span>虽然论文标题是针对大语言模型，但本质上其思想对任何大模型都有效。对于基于Transformer模型的大语言模型，LoRA一般是在Transformer以及前馈层中添加LoRA；针对于扩散模型，其思想是在U-net里增加一些层，训练这些层去调整U-net的输出（事实上调整的是UNet网络中Transformer结构中的权重），只需要保存添加的层，所以文件比较小，但需要基础模型</span></p><h6 id='使用-lora'><span>使用 LoRA</span></h6><p><span>需要将 lora 文件放到指定文件夹</span></p><p><span>注意！有些Lora是有trigger words的，若prompt未包含触发词，则就算加入Lora也不会有效果</span></p><ul><li><p><span>对于webui而言：可找到lora板块点击加载</span></p></li><li><p><span>对于comfyui而言：创建lora加载器节点，即可加载lora并调整参数</span></p></li></ul><p><span>Lora权重：在prompt中，lora的第三个字符串表示所占权重，即lora在图像生成中占据多少权重</span></p><h6 id='训练lora'><span>训练LoRA</span></h6><p><img src="assets/v2.jpg" referrerpolicy="no-referrer"></p><ol start='' ><li><p><span>数据集处理：</span></p><ol start='' ><li><p><span>收集15-50张高质量的训练图片，主题明确，特征明显，背景不杂乱，主体多维度，避免相似度高的图片</span></p></li><li><p><span>处理图片，分辨率全部相同且需为64的倍数，可通过brime网站批量裁切</span></p></li><li><p><span>为每张图打tag，可安装 tagger 标签器插件辅助。打完tag，可选择将某些tag删除，而删除标签（如blue eyes）就相当于将特征与LoRA绑定在一起，使用该lora大概率会出现 blue eyes</span></p></li></ol></li><li><p><span>训练环境搭建</span></p><ul><li><p><span>本地：要求N卡，可用秋叶整合的一键训练包，或者安装训练插件</span></p></li><li><p><span>云端：可使用 kohya-ss 等训练脚本</span></p></li></ul></li><li><p><span>模型训练</span></p></li><li><p><span>模型测试</span></p></li></ol><h4 id='dreambooth'><span>Dreambooth</span></h4><p><span>谷歌发布的训练模型的方式，通过特定场景图片训练基础模型，是一种全量微调策略，即可让模型总是生成以这些场景为主题的图片。目前主流checkpoint都是经过DreamBooth训练所得到的模型，在某一细分领域表现很好，缺点是总是生成某一类别的图片（如人物、风景等）</span></p><p><span>直接用新的图片和关键词去调整U-Net里的参数，保存整个修改过的模型，所以文件很大。同时训练所需的配置也要比训练LoRA更高。只要注入几张dog图片，后面就算prompt中没有dog，图片中也总是以dog为核心，如下：</span></p><p><img src="assets/dogs.png" referrerpolicy="no-referrer"></p><h4 id='vae变分自编码器'><span>VAE：变分自编码器</span></h4><p><span>是一个美化模型，作用为滤镜+微调，一般该文件的名字中带有vae，后缀名一般为ckpt\pt等。有的大模型是自带vae的，再加入vae可能会适得其反</span></p><p><span>VAE充当的是像素空间和潜在空间的桥梁，更改VAE就是修改文本的嵌入</span></p><h4 id='textual-inversion文本反演'><span>Textual Inversion：文本反演</span></h4><p><span>后缀名为embedding的文件，主要作用在clip层的embedding lookup，让模型加入特定的、嵌入过后的词语，只需要保存到学习到的特征，文件非常小。常见的如easynegative，文本编码器见到这个词，就会去找特定的语义向量</span></p><p><img src="assets/embedding.png" style="zoom:50%;" /></p><h4 id='controlnet控制网络'><span>Controlnet：控制网络</span></h4><p><span>训练另外一个神经网络来控制U-net的输出</span></p><h4 id='upscale-model放大模型'><span>upscale model：放大模型</span></h4><p><span>放大模型，使用不同算法给图片放大尺寸，后缀名.pth。这玩意有些是可能是自带的，有些需要另行下载</span></p><p>&nbsp;</p><h2 id='三调度器与采样器'><span>三、调度器与采样器</span></h2><h4 id='调度器'><span>调度器</span></h4><p><span>噪声调度器用于告诉采样器采样步数以及每一步的噪声应该是多少，常见的有Karras调度器，该调度器的特点是越接近采样完成，噪声步长会越小，有助于图像提升</span></p><p><span>注意：在webui中，调度器和采样器合并到了一个选项，如采样方法：Euler karras就同时包含了 Euler 采样器和 Karras 调度器</span></p><p><span>真人这种要求较为准确的场景，可使用DPM系列采样方法，对于卡通、动漫这种准确度要求不高、且速度有要求的，可使用UniPC、Euler系列（包括带 a 的）</span></p><h4 id='采样器sampler）'><span>采样器（sampler）</span></h4><p><span>stable diffusion在去噪的过程中每一步都会产生一个新的图像样本，因此去噪的过程也被称为采样，采样过程中使用的方法就是采样器，换句话说采样器负责不断去除噪声</span></p><p><span>增大采样步数，就是增加降噪的步数，部署越多有助于减少截断误差，提升效果，但采样步数达到一定程度时效果已不明显，反而会提高算力要求</span></p><p><span>常见的采样器有：</span></p><ul><li><p><span>Euler、Heun、LMS：这一类是古老的采样方法，但效果还可以，运行起来也比较简单；Heun比Euler更准确，但更慢；LMS和Euler一样快，但可能会更准确</span></p></li><li><p><span>Euler a 等带a（ancestral）的采样器：即祖先采样器，其采样结果具有随机性且结果图片不保证收敛。虽然不稳定，但有时候效果以外的不错，可以碰碰运气</span></p></li><li><p><span>DDIM和PLMS 系列，迄今已有点过时了，一般不再使用</span></p></li><li><p><span>DPM系列：是一系列发布于2022年的采样器，DPM2表示二阶，与DPM相比更慢但更准确；DPM++是DPM的优化版本，DPM adaptive可以自适应调整每一步的值，但可能非常慢</span></p></li><li><p><span>UniPC：2023年发布的新型采样器，可在5-10步内采样出高质量图片，对平面、卡通效果表现较好</span></p></li><li><p><span>K sampler：k采样器，它不是一个单独的采样器，而是一个github仓库，里面实现了以上诸多采样器。在ComfyUI中，可通过“K sampler”节点，来使用不同的采样器</span></p></li></ul><p>&nbsp;</p><h2 id='四常用插件'><span>四、常用插件</span></h2><h4 id='xformers'><span>xformers</span></h4><p><span>可以降低显存占用，作用在模型的 corss attention 部分</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='五各种新模型'><span>五、各种新模型</span></h2><h4 id='sdxl'><span>SDXL</span></h4><h6 id='特点'><span>特点</span></h6><ul><li><p><span>针对U-Net、VAE、Clip text encoder三大核心模块都做了改进</span></p></li><li><p><span>新增了一个独立于Latent的refiner模型，也是一个扩散模型，用来提升图形的精细化程度</span></p></li><li><p><span>新发布的0.9版本收集了反馈情况，并使用RLHF技术优化后推出1.0正式版</span></p></li><li><p><span>训练图像为1024*1024的分辨率，因此可以直接生成高质量的高分辨率图像</span></p></li><li><p><span>各种模型，如lora、vae等，和SD1.5等模型不兼容</span></p></li><li><p><span>在训练时，由于要保持同一批训练图像尺寸相同，在1.x时代不得不丢掉一些低分辨率的、以及长宽比不同的图。在sdxl训练时，将图像尺寸条件化、图像裁剪参数条件化，将吃尺寸、裁剪作为原始条件也加入训练，提升模型能力</span></p></li><li><p><span>sdxl可能需要更高的采样步数，建议25及以上；采样方法优先选择Euler系列、DPM++系列、Uni_PC系列，采样器首选Karras</span></p></li></ul><h6 id='架构'><span>架构</span></h6><ul><li><p><span>包含base模型和refiner模型，前者作用和sd1.5等版本一致，具备文生图、图生图、inpainting等功能，refiner本质在做图生图工作，对base模型生成的图进行精细化提升</span></p></li><li><p><span>refiner模型也是基于latent的扩散模型，同样包含U-Net、VAE、Clip text encoder三大模块，prompt一样作用于refiner。refiner模型同样是safetensor文件，且名称中一般带“refiner”字样</span></p></li><li><p><span>如果checkpoint生成的图片已经足够好，就不需要使用refiner。</span></p></li></ul><h6 id='sdxl-turbo'><span>SDXL Turbo</span></h6><p><span>在SDXL1.0基础上设计的新的蒸馏训练方案，该模型只需1-4步即可生成高质量图像，其网络架构和SDXL一致，主要是优化了生成图像时的采样步数，且不包含refiner部分</span></p><h4 id='flux'><span>FLUX</span></h4><p><span>由黑森林实验室（Black Forest Lab）推出的文生图模型。该模型引入了流匹配训练方法、旋转位置嵌入和并行注意力层，在生成图像的质量方面达到了SOTA</span></p><p><span>FLUX.1 拥有120亿参数，远超SDXL等模型，这让它的使用门槛提升了许多，但也带来了显著的质量提升。FLUX在手部、长文本、提示词遵循度、图片长宽比可变性等方面有了飞跃性提升</span></p><p><span>该模型只有正向提示词，没有负向</span></p><p><span>当前一共三个版本：</span></p><ol start='' ><li><p><span>Pro：闭源，拥有最佳性能</span></p></li><li><p><span>dev：开源，是在 Pro 的基础上蒸馏而来，以少量质量为代价换来了显著的使用门槛降低</span></p></li><li><p><span>schnell：开源，在 dev 的基础上进一步蒸馏迭代步数而来，质量有了明显的下降，但只需4步即可生成图片</span></p></li></ol><p><span>目前 FLUX 正受到开源社区的追捧，诸如 LORA、controlnet 等都在为其进行适配</span></p><p>&nbsp;</p><h2 id='六注意点'><span>六、注意点</span></h2><ul><li><p><span>之前的模型后缀都是使用的.ckpt，现在为了安全已换成.safetensors，但两者基本一致，都可放置在Stable Diffusion文件夹下使用。.ckpt是序列化的，有可能包含恶意代码，而.safetensors是用numpy保存的，只包含张量数据，更安全</span></p></li><li><p><span>fp16和fp32对生成图形影响不大，可以选择fp16。fp32模型的大小是fp16的接近两倍，且后者运算更快。若使用fp16出现黑图问题，可换回单精度模型试试</span></p></li><li><p><span>有些选项需要依赖于未进行下载的包，例如面部修复。勾选后将自动进行下载（CMD里可以看到）</span></p></li><li><p><span>一定要输入正负面画面质量的提示词，例如best quality和low quality；另外有些模型需要使用配套的EasyNegative嵌入式模型，不然效果可能不佳；在性能足够的情况下尽量跑更高的分辨率，能得到更好的效果。当前AI出图不再仅仅是关键词了，各种插件（例如动态CFG等）、各种embedding（如easynegative）、clip跳过层等都是影响画面质量的关键</span></p></li><li><p><span>影响图像成品最主要的几个因素：CFG的大小、Lora的使用和权重的分配。其他的因素比如分辨率、steps、采样方法等对结果的影响远没有前面三者的大</span></p></li><li><p><span>图片信息（PNG info）：上传AI生成的PNG图片，即可看到图片生成时所使用的各种参数，比较详尽，可以用来重现类似的图片</span></p></li><li><p><span>注意prompt在不同类型图片中的使用，某些词在二次元风格图片中就可以取得较好的效果，而在真实风格图片中，可能因为没有这样的样本而导致效果不好，真实中可能很难找到这种图片来训练，而二次元中可能就比较容易画出这样的效果</span></p></li><li><p><span>对于CFG而言，不同模型、不同风格的图片可能会有不同的适应度，即最佳的CFG可能不一致，需要调整</span></p></li><li><p><span>模型融合也是一种得到新模型的一种方式，挑选各种模型，按一定比例混合其中不同层的参数，得到融合模型</span></p></li></ul><p>&nbsp;</p><h1 id='2-comfyui'><span>2. ComfyUI</span></h1><p><span>以ComfyUI为主，也包含了WebUI的一些东西，但无论是哪一种框架，AI绘图的知识点和主要流程都是类似的</span></p><h2 id='一文生图'><span>一、文生图</span></h2><h4 id='画图要点'><span>画图要点</span></h4><p><span>先总体再部位，分层设置提示词</span></p><p><span>比如要画一张女生图，一般的提示词板块设置为：</span></p><ol start='' ><li><p><span>使用的小模型：lora等</span></p></li><li><p><span>画面质量：highresolution、raw、best quality、CG、8K等</span></p></li><li><p><span>画面环境：bedroom、kitchen等</span></p></li><li><p><span>主体：1girl、beautiful girl、full body等（如果是单人特写可与画面环境交换次序以提升重要性）</span></p></li><li><p><span>动作：lying、beg、arms behind back等</span></p></li><li><p><span>其它细节：如bunny girl、各种装饰、长发还是短发等</span></p></li></ol><h4 id='提示词'><span>提示词</span></h4><p><span>提示词（Prompt）：分为正负两方面</span></p><ul><li><p><span>AI 会按照 prompt 提示词输入的先后顺序和所分配权重来执行去噪工作</span></p></li><li><p><span>AI 也会依照概率来选择性执行，如提示词之间有冲突，AI 会根据权重确定的概率来随机选择执行哪个提示词</span></p></li><li><p><span>越靠前的 Tag 权重越大，比如景色Tag在前，人物就会小，相反的人物会变大或半身</span></p></li><li><p><span>生成图片的大小会影响 Prompt 的效果，图片越大需要的 Prompt 越多，不然 Prompt 会相互污染</span></p></li><li><p><span>Prompt 支持使用 emoji，且表现力较好</span></p></li><li><p><span>正负面prompt都不是越多越好，这里的太多指的不是数量多，而是重复prompt太多。太少可能达不到想要的效果，太多会使画面中出现奇怪的东西</span></p></li></ul><p><span>常用正向提示词：</span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>正向提示词</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>HDR, UHD, 8K (HDR、UHD、4K、8K 和 64K）</span></td><td style='text-align:center;' ><span>这样的质量词可以带来巨大的差异提升照片的质量</span></td></tr><tr><td style='text-align:center;' ><span>best quality</span></td><td style='text-align:center;' ><span>最佳质量</span></td></tr><tr><td style='text-align:center;' ><span>masterpiece</span></td><td style='text-align:center;' ><span>杰作</span></td></tr><tr><td style='text-align:center;' ><span>Highly detailed</span></td><td style='text-align:center;' ><span>画出更多详细的细节</span></td></tr><tr><td style='text-align:center;' ><span>Studio lighting</span></td><td style='text-align:center;' ><span>添加演播室的灯光，可以为图像添加一些漂亮的纹理</span></td></tr><tr><td style='text-align:center;' ><span>ultra-fine painting</span></td><td style='text-align:center;' ><span>超精细绘画</span></td></tr><tr><td style='text-align:center;' ><span>sharp focus</span></td><td style='text-align:center;' ><span>聚焦清晰</span></td></tr><tr><td style='text-align:center;' ><span>physically-based rendering</span></td><td style='text-align:center;' ><span>基于物理渲染</span></td></tr><tr><td style='text-align:center;' ><span>extreme detail description</span></td><td style='text-align:center;' ><span>极其详细的刻画</span></td></tr><tr><td style='text-align:center;' ><span>Professional</span></td><td style='text-align:center;' ><span>加入该词可以大大改善图像的色彩对比和细节</span></td></tr><tr><td style='text-align:center;' ><span>Vivid Colors</span></td><td style='text-align:center;' ><span>给图片添加鲜艳的色彩，可以为你的图像增添活力</span></td></tr><tr><td style='text-align:center;' ><span>Bokeh</span></td><td style='text-align:center;' ><span>虚化模糊了背景，突出了主体，像 iPhone 的人像模式</span></td></tr><tr><td style='text-align:center;' ><span>(EOS R8, 50mm, F1.2, 8K, RAW photo:1.2)</span></td><td style='text-align:center;' ><span>摄影师对相机设置的描述</span></td></tr><tr><td style='text-align:center;' ><span>High resolution scan</span></td><td style='text-align:center;' ><span>让你的照片具有老照片的样子赋予年代感</span></td></tr><tr><td style='text-align:center;' ><span>Sketch</span></td><td style='text-align:center;' ><span>素描</span></td></tr><tr><td style='text-align:center;' ><span>Painting</span></td><td style='text-align:center;' ><span>绘画</span></td></tr></tbody></table></figure><p><span>注意：</span></p><ul><li><p><span>正向prompts不是越多越好，尤其是含有互相冲突的prompts的情况下，比如同时含有“arms behind head”和“press face”，这样冲突的词，一般模型会以权重为依据随机挑选一个，但若冲突部分太多，则可能导致画面崩坏。简单即是多</span></p></li><li><p><span>根据模型来选择合适的prompt，比如风景checkpoint就可以用wide lens等，而人物checkpoint则可用动作、外貌的提示词。其它的，比如一个正经画妹子的模型，强行塞不正经的提示词，因为训练的时候就基本没有这种样本，所以很难画出好东西</span></p></li></ul><p><span>负面prompt在某一类绘图中基本都是通用的，比如画人、画风景等，如果为了简便都可以用一类prompt通用。负面提示词中比较常用的词汇，已被做成类似easynegative等embedding了，可直接下载使用</span></p><h4 id='提示词的进阶使用'><span>提示词的进阶使用</span></h4><p><span>注意：提示词的语法、分隔符和组合符（都必须是英文半角的）</span></p><p><span>一般流程：先把要描述的画面写下生成一次，根据生成结果边试边改不满意或遗漏的描述，要强调的概念用 (xxx: 1.x ) 语法形式来提升权重，其中 xxx 是要强调的词 1.x 代表要提升的比例，如 1.5 就是提升 150% 的权重。权重取值范围 0.4-1.6，权重太小容易被忽视，太大容易拟合图像出错</span></p><ul><li><p><span>分隔符：逗号。分割词缀，有一定的权重排序功能，逗号前权重更高，因此建议排序：</span></p><ol start='' ><li><p><span>综述（图像质量+画风+镜头效果+光照效果+主题+构图）</span></p></li><li><p><span>主体（人物&amp;对象+姿势+服装+道具）</span></p></li><li><p><span>细节（场景+环境+饰品+特征）</span></p></li></ol></li><li><p><span>组合符：</span></p><ol start='' ><li><p><span>冒号：自定义权重数值格式，例如(1girl:0.75)表示单人女孩权重为0.75</span></p></li><li><p><span>圆括号：权重乘1.1，如(1girl)，表示权重乘1.1</span></p></li><li><p><span>花括号：权重乘1.05，与圆括号用法类似</span></p></li><li><p><span>方括号：权重除1.1</span></p></li><li><p><span>复合括号：多次叠加权重，如(((1girl)))，表示权重乘1.1的三次方</span></p></li></ol></li><li><p><span>连接符：+, and, |, _ 都可连接描述词，但各自细节效果有所不同</span></p></li></ul><h4 id='采样方法和采样步长'><span>采样方法和采样步长</span></h4><p><span>Sampling method和Sampling Steps：采样方法和采样步长</span></p><p><span>采样方法本身没有绝对意义上的优劣之分，只有是否合适一说，只要能达到预期的效果，就是好方法</span></p><p><span>采样步长也必须合适，太小会导致随机性很高，太大会导致效率降低（和低的steps效果差不多但是生成图像所需时间更长）</span></p><h4 id='三种优化技术'><span>三种优化技术</span></h4><h6 id='restore-face'><span>Restore face</span></h6><p><span>主要用于优化面部，首次使用会自动在cmd界面中下载扩展包，不够效果貌似一般</span></p><h6 id='tiling'><span>Tiling</span></h6><p><span>CUDA的矩阵乘法优化，一般不用</span></p><h6 id='highres'><span>Highres</span></h6><p><span>在内部生成低分辨率的图，放大并添加细节后再输出</span></p><p><span>因为直接使用高分辨率画图，可能会出现奇怪的情况，比如画出了多个人。这种情况在风景图等也存在。原因在于原本的模型大多是使用512</span><span>*</span><span>512的训练样本来训练的，要是分辨率过高，会导致AI误以为在生成多张图。超过800</span><span>*</span><span>800的图都使用高清修复会更好出结果</span></p><p><span>高清修复本质就是生成了一张低分辨率的小图，然后放到图生图里提升分辨率和细节</span></p><p><span>当需要画出高分辨率图像时，最好使用高清修复。不过这个方法可能还是会出现问题</span></p><p><span>放大算法若是人物类图片，优先选择R-ESRGAN 4x+，潜变量latent有时候也还行</span></p><p><span>Denosing strength：重绘程度，即对原图片的保留程度，和CFG有些相似。越接近于0，则在生成高分辨率图时会保留更多的低分辨率的图。而越接近1则重绘程度越高。可把数值看成百分比</span></p><p><span>一般在0.4~0.7之间比较好</span></p><p><span>注意：</span></p><ul><li><p><span>对于真人而言，如果重绘程度和CFG都很小，图片会有一种朦胧感</span></p></li><li><p><span>只有适合的CFG和适合的重绘程度才能生成好图，不然图片会变得非常诡异</span></p></li><li><p><span>CFG一般不超过10和不低于2，最大不能超过20，重绘程度一般不大于0.8，否则可能会出问题</span></p></li><li><p><span>重绘程度越大，则会有越多的细节，但是细节太多也不是一件好事，比如出现奇怪的东西</span></p></li><li><p><span>重绘幅度在0.7以前一般都是一个画风，而到了某个值以后就会发生画风变化</span></p></li></ul><p><span>可用脚本X/Y/Z plot进行测试，发现最好的参数</span></p><h4 id='batch-count和batch-size'><span>batch count和batch size</span></h4><p><span>count是出图的轮次，而size是每一轮出图的数量。count和性能无关，而size直接和性能挂钩，性能差则size无法拉高，否则很可能爆显存</span></p><h4 id='cfg-scale'><span>CFG scale</span></h4><p><span>AI对描述参数的倾向程度，越高则越倾向于prompt，而随机性下降。该参数会显著影响最终结果</span></p><p><span>基本上都在4~8之间最好</span></p><ul><li><p><span>低 CFG：图片糊、看起来雾蒙蒙的，色彩对比弱，构图也比较差，图片结构未定型</span></p></li><li><p><span>高 CFG：图片对比度非常强，色彩非常饱和，甚至会过饱和，颜色和结构失调</span></p></li></ul><h4 id='加载lora'><span>加载LoRA</span></h4><p><span>lora加载器，右侧model连接采样器，左侧连接大模型（另一个lora），左侧clip连接大模型，右侧连接prompt文本；至于反向提示词，连lora还是大模型都可以，但正向提示词必须要连lora</span></p><h4 id='一图分区域编写prompt'><span>一图分区域编写prompt</span></h4><ul><li><p><span>Conditioning(set Area)：该节点连接在文本编码器之后，可分别设置不同区域的prompt，包括正向和反向，注意设置正确的宽高合XY位置。</span></p></li><li><p><span>只需要给多个prompt加入Conditioning(set Area)调整prompt的影响范围，随后加上一个ConditioningCombine将节点合并，随后将合并节点接入采样器的prompt。</span></p></li><li><p><span>一般反向提示词可以共用，不需要处理。</span></p></li><li><p><span>注意ConditioningCombine节点只能两两合并，要是多个图片则需要多次合并。同时，对于这类需要“合并”的图片，如果直接合，会有一个明显的分隔而不像一张完整的图，这时需要再加入一个条件文本，进行合并。工作流演示：multiPhotoCombine.json在ComfyUI打开</span></p></li><li><p><span>如果合并边界处仍然有问题，可换个种子重新试一下</span></p></li><li><p><span>建议多个区域，只写本区域特定元素（如xx人物），而在多图合并时的prompt，写场景信息</span></p></li><li><p><span>如果光影以及其它区域还存在问题，还可通过后续处理进一步完善</span></p></li></ul><h4 id='多参数同时生成图片'><span>多参数同时生成图片</span></h4><p><span>在comfyui中，可使用多个lora、采样器、vae、保存图像等节点，可实现类似webui的xyz-plot多参数对比效果，相当于一种超参数搜索，可快速根据出图得到最合适的参数组</span></p><h4 id='脚本'><span>脚本</span></h4><h6 id='webui中的脚本'><span>webui中的脚本</span></h6><p><span>方便比较使用各种参数所得到的结果，一般使用X/Y/Z plot</span></p><p><span>例如以下这个例子：共生成x、y、z值的乘积张图片，其中不同值之间用逗号分割</span></p><p><img src="assets/xyzplot.png" style="zoom:67%;" /></p><p><span>其规律为：Z、Y、X重要性依次降低，即每次生成总是先取定一个Z或Y，再生成 X 的各个值</span></p><p><span>prompt S/R：</span></p><ul><li><p><span>是xyz图的一个子项，即提示词搜索和替换，比提示词矩阵更加好用</span></p></li><li><p><span>用法：若在prompt中输入了提示词A，则在其值中可输入A，B，C，此时会分别以提示词A、B、C生成3张图，便于比较不同提示词之间的差异</span></p></li><li><p><span>ps：也可以用该功能来方便跑不同类型词的图，比如跑5张修女和5张 jk 图。这样的话，记得勾选随机种子为1</span></p></li></ul><h6 id='comfyui实现脚本'><span>comfyui实现脚本</span></h6><p><span>需要通过efficiency nodes插件，可见工作流：XY Plot.json</span></p><ul><li><p><span>位置：新建节点-效率节点，搜索和自动推荐不一定包括进来想要的节点了，有时需要自己去找</span></p></li><li><p><span>采样器(效率)中有一个脚本接口，选择xy图表即可实现XYZplot功能；加载器(效率)的clip可不连任何节点</span></p></li><li><p><span>注意”手动输入“节点，需要用 ; 分隔而不是 , 分隔！</span></p></li></ul><h4 id='clip跳过层'><span>clip跳过层</span></h4><p><span>不是将clip网络最后一层的输出传入Unet网络，而是将倒数第n层的隐藏状态传递给Unet，最终会对输出有一定影响，可超参数搜索决定合适的clip跳层</span></p><p><span>注意：webui里clip跳层是正数，表示倒数第n层输出；comfyui里是负数，但意思一致</span></p><p><span>comfyui设置节点：clip设置停止层（负数形式）</span></p><p>&nbsp;</p><h2 id='二图生图'><span>二、图生图</span></h2><p><span>本质上是用现有的图片作为隐空间数据，替换掉了空latent节点中的随机噪声</span></p><h4 id='关键节点'><span>关键节点</span></h4><ul><li><p><span>load image：image用于图生图，mask用于局部重绘，如果不使用局部重绘就不连</span></p></li><li><p><span>vae encode/vae内补编码器：vae连接大模型或vae加载器，latent连接采样器</span></p></li><li><p><span>upscale image/按系数放大image：修改出图尺寸</span></p></li><li><p><span>外补画板：用于扩展图片</span></p></li></ul><h4 id='反推提示词'><span>反推提示词</span></h4><p><span>通过一张AI图片，推断出来这张图所使用的prompt、CFG等各种参数，一般有以下两种方法</span></p><ul><li><p><span>CLIP反推：一般是一句话描述，描述也比较准确</span></p></li><li><p><span>DeepBooru反推：结果也比较准确，但不是一句话描述而是关键词堆叠，很像prompt的风格</span></p></li></ul><p><span>图片信息板块只适用于携带了图片原始生成信息的PNG图片，若是生成时没勾选保存生成信息，或者生成的不是PNG图片，则不能使用图片信息，这个时候反推就可以派上用场</span></p><h4 id='其他设置'><span>其他设置</span></h4><p><span>采样器重绘幅度需要调整，越高相似度就越低</span></p><h4 id='局部重绘'><span>局部重绘</span></h4><ol start='' ><li><p><span>在”加载图像“节点之后，建立VAE编码，连接“设置Latent噪波遮罩”，然后连接K Sampler</span></p></li><li><p><span>右键加载图像，点击”在遮罩编辑器打开“，即可看到重绘区域的弹窗，可使用画笔绘制需要重绘的区域，注意prompt只对应需要重绘的区域而不是整个图。</span></p></li></ol><p><span>注意：调整重绘幅度（0.5左右），才能比较好地出图！此外，也可也使用controlnet中的inpating模型进行重绘</span></p><h4 id='控制出图尺寸'><span>控制出图尺寸</span></h4><p><span>如果不进行任何处理，则出图尺寸和原图一致</span></p><p><span>在image loader和vae encode之间添加一个upscale image节点，如果不使用裁剪而直接更改尺寸，那么出图就是自动拉伸；也可以选“图像按系数缩放”</span></p><h4 id='图片放大'><span>图片放大</span></h4><p><span>对应webui的高清修复</span></p><h6 id='直接放大模型放大）'><span>直接放大（模型放大）</span></h6><p><span>直接对像素空间放大，对应高清修复中的用模型放大，即采样完成后，直接放大图像尺寸，这样虽然分辨率高但没有细节</span></p><p><span>可解码后直接通过“upscale image”或“图像按系数缩放”节点直接缩放，也可以插入“图像通过模型放大”节点，使用“放大模型加载器”加载放大模型。直接放大的效果并不好。注意，通过放大模型放大，其尺寸一般是由放大模型本身决定的，如 4x 就是长宽均放大4倍</span></p><p><span>对于一般的类似矢量的平面图，可无需大模型，直接用放大模型放大，注意放大模型的放大倍数</span></p><p><img src="assets/ups.png" referrerpolicy="no-referrer"></p><h6 id='潜在放大'><span>潜在放大</span></h6><p><span>对潜在空间放大，对应webui的高清修复中的 latent 默认选项</span></p><p><span>本质上就是生成一张图后，将其解码并放大尺寸成大图，再将其编码然后又一次采样，此次采样去除的是放大尺寸过程中产生的噪声，其降噪对应重绘幅度，一般采样参数和第一个采样器一致，只是降噪改到0.5左右。最后解码成图像</span></p><p><span>节点：“Latent缩放”/“Latent按系数缩放”</span></p><p><span>在 k 采样器之后，可直接解码并保存图片，也可也直接再连出一条线到Latent缩放上，并再次采样和解码保存。</span></p><p><span>具体可参考workflow：highresFix_Latent.json</span></p><h4 id='智能扩图'><span>智能扩图</span></h4><p><span>可扩充图像的四周，通过”外补画板“节点，其上下左右分别设置扩图区域，该节点位于加载图像/upscale image---vae内补编码器之间</span></p><h2 id='三controlnet'><span>三、ControlNet</span></h2><p><span>是一个插件，它通过额外的输入来控制预训练的大模型，可以提高产出的精度，极大避免了各种差错</span></p><p><span>注意：</span></p><ul><li><p><span>使用该插件有着更高的显卡要求，因为要使用额外的模型</span></p></li><li><p><span>可以使用它来控制人物的骨骼、动作等，因此可以用来做动画</span></p></li></ul><p><span>基本流程（ComfyUI）：load images--预处理器--(preview image)--apply controlnet--K采样器正向提示词</span></p><p><span>controlnet网络有多种，如openpose、lineart等，和预处理器一一对应，注意选择正确的模型</span></p><p><span>要使用多个controlnet，只需要在 apply controlnet后面继续接apply controlnet即可</span></p><p><span>可参考本目录下的assets文件夹下的 controlnet.json 文件（利用comfyui打开）</span></p><h4 id='预处理器系列'><span>预处理器系列</span></h4><p><span>通过输入的图片得到指定的框架，如线稿、openpose、语义分割等，然后加载controlnet并基于此框架指导最终的图像生成，直接搜预处理器即可</span></p><ul><li><p><span>openpose：骨架、姿态预处理，该节点输入一张图片，输出该图片的骨骼（姿态）图像</span></p></li><li><p><span>openpose姿态及手部检测：带手部的姿势检测</span></p></li><li><p><span>lineart：线稿预处理器，输出被输入图片的线稿</span></p></li><li><p><span>canny：也是一个处理线稿的</span></p></li><li><p><span>color：参考原图的颜色，生成一张马赛克的图片，控制最终出图的颜色划分</span></p></li><li><p><span>直线检测（MLSD）：检测输入图片中的直线，常用于建筑等</span></p></li><li><p><span>分块检测（segmentation）：语义分割，用不同的色块标注不同的物体</span></p></li></ul><h4 id='apply-controlnet高级）节点'><span>Apply ControlNet（高级）节点</span></h4><p><span>image的输入是诸如lineartprocessor、openpose这类的节点输出</span></p><ul><li><p><span>conditioning分别是正、负提示词clip</span></p></li><li><p><span>controlNnet输入连接Load ControlNet</span></p></li><li><p><span>conditioning输出连接采样器prompt</span></p></li><li><p><span>强度：用来控制权重</span></p></li><li><p><span>开始/结束时间：在绘图时，controlnet在什么时候开始/结束控制（根据采样步数）</span></p></li></ul><p><span>Load ControlNet，加载控制网络，CONTROL_NET输出接Apply ControlNet</span></p><h2 id='四deforum'><span>四、Deforum</span></h2><p><span>Deforum是WebUI的一个插件，可以根据提示词生成动画</span></p><p><span>该插件一个明显特点就是使用“key frame”，即关键帧，几乎每种变动，比如视角转变、controlnet介入等，都可以设置入点出点，以此达到关键帧的目的</span></p><h4 id='主要功能板块'><span>主要功能板块</span></h4><ol start='' ><li><p><span>Run：AI模型基本参数调节，如采样方法和步数、视频宽高等。这些基本参数是不可以打关键帧的、最基本的参数</span></p></li><li><p><span>Keyframes：设置视频其它参数比如最大帧数，并且可以打关键帧</span></p><ul><li><p><span>下边还有一些其它的小功能板块，比如镜头的移动，噪声的选取等，甚至可以给主模型打关键帧，在不同时刻使用不同的主模型</span></p></li></ul></li><li><p><span>Prompts：提示词板块，设置贯穿全视频的正向和反向提示词，还可设置在不同帧时不同物体的开始出现，也就是提示词关键帧</span></p><ul><li><p><span>注意Prompts的格式是JSON格式，不能更改。如果要加新的关键帧也要符合原来的格式</span></p></li></ul></li><li><p><span>Init：设置初始帧或视频，即以某张图或某段视频为开始，继续生成动画</span></p></li><li><p><span>Controlnet：使用控制网络达到更好的效果</span></p><ul><li><p><span>可同时启用多个网络，且可设置控制网络介入的关键帧</span></p></li></ul></li><li><p><span>Hybrid Video：hybrid表示“混合”，即混合视频或融合视频</span></p></li><li><p><span>Output：输出选项，可设置FPS、是否超分辨率以及超分辨率的算法、是否保存生成的每一帧的图片等</span></p></li></ol><p><span>设置好后，点击右上角 Generate 即可生成视频，生成完成后可点击查看或到文件夹里去找</span></p><p><span>视频一般在 outputs 的 img2img 文件夹里边。如果未勾选delete imgs，则在文件夹里也会保存生成的每一帧</span></p><h2 id='五注意点'><span>五、注意点</span></h2><ul><li><p><span>为了便于区分，可为每个节点重命名</span></p></li><li><p><span>按下ctrl+鼠标左键，可多选节点；按下shift才能整体拖动；每个节点右下角都可改变节点大小</span></p></li><li><p><span>k采样器可预览图像（如果启动器设置没关闭的话），也有图像预览节点preview image</span></p></li><li><p><span>可新建组，将组的框框的范围扩大，此时直接移动组就可以同时移动组内所有节点</span></p></li><li><p><span>直接拉出节点，会自动推荐合适的节点</span></p></li><li><p><span>workflow默认存储在undefined/my_workflow里</span></p></li><li><p><span>虽然下载了预处理器、controlnet插件，但里面的模型还没有下载，其中预处理器在第一次使用预处理器节点时会自动下载，而controlnet需要自行去GitHub/huggingface下载</span></p></li><li><p><span>生成的图像崩了，优先调：lora的权重、增大到合适的采样迭代步数、增大分辨率，CFG不要太高。尝试使用高清修复而不要直接生成高分辨率的图</span></p></li><li><p><span>每次绘图，当一张图片快画完时，显存的占用会显著上升。若一开始显存占用就很高了，那么</span><strong><span>极有可能在即将结束的时候爆显存</span></strong></p></li></ul><p>&nbsp;</p><h1 id='3-sora'><span>3. Sora</span></h1><p><span>Sora 是由 OpenAI 推出的文生视频（Text-to-Video，T2V或TTV）模型，不仅在画面质量上远超同期的其他模型，并且能生成60s的最长视频长度、具有惊人的画面连贯性，达到了影视级的效果</span></p><h4 id='特点-2'><span>特点</span></h4><ol start='' ><li><p><span>高质量</span></p></li><li><p><span>灵活：支持不同时长、不同分辨率、不同长宽比的视频，并且支持多机位</span></p></li><li><p><span>时空和角色的一致性：主体在时间线上连续且一致，很少发生畸变等情况</span></p></li><li><p><span>多模态的语言理解与文本提示：能支持图片或视频作为prompt</span></p></li></ol><h4 id='核心架构扩散transformer'><span>核心架构：扩散Transformer</span></h4><p><span>目前生成视频的模型中主要有GAN和扩散模型，GAN诞生更早，而扩散模型效果以及稳定性都更优。然而扩散模型仍然无法做到较好的连贯性</span></p><p><span>Sora 基于扩散模型，并通过引入 Transformer 模型代替传统的 U-net 网络，通过注意力机制使模型能更好地把握时空连贯性</span></p><p><img src="assets/2b4efb13717eec48799902fa2e943128.png" referrerpolicy="no-referrer" alt="img"></p><p><span>Sora 将训练数据的每一帧进行分块，称为时空潜图块（Spacetime Latent Patch），然后通过编码器将其转化为时间上的一个序列</span></p></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>

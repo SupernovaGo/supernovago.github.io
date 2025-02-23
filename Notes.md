@@ -4,13 +4,11 @@
 
 1. 网页采用暗色主题，Chrome 若开启了深色模式，图片可能会出现显示问题
 2. 笔记的左侧为内容目录
-4. 最后更新日期：2025.1.30，字数统计：420000
+4. 最后更新日期：2025.2，字数约440000
 
 
 
 ## 一、22408 考研
-
-
 
 <a href='./resource/htmlnote/数学二基础.html' target="_blank"><span>数学二基础</span></a>
 
@@ -32,9 +30,7 @@
 
 以名称排序：
 
-
-
-<a href='./resource/htmlnote/AI绘图.html' target="_blank"><span>AI绘图</span></a>
+<a href='./resource/htmlnote/AIGC.html' target="_blank"><span>AIGC</span></a>
 
 <a href='./resource/htmlnote/Blender.html' target="_blank"><span>Blender</span></a>
 
@@ -50,7 +46,7 @@
 
 <a href='./resource/htmlnote/大模型.html' target="_blank"><span>大模型</span></a>
 
-<a href='./resource/htmlnote/计算机硬件.html' target="_blank"><span>计算机硬件</span></a>
+<a href='./resource/htmlnote/计算机软硬件.html' target="_blank"><span>计算机软硬件</span></a>
 
 <a href='./resource/htmlnote/爬虫.html' target="_blank"><span>爬虫</span></a>
 
@@ -73,8 +69,6 @@
 
 
 ## 三、专业基础课程
-
-
 
 <a href='./resource/htmlnote/多元统计分析.html' target="_blank"><span>多元统计分析</span></a>
 
